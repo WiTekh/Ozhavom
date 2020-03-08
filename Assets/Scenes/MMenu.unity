@@ -1694,9 +1694,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySelectedChar: 0
   allCharacters:
-  - {fileID: 7194486950041670342, guid: 23cc4c9d6a43de24495b3a429b346b15, type: 3}
-  - {fileID: 6066848740233912561, guid: e59312a93557b6f40b83d6994ead7a6c, type: 3}
-  - {fileID: 8766960032898696021, guid: cbdec0c4df98c44478f0e1e5e57e0700, type: 3}
+  - {fileID: 5330413579319778799, guid: 8cfe255f507ea42378838c9c8f145ad1, type: 3}
+  - {fileID: 6735837058333302755, guid: 7c1652017e936471398739189d852870, type: 3}
+  - {fileID: 1356181339794647000, guid: db7fa4f71d9dc4667a467d493d844f95, type: 3}
 --- !u!4 &2090241679
 Transform:
   m_ObjectHideFlags: 0
