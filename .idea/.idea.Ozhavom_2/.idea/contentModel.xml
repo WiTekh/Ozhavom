@@ -425,7 +425,6 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Class.cs" t="Include" />
-          <e p="MeleeWP.cs" t="Include" />
           <e p="Movement" t="Include">
             <e p="PhotonPlayer.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
@@ -442,7 +441,6 @@
             <e p="PhotonRoom.cs" t="Include" />
             <e p="PlayerInfos.cs" t="Include" />
           </e>
-          <e p="RangeWP.cs" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
