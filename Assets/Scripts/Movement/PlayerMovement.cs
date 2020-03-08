@@ -45,33 +45,33 @@ public class PlayerMovement : MonoBehaviour
         
         if (Input.GetKey(KeyCode.S)&&Input.GetKey(KeyCode.D)&&!Input.GetKey(KeyCode.W)&&!Input.GetKey(KeyCode.A))   //detect diagonals 
         {
-            desiredPosition += new Vector2(Mathf.Sqrt(2) * MovementSpeed / 2, -Mathf.Sqrt(2) * MovementSpeed / 2);
+            RB.transform.Translate(new Vector2(Mathf.Sqrt(2)*MovementSpeed/2 ,-Mathf.Sqrt(2)*MovementSpeed/2 ) * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.S) &&
                  !Input.GetKey(KeyCode.A))
         {
-            desiredPosition += new Vector2(Mathf.Sqrt(2)*MovementSpeed/2 ,Mathf.Sqrt(2)*MovementSpeed/2);
+            RB.transform.Translate(new Vector2(Mathf.Sqrt(2)*MovementSpeed/2 ,Mathf.Sqrt(2)*MovementSpeed/2 ) * Time.deltaTime);
         }
         else if(Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.W) &&
                 !Input.GetKey(KeyCode.D))
         {
-            desiredPosition += new Vector2(-Mathf.Sqrt(2)*MovementSpeed/2 ,-Mathf.Sqrt(2)*MovementSpeed/2 );
+            RB.transform.Translate(new Vector2(-Mathf.Sqrt(2)*MovementSpeed/2 ,-Mathf.Sqrt(2)*MovementSpeed/2 ) * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) &&
                  !Input.GetKey(KeyCode.D))
         {
-            desiredPosition += new Vector2(-Mathf.Sqrt(2)*MovementSpeed/2 ,Mathf.Sqrt(2)*MovementSpeed/2 );
+            RB.transform.Translate(new Vector2(-Mathf.Sqrt(2)*MovementSpeed/2 ,Mathf.Sqrt(2)*MovementSpeed/2 ) * Time.deltaTime);
         }
         else
         {
             if (Input.GetKey(KeyCode.D))
-                desiredPosition += new Vector2(MovementSpeed, 0);
+                RB.transform.Translate(new Vector2(MovementSpeed, 0) * Time.deltaTime);
             if (Input.GetKey(KeyCode.A))
-                desiredPosition += new Vector2(-MovementSpeed, 0);
+                RB.transform.Translate(new Vector2(-MovementSpeed, 0) * Time.deltaTime);
             if (Input.GetKey(KeyCode.S))
-                desiredPosition += new Vector2(0, -MovementSpeed);
+                RB.transform.Translate(new Vector2(0, -MovementSpeed) * Time.deltaTime);
             if (Input.GetKey(KeyCode.W))
-                desiredPosition += new Vector2(0, MovementSpeed);
+                RB.transform.Translate(new Vector2(0, MovementSpeed) * Time.deltaTime);
         }
     }
 
