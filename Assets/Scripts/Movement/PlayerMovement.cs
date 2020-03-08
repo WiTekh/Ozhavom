@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     
     public float MovementSpeed;
     public float RotationSpeed;
+
+    private Vector2 desiredPosition;
 
     void Start()
     {
@@ -45,34 +47,36 @@ public class PlayerMovement : MonoBehaviour
         
         if (Input.GetKey(KeyCode.S)&&Input.GetKey(KeyCode.D)&&!Input.GetKey(KeyCode.W)&&!Input.GetKey(KeyCode.A))   //detect diagonals 
         {
-            RB.transform.Translate(new Vector2(Mathf.Sqrt(2)*MovementSpeed/2 ,-Mathf.Sqrt(2)*MovementSpeed/2 ) * Time.deltaTime);
+            desiredPosition += new Vector2(Mathf.Sqrt(2) * MovementSpeed / 2, -Mathf.Sqrt(2) * MovementSpeed / 2);
         }
         else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.S) &&
                  !Input.GetKey(KeyCode.A))
         {
-            RB.transform.Translate(new Vector2(Mathf.Sqrt(2)*MovementSpeed/2 ,Mathf.Sqrt(2)*MovementSpeed/2 ) * Time.deltaTime);
+            desiredPosition += new Vector2(Mathf.Sqrt(2)*MovementSpeed/2 ,Mathf.Sqrt(2)*MovementSpeed/2);
         }
         else if(Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.W) &&
                 !Input.GetKey(KeyCode.D))
         {
-            RB.transform.Translate(new Vector2(-Mathf.Sqrt(2)*MovementSpeed/2 ,-Mathf.Sqrt(2)*MovementSpeed/2 ) * Time.deltaTime);
+            desiredPosition += new Vector2(-Mathf.Sqrt(2)*MovementSpeed/2 ,-Mathf.Sqrt(2)*MovementSpeed/2 );
         }
         else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) &&
                  !Input.GetKey(KeyCode.D))
         {
-            RB.transform.Translate(new Vector2(-Mathf.Sqrt(2)*MovementSpeed/2 ,Mathf.Sqrt(2)*MovementSpeed/2 ) * Time.deltaTime);
+            desiredPosition += new Vector2(-Mathf.Sqrt(2)*MovementSpeed/2 ,Mathf.Sqrt(2)*MovementSpeed/2 );
         }
         else
         {
             if (Input.GetKey(KeyCode.D))
-                RB.transform.Translate(new Vector2(MovementSpeed, 0) * Time.deltaTime);
+                desiredPosition += new Vector2(MovementSpeed, 0);
             if (Input.GetKey(KeyCode.A))
-                RB.transform.Translate(new Vector2(-MovementSpeed, 0) * Time.deltaTime);
+                desiredPosition += new Vector2(-MovementSpeed, 0);
             if (Input.GetKey(KeyCode.S))
-                RB.transform.Translate(new Vector2(0, -MovementSpeed) * Time.deltaTime);
+                desiredPosition += new Vector2(0, -MovementSpeed);
             if (Input.GetKey(KeyCode.W))
-                RB.transform.Translate(new Vector2(0, MovementSpeed) * Time.deltaTime);
+                desiredPosition += new Vector2(0, MovementSpeed);
         }
+        
+        RB.MovePosition(desiredPosition);
     }
 
     private void Rotate()
