@@ -425,6 +425,7 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Class.cs" t="Include" />
+          <e p="Joueur.cs" t="Include" />
           <e p="Movement" t="Include">
             <e p="PhotonPlayer.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
