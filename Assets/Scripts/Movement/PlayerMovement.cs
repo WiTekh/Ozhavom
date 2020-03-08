@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     
     public float MovementSpeed;
     public float RotationSpeed;
+
+    private Vector2 desiredPosition;
 
     void Start()
     {
@@ -73,6 +75,8 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.W))
                 RB.transform.Translate(new Vector2(0, MovementSpeed) * Time.deltaTime);
         }
+        
+        RB.MovePosition(desiredPosition);
     }
 
     private void Rotate()
