@@ -8,9 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3300624883135362620}
-  - component: {fileID: 87065977228353277}
-  - component: {fileID: 6360079239691300797}
+  - component: {fileID: 4320961411430112887}
+  - component: {fileID: 4245928467862590397}
+  - component: {fileID: 1068675088108263687}
+  - component: {fileID: 2145724508865138407}
+  - component: {fileID: 2929447737748963180}
   m_Layer: 0
   m_Name: Cright
   m_TagString: Untagged
@@ -477,9 +479,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d17a7d8db400d8a4194b239680cfbca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 7173753948549487590}
-  angle: 0
---- !u!1 &3444300905661198603
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+--- !u!61 &2929447737748963180
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5330413579319778799}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 2.56, y: 2.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5}
+  m_EdgeRadius: 0
+--- !u!1 &657540984423623314
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
