@@ -6,6 +6,7 @@
     <e p="D:\cour\programation\Git\Ozhavom_2" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="BulletColision.cs" t="Include" />
         <e p="debugWalls.cs" t="Include" />
         <e p="ExtAssets" t="Include">
           <e p="TMP" t="Include">
@@ -427,6 +428,7 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Class.cs" t="Include" />
           <e p="Joueur.cs" t="Include" />
           <e p="Movement" t="Include">
             <e p="PhotonPlayer.cs" t="Include" />
@@ -437,6 +439,7 @@
             <e p="SpriteUp.cs" t="Include" />
             <e p="WeaponMoovement.cs" t="Include" />
             <e p="WeaponRotation.cs" t="Include" />
+            <e p="WeaponShoot.cs" t="Include" />
           </e>
           <e p="Photon" t="Include">
             <e p="AvatarSetup.cs" t="Include" />

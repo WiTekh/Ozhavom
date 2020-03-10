@@ -7,7 +7,7 @@ public class SpriteRight : MonoBehaviour
 {
     private PhotonView PV;
     private bool active;
-    [SerializeField] Renderer weapon;
+    [SerializeField] GameObject weapon;
     private Renderer _sprite;
     [SerializeField] private float angle;
     
@@ -21,7 +21,7 @@ public class SpriteRight : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (PV.IsMine)
         {
@@ -32,13 +32,13 @@ public class SpriteRight : MonoBehaviour
                 if (active == false && angle < 45 && angle >= -45)
                 {
                     _sprite.enabled = true;
-                    weapon.enabled = true;
+                    weapon.SetActive(true);
                     active = true;
                 }
                 if (active && angle < -45 || angle > 45)
                 {
                     _sprite.enabled = false;
-                    weapon.enabled = false;
+                    weapon.SetActive(false);
                     active = false;
                     
                 }

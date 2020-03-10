@@ -7,7 +7,7 @@ public class SpriteDown : MonoBehaviour
 {
     private PhotonView PV;
     private bool active;
-    [SerializeField] Renderer weapon;
+    [SerializeField] GameObject weapon;
     private Renderer _sprite;
     [SerializeField] private float angle;
 
@@ -20,7 +20,7 @@ public class SpriteDown : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (PV.IsMine)
         {
@@ -31,13 +31,13 @@ public class SpriteDown : MonoBehaviour
                 if (!active && angle > -135 && angle <= -45)
                 {
                     _sprite.enabled = true;
-                    weapon.enabled = true;
+                    weapon.SetActive(true);
                     active = true;
                 }
                 if (active && angle < -135 || angle > -45)
                 {
                     _sprite.enabled = false;
-                    weapon.enabled = false;
+                    weapon.SetActive(false);
                     active = false;
                 }
             
