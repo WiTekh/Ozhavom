@@ -5,6 +5,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="BulletColision.cs" t="Include" />
+        <e p="camMove.cs" t="Include" />
         <e p="ExtAssets" t="Include">
           <e p="TMP" t="Include">
             <e p="Examples &amp; Extras" t="Include">
