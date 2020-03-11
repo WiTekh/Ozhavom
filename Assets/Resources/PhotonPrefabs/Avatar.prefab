@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9195919784097418931}
   - component: {fileID: 7346411407528598057}
   - component: {fileID: 4425997154429615853}
+  - component: {fileID: 4756204107888220914}
   m_Layer: 0
   m_Name: LocalView
   m_TagString: Untagged
@@ -96,6 +97,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c47d53bd41240548907c0025b86ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4756204107888220914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925831212028460997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 0
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &7372973731340461828
 GameObject:
   m_ObjectHideFlags: 0

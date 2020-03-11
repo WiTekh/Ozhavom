@@ -6,14 +6,13 @@ using UnityEngine;
 
 public class WeaponRotation : MonoBehaviour
 {
-    private PhotonView PV;
+    [SerializeField]private PhotonView PV;
     [SerializeField] int memoire;
     private Transform transformparent;
     [SerializeField] Transform transformplayer;
 
     private void Start() // Start function is called before the first frame
     {
-        PV = GetComponentInParent<PhotonView>();
         transformparent = transform.parent;
         memoire = 0;
     }
@@ -105,5 +104,4 @@ public class WeaponRotation : MonoBehaviour
                 break;
         }
     }
-    
 }
