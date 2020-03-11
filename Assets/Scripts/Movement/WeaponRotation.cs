@@ -16,7 +16,7 @@ public class WeaponRotation : MonoBehaviour
         transform = GetComponent<Transform>();
     }
 
-    void Update() // called once per frame
+    void FixedUpdate() // called once per frame
     {
         if (PV.IsMine)
             Rotate();

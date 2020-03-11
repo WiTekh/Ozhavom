@@ -21,7 +21,9 @@
       <Path>.vscode</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
+      <Path>Temp</Path>
       <Path>obj</Path>
+      <Path>tir_network.app</Path>
     </explicitExcludes>
   </component>
 </project>

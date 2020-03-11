@@ -122,7 +122,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498923600168599666}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.667, y: -0.73, z: 0}
+  m_LocalPosition: {x: 0.253, y: -0.04, z: 0}
   m_LocalScale: {x: 0.8517535, y: 142.85455, z: 0.88748395}
   m_Children: []
   m_Father: {fileID: 4076016502456210073}
@@ -262,7 +262,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2909368458523576876}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.036, y: 4.12, z: 0}
+  m_LocalPosition: {x: 0.255, y: -0.01, z: 0}
   m_LocalScale: {x: 0.94425386, y: 158.36855, z: 0.98386467}
   m_Children: []
   m_Father: {fileID: 5414084435395710543}
@@ -307,7 +307,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4371439367951863898}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02320511, y: -2.5255952, z: 0}
+  m_LocalPosition: {x: 0.254, y: -0.06, z: 0}
   m_LocalScale: {x: 0.94425386, y: 9.898034, z: 0.98386467}
   m_Children: []
   m_Father: {fileID: 5285355048818417159}
@@ -959,6 +959,7 @@ GameObject:
   - component: {fileID: 5735017390711213154}
   - component: {fileID: 6411492503153484247}
   - component: {fileID: 3718828457899135050}
+  - component: {fileID: -7247244845660700571}
   m_Layer: 0
   m_Name: Gnoll
   m_TagString: Untagged
@@ -974,7 +975,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8766960032898696021}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.3407183, y: 1.2682807, z: -249.16504}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 812566741753312071}
@@ -1021,3 +1022,29 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+--- !u!61 &-7247244845660700571
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8766960032898696021}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5}
+  m_EdgeRadius: 0
