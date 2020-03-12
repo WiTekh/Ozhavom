@@ -411,6 +411,7 @@
             </e>
           </e>
         </e>
+        <e p="PlayerNetworkDeactivate.cs" t="Include" />
         <e p="Scenes" t="Include">
           <e p="Menus" t="Include">
             <e p="Cre_Joi.Sys" t="Include">

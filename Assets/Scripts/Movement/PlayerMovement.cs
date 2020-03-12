@@ -25,10 +25,7 @@ public class PlayerMovement : MonoBehaviour
     //FixedUpdate has to be called for Rigidbodies
     void FixedUpdate()
     {
-        if (PV.IsMine)
-        {
-            Move();
-        }
+        Move();
     }
     private void Move()
     {

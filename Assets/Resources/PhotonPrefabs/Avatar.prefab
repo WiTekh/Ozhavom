@@ -131,6 +131,9 @@ GameObject:
   - component: {fileID: 2413872464046269420}
   - component: {fileID: 3633379542943544332}
   - component: {fileID: 3049741779810024966}
+  - component: {fileID: 3151032211825054837}
+  - component: {fileID: 3800918893036468054}
+  - component: {fileID: 1607943263928076362}
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Untagged
@@ -204,3 +207,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charVal: 0
   myChar: {fileID: 0}
+--- !u!114 &3151032211825054837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7372973731340461828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80fbfd2eaa2ad4cdf85d222963b9a29a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 0}
+  scriptsToIgnore:
+  - {fileID: 1607943263928076362}
+  - {fileID: 0}
+  objectsToIgnore: []
+--- !u!50 &3800918893036468054
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7372973731340461828}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &1607943263928076362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7372973731340461828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b70916210cfca4e9a9c259d29c15bd19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MovementSpeed: 10

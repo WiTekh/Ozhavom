@@ -19,8 +19,7 @@ public class WeaponRotation : MonoBehaviour
 
     void FixedUpdate() // called once per frame
     {
-        if (PV.IsMine)
-            Rotate();
+        Rotate();
     }
     private void Rotate()
     {
