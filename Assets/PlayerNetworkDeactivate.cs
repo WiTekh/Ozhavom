@@ -15,7 +15,7 @@ public class PlayerNetworkDeactivate : MonoBehaviour
     private PhotonView photonView;
 
     // Use this for initialization
-    void Awake()
+    void Start()
     {
         photonView = GetComponent<PhotonView>();
         Initialize();
@@ -33,18 +33,20 @@ public class PlayerNetworkDeactivate : MonoBehaviour
             
             foreach (MonoBehaviour item in scriptsToIgnore)
             {
+                scriptsToIgnore[1] = transform.GetChild(1).GetChild(4).GetChild(0).GetComponent<WeaponRotation>();
+                scriptsToIgnore[2] = transform.GetChild(1).GetChild(4).GetChild(0).GetChild(0).GetComponent<WeaponShoot>();
                 item.enabled = false;
             }
 
             foreach (GameObject item in objectsToIgnore)
             {
+                
                 item.SetActive(false);
             }
         }
     }
 
-    private void Start()
-    {
-        scriptsToIgnore[1] = transform.GetChild(1).GetChild(4).GetChild(0).GetComponent<WeaponRotation>();
-    }
+    
+      
+    
 }

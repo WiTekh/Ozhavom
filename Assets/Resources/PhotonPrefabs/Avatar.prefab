@@ -223,7 +223,9 @@ MonoBehaviour:
   scriptsToIgnore:
   - {fileID: 1607943263928076362}
   - {fileID: 0}
-  objectsToIgnore: []
+  - {fileID: 0}
+  objectsToIgnore:
+  - {fileID: 1925831212028460997}
 --- !u!50 &3800918893036468054
 Rigidbody2D:
   serializedVersion: 4
