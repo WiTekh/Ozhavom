@@ -2072,8 +2072,8 @@ MonoBehaviour:
   mySelectedChar: 0
   allCharacters:
   - {fileID: 7194486950041670342, guid: 23cc4c9d6a43de24495b3a429b346b15, type: 3}
-  - {fileID: 6066848740233912561, guid: e59312a93557b6f40b83d6994ead7a6c, type: 3}
-  - {fileID: 8766960032898696021, guid: cbdec0c4df98c44478f0e1e5e57e0700, type: 3}
+  - {fileID: 3317224608321794165, guid: da79ab07cd322fc4dbb3c92081b218ea, type: 3}
+  - {fileID: 8277837133731038394, guid: cbdec0c4df98c44478f0e1e5e57e0700, type: 3}
 --- !u!4 &2090241679
 Transform:
   m_ObjectHideFlags: 0
