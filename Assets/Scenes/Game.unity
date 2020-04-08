@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 33606572}
   - component: {fileID: 33606573}
   m_Layer: 0
-  m_Name: ragdoll (16)
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 332919156}
   - component: {fileID: 332919159}
   m_Layer: 0
-  m_Name: Down Wall
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -409,7 +409,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ad442d9c7c1a8496db88f72ecee4bf03, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.16568337, g: 0.3018868, b: 0.13812746, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -54,9 +54,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3300624883135362620}
-  - component: {fileID: 87065977228353277}
-  - component: {fileID: 6360079239691300797}
+  - component: {fileID: 4320961411430112887}
+  - component: {fileID: 4245928467862590397}
+  - component: {fileID: 1068675088108263687}
+  - component: {fileID: 2145724508865138407}
+  - component: {fileID: 2929447737748963180}
   m_Layer: 0
   m_Name: Cright
   m_TagString: Untagged
@@ -468,7 +470,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 0
---- !u!1 &6004644460469029086
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

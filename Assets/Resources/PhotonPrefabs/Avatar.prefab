@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 3151032211825054837}
   - component: {fileID: 1607943263928076362}
   - component: {fileID: 3800918893036468054}
+
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Untagged
@@ -208,6 +209,7 @@ MonoBehaviour:
   charVal: 0
   myChar: {fileID: 0}
 --- !u!114 &3151032211825054837
+
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
