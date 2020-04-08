@@ -10,7 +10,7 @@ public class AvatarSetup : MonoBehaviour
     public int charVal;
     public GameObject myChar;
 
-    private void Start()
+    private void Awake()
     {
         PV = GetComponent<PhotonView>();
         if (PV.IsMine)

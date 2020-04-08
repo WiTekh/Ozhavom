@@ -19,7 +19,7 @@ public class NetworkSetter : MonoBehaviourPunCallbacks
     void Awake()
     {
         UpdateText(true);
-        PhotonNetwork.ConnectUsingSettings();
+        PhotonNetwork.ConnectToRegion("eu");
     }
 
     public override void OnConnectedToMaster()

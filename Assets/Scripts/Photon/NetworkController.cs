@@ -7,7 +7,7 @@ public class NetworkController : MonoBehaviourPunCallbacks
 {
     void Start()
     {
-        PhotonNetwork.ConnectUsingSettings(); //Connects to Photon master servers
+        PhotonNetwork.ConnectToRegion("eu"); //Connects to Photon master servers
     }
 
     public override void OnConnectedToMaster()

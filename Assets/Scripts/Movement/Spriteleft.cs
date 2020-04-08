@@ -7,7 +7,6 @@ public class Spriteleft : MonoBehaviour
 {
     private PhotonView PV;
     private bool active;
-    [SerializeField] Renderer weapon;
     private Renderer _sprite;
     [SerializeField] private float angle;
 
@@ -20,11 +19,11 @@ public class Spriteleft : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (PV.IsMine)
         {
-            Camera myCam = Camera.main;
+            Camera myCam = transform.parent.parent.GetChild(0).gameObject.GetComponent<Camera>();
             Vector3 delta = Input.mousePosition - myCam.WorldToScreenPoint(transform.position);
             // si le cursor est sur le sprite on ne fait rien
             {
@@ -32,14 +31,12 @@ public class Spriteleft : MonoBehaviour
                 if (!active && angle > 135 || angle < -135)
                 {
                     _sprite.enabled = true;
-                    weapon.enabled = true;
                     active = true;
                 }
 
                 if (active && angle < 135 && angle > -135)
                 {
                     _sprite.enabled = false;
-                    weapon.enabled = false;
                     active = false;
                 }
             }

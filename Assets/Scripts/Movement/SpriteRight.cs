@@ -7,7 +7,6 @@ public class SpriteRight : MonoBehaviour
 {
     private PhotonView PV;
     private bool active;
-    [SerializeField] Renderer weapon;
     private Renderer _sprite;
     [SerializeField] private float angle;
     
@@ -21,24 +20,22 @@ public class SpriteRight : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (PV.IsMine)
         {
-            Camera myCam = Camera.main;
+            Camera myCam = transform.parent.parent.GetChild(0).gameObject.GetComponent<Camera>();
             Vector3 delta = Input.mousePosition - myCam.WorldToScreenPoint(transform.position);
             
                angle = Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg;
                 if (active == false && angle < 45 && angle >= -45)
                 {
                     _sprite.enabled = true;
-                    weapon.enabled = true;
                     active = true;
                 }
                 if (active && angle < -45 || angle > 45)
                 {
                     _sprite.enabled = false;
-                    weapon.enabled = false;
                     active = false;
                     
                 }
