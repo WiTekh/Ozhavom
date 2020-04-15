@@ -4,85 +4,13 @@
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="BulletColision.cs" t="Include" />
-        <e p="camMove.cs" t="Include" />
-        <e p="ExtAssets" t="Include">
-          <e p="TMP" t="Include">
-            <e p="Examples &amp; Extras" t="Include">
-              <e p="Fonts" t="Include">
-                <e p="Anton OFL.txt" t="Include" />
-                <e p="Bangers - OFL.txt" t="Include" />
-                <e p="Oswald-Bold - OFL.txt" t="Include" />
-              </e>
-              <e p="Scripts" t="Include">
-                <e p="Benchmark01.cs" t="Include" />
-                <e p="Benchmark01_UGUI.cs" t="Include" />
-                <e p="Benchmark02.cs" t="Include" />
-                <e p="Benchmark03.cs" t="Include" />
-                <e p="Benchmark04.cs" t="Include" />
-                <e p="CameraController.cs" t="Include" />
-                <e p="ChatController.cs" t="Include" />
-                <e p="EnvMapAnimator.cs" t="Include" />
-                <e p="ObjectSpin.cs" t="Include" />
-                <e p="ShaderPropAnimator.cs" t="Include" />
-                <e p="SimpleScript.cs" t="Include" />
-                <e p="SkewTextExample.cs" t="Include" />
-                <e p="TeleType.cs" t="Include" />
-                <e p="TextConsoleSimulator.cs" t="Include" />
-                <e p="TextMeshProFloatingText.cs" t="Include" />
-                <e p="TextMeshSpawner.cs" t="Include" />
-                <e p="TMP_DigitValidator.cs" t="Include" />
-                <e p="TMP_ExampleScript_01.cs" t="Include" />
-                <e p="TMP_FrameRateCounter.cs" t="Include" />
-                <e p="TMP_PhoneNumberValidator.cs" t="Include" />
-                <e p="TMP_TextEventCheck.cs" t="Include" />
-                <e p="TMP_TextEventHandler.cs" t="Include" />
-                <e p="TMP_TextInfoDebugTool.cs" t="Include" />
-                <e p="TMP_TextSelector_A.cs" t="Include" />
-                <e p="TMP_TextSelector_B.cs" t="Include" />
-                <e p="TMP_UiFrameRateCounter.cs" t="Include" />
-                <e p="TMPro_InstructionOverlay.cs" t="Include" />
-                <e p="VertexColorCycler.cs" t="Include" />
-                <e p="VertexJitter.cs" t="Include" />
-                <e p="VertexShakeA.cs" t="Include" />
-                <e p="VertexShakeB.cs" t="Include" />
-                <e p="VertexZoom.cs" t="Include" />
-                <e p="WarpTextExample.cs" t="Include" />
-              </e>
-            </e>
-            <e p="Fonts" t="Include">
-              <e p="LiberationSans - OFL.txt" t="Include" />
-            </e>
-            <e p="Resources" t="Include">
-              <e p="LineBreaking Following Characters.txt" t="Include" />
-              <e p="LineBreaking Leading Characters.txt" t="Include" />
-              <e p="Shaders" t="Include">
-                <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
-                <e p="TMP_Bitmap-Mobile.shader" t="Include" />
-                <e p="TMP_Bitmap.shader" t="Include" />
-                <e p="TMP_SDF Overlay.shader" t="Include" />
-                <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
-                <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
-                <e p="TMP_SDF-Mobile.shader" t="Include" />
-                <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
-                <e p="TMP_SDF-Surface.shader" t="Include" />
-                <e p="TMP_SDF.shader" t="Include" />
-                <e p="TMP_Sprite.shader" t="Include" />
-                <e p="TMPro.cginc" t="Include" />
-                <e p="TMPro_Properties.cginc" t="Include" />
-                <e p="TMPro_Surface.cginc" t="Include" />
-              </e>
-            </e>
-            <e p="Sprites" t="Include">
-              <e p="EmojiOne Attribution.txt" t="Include" />
-            </e>
-          </e>
-        </e>
-        <e p="Photon" t="Include">
+        <e p="1_Photon" t="Include">
           <e p="PhotonChat" t="Include">
             <e p="Code" t="Include">
+              <e p="changes-chat.txt" t="Include" />
               <e p="ChannelCreationOptions.cs" t="Include" />
               <e p="ChannelWellKnownProperties.cs" t="Include" />
+              <e p="ChatAppSettings.cs" t="Include" />
               <e p="ChatChannel.cs" t="Include" />
               <e p="ChatClient.cs" t="Include" />
               <e p="ChatDisconnectCause.cs" t="Include" />
@@ -102,6 +30,7 @@
                 <e p="TextToggleIsOnTransition.cs" t="Include" />
               </e>
               <e p="DemoChat" t="Include">
+                <e p="AppSettingsExtensions.cs" t="Include" />
                 <e p="ChannelSelector.cs" t="Include" />
                 <e p="ChatAppIdCheckerUI.cs" t="Include" />
                 <e p="ChatGui.cs" t="Include" />
@@ -373,9 +302,11 @@
               </e>
               <e p="PhotonPlayer" t="Include">
                 <e p="Editor" t="Include">
+                  <e p="PhotonTeamsManagerInspector.cs" t="Include" />
                   <e p="PlayerNumberingInspector.cs" t="Include" />
                   <e p="PunTeamsInspector.cs" t="Include" />
                 </e>
+                <e p="PhotonTeamsManager.cs" t="Include" />
                 <e p="PlayerNumbering.cs" t="Include" />
                 <e p="PunPlayerScores.cs" t="Include" />
                 <e p="PunTeams.cs" t="Include" />
@@ -411,22 +342,9 @@
             </e>
           </e>
         </e>
-        <e p="PlayerNetworkDeactivate.cs" t="Include" />
-        <e p="Scenes" t="Include">
-          <e p="Menus" t="Include">
-            <e p="Cre_Joi.Sys" t="Include">
-              <e p="Create" t="Include">
-                <e p="CreateAndJoin.cs" t="Include" />
-                <e p="SaveVal.cs" t="Include" />
-              </e>
-              <e p="Join" t="Include">
-                <e p="ListRooms.cs" t="Include" />
-                <e p="LoadScene.cs" t="Include" />
-              </e>
-            </e>
-          </e>
-        </e>
-        <e p="Scripts" t="Include">
+        <e p="2_Scripts" t="Include">
+          <e p="BulletColision.cs" t="Include" />
+          <e p="camMove.cs" t="Include" />
           <e p="Class.cs" t="Include" />
           <e p="Joueur.cs" t="Include" />
           <e p="Movement" t="Include">
@@ -450,6 +368,93 @@
             <e p="PhotonRoom.cs" t="Include" />
             <e p="PlayerInfos.cs" t="Include" />
           </e>
+          <e p="PlayerNetworkDeactivate.cs" t="Include" />
+        </e>
+        <e p="Y_Scenes" t="Include">
+          <e p="Menus" t="Include">
+            <e p="Cre_Joi.Sys" t="Include">
+              <e p="Create" t="Include">
+                <e p="CreateAndJoin.cs" t="Include" />
+                <e p="SaveVal.cs" t="Include" />
+              </e>
+              <e p="Join" t="Include">
+                <e p="ListRooms.cs" t="Include" />
+                <e p="LoadScene.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="Z_ExtAssets" t="Include">
+          <e p="TMP" t="Include">
+            <e p="Examples &amp; Extras" t="Include">
+              <e p="Fonts" t="Include">
+                <e p="Anton OFL.txt" t="Include" />
+                <e p="Bangers - OFL.txt" t="Include" />
+                <e p="Oswald-Bold - OFL.txt" t="Include" />
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="Benchmark01.cs" t="Include" />
+                <e p="Benchmark01_UGUI.cs" t="Include" />
+                <e p="Benchmark02.cs" t="Include" />
+                <e p="Benchmark03.cs" t="Include" />
+                <e p="Benchmark04.cs" t="Include" />
+                <e p="CameraController.cs" t="Include" />
+                <e p="ChatController.cs" t="Include" />
+                <e p="EnvMapAnimator.cs" t="Include" />
+                <e p="ObjectSpin.cs" t="Include" />
+                <e p="ShaderPropAnimator.cs" t="Include" />
+                <e p="SimpleScript.cs" t="Include" />
+                <e p="SkewTextExample.cs" t="Include" />
+                <e p="TeleType.cs" t="Include" />
+                <e p="TextConsoleSimulator.cs" t="Include" />
+                <e p="TextMeshProFloatingText.cs" t="Include" />
+                <e p="TextMeshSpawner.cs" t="Include" />
+                <e p="TMP_DigitValidator.cs" t="Include" />
+                <e p="TMP_ExampleScript_01.cs" t="Include" />
+                <e p="TMP_FrameRateCounter.cs" t="Include" />
+                <e p="TMP_PhoneNumberValidator.cs" t="Include" />
+                <e p="TMP_TextEventCheck.cs" t="Include" />
+                <e p="TMP_TextEventHandler.cs" t="Include" />
+                <e p="TMP_TextInfoDebugTool.cs" t="Include" />
+                <e p="TMP_TextSelector_A.cs" t="Include" />
+                <e p="TMP_TextSelector_B.cs" t="Include" />
+                <e p="TMP_UiFrameRateCounter.cs" t="Include" />
+                <e p="TMPro_InstructionOverlay.cs" t="Include" />
+                <e p="VertexColorCycler.cs" t="Include" />
+                <e p="VertexJitter.cs" t="Include" />
+                <e p="VertexShakeA.cs" t="Include" />
+                <e p="VertexShakeB.cs" t="Include" />
+                <e p="VertexZoom.cs" t="Include" />
+                <e p="WarpTextExample.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Fonts" t="Include">
+              <e p="LiberationSans - OFL.txt" t="Include" />
+            </e>
+            <e p="Resources" t="Include">
+              <e p="LineBreaking Following Characters.txt" t="Include" />
+              <e p="LineBreaking Leading Characters.txt" t="Include" />
+              <e p="Shaders" t="Include">
+                <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+                <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+                <e p="TMP_Bitmap.shader" t="Include" />
+                <e p="TMP_SDF Overlay.shader" t="Include" />
+                <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+                <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+                <e p="TMP_SDF-Mobile.shader" t="Include" />
+                <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+                <e p="TMP_SDF-Surface.shader" t="Include" />
+                <e p="TMP_SDF.shader" t="Include" />
+                <e p="TMP_Sprite.shader" t="Include" />
+                <e p="TMPro.cginc" t="Include" />
+                <e p="TMPro_Properties.cginc" t="Include" />
+                <e p="TMPro_Surface.cginc" t="Include" />
+              </e>
+            </e>
+            <e p="Sprites" t="Include">
+              <e p="EmojiOne Attribution.txt" t="Include" />
+            </e>
+          </e>
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
@@ -469,6 +474,6 @@
       <e p="Temp/bin" t="ExcludeRecursive" />
     </e>
     <e p="$USER_HOME$/Library/Caches/Rider2019.2/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.2/resharper-host/local/Transient/ReSharperHost/v192/SolutionCaches/_Ozhavom_2.33981725.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.2/resharper-host/local/Transient/ReSharperHost/v192/SolutionCaches/_Ozhavom_2.-444152547.00" t="ExcludeRecursive" />
   </component>
 </project>
