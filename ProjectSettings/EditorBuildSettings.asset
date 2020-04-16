@@ -6,24 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Y_Scenes/MainMenu.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Y_Scenes/Menus/Cre_Joi.Sys/Scenes/MenuJC.unity
+    path: Assets/Scenes/Menus/Cre_Joi.Sys/Scenes/MenuJC.unity
     guid: f1ab5c8b8b32144739545990439c4270
   - enabled: 1
-    path: Assets/Y_Scenes/Menus/SMenu.unity
+    path: Assets/Scenes/Menus/SMenu.unity
     guid: c7a440791fc6044bd901af846537cfa8
   - enabled: 1
-    path: Assets/Y_Scenes/Menus/Cre_Joi.Sys/Scenes/CreRoom.unity
+    path: Assets/Scenes/Menus/Cre_Joi.Sys/Scenes/CreRoom.unity
     guid: c290575bb174d454094ed60f631520ea
   - enabled: 1
-    path: Assets/Y_Scenes/Menus/Cre_Joi.Sys/Scenes/JoinRoom.unity
+    path: Assets/Scenes/Menus/Cre_Joi.Sys/Scenes/JoinRoom.unity
     guid: 524097f85bdbd494c881b4af14f7f457
   - enabled: 1
-    path: Assets/Y_Scenes/Game.unity
+    path: Assets/Scenes/Game.unity
     guid: 7d47991cdc31043199c681f8ccba4570
   - enabled: 1
-    path: Assets/Y_Scenes/MMenu.unity
+    path: Assets/Scenes/MMenu.unity
     guid: dbed2e3f7b0ea4b9b8fe9092014765d3
   m_configObjects: {}
