@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerInfos : MonoBehaviour
@@ -11,6 +13,8 @@ public class PlayerInfos : MonoBehaviour
     public int mySelectedChar;
 
     public GameObject[] allCharacters;
+
+    public string name;
 
     public void OnEnable()
     {
@@ -28,6 +32,7 @@ public class PlayerInfos : MonoBehaviour
 
     void Start()
     {
+        PhotonNetwork.LocalPlayer.NickName = name;
         if (PlayerPrefs.HasKey("MyChar"))
         {
             mySelectedChar = PlayerPrefs.GetInt("MyChar");

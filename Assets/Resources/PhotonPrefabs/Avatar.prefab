@@ -185,9 +185,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charVal: 0
   myChar: {fileID: 0}
-  maxHealth: 0
-  dmgs: 0
-  speed: 0
+  maxH: 300
+  speed: 30
 --- !u!114 &3151032211825054837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,13 +204,9 @@ MonoBehaviour:
   - {fileID: 1607943263928076362}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 7077725040189304136}
+  - {fileID: 0}
   objectsToIgnore:
   - {fileID: 1925831212028460997}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &1607943263928076362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,10 +253,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ae6a0df6c39546dd9faf61e2a9737ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AS: {fileID: 0}
-  maxH: 0
-  currentH: 0
+  AS: {fileID: 3049741779810024966}
+  currentH: 200
   healthBar: {fileID: 0}
   speed: 0
-  moneyVal: 0
+  coinAmount: 0
+  playerName: {fileID: 0}
   coinHeap: {fileID: 0}

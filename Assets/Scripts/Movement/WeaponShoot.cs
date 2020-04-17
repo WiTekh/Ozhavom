@@ -11,7 +11,6 @@ public class WeaponShoot : MonoBehaviour
 {
     private AvatarSetup AS;
     private PhotonView PV;
-    private playerStats PS;
     
     [SerializeField] GameObject bulletprefab;
 
@@ -38,24 +37,15 @@ public class WeaponShoot : MonoBehaviour
     {
         if (Input.GetMouseButton(0) && firerate <= fire)
         {
-            PV.RPC("RPC_Shooting", RpcTarget.All);
+            GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position, transform.rotation);
+            bullet.GetComponent<BulletColision>().dmg = 50;
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce(transform.right*20f,ForceMode2D.Impulse);
+            fire = 0;
         }
         else if (fire<firerate)
         {
             fire++;
         }
-
-        healthBar.value = PS.currentH / PS.maxH;
-        coinsAmount.text = PS.coinAmount.ToString();
-    }
-
-    [PunRPC]
-    void RPC_Shooting()
-    {
-        GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position, transform.rotation);
-        bullet.GetComponent<BulletColision>().dmg = 50;
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(transform.right*20f,ForceMode2D.Impulse);
-        fire = 0;
     }
 }
