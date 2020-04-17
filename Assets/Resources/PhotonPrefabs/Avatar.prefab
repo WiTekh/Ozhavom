@@ -258,4 +258,5 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   speed: 0
   coinAmount: 0
+  playerName: {fileID: 0}
   coinHeap: {fileID: 0}
