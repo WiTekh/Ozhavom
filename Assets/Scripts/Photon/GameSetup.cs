@@ -15,7 +15,7 @@ public class GameSetup : MonoBehaviour
     public TMP_Text coinsAmount;
     public Slider healthBar;
 
-    private (bool, bool, bool, bool, bool, bool)[,] matrix;
+    private (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool)[,] matrix;
     public void OnEnable()
     {
         if (GameSetup.GS == null)

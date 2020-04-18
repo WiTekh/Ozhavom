@@ -1,0 +1,247 @@
+fileFormatVersion: 2
+guid: f12e9db7fb81f524c81c37235b6ba2c9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3639183092211752238
+    second: bad lizard_0
+  - first:
+      213: 6193297973564773526
+    second: bad lizard_1
+  - first:
+      213: 4292746315087160019
+    second: bad lizard_2
+  - first:
+      213: 1593490392793964517
+    second: bad lizard_3
+  - first:
+      213: -4104011040940723060
+    second: bad lizard_4
+  - first:
+      213: 7813731364751044659
+    second: bad lizard_5
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bad lizard_0
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 1311
+        width: 195
+        height: 460
+      alignment: 9
+      pivot: {x: 0.70937514, y: 0.14497176}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0ddfb43ad61f114fb33cf3dba88ffa6
+      internalID: 3639183092211752238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad lizard_1
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 1339
+        width: 270
+        height: 293
+      alignment: 9
+      pivot: {x: 0.5432043, y: 0.1416828}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01b22a7a96563724bb956a1e6419c982
+      internalID: 6193297973564773526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad lizard_2
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 1379
+        width: 134
+        height: 212
+      alignment: 9
+      pivot: {x: 0.28236413, y: 0.8026348}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6585e8289273ab543a67a87d6a57def3
+      internalID: 4292746315087160019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad lizard_3
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 929
+        width: 374
+        height: 212
+      alignment: 9
+      pivot: {x: 0.6091661, y: 0.47248754}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a683063d34f08c0449d469e5ac77398f
+      internalID: 1593490392793964517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad lizard_4
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 992
+        width: 188
+        height: 179
+      alignment: 9
+      pivot: {x: 0.22077909, y: 0.74438137}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 258c361ab270f2c40a67edf98c67dd21
+      internalID: -4104011040940723060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad lizard_5
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 853
+        width: 381
+        height: 458
+      alignment: 9
+      pivot: {x: 0.61481434, y: 0.6018791}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6adf51a26252d7f4ca03658d37cb7ec9
+      internalID: 7813731364751044659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
