@@ -15,10 +15,11 @@ public class PhotonPlayer : MonoBehaviour
     void Start()
     {
         PV = GetComponent<PhotonView>();
+        
         if (PV.IsMine)
         {
             myAvatar = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Avatar"),
-                GameSetup.GS.SpawnPoints.position, Quaternion.identity, 0);
+                GameSetup.GS.SpawnPoints[PhotonNetwork.PlayerList.Length -1].position, Quaternion.identity, 0);
         }
     }
 }
