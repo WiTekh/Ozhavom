@@ -13,13 +13,15 @@ public class PlayerMovement : MonoBehaviour
     //[SerializeField] private Sprite[] sprites;
 
     private Camera _cam;
-    
-    public float MovementSpeed;
+
+    [SerializeField] private float MovementSpeed = 0;
 
     void Start()
     {
         PV = GetComponent<PhotonView>();
         RB = GetComponentInParent<Rigidbody2D>();
+
+        MovementSpeed = gameObject.GetComponent<AvatarSetup>().speed;
     }
     
     //FixedUpdate has to be called for Rigidbodies

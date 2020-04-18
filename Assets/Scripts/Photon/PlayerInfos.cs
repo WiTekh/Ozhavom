@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using Photon.Realtime;
+using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -15,6 +16,7 @@ public class PlayerInfos : MonoBehaviour
     public GameObject[] allCharacters;
 
     public string name;
+    public TMP_InputField inputName;
 
     public void OnEnable()
     {
@@ -32,7 +34,7 @@ public class PlayerInfos : MonoBehaviour
 
     void Start()
     {
-        PhotonNetwork.LocalPlayer.NickName = name;
+        inputName = GameObject.Find("Canvas").transform.GetChild(5).GetComponent<TMP_InputField>();
         if (PlayerPrefs.HasKey("MyChar"))
         {
             mySelectedChar = PlayerPrefs.GetInt("MyChar");
@@ -42,5 +44,11 @@ public class PlayerInfos : MonoBehaviour
             mySelectedChar = 0;
             PlayerPrefs.SetInt("MyChar", mySelectedChar);
         }
+    }
+
+    public void Update()
+    {
+        name = inputName.text;
+        PhotonNetwork.LocalPlayer.NickName = name;
     }
 }
