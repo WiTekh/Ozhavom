@@ -12,8 +12,13 @@ public class cleanscript : MonoBehaviour
      public bool right = true;
     
     
-    public bool boss = false ;
-    public bool spawn = false ;
-
+    public bool boss;
+    public bool spawn;
+    public bool forge;
+    public bool shop;
+    public bool instructor;
+    public bool cook;
+    public bool item;
+    
 
 }

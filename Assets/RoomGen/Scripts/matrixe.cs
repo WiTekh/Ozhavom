@@ -8,7 +8,8 @@ using Random = System.Random;
 public class matrixe : MonoBehaviour
 {
     // 1 -> Top || 2 -> Bot || 3 -> Left || 4 -> Right || 5 -> Spawn || 6 -> Boss
-    [SerializeField] public (bool, bool, bool, bool, bool, bool)[,] matrix;
+    // 7-> forgeron || 8-> shop || 9-> instructeur || 10 -> cook || 11-> item
+    [SerializeField] public (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool)[,] matrix;
      public int size;
     [SerializeField] private GameObject neo;
     //[SerializeField] private GameObject boss;
@@ -20,16 +21,16 @@ public class matrixe : MonoBehaviour
     {
         PV = gameObject.GetComponent<PhotonView>();
         if (size % 2 == 0) size += 1;
-        matrix = new (bool, bool, bool, bool, bool, bool)[size,size]; 
+        matrix = new (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool)[size,size]; 
         for (int i = 0; i < size; i++)
         {
             for (int j = 0; j < size; j++)
             {
-                matrix[i, j] = (true, true, true, true, false, false);
+                matrix[i, j] = (true, true, true, true, false, false, false, false, false, false, false);
             }
         }
         
-        generatedungeon(size);
+        generatedungeon();
     }
     private void Start()
     {
@@ -52,7 +53,7 @@ public class matrixe : MonoBehaviour
         }
     }
 
-    public void generatedungeon(int size)
+    public void generatedungeon()
     {
         int maxroom = (size * size) /3;
         int compteur = 5;
@@ -69,7 +70,7 @@ public class matrixe : MonoBehaviour
 
         while (compteur < maxroom && boule)
         {
-            (int x, int y)= recdungeon(size);
+            (int x, int y)= recdungeon();
             if (x >= 0)
             {
                 int a = generateroom(x, y, maxroom - compteur);
@@ -82,13 +83,14 @@ public class matrixe : MonoBehaviour
         {
             for (int j = 0; j < size; j++)
             {
-                checkdoors(size,i,j);
+                checkdoors(i,j);
             }
         }
 
-        AddTheBossRoom(size);
+        AddTheBossRoom();
+        SpecialRooms();
     }
-    public (int,int) recdungeon(int size)
+    public (int,int) recdungeon()
     {
 //        Debug.Log("Recdungeon : Called");
         List<(int,int)> a = new List<(int, int)>();
@@ -96,7 +98,7 @@ public class matrixe : MonoBehaviour
         {
             for (int j = 0; j < size; j++)
             {
-                if(IsAccesible(size,i,j))
+                if (IsAccesible(i, j)) 
                     a.Add((i,j));
             }
         }
@@ -111,32 +113,32 @@ public class matrixe : MonoBehaviour
     }
     
     
-    public bool isvalid(int size,int i ,int j)
+    public bool isvalid(int i ,int j)
     {
         return (i >= 0 && j >= 0 && i < size && j < size);
     }
     
-    public bool ishere(int size, int i, int j)
+    public bool ishere(int i, int j)
     {
-        if (isvalid(size, i, j))
+        if (isvalid(i, j))
         {
             return !(matrix[i, j].Item1 && matrix[i, j].Item2 && matrix[i, j].Item3 && matrix[i, j].Item4);
         }
         return false;
     }
     
-    public bool IsAccesible(int size, int i, int j)
+    public bool IsAccesible(int i, int j)
     {
         bool b = false;
-        if (!ishere(size,i,j))
+        if (!ishere(i,j))
         {
-            if (isvalid(size,i,j+1) && !matrix[i,j+1].Item2)
+            if (isvalid(i,j+1) && !matrix[i,j+1].Item2)
                 b = true;
-            else if (isvalid(size,i,j-1) && !matrix[i,j-1].Item1)
+            else if (isvalid(i,j-1) && !matrix[i,j-1].Item1)
                 b = true;
-            else if (isvalid(size,i+1,j) && !matrix[i+1,j].Item3)
+            else if (isvalid(i+1,j) && !matrix[i+1,j].Item3)
                 b = true;
-            else if (isvalid(size,i-1,j) && !matrix[i-1,j].Item4)
+            else if (isvalid(i-1,j) && !matrix[i-1,j].Item4)
                 b = true;
         }
 
@@ -151,7 +153,7 @@ public class matrixe : MonoBehaviour
         int compteur = 0;
         
         
-        checkdoors(size,i,j);
+        checkdoors(i,j);
         int d = possibledirections(size, i, j);
 
 
@@ -186,41 +188,41 @@ public class matrixe : MonoBehaviour
     public int possibledirections(int size, int i, int j)
     {
         int d = 0;
-        if (!ishere(size, i + 1, j) && isvalid(size, i + 1, j))
+        if (!ishere(i + 1, j) && isvalid( i + 1, j))
             d++;
-        if (!ishere(size, i - 1, j) && isvalid(size, i - 1, j))
+        if (!ishere( i - 1, j) && isvalid( i - 1, j))
             d++;
-        if (!ishere(size, i, j + 1) && isvalid(size, i, j + 1))
+        if (!ishere( i, j + 1) && isvalid( i, j + 1))
             d++;
-        if (!ishere(size, i, j - 1) && isvalid(size, i, j - 1))
+        if (!ishere( i, j - 1) && isvalid( i, j - 1))
             d++;
         return d;
     }
     
-    public void checkdoors(int size, int i, int j)
+    public void checkdoors(int i, int j)
     {
-        if (isvalid(size,i+1,j) && !matrix[i+1,j].Item3)
+        if (isvalid(i + 1, j) && !matrix[i + 1, j].Item3)
             matrix[i, j].Item4 = false;
-        
-        if (isvalid(size,i-1,j) && !matrix[i-1,j].Item4)
+
+        if (isvalid(i - 1, j) && !matrix[i - 1, j].Item4)
             matrix[i, j].Item3 = false;
         
-        if (isvalid(size,i,j+1) && !matrix[i,j+1].Item2)
+        if (isvalid(i,j+1) && !matrix[i,j+1].Item2)
             matrix[i, j].Item1 = false;
         
-        if (isvalid(size,i,j-1) && !matrix[i,j-1].Item1)
+        if (isvalid(i,j-1) && !matrix[i,j-1].Item1)
             matrix[i, j].Item2 = false;
         
-        if (!isvalid(size,i+1,j) && !matrix[i,j].Item4)
+        if (!isvalid(i+1,j) && !matrix[i,j].Item4)
             matrix[i, j].Item4 = true;
         
-        if (!isvalid(size,i-1,j) && !matrix[i,j].Item3)
+        if (!isvalid(i-1,j) && !matrix[i,j].Item3)
             matrix[i, j].Item3 = true;
         
-        if (!isvalid(size,i,j+1) && !matrix[i,j].Item1)
+        if (!isvalid(i,j+1) && !matrix[i,j].Item1)
             matrix[i, j].Item1 = true;
         
-        if (!isvalid(size,i,j-1) && !matrix[i,j].Item2)
+        if (!isvalid(i,j-1) && !matrix[i,j].Item2)
             matrix[i, j].Item2 = true;
     }
 
@@ -254,22 +256,22 @@ public class matrixe : MonoBehaviour
         {
             int a = r.Next(4);
                     
-            if (a == 0 && isvalid(size, i, j + 1) && matrix[i, j].Item4)
+            if (a == 0 && isvalid(i, j + 1) && matrix[i, j].Item4)
             {
                 added = true;
                 matrix[i, j].Item4 = false;
             }
-            if (a == 1 && isvalid(size, i, j - 1) && matrix[i, j].Item3)
+            if (a == 1 && isvalid( i, j - 1) && matrix[i, j].Item3)
             {
                 added = true;
                 matrix[i, j].Item3 = false;
             }
-            if (a == 2 && isvalid(size, i+1, j ) && matrix[i, j].Item2)
+            if (a == 2 && isvalid(i+1, j ) && matrix[i, j].Item2)
             {
                 added = true;
                 matrix[i, j].Item2 = false;
             }
-            if (a == 3 && isvalid(size, i-1, j) && matrix[i, j].Item1)
+            if (a == 3 && isvalid( i-1, j) && matrix[i, j].Item1)
             { 
                 added = true;
                 matrix[i, j].Item1 = false;
@@ -283,7 +285,7 @@ public class matrixe : MonoBehaviour
         return 0;
     }
 
-    public void AddTheBossRoom(int size)
+    public void AddTheBossRoom()
     {
         int rand = r.Next(4);
         if (rand == 0)
@@ -292,7 +294,7 @@ public class matrixe : MonoBehaviour
             {
                 for (int j = 0; j < size; j++)
                 {
-                    if (ishere(size, i, j) && IsBossCandidaite(size,i,j))
+                    if (ishere( i, j) && IsBossCandidaite(i,j))
                     {
                         matrix[i, j].Item6 = true;
                         return;
@@ -307,7 +309,7 @@ public class matrixe : MonoBehaviour
             {
                 for (int j = 0; j < size; j++)
                 {
-                    if (ishere(size, j, i) && IsBossCandidaite(size,j,i))
+                    if (ishere( j, i) && IsBossCandidaite(j,i))
                     {
                         matrix[j, i].Item6 = true;
                         return;
@@ -322,7 +324,7 @@ public class matrixe : MonoBehaviour
             {
                 for (int j = size; j > 0; j--)
                 {
-                    if (ishere(size, i, j) && IsBossCandidaite(size,i,j))
+                    if (ishere( i, j) && IsBossCandidaite(i,j))
                     {
                         matrix[i, j].Item6 = true;
                         return;
@@ -337,7 +339,7 @@ public class matrixe : MonoBehaviour
             {
                 for (int j = size; j > 0; j--)
                 {
-                    if (ishere(size, j, i) && IsBossCandidaite(size,j,i))
+                    if (ishere( j, i) && IsBossCandidaite(j,i))
                     {
                         matrix[j, i].Item6 = true;
                         return;
@@ -348,7 +350,7 @@ public class matrixe : MonoBehaviour
         }
     }
 
-    public bool IsBossCandidaite(int size, int i, int j)
+    public bool IsBossCandidaite( int i, int j)
     {
         bool bool1 = !matrix[i, j].Item1;
         bool bool2 = !matrix[i, j].Item2;
@@ -360,10 +362,10 @@ public class matrixe : MonoBehaviour
         bool bool7 = !bool1 && !bool2 && bool3 && !bool4;
         bool bool8 = !bool1 && !bool2 && !bool3 && bool4;
 
-        bool bool9 = isvalid(size, i, j + 1) && matrix[i, j + 1].Item5;
-        bool bool10 = isvalid(size, i, j - 1) && matrix[i, j - 1].Item5;
-        bool bool11 = isvalid(size, i + 1, j) && matrix[i + 1, j].Item5;
-        bool bool12 = isvalid(size, i - 1, j) && matrix[i - 1, j].Item5;
+        bool bool9 = isvalid( i, j + 1) && matrix[i, j + 1].Item5;
+        bool bool10 = isvalid(i, j - 1) && matrix[i, j - 1].Item5;
+        bool bool11 = isvalid(i + 1, j) && matrix[i + 1, j].Item5;
+        bool bool12 = isvalid(i - 1, j) && matrix[i - 1, j].Item5;
 
         bool bool13 = bool9 || bool10 || bool11 || bool12;
 
@@ -504,6 +506,94 @@ public class matrixe : MonoBehaviour
         generateforest(oo,i,j);
         oo.GetComponent<cleanscript>().spawn = matrix[i, j].Item5;
         oo.GetComponent<cleanscript>().boss = matrix[i, j].Item6;
+        oo.GetComponent<cleanscript>().forge = matrix[i, j].Item7;
+        oo.GetComponent<cleanscript>().shop = matrix[i, j].Item8;
+        oo.GetComponent<cleanscript>().instructor = matrix[i, j].Item9;
+        oo.GetComponent<cleanscript>().cook = matrix[i, j].Item10;
+        oo.GetComponent<cleanscript>().item = matrix[i, j].Item11;
+    }
+
+
+    public void SpecialRooms()
+    {
+        bool item = true;
+        while (item)
+        {
+            int a = r.Next(size);
+            int b = r.Next(size);
+            if (IsBossCandidaite(a, b))
+            {
+                matrix[a, b].Item11 = true;
+                item = false;
+            }
+        }
+        if (size<=9)
+        {
+            
+            bool market = true;
+            while (market)
+            {
+                int a = r.Next(size);
+                int b = r.Next(size);
+                if (ishere(a, b) && !matrix[a, b].Item11 && !matrix[a,b].Item5 && !matrix[a,b].Item6) 
+                {
+                    matrix[a, b].Item7 = true;
+                    matrix[a, b].Item8 = true;
+                    matrix[a, b].Item9 = true;
+                    matrix[a, b].Item10 = true;
+                    market = false;
+                }
+            }
+        }
+        else
+        {
+            bool forg = true;
+            while (forg)
+            {
+                int a = r.Next(size);
+                int b = r.Next(size);
+                if (ishere(a, b) && !matrix[a, b].Item11 && !matrix[a,b].Item5 && !matrix[a,b].Item6) 
+                {
+                    matrix[a, b].Item7 = true;
+                    forg = false;
+                }
+            }
+            bool shop = true;
+            while (shop)
+            {
+                int a = r.Next(size);
+                int b = r.Next(size);
+                if (ishere(a, b) && !matrix[a, b].Item11 && !matrix[a,b].Item5 && !matrix[a,b].Item6) 
+                {
+                    matrix[a, b].Item8 = true;
+                    shop = false;
+                }
+            }
+            bool ins = true;
+            while (ins)
+            {
+                int a = r.Next(size);
+                int b = r.Next(size);
+                if (ishere(a, b) && !matrix[a, b].Item11 && !matrix[a,b].Item5 && !matrix[a,b].Item6) 
+                {
+                    matrix[a, b].Item9 = true;
+                    ins = false;
+                }
+            }
+            bool cook = true;
+            while (cook)
+            {
+                int a = r.Next(size);
+                int b = r.Next(size);
+                if (ishere(a, b) && !matrix[a, b].Item11 && !matrix[a,b].Item5 && !matrix[a,b].Item6) 
+                {
+                    matrix[a, b].Item10 = true;
+                    cook = false;
+                }
+            }
+            
+            
+        }
     }
 }
 
