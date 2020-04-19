@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class Rafale : MonoBehaviour
 {
-   [SerializeField] GameObject bulletprefab;
        [SerializeField] private int firerate;
        [SerializeField] public bool active;
        [SerializeField] public int slot;
@@ -24,21 +23,17 @@ public class Rafale : MonoBehaviour
            {
                fire++;
            }
-           if (firerate == 20)
+           if (fire == 20)
            {
-               GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position, transform.rotation);
-               Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-               rb.AddForce(transform.right*20f,ForceMode2D.Impulse);
+               Fire();
            }
    
-           if (firerate == 40)
+           if (fire == 40)
            {
-               GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position, transform.rotation);
-               Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-               rb.AddForce(transform.right*20f,ForceMode2D.Impulse);
+               Fire();
            }
    
-           if (firerate >= fire)
+           if (fire >= firerate)
            {
                switch (slot)
                {
@@ -46,27 +41,24 @@ public class Rafale : MonoBehaviour
                        if (Input.GetKey(KeyCode.Z))
                        {
                            Fire();
+                           fire = 0;
                        }
                        break;
                    case 1:
                        if (Input.GetKey(KeyCode.E))
                        { 
                            Fire();
+                           fire = 0;
+                           
                        }
                        break;
                    case 2:
                        if (Input.GetKey(KeyCode.R))
                        {
                            Fire();
+                           fire = 0;
                        }
                        break;
-                   case 3:
-                       if (Input.GetKey(KeyCode.T))
-                       {
-                           Fire();
-                       }
-                       break;
-   
                }
            }
        }
@@ -76,7 +68,5 @@ public class Rafale : MonoBehaviour
            GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position, transform.rotation);
            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
            rb.AddForce(transform.right*20f,ForceMode2D.Impulse);
-           fire = 0;
-           
        }
 }

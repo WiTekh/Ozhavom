@@ -7,7 +7,7 @@ using UnityEngine;
 public class WeaponRotation : MonoBehaviour
 {
     [SerializeField]private PhotonView PV;
-    [SerializeField] int memoire;
+    [SerializeField] public int memoire;
     private Transform transformparent;
     [SerializeField] Transform transformplayer;
 

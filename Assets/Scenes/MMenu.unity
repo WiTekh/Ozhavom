@@ -2072,8 +2072,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySelectedChar: 0
   allCharacters:
-  - {fileID: 2670946346661925763, guid: 8031fa52df6374402ae61b48bebfd499, type: 3}
-  - {fileID: 3317224608321794165, guid: da79ab07cd322fc4dbb3c92081b218ea, type: 3}
+  - {fileID: 7103033102385083683, guid: 8031fa52df6374402ae61b48bebfd499, type: 3}
+  - {fileID: 3219149033761282622, guid: a816c9aa2214ca94ea23b6a6b3fc6848, type: 3}
   - {fileID: 8277837133731038394, guid: cbdec0c4df98c44478f0e1e5e57e0700, type: 3}
   name: 
   inputName: {fileID: 0}
