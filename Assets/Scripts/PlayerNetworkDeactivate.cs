@@ -17,8 +17,8 @@ public class PlayerNetworkDeactivate : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        scriptsToIgnore[1] = transform.GetChild(1).GetChild(4).GetChild(0).GetComponent<WeaponRotation>();
-        scriptsToIgnore[2] = transform.GetChild(1).GetChild(4).GetChild(0).GetChild(0).GetComponent<WeaponShoot>();
+        scriptsToIgnore[1] = transform.GetChild(1).GetChild(5).GetChild(0).GetComponent<WeaponRotation>();
+        scriptsToIgnore[2] = transform.GetChild(1).GetChild(5).GetChild(0).GetChild(0).GetComponent<WeaponShoot>();
         scriptsToIgnore[3] = gameObject.GetComponent<playerStats>();
 
         photonView = GetComponent<PhotonView>();
