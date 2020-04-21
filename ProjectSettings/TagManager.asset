@@ -7,6 +7,10 @@ TagManager:
   - Bullet
   - Weapons
   - Ennemy
+  - rTop
+  - rBot
+  - rLeft
+  - rRight
   layers:
   - Default
   - TransparentFX

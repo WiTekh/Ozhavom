@@ -39,6 +39,7 @@ MonoBehaviour:
   - RPC_AddChar
   - RPC_Shooting
   - Generate
+  - SpawnEnnemy
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
