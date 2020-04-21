@@ -30,6 +30,23 @@ public class IsOpen : MonoBehaviour
                         IsRoomOpen |= gO.GetChild(0).GetComponent<OpenGateRight>().Isopen;
                         break;
                 }
+                
+                if (IsRoomOpen)
+                    switch (gO.tag)
+                    {
+                        case "rTop":
+                            gO.GetChild(0).GetComponent<OpenGateTop>().Isopen = true;
+                            break;
+                        case "rBot":
+                            gO.GetChild(0).GetComponent<OpenGateot>().Isopen = true;
+                            break;
+                        case "rLeft":
+                            gO.GetChild(0).GetComponent<OpenGateLeft>().Isopen = true;
+                            break;
+                        case "rRight":
+                            gO.GetChild(0).GetComponent<OpenGateRight>().Isopen = true;
+                            break;
+                    }
             }
         }
     }

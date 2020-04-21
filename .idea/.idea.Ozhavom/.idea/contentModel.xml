@@ -475,6 +475,7 @@
             <e p="PhotonRoom.cs" t="Include" />
             <e p="PlayerInfos.cs" t="Include" />
           </e>
+          <e p="playerEnter.cs" t="Include" />
           <e p="PlayerNetworkDeactivate.cs" t="Include" />
           <e p="playerStats.cs" t="Include" />
           <e p="Rafale.cs" t="Include" />
