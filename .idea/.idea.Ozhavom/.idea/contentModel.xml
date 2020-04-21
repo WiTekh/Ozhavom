@@ -9,6 +9,10 @@
         <e p="ChargedBeam.cs" t="Include" />
         <e p="LaserBeam.cs" t="Include" />
         <e p="Masse.cs" t="Include" />
+        <e p="OpenGateLeft.cs" t="Include" />
+        <e p="OpenGateot.cs" t="Include" />
+        <e p="OpenGateRight.cs" t="Include" />
+        <e p="OpenGateTop.cs" t="Include" />
         <e p="other assets" t="Include">
           <e p="TMP" t="Include">
             <e p="Examples &amp; Extras" t="Include">
