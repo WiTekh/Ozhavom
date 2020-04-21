@@ -32,9 +32,9 @@ public class AIBullet : MonoBehaviour
         }
     }
 
-    IEnumerator AutoDestroy()
+    IEnumerator StopNDest(Transform t)
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         Destroy(gameObject);
     }
 }

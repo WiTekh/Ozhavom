@@ -13,6 +13,7 @@ public class BulletColision : MonoBehaviour
       PhotonNetwork.Destroy(gameObject);
       if (collision.collider.CompareTag("Ennemy"))
       {
+         Debug.Log($"Dealt {dmg}");
          collision.gameObject.GetComponent<ennemyStats>().health -= dmg;
       }
    }
