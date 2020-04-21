@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
@@ -8,7 +9,7 @@ using Random = System.Random;
 
 public class spawnEnnemies : MonoBehaviour
 {
-    public GameObject ennemyPrefab;
+    public GameObject[] ennemyPrefab;
     [SerializeField] private Transform[] Spawners;
     private int nbEnnemies;
     Random rd = new Random();
@@ -40,11 +41,6 @@ public class spawnEnnemies : MonoBehaviour
                 nbEnnemies = rd.Next(4, 6);
                 break;
         }
-
-        for(int i = 0; i < nbEnnemies; i++)
-        {
-            Spawners[i].gameObject.SetActive(false);
-        }
     }
 
     private void Update()
@@ -61,14 +57,10 @@ public class spawnEnnemies : MonoBehaviour
     {
         foreach (var spawner in Spawners)
         {
-            transform.GetComponent<PhotonView>().RPC("SpawnEnnemy", RpcTarget.AllBuffered, spawner);
+            if (spawner.gameObject.activeSelf)
+                PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "ennemy"), spawner.position, spawner.rotation);
         }
+
         hasSpawned = false;
-    }
-    
-    [PunRPC]
-    void SpawnEnnemy(Transform parent)
-    {
-        Instantiate(ennemyPrefab, parent);
     }
 }

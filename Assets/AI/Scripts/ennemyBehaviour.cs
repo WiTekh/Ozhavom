@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class ennemyBehaviour : MonoBehaviour
@@ -42,7 +43,9 @@ public class ennemyBehaviour : MonoBehaviour
 
             if (fireRate <= 0)
             {
-                Instantiate(bullet, transform.position, Quaternion.identity).GetComponent<AIBullet>().Target = new Vector2(player.position.x, player.position.y);
+                GameObject b = PhotonNetwork.Instantiate("bullet", transform.position, Quaternion.identity);
+                b.transform.parent = transform;
+                b.GetComponent<AIBullet>().Target = new Vector2(player.position.x, player.position.y);
                 fireRate = nxtFire;
             }
             else

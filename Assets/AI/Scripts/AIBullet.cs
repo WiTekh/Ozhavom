@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class AIBullet : MonoBehaviour
@@ -9,6 +10,12 @@ public class AIBullet : MonoBehaviour
     public Vector2 Target;
 
     public float dmg;
+
+    private void Start()
+    {
+        dmg = transform.parent.GetComponent<ennemyStats>().dmg;
+    }
+
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, Target, speed * Time.deltaTime);
@@ -19,8 +26,9 @@ public class AIBullet : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Hit!");
             other.gameObject.GetComponent<playerStats>().currentH -= dmg;
-            Destroy(gameObject);
+            PhotonNetwork.Destroy(gameObject);
         }
     }
 
