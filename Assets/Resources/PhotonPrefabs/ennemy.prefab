@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -3638617187669101116}
   - component: {fileID: -4197244320972953941}
   - component: {fileID: 7009126393085271543}
+  - component: {fileID: 924837456261041398}
   m_Layer: 0
   m_Name: ennemy
   m_TagString: Untagged
@@ -176,3 +177,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   dmg: 50
+--- !u!61 &924837456261041398
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858449547313201413}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.12372446}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8778825, y: 0.7525511}
+  m_EdgeRadius: 0
