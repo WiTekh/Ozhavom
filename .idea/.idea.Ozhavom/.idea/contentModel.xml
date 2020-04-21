@@ -11,14 +11,6 @@
             <e p="moving.cs" t="Include" />
           </e>
         </e>
-        <e p="ChargedBeam.cs" t="Include" />
-        <e p="IsOpen.cs" t="Include" />
-        <e p="LaserBeam.cs" t="Include" />
-        <e p="Masse.cs" t="Include" />
-        <e p="OpenGateLeft.cs" t="Include" />
-        <e p="OpenGateot.cs" t="Include" />
-        <e p="OpenGateRight.cs" t="Include" />
-        <e p="OpenGateTop.cs" t="Include" />
         <e p="other assets" t="Include">
           <e p="TMP" t="Include">
             <e p="Examples &amp; Extras" t="Include">
@@ -455,6 +447,7 @@
           <e p="Class.cs" t="Include" />
           <e p="ennemyStats.cs" t="Include" />
           <e p="Equipement.cs" t="Include" />
+          <e p="IsOpen.cs" t="Include" />
           <e p="ItemInfo.cs" t="Include" />
           <e p="Joueur.cs" t="Include" />
           <e p="Movement" t="Include">
@@ -468,6 +461,10 @@
             <e p="WeaponRotation.cs" t="Include" />
             <e p="WeaponShoot.cs" t="Include" />
           </e>
+          <e p="OpenGateLeft.cs" t="Include" />
+          <e p="OpenGateot.cs" t="Include" />
+          <e p="OpenGateRight.cs" t="Include" />
+          <e p="OpenGateTop.cs" t="Include" />
           <e p="Photon" t="Include">
             <e p="AvatarSetup.cs" t="Include" />
             <e p="GameSetup.cs" t="Include" />
@@ -481,9 +478,14 @@
           <e p="PlayerNetworkDeactivate.cs" t="Include" />
           <e p="playerStats.cs" t="Include" />
           <e p="Rafale.cs" t="Include" />
+          <e p="spawnEnnemies.cs" t="Include" />
         </e>
-        <e p="spawnEnnemies.cs" t="Include" />
-        <e p="TripleShot.cs" t="Include" />
+        <e p="Weapons" t="Include">
+          <e p="ChargedBeam.cs" t="Include" />
+          <e p="LaserBeam.cs" t="Include" />
+          <e p="Masse.cs" t="Include" />
+          <e p="TripleShot.cs" t="Include" />
+        </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Ozhavom.sln" t="IncludeFlat" />

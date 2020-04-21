@@ -32,9 +32,10 @@ public class AIBullet : MonoBehaviour
         }
     }
 
-    IEnumerator StopNDest(Transform t)
+    IEnumerator AutoDestroy()
     {
         yield return new WaitForSeconds(1);
         Destroy(gameObject);
+        //Loot money
     }
 }
