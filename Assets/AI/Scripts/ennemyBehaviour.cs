@@ -1,0 +1,71 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ennemyBehaviour : MonoBehaviour
+{
+    public float speed;
+    public float stopDist;
+    public float retreatDist;
+
+    public float detection;
+
+    private float fireRate;
+    public float nxtFire;
+
+    public GameObject bullet;
+        
+    private Transform player;
+
+    private void Start()
+    {
+        Look4Target();
+        fireRate = nxtFire;
+    }
+
+    private void Update()
+    {
+        if (Vector2.Distance(transform.position, player.position) < detection)
+        {
+            if (Vector2.Distance(transform.position, player.position) > stopDist)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            }
+            else if (Vector2.Distance(transform.position, player.position) < stopDist && Vector2.Distance(transform.position, player.position) > retreatDist)
+            {
+                transform.position = transform.position;
+            } else if (Vector2.Distance(transform.position, player.position) < retreatDist)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.position, -speed*Time.deltaTime);
+            }
+
+            if (fireRate <= 0)
+            {
+                Instantiate(bullet, transform.position, Quaternion.identity).GetComponent<AIBullet>().Target = new Vector2(player.position.x, player.position.y);
+                fireRate = nxtFire;
+            }
+            else
+            {
+                fireRate -= Time.deltaTime;
+            }
+        }
+        else
+        {
+            Look4Target();
+        }
+    }
+
+    void Look4Target()
+    {
+        //Getting the Player thru all GO tagged w/ "Player"
+        player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
+        
+        //Getting the nearest Player
+        foreach (var gO in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            if (Vector2.Distance(transform.position, gO.transform.position) < Vector2.Distance(gameObject.transform.position, player.position))
+                player = gO.transform;
+        }
+    }
+}

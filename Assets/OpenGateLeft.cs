@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class OpenGateLeft : MonoBehaviour
 {
-    [SerializeField] private bool Isopen;
+    public bool Isopen;
     
     [SerializeField]private SpriteRenderer sr;
 
     private void Start()
     {
+        if (transform.parent.parent.parent.GetComponent<cleanscript>().spawn)
+            Isopen = true;
         sr = transform.parent.GetComponent<SpriteRenderer>();
     }
 
@@ -26,6 +28,7 @@ public class OpenGateLeft : MonoBehaviour
         if (Isopen && col.gameObject.CompareTag("Player"))
         {
             col.gameObject.transform.Translate(-6,0,0);
+            //Active the stagger of Left Room
         }
     }
 }

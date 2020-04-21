@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class OpenGateot : MonoBehaviour
 {
-   [SerializeField] private bool Isopen;
+   public bool Isopen;
    
    [SerializeField]private SpriteRenderer sr;
    private void Start()
    {
+      if (transform.parent.parent.parent.GetComponent<cleanscript>().spawn)
+         Isopen = true;
       sr = transform.parent.GetComponent<SpriteRenderer>();
    }
    private void Update()
@@ -24,6 +26,7 @@ public class OpenGateot : MonoBehaviour
       if (Isopen && col.gameObject.CompareTag("Player"))
       {
          col.gameObject.transform.Translate(0,-5.5f,0);
+         //Active the stagger of Bottom Room
       }
    }
 }

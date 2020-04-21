@@ -42,7 +42,7 @@ public class matrixe : MonoBehaviour
             {
                 if (!(matrix[i, j].Item1 && matrix[i, j].Item2 && matrix[i, j].Item3 && matrix[i, j].Item4))
                 {
-                    PV.RPC("Generate", RpcTarget.AllBuffered, i, j, cnt);
+                    PV.RPC("Generate", RpcTarget.AllBuffered, i, j);
 
                     /*if (matrix[i, j].Item6 || matrix[i,j].Item5)
                     {
@@ -496,23 +496,6 @@ public class matrixe : MonoBehaviour
 
         gobj.transform.GetChild(1).gameObject.SetActive(gr==0);
     }
-    
-    [PunRPC]
-    private void Generate(int i, int j, int counter)
-    {
-        GameObject oo = Instantiate(neo, new Vector2(i*19, j*12), Quaternion.identity, transform);
-        oo.name = $"Room_{counter}";
-        counter++;
-        generateforest(oo,i,j);
-        oo.GetComponent<cleanscript>().spawn = matrix[i, j].Item5;
-        oo.GetComponent<cleanscript>().boss = matrix[i, j].Item6;
-        oo.GetComponent<cleanscript>().forge = matrix[i, j].Item7;
-        oo.GetComponent<cleanscript>().shop = matrix[i, j].Item8;
-        oo.GetComponent<cleanscript>().instructor = matrix[i, j].Item9;
-        oo.GetComponent<cleanscript>().cook = matrix[i, j].Item10;
-        oo.GetComponent<cleanscript>().item = matrix[i, j].Item11;
-    }
-
 
     public void SpecialRooms()
     {
@@ -594,6 +577,23 @@ public class matrixe : MonoBehaviour
             
             
         }
+    }
+    
+    [PunRPC]
+    private void Generate(int i, int j)
+    {
+        int counter = 0;
+        GameObject oo = Instantiate(neo, new Vector2(i*19, j*12), Quaternion.identity, transform);
+        oo.name = $"Room_{counter}";
+        counter++;
+        generateforest(oo,i,j);
+        oo.GetComponent<cleanscript>().spawn = matrix[i, j].Item5;
+        oo.GetComponent<cleanscript>().boss = matrix[i, j].Item6;
+        oo.GetComponent<cleanscript>().forge = matrix[i, j].Item7;
+        oo.GetComponent<cleanscript>().shop = matrix[i, j].Item8;
+        oo.GetComponent<cleanscript>().instructor = matrix[i, j].Item9;
+        oo.GetComponent<cleanscript>().cook = matrix[i, j].Item10;
+        oo.GetComponent<cleanscript>().item = matrix[i, j].Item11;
     }
 }
 
