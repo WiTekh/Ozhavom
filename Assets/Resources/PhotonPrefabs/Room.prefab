@@ -478,8 +478,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adf9815b636c343adafb9eef80973533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ennemyPrefab: {fileID: 858449547313201413, guid: 2642f3e25b83d447d97d604a6c1bb4a4,
-    type: 3}
+  ennemyPrefab:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   Spawners: []
 --- !u!1 &1283465285003436592
 GameObject:

@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 858449547313201415}
   - component: {fileID: 858449547313201414}
   - component: {fileID: 858449547313201409}
+  - component: {fileID: -3638617187669101116}
+  - component: {fileID: -4197244320972953941}
+  - component: {fileID: 7009126393085271543}
   m_Layer: 0
   m_Name: ennemy
   m_TagString: Untagged
@@ -69,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -189443143
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 41c11d1eb3ee54f049b97b115affb2ed, type: 3}
   m_Color: {r: 0.8207547, g: 0.40650585, b: 0.40650585, a: 1}
@@ -122,3 +125,54 @@ MonoBehaviour:
   detection: 10
   nxtFire: 2
   bullet: {fileID: 4403390162498528759, guid: 9dbb2483aac1745ee88ad2507c44a56a, type: 3}
+--- !u!114 &-3638617187669101116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858449547313201413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: -4197244320972953941}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &-4197244320972953941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858449547313201413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+--- !u!114 &7009126393085271543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858449547313201413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ee651515b91e458081d333552c84243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  dmg: 50
