@@ -4,6 +4,7 @@ using Photon.Pun.Demo.PunBasics;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class playerStats : MonoBehaviour
 {
@@ -38,6 +39,10 @@ public class playerStats : MonoBehaviour
 
     public void Update()
     {
+        if (currentH <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
         healthBar.value = currentH / AS.maxH;
         coinHeap.text = coinAmount.ToString(); 
     }

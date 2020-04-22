@@ -12,6 +12,7 @@ public class ennemyBehaviour : MonoBehaviour
 
     public float detection;
 
+    public bool isRat;
     private float fireRate;
     public float nxtFire;
 
@@ -29,28 +30,38 @@ public class ennemyBehaviour : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, player.position) < detection)
         {
+            //Follow
             if (Vector2.Distance(transform.position, player.position) > stopDist)
             {
                 transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
             }
-            else if (Vector2.Distance(transform.position, player.position) < stopDist && Vector2.Distance(transform.position, player.position) > retreatDist)
-            {
-                transform.position = transform.position;
-            } else if (Vector2.Distance(transform.position, player.position) < retreatDist)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, player.position, -speed*Time.deltaTime);
-            }
 
-            if (fireRate <= 0)
+            //Stand
+            if (isRat == false)
             {
-                GameObject b = PhotonNetwork.Instantiate("bullet", transform.position, Quaternion.identity);
-                b.transform.parent = transform;
-                b.GetComponent<AIBullet>().Target = new Vector2(player.position.x, player.position.y);
-                fireRate = nxtFire;
-            }
-            else
-            {
-                fireRate -= Time.deltaTime;
+                if (Vector2.Distance(transform.position, player.position) < stopDist &&
+                    Vector2.Distance(transform.position, player.position) > retreatDist)
+                {
+                    transform.position = transform.position;
+                }
+                //Retreat
+                else if (Vector2.Distance(transform.position, player.position) < retreatDist)
+                {
+                    transform.position =
+                        Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
+                }
+
+                if (fireRate <= 0)
+                {
+                    GameObject b = PhotonNetwork.Instantiate("bullet", transform.position, Quaternion.identity);
+                    b.transform.parent = transform;
+                    b.GetComponent<AIBullet>().Target = new Vector2(player.position.x, player.position.y);
+                    fireRate = nxtFire;
+                }
+                else
+                {
+                    fireRate -= Time.deltaTime;
+                }
             }
         }
         else

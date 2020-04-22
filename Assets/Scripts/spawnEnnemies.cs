@@ -15,6 +15,7 @@ public class spawnEnnemies : MonoBehaviour
     Random rd = new Random();
     private bool hasSpawned = true;
     private bool done = false;
+    public int RoomID = 80001;
     private bool go4boss = true;
 
 
@@ -30,7 +31,7 @@ public class spawnEnnemies : MonoBehaviour
     }
 
     private void Start()
-    {
+    {/*
         //Setting the nb of ennemies w/ more chances of having between 4 and 6 ennemies than more or less
         switch (rd.Next(10))
         {
@@ -45,7 +46,8 @@ public class spawnEnnemies : MonoBehaviour
             default:
                 nbEnnemies = rd.Next(4, 6);
                 break;
-        }
+        } */
+        nbEnnemies = 2;
     }
 
     private void Update()
@@ -89,18 +91,10 @@ public class spawnEnnemies : MonoBehaviour
 
     void Spawn()
     {
-        int nASE = GameObject.FindGameObjectsWithTag("Ennemy").Length;
-        foreach (Transform spawner in Spawners)
+        if (RoomID == 80001)
         {
-            if (spawner.gameObject.activeSelf)
-            {
-                PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "ennemy"), spawner.position, spawner.rotation);
-            }
-        }
-
-        for (int i = nASE; i < GameObject.FindGameObjectsWithTag("Ennemy").Length; i++)
-        {
-            ennemies.Add(GameObject.FindGameObjectsWithTag("Ennemy")[i]);
+            PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "ennemy"), transform.position + new Vector3(-2,0,0), transform.rotation);
+            PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Rat"), transform.position + new Vector3(2,0,0), transform.rotation);
         }
         hasSpawned = false;
     }
