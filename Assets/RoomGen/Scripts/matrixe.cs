@@ -42,12 +42,9 @@ public class matrixe : MonoBehaviour
             {
                 if (!(matrix[i, j].Item1 && matrix[i, j].Item2 && matrix[i, j].Item3 && matrix[i, j].Item4))
                 {
+                    cnt++;
                     PV.RPC("Generate", RpcTarget.AllBuffered, i, j);
 
-                    /*if (matrix[i, j].Item6 || matrix[i,j].Item5)
-                    {
-                        GameObject bossshit = Instantiate(boss, new Vector2(i*11+1, j*11+1), Quaternion.identity, transform);
-                    }*/
                 }
             }
         }

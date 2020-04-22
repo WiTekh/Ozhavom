@@ -26,15 +26,16 @@ public class Spriteleft : MonoBehaviour
             Camera myCam = transform.parent.parent.GetChild(0).gameObject.GetComponent<Camera>();
             Vector3 delta = Input.mousePosition - myCam.WorldToScreenPoint(transform.position);
             // si le cursor est sur le sprite on ne fait rien
+            //dos droit
             {
                 angle = Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg;
-                if (!active && angle > 135 || angle < -135)
+                                 
+                if (!active && angle > -180 && angle <= -90)
                 {
                     _sprite.enabled = true;
                     active = true;
                 }
-
-                if (active && angle < 135 && angle > -135)
+                if (active && angle <-180 || angle >= -90)
                 {
                     _sprite.enabled = false;
                     active = false;

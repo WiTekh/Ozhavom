@@ -1,0 +1,295 @@
+fileFormatVersion: 2
+guid: f30053df03ae1e844ae454ae8e053d7f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3306142147962868126
+    second: gnollaspritesheet_0
+  - first:
+      213: -2872401277232786071
+    second: gnollaspritesheet_1
+  - first:
+      213: -3684692421651656884
+    second: gnollaspritesheet_2
+  - first:
+      213: -5091656559967309143
+    second: gnollaspritesheet_3
+  - first:
+      213: 836632857625123303
+    second: gnollaspritesheet_4
+  - first:
+      213: -4497521271936587862
+    second: gnollaspritesheet_5
+  - first:
+      213: -6745495813785605729
+    second: gnollaspritesheet_6
+  - first:
+      213: -4431522178427492233
+    second: gnollaspritesheet_7
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: gnollaspritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 207
+        width: 39
+        height: 102
+      alignment: 9
+      pivot: {x: 0.7961913, y: 0.5000003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f73a6f30935d346a55fba72e1c0c6b
+      internalID: 3306142147962868126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gnollaspritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 195
+        width: 80
+        height: 86
+      alignment: 9
+      pivot: {x: 0.41577053, y: 0.44963038}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b29a021801fe224587ba4afb0624122
+      internalID: -2872401277232786071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gnollaspritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 199
+        width: 81
+        height: 90
+      alignment: 9
+      pivot: {x: 0.5772479, y: 0.41978166}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9603b1b9885fb33418174a946c430aa1
+      internalID: -3684692421651656884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gnollaspritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 195
+        width: 40
+        height: 100
+      alignment: 9
+      pivot: {x: 0.23527984, y: 0.5144402}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68abf88b0adfcff419636259fd71076f
+      internalID: -5091656559967309143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gnollaspritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 41
+        width: 41
+        height: 100
+      alignment: 9
+      pivot: {x: 0.7582645, y: 0.50962645}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b03b6c723b28c25448350b51e5d68abf
+      internalID: 836632857625123303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gnollaspritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 56
+        width: 85
+        height: 81
+      alignment: 9
+      pivot: {x: 0.38675052, y: 0.46434757}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9c6194dda5353f4e95cc912b903b592
+      internalID: -4497521271936587862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gnollaspritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 51
+        width: 92
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5889378, y: 0.39772168}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45a3b232ed7c6954ebffa7842fab5800
+      internalID: -6745495813785605729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gnollaspritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 32
+        width: 40
+        height: 99
+      alignment: 9
+      pivot: {x: 0.18714981, y: 0.48541513}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0c0ccab8a5f3bc40a9169b7297f4a8f
+      internalID: -4431522178427492233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
