@@ -14,7 +14,8 @@ public class spawnEnnemies : MonoBehaviour
     private int nbEnnemies;
     Random rd = new Random();
     private bool hasSpawned = true;
-    bool done = false;
+    private bool done = false;
+    private bool go4boss = true;
 
 
     [SerializeField] private List<GameObject> ennemies;
@@ -61,9 +62,19 @@ public class spawnEnnemies : MonoBehaviour
         
         bool isOccupied = !transform.parent.GetComponent<IsOpen>().IsRoomOpen;
 
-        if (isOccupied && !transform.parent.parent.GetComponent<cleanscript>().spawn && hasSpawned && transform.parent.parent.GetComponent<playerEnter>().hasEntered)
+        //Spawning Ennemies only if not a shop, a spawn, a boss room, etc..
+        if (isOccupied && !transform.parent.parent.GetComponent<cleanscript>().shop && !transform.parent.parent.GetComponent<cleanscript>().item && !transform.parent.parent.GetComponent<cleanscript>().instructor 
+            && !transform.parent.parent.GetComponent<cleanscript>().forge && !transform.parent.parent.GetComponent<cleanscript>().cook && !transform.parent.parent.GetComponent<cleanscript>().boss 
+            && !transform.parent.parent.GetComponent<cleanscript>().spawn && hasSpawned && transform.parent.parent.GetComponent<playerEnter>().hasEntered)
         { 
             Spawn();
+        }
+        //Spawning the Boss
+        if (isOccupied && transform.parent.parent.GetComponent<cleanscript>().boss &&
+            transform.parent.parent.GetComponent<playerEnter>().hasEntered && go4boss)
+        {
+            SpawnBoss();
+            go4boss = false;
         }
 
         if (ennemies.Count > 0)
@@ -83,7 +94,7 @@ public class spawnEnnemies : MonoBehaviour
         {
             if (spawner.gameObject.activeSelf)
             {
-                PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "ennemy"), spawner.position, spawner.rotation);
+                PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "ennemy"), spawner.position, spawner.rotation);
             }
         }
 
@@ -92,5 +103,12 @@ public class spawnEnnemies : MonoBehaviour
             ennemies.Add(GameObject.FindGameObjectsWithTag("Ennemy")[i]);
         }
         hasSpawned = false;
+    }
+
+    void SpawnBoss()
+    {
+        Debug.Log($"Boss : ({transform.position.x},{transform.position.y}) Spawned");
+        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "octo"), transform.position, Quaternion.identity);
+        GameObject.Find("Canvas").transform.GetChild(1).gameObject.SetActive(true);
     }
 }

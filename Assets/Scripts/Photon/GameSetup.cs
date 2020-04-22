@@ -15,6 +15,8 @@ public class GameSetup : MonoBehaviour
     public TMP_Text coinsAmount;
     public Slider healthBar;
 
+    public Slider octoBar;
+
     private (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool)[,] matrix;
     public void OnEnable()
     {
@@ -26,6 +28,7 @@ public class GameSetup : MonoBehaviour
     {
         matrix = GameObject.Find("starter").GetComponent<matrixe>().matrix;
         GameObject.Find("Canvas").transform.GetChild(0).GetChild(5).GetComponent<TMP_Text>().text = PhotonNetwork.LocalPlayer.NickName;
+        octoBar = GameObject.Find("Canvas").transform.GetChild(1).GetComponent<Slider>();
         
         //Set the spawnpoints in the right room
         for (int i = 0; i < matrix.GetLength(0); i++)
