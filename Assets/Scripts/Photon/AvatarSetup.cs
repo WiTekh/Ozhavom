@@ -22,15 +22,15 @@ public class AvatarSetup : MonoBehaviour
         switch (charVal)
         {
             case 0:
-                maxH = 100;
-                speed = 30;
+                maxH = 300;
+                speed = 5;
                 break;
             case 1:
                 maxH = 200;
-                speed = 30;
+                speed = 7;
                 break;
             case 2:
-                maxH = 300;
+                maxH = 100;
                 speed = 10;
                 break;
             default:

@@ -461,6 +461,7 @@
             <e p="WeaponRotation.cs" t="Include" />
             <e p="WeaponShoot.cs" t="Include" />
           </e>
+          <e p="octo_Pattern.cs" t="Include" />
           <e p="OpenGateLeft.cs" t="Include" />
           <e p="OpenGateot.cs" t="Include" />
           <e p="OpenGateRight.cs" t="Include" />
@@ -475,6 +476,7 @@
             <e p="PhotonRoom.cs" t="Include" />
             <e p="PlayerInfos.cs" t="Include" />
           </e>
+          <e p="pickUpCoin.cs" t="Include" />
           <e p="playerEnter.cs" t="Include" />
           <e p="PlayerNetworkDeactivate.cs" t="Include" />
           <e p="playerStats.cs" t="Include" />

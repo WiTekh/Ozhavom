@@ -23,6 +23,7 @@
       <Path>Temp</Path>
       <Path>obj</Path>
       <Path>scene_spawns_tests.app</Path>
+      <Path>sync_test_coins+ennemies.app</Path>
     </explicitExcludes>
   </component>
 </project>
