@@ -483,6 +483,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   Spawners: []
+  RoomID: 80001
+  ennemies: []
 --- !u!1 &1283465285003436592
 GameObject:
   m_ObjectHideFlags: 0
@@ -3068,6 +3070,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ffa121f996184490af8ec5d5477051f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasEntered: 0
+  clean: {fileID: 438742407828689194}
 --- !u!1 &7424513190198237308
 GameObject:
   m_ObjectHideFlags: 0
