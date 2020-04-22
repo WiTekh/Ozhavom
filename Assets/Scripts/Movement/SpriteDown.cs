@@ -26,13 +26,14 @@ public class SpriteDown : MonoBehaviour
             Camera myCam = transform.parent.parent.GetChild(0).gameObject.GetComponent<Camera>();
             Vector3 delta = Input.mousePosition - myCam.WorldToScreenPoint(transform.position);
             
+            //face droit
                  angle = Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg;
-                if (!active && angle > -135 && angle <= -45)
+                if (!active && angle > -90 && angle <=0 )
                 {
                     _sprite.enabled = true;
                     active = true;
                 }
-                if (active && angle < -135 || angle > -45)
+                if (active && angle < -90 || angle >= 0)
                 {
                     _sprite.enabled = false;
                     active = false;
