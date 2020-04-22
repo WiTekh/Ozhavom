@@ -17,7 +17,7 @@ public class spawnEnnemies : MonoBehaviour
     private bool done = false;
     public int RoomID = 80001;
     private bool go4boss = true;
-    private bool isOccupied;
+    [SerializeField] private bool isOccupied;
 
 
     [SerializeField] private List<GameObject> ennemies;
@@ -48,8 +48,8 @@ public class spawnEnnemies : MonoBehaviour
                 nbEnnemies = rd.Next(4, 6);
                 break;
         } */
-        nbEnnemies = 2;
-        bool isOccupied = true;
+        nbEnnemies = 2; 
+        isOccupied = true;
     }
 
     private void Update()
@@ -71,8 +71,9 @@ public class spawnEnnemies : MonoBehaviour
             && !transform.parent.parent.GetComponent<cleanscript>().forge && !transform.parent.parent.GetComponent<cleanscript>().cook && !transform.parent.parent.GetComponent<cleanscript>().boss 
             && !transform.parent.parent.GetComponent<cleanscript>().spawn && hasSpawned && transform.parent.parent.GetComponent<playerEnter>().hasEntered)
         { 
+            Debug.Log("Je susi con");
             Spawn();
-            isOccupied = false;
+            
         }
         //Spawning the Boss
         if (isOccupied && transform.parent.parent.GetComponent<cleanscript>().boss &&
@@ -80,7 +81,7 @@ public class spawnEnnemies : MonoBehaviour
         {
             SpawnBoss();
             go4boss = false;
-            isOccupied = false;
+           
         }
 
         if (ennemies.Count > 0)
@@ -96,9 +97,10 @@ public class spawnEnnemies : MonoBehaviour
     void Spawn()
     {
         if (RoomID == 80001)
-        {
-            PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "ennemy"), transform.position + new Vector3(-2,0,0), transform.rotation);
-            PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Rat"), transform.position + new Vector3(2,0,0), transform.rotation);
+        {    
+            
+            ennemies.Add( PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "ennemy"), transform.position + new Vector3(-2,0,0), transform.rotation));
+            ennemies.Add(PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Rat"), transform.position + new Vector3(2,0,0), transform.rotation));
         }
         hasSpawned = false;
     }

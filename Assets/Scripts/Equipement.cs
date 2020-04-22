@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Photon.Pun;
 using UnityEngine;
 
 public class Equipement : MonoBehaviour
@@ -44,7 +45,7 @@ public class Equipement : MonoBehaviour
                             _rafale.active = true;
                             _rafale.slot = freeslot;
                             _rafale.enabled = true;
-                            Destroy(_gameObject);
+                            PhotonNetwork.Destroy(_gameObject);
                             freeslot++; //une fois les test terminer faut rajouter un PhotonNetwork. avant le destroy
                         }
                         break;
@@ -54,7 +55,7 @@ public class Equipement : MonoBehaviour
                             masse.active = true;
                             masse.slot = freeslot;
                             masse.enabled = true;
-                            Destroy(_gameObject);
+                            PhotonNetwork.Destroy(_gameObject);
                             freeslot++;
                         }
                         break;
@@ -65,7 +66,7 @@ public class Equipement : MonoBehaviour
                             tripleShot.slot = freeslot;
                             freeslot++;
                             tripleShot.enabled = true;
-                            Destroy(_gameObject);
+                            PhotonNetwork.Destroy(_gameObject);
                         }
                         break;
                     case "laserbeam":
@@ -75,7 +76,7 @@ public class Equipement : MonoBehaviour
                             _laserBeam.enabled = true;
                             _laserBeam.slot = freeslot;
                             freeslot++;
-                            Destroy(_gameObject);
+                            PhotonNetwork.Destroy(_gameObject);
                         }
                         break;
                     case "chargedbeam":
@@ -85,7 +86,7 @@ public class Equipement : MonoBehaviour
                             _chargedBeam.slot = freeslot;
                             _chargedBeam.enabled = true;
                             freeslot++;
-                            Destroy(_gameObject);
+                            PhotonNetwork.Destroy(_gameObject);
                         }
                         break;
                 }
