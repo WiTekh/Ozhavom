@@ -5,9 +5,9 @@ using System.IO;
 using Photon.Pun;
 using UnityEngine;
 
-public class ennemyStats : MonoBehaviour
+public class ennemyStats : MonoBehaviourPunCallbacks
 {
-    public float health = 100;
+    [SerializeField]public float health = 100;
     public float dmg = 50;
 
     private void Update()
@@ -20,4 +20,17 @@ public class ennemyStats : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll; 
         }
     }
+
+    public void OnPhotonSenializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(health);
+        }
+        else
+        {
+            this.health = (float) stream.ReceiveNext();
+        }
+    }
+    
 }

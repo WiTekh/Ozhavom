@@ -9,7 +9,7 @@ public class IsOpen : MonoBehaviour
 
     private void Update()
     {
-        for (int i = 1; i < transform.childCount; i++)
+        for (int i = 0; i < transform.childCount; i++)
         {
             Transform gO = transform.GetChild(i);
             
