@@ -17,6 +17,7 @@ public class spawnEnnemies : MonoBehaviour
     private bool done = false;
     public int RoomID = 80001;
     private bool go4boss = true;
+    private bool isOccupied;
 
 
     [SerializeField] private List<GameObject> ennemies;
@@ -48,6 +49,7 @@ public class spawnEnnemies : MonoBehaviour
                 break;
         } */
         nbEnnemies = 2;
+        bool isOccupied = true;
     }
 
     private void Update()
@@ -62,7 +64,7 @@ public class spawnEnnemies : MonoBehaviour
             }
         }
         
-        bool isOccupied = !transform.parent.GetComponent<IsOpen>().IsRoomOpen;
+       
 
         //Spawning Ennemies only if not a shop, a spawn, a boss room, etc..
         if (isOccupied && !transform.parent.parent.GetComponent<cleanscript>().shop && !transform.parent.parent.GetComponent<cleanscript>().item && !transform.parent.parent.GetComponent<cleanscript>().instructor 
@@ -70,6 +72,7 @@ public class spawnEnnemies : MonoBehaviour
             && !transform.parent.parent.GetComponent<cleanscript>().spawn && hasSpawned && transform.parent.parent.GetComponent<playerEnter>().hasEntered)
         { 
             Spawn();
+            isOccupied = false;
         }
         //Spawning the Boss
         if (isOccupied && transform.parent.parent.GetComponent<cleanscript>().boss &&
@@ -77,6 +80,7 @@ public class spawnEnnemies : MonoBehaviour
         {
             SpawnBoss();
             go4boss = false;
+            isOccupied = false;
         }
 
         if (ennemies.Count > 0)
