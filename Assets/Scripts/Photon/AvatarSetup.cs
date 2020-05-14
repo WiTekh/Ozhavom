@@ -39,6 +39,20 @@ public class AvatarSetup : MonoBehaviour
         }
     }
 
+    private void Start()
+    { 
+        //Getting the PV of the weapon and setting its ownership to the Local Player
+        if (PV.IsMine)
+        {
+            PhotonView PV2 = transform.GetChild(1).GetComponent<PhotonView>();
+            PhotonView PV3 = transform.GetChild(1).GetChild(4).GetChild(0).GetComponent<PhotonView>();
+            PhotonView PV4 = transform.GetChild(1).GetChild(5).GetChild(0).GetComponent<PhotonView>();
+            PV2.TransferOwnership(PhotonNetwork.LocalPlayer);
+            PV3.TransferOwnership(PhotonNetwork.LocalPlayer);
+            PV4.TransferOwnership(PhotonNetwork.LocalPlayer);
+        }
+    }
+
     [PunRPC]
     void RPC_AddChar(int whichChar)
     {
