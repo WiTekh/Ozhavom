@@ -11,6 +11,7 @@ TagManager:
   - rBot
   - rLeft
   - rRight
+  - spawner
   layers:
   - Default
   - TransparentFX

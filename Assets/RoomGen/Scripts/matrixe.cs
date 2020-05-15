@@ -14,23 +14,28 @@ public class matrixe : MonoBehaviour
     [SerializeField] private GameObject neo;
     //[SerializeField] private GameObject boss;
     private Random r = new Random();
-
+    
     private PhotonView PV;
+    public bool shouldGen = true;
     
     void Awake()
     {
-        PV = gameObject.GetComponent<PhotonView>();
-        if (size % 2 == 0) size += 1;
-        matrix = new (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool)[size,size]; 
-        for (int i = 0; i < size; i++)
+        if (shouldGen)
         {
-            for (int j = 0; j < size; j++)
+            PV = gameObject.GetComponent<PhotonView>();
+            if (size % 2 == 0) size += 1;
+            matrix = new (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool)[size,size]; 
+            for (int i = 0; i < size; i++)
             {
-                matrix[i, j] = (true, true, true, true, false, false, false, false, false, false, false);
+                for (int j = 0; j < size; j++)
+                {
+                    matrix[i, j] = (true, true, true, true, false, false, false, false, false, false, false);
+                }
             }
-        }
         
-        generatedungeon();
+            generatedungeon();
+            shouldGen = false;
+        }
     }
     private void Start()
     {

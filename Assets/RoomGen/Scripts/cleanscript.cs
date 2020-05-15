@@ -19,6 +19,4 @@ public class cleanscript : MonoBehaviour
     public bool instructor;
     public bool cook;
     public bool item;
-    
-
 }
