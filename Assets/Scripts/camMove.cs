@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using DG.Tweening;
 
 public class camMove : MonoBehaviour
 {
@@ -29,8 +30,9 @@ public class camMove : MonoBehaviour
         else {
             Y = Y - Y % 12 + 12;
         }
+        
+        transform.DOMove(new Vector3(X, Y, pos.z), 1f);
 
-        transform.position = new Vector3(X, Y, pos.z);
         Debug.Log(pos);
     }
 }
