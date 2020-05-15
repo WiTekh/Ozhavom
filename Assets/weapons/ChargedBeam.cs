@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class ChargedBeam : MonoBehaviour
 {
-  
+
+    private PhotonView PV;
     public int slot;
     public bool active;
     private PlayerMovement move;
@@ -17,24 +19,30 @@ public class ChargedBeam : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
+        PV = transform.parent.parent.parent.GetComponent<PhotonView>();
+
         move = transform.parent.parent.parent.parent.GetComponent<PlayerMovement>();
         laser = GetComponent<LineRenderer>();
     }
 
     void Update()
     {
-        if (move.enabled == false)
+        if (PV.IsMine)
         {
-            fire += 0.25f;
-        }
-        
-        if (fire == 20)
-        {
-            move.enabled = true;
-            laser.enabled = false;
-        }
 
-       
+
+            if (move.enabled == false)
+            {
+                fire += 0.25f;
+            }
+
+            if (fire == 20)
+            {
+                move.enabled = true;
+                laser.enabled = false;
+            }
+
+
             switch (slot)
             {
                 case 0:
@@ -68,21 +76,22 @@ public class ChargedBeam : MonoBehaviour
                         laser.enabled = true;
                         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right);
                         LaserHit.position = hit.point;
-                        laser.SetPosition(0,transform.position);
-                        laser.SetPosition(1,LaserHit.position);
+                        laser.SetPosition(0, transform.position);
+                        laser.SetPosition(1, LaserHit.position);
                         move.enabled = false;
                         fire = 0;
                     }
-        
+
                     else if (move.enabled)
                     {
                         fire = 0;
                     }
+
                     break;
             }
-        
 
-        
+
+        }
     }
 
     void Fire()

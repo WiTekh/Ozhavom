@@ -20,14 +20,21 @@ public class PlayerMovement : MonoBehaviour
     {
         PV = GetComponent<PhotonView>();
         RB = GetComponentInParent<Rigidbody2D>();
+        if (PV.IsMine)
+        {
+            MovementSpeed = gameObject.GetComponent<AvatarSetup>().speed;
 
-        MovementSpeed = gameObject.GetComponent<AvatarSetup>().speed;
+        }
     }
     
     //FixedUpdate has to be called for Rigidbodies
     void FixedUpdate()
     {
-        Move();
+        if (PV.IsMine)
+        {
+            Move();
+        }
+       
     }
     private void Move()
     {

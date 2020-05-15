@@ -19,12 +19,17 @@ public class WeaponRotation : MonoBehaviour
 
     void FixedUpdate() // called once per frame
     {
-        Rotate();
+        if (PV.IsMine)
+        {
+            
+            Rotate();
+        }
+       
     }
     private void Rotate()
     {
         //Will have to change that bc all players have different cameras
-        Camera myCam = transform.parent.parent.parent.GetChild(0).gameObject.GetComponent<Camera>();
+        Camera myCam = transform.parent.parent.GetChild(0).gameObject.GetComponent<Camera>();
         
         Vector3 dir = Input.mousePosition - myCam.WorldToScreenPoint(transform.position);
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;

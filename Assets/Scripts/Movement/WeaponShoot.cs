@@ -23,7 +23,7 @@ public class WeaponShoot : MonoBehaviour
     
     private void Start()
     {
-        Transform avatar = transform.parent.parent.parent.parent;
+        Transform avatar = transform.parent.parent.parent;
         AS = avatar.GetComponent<AvatarSetup>();
         PV = avatar.GetComponent<PhotonView>();
 
@@ -35,17 +35,21 @@ public class WeaponShoot : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0) && firerate <= fire)
+        if (PV.IsMine)
         {
-            GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position, transform.rotation);
-            bullet.GetComponent<BulletColision>().dmg = 50;
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.AddForce(transform.right*20f,ForceMode2D.Impulse);
-            fire = 0;
+            if (Input.GetMouseButton(0) && firerate <= fire)
+            {
+                GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position, transform.rotation);
+                bullet.GetComponent<BulletColision>().dmg = 50;
+                Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+                rb.AddForce(transform.right*20f,ForceMode2D.Impulse);
+                fire = 0;
+            }
+            else if (fire<firerate)
+            {
+                fire++;
+            }
         }
-        else if (fire<firerate)
-        {
-            fire++;
-        }
+       
     }
 }

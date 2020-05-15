@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class TripleShot : MonoBehaviour
 {
+    private PhotonView PV;
+
     [SerializeField] private int firerate;
     [SerializeField] public bool active;
     [SerializeField] public int slot;
@@ -17,7 +19,9 @@ public class TripleShot : MonoBehaviour
     private GameObject bullet;
     // Start is called before the first frame update
     void Start()
-    {
+    {          
+        PV = transform.parent.parent.parent.GetComponent<PhotonView>();
+
         fire = firerate;
         wr = transform.parent.GetComponent<WeaponRotation>();
     }
@@ -25,37 +29,46 @@ public class TripleShot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mem = wr.memoire;
-        if (fire<firerate)
+        if (PV.IsMine)
         {
-            fire++;
-        }
-        if (fire >= firerate)
-        {
-            switch (slot)
+
+
+            mem = wr.memoire;
+            if (fire < firerate)
             {
-                case 0:
-                    if (Input.GetKey(KeyCode.Z))
-                    {
-                        Fire();
-                        fire = 0;
-                    }
-                    break;
-                case 1:
-                    if (Input.GetKey(KeyCode.E))
-                    { 
-                        Fire();
-                        fire = 0;
-                           
-                    }
-                    break;
-                case 2:
-                    if (Input.GetKey(KeyCode.R))
-                    {
-                        Fire();
-                        fire = 0;
-                    }
-                    break;
+                fire++;
+            }
+
+            if (fire >= firerate)
+            {
+                switch (slot)
+                {
+                    case 0:
+                        if (Input.GetKey(KeyCode.Z))
+                        {
+                            Fire();
+                            fire = 0;
+                        }
+
+                        break;
+                    case 1:
+                        if (Input.GetKey(KeyCode.E))
+                        {
+                            Fire();
+                            fire = 0;
+
+                        }
+
+                        break;
+                    case 2:
+                        if (Input.GetKey(KeyCode.R))
+                        {
+                            Fire();
+                            fire = 0;
+                        }
+
+                        break;
+                }
             }
         }
     }
