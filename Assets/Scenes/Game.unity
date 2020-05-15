@@ -860,6 +860,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: starter
       objectReference: {fileID: 0}
+    - target: {fileID: 2780814951708767987, guid: a93b4535244180545b94c446f935ce49,
+        type: 3}
+      propertyPath: m_TagString
+      value: spawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a93b4535244180545b94c446f935ce49, type: 3}
 --- !u!1 &1064653164 stripped
@@ -887,7 +892,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 17
+  viewIdField: 69420
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &1067319502
@@ -1714,6 +1719,7 @@ MonoBehaviour:
   - {fileID: 396666513}
   coinsAmount: {fileID: 1638057736}
   healthBar: {fileID: 1638057737}
+  octoBar: {fileID: 0}
 --- !u!1 &1922815163
 GameObject:
   m_ObjectHideFlags: 0
