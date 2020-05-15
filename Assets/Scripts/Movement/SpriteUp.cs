@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
+using Debug = System.Diagnostics.Debug;
 
 public class SpriteUp : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class SpriteUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PV = GetComponentInParent<PhotonView>();
+        PV = transform.parent.GetComponent<PhotonView>();
         active = false;
         _sprite = GetComponent<Renderer>();
     }
@@ -23,7 +24,8 @@ public class SpriteUp : MonoBehaviour
     {
         if (PV.IsMine)
         {
-            Camera myCam = transform.parent.parent.GetChild(0).gameObject.GetComponent<Camera>();
+            UnityEngine.Debug.Log("yep");
+            Camera myCam = transform.parent.GetChild(0).gameObject.GetComponent<Camera>();
             Vector3 delta = Input.mousePosition - myCam.WorldToScreenPoint(transform.position);
             //dos gauche
                 angle = Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg;

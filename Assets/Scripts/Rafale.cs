@@ -6,7 +6,9 @@ using UnityEngine;
 
 public class Rafale : MonoBehaviour
 {
-       [SerializeField] private int firerate;
+    
+        private PhotonView PV;
+        [SerializeField] private int firerate;
        [SerializeField] public bool active;
        [SerializeField] public int slot;
    
@@ -15,50 +17,61 @@ public class Rafale : MonoBehaviour
        private void Start()
        {
            fire = firerate;
+           PV = transform.parent.parent.parent.GetComponent<PhotonView>();
+
        }
    
        private void Update()
        {
-           if (fire<firerate)
+           if (PV.IsMine)
            {
-               fire++;
-           }
-           if (fire == 20)
-           {
-               Fire();
-           }
-   
-           if (fire == 40)
-           {
-               Fire();
-           }
-   
-           if (fire >= firerate)
-           {
-               switch (slot)
+
+
+               if (fire < firerate)
                {
-                   case 0:
-                       if (Input.GetKey(KeyCode.Z))
-                       {
-                           Fire();
-                           fire = 0;
-                       }
-                       break;
-                   case 1:
-                       if (Input.GetKey(KeyCode.E))
-                       { 
-                           Fire();
-                           fire = 0;
-                           
-                       }
-                       break;
-                   case 2:
-                       if (Input.GetKey(KeyCode.R))
-                       {
-                           Fire();
-                           fire = 0;
-                       }
-                       break;
+                   fire++;
+               }
+
+               if (fire == 20)
+               {
+                   Fire();
+               }
+
+               if (fire == 40)
+               {
+                   Fire();
+               }
+
+               if (fire >= firerate)
+               {
+                   switch (slot)
+                   {
+                       case 0:
+                           if (Input.GetKey(KeyCode.Z))
+                           {
+                               Fire();
+                               fire = 0;
+                           }
+
+                           break;
+                       case 1:
+                           if (Input.GetKey(KeyCode.E))
+                           {
+                               Fire();
+                               fire = 0;
+
+                           }
+
+                           break;
+                       case 2:
+                           if (Input.GetKey(KeyCode.R))
+                           {
+                               Fire();
+                               fire = 0;
+                           }
+
+                           break;
+                   }
                }
            }
        }

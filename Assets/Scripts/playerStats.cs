@@ -12,8 +12,7 @@ public class playerStats : MonoBehaviour
     
     public float currentH;
     public Slider healthBar;
-
-    [SerializeField]
+    [SerializeField] private PhotonView PV;
     private float speed;
 
     [SerializeField]
@@ -30,20 +29,28 @@ public class playerStats : MonoBehaviour
 
     public void Start()
     {
-        currentH = AS.maxH;
-        speed = AS.speed;
+        if (PV.IsMine)
+        {
+            currentH = AS.maxH;
+            speed = AS.speed;
         
-        healthBar = GameObject.Find("Canvas").transform.GetChild(0).GetComponent<Slider>();
-        coinHeap = GameObject.Find("Canvas").transform.GetChild(0).GetChild(4).GetComponent<TMP_Text>();
+            healthBar = GameObject.Find("Canvas").transform.GetChild(0).GetComponent<Slider>();
+            coinHeap = GameObject.Find("Canvas").transform.GetChild(0).GetChild(4).GetComponent<TMP_Text>();
+        }
+       
     }
 
     public void Update()
     {
-        if (currentH <= 0)
+        if (PV.IsMine)
         {
-            SceneManager.LoadScene("GameOver");
+            if (currentH <= 0)
+            {
+                SceneManager.LoadScene("GameOver");
+            }
+            healthBar.value = currentH / AS.maxH;
+            coinHeap.text = coinAmount.ToString(); 
         }
-        healthBar.value = currentH / AS.maxH;
-        coinHeap.text = coinAmount.ToString(); 
+        
     }
 }

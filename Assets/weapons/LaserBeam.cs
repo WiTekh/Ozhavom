@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class LaserBeam : MonoBehaviour
 {
-
+    private PhotonView PV;
     public int slot;
     public bool active;
     private PlayerMovement move;
@@ -17,51 +18,61 @@ public class LaserBeam : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
-        move = transform.parent.parent.parent.parent.GetComponent<PlayerMovement>();
+        PV = transform.parent.parent.parent.GetComponent<PhotonView>();
+
+        move = transform.parent.parent.parent.GetComponent<PlayerMovement>();
         fire = firerate;
         laser = GetComponent<LineRenderer>();
     }
 
     void Update()
     {
-        if (fire == 80)
+        if (PV.IsMine)
         {
-            move.enabled = true;
-            laser.enabled = false;
-        }
-        
-        if (fire >= firerate)
-        {
-            switch (slot)
-            {
-                case 0:
-                    if (Input.GetKey(KeyCode.Z))
-                    {
-                        Fire();
-                        fire = 0;
-                    }
-                    break;
-                case 1:
-                    if (Input.GetKey(KeyCode.E))
-                    { 
-                        Fire();
-                        fire = 0;
-                           
-                    }
-                    break;
-                case 2:
-                    if (Input.GetKey(KeyCode.R))
-                    {
-                        Fire();
-                        fire = 0;
-                    }
-                    break;
-            }
-        }
 
-        else if (fire<firerate)
-        {
-            fire++;
+
+            if (fire == 80)
+            {
+                move.enabled = true;
+                laser.enabled = false;
+            }
+
+            if (fire >= firerate)
+            {
+                switch (slot)
+                {
+                    case 0:
+                        if (Input.GetKey(KeyCode.Z))
+                        {
+                            Fire();
+                            fire = 0;
+                        }
+
+                        break;
+                    case 1:
+                        if (Input.GetKey(KeyCode.E))
+                        {
+                            Fire();
+                            fire = 0;
+
+                        }
+
+                        break;
+                    case 2:
+                        if (Input.GetKey(KeyCode.R))
+                        {
+                            Fire();
+                            fire = 0;
+                        }
+
+                        break;
+                }
+            }
+
+            else if (fire < firerate)
+            {
+                fire++;
+            }
         }
     }
 

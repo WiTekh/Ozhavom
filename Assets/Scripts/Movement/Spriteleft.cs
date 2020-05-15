@@ -13,7 +13,7 @@ public class Spriteleft : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PV = GetComponentInParent<PhotonView>();
+        PV = transform.parent.GetComponent<PhotonView>();
         active = false;
         _sprite = GetComponent<Renderer>();
     }
@@ -23,7 +23,7 @@ public class Spriteleft : MonoBehaviour
     {
         if (PV.IsMine)
         {
-            Camera myCam = transform.parent.parent.GetChild(0).gameObject.GetComponent<Camera>();
+            Camera myCam = transform.parent.GetChild(0).gameObject.GetComponent<Camera>();
             Vector3 delta = Input.mousePosition - myCam.WorldToScreenPoint(transform.position);
             // si le cursor est sur le sprite on ne fait rien
             //dos droit
