@@ -19,12 +19,12 @@ public class PhotonPlayer : MonoBehaviour
         charVal = PlayerInfos.PI.mySelectedChar;
         if (PV.IsMine)
         {
-            if (charVal ==0 )
+            if (charVal == 0)
             {
                 myAvatar = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Crab"),
                     GameSetup.GS.SpawnPoints[PhotonNetwork.PlayerList.Length -1].position, Quaternion.identity, 0);
             }
-            else if (charVal ==2 )
+            else if (charVal == 1)
             {
                 myAvatar = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Goblin"),
                     GameSetup.GS.SpawnPoints[PhotonNetwork.PlayerList.Length -1].position, Quaternion.identity, 0);
