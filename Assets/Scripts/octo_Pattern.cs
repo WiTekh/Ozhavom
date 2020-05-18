@@ -41,6 +41,15 @@ public class octo_Pattern : MonoBehaviour
 
     private void Update()
     {
+        //Moving Mecanism
+        
+        /*
+         * 1 - Find the nearest player position
+         * 2 - Choose him as target
+         * 3 - Move forward to him (just a little bit (ex : take the normalized vector to the target and multiply it by a Length coef))
+         */
+
+
         //Keeping the display of the Boss' healthbar
         octoHealth.value = CurrentOH / MaxOH;
         
@@ -121,6 +130,5 @@ public class octo_Pattern : MonoBehaviour
 
             //Shoot little fast projectiles every 1.5 seconds
         }
-        
     }
 }
