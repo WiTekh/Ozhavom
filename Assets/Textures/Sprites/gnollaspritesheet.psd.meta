@@ -136,7 +136,7 @@ TextureImporter:
         serializedVersion: 2
         x: 104
         y: 195
-        width: 80
+        width: 108
         height: 86
       alignment: 9
       pivot: {x: 0.41577053, y: 0.44963038}
@@ -157,7 +157,7 @@ TextureImporter:
         serializedVersion: 2
         x: 287
         y: 199
-        width: 81
+        width: 105
         height: 90
       alignment: 9
       pivot: {x: 0.5772479, y: 0.41978166}
@@ -218,12 +218,12 @@ TextureImporter:
       name: gnollaspritesheet_5
       rect:
         serializedVersion: 2
-        x: 127
-        y: 56
-        width: 85
-        height: 81
+        x: 126
+        y: 54
+        width: 107
+        height: 97
       alignment: 9
-      pivot: {x: 0.38675052, y: 0.46434757}
+      pivot: {x: 0.4808039, y: 0.46434775}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -241,8 +241,8 @@ TextureImporter:
         serializedVersion: 2
         x: 276
         y: 51
-        width: 92
-        height: 80
+        width: 114
+        height: 90
       alignment: 9
       pivot: {x: 0.5889378, y: 0.39772168}
       border: {x: 0, y: 0, z: 0, w: 0}
