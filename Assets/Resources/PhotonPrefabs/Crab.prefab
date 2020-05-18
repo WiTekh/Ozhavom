@@ -556,7 +556,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angle: 0
   PV: {fileID: 5537800801512113069}
-  memoire: 0
   transformplayer: {fileID: 5026135947840991541}
   liste:
   - {fileID: -1775031394084752501, guid: 2ffc1add49df7494e960f359a74b8788, type: 3}

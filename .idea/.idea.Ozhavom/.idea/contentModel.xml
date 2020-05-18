@@ -29,6 +29,9 @@
             <e p="readme.txt" t="Include" />
           </e>
         </e>
+        <e p="gniollweapon.cs" t="Include" />
+        <e p="gnollweapon.cs" t="Include" />
+        <e p="goblinweapon.cs" t="Include" />
         <e p="other assets" t="Include">
           <e p="TMP" t="Include">
             <e p="Examples &amp; Extras" t="Include">
