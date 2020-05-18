@@ -5,7 +5,7 @@ using System.IO;
 using Photon.Pun;
 using UnityEngine;
 
-public class ennemyStats : MonoBehaviourPunCallbacks
+public class ennemyStats : MonoBehaviourPunCallbacks, IPunObservable
 {
     [SerializeField]public float health = 100;
     public float dmg = 50;
@@ -31,5 +31,10 @@ public class ennemyStats : MonoBehaviourPunCallbacks
         {
             this.health = (float) stream.ReceiveNext();
         }
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        throw new NotImplementedException();
     }
 }
