@@ -71,7 +71,7 @@ public class spawnEnnemies : MonoBehaviour
             && !transform.parent.parent.GetComponent<cleanscript>().forge && !transform.parent.parent.GetComponent<cleanscript>().cook && !transform.parent.parent.GetComponent<cleanscript>().boss 
             && !transform.parent.parent.GetComponent<cleanscript>().spawn && hasSpawned && transform.parent.parent.GetComponent<playerEnter>().hasEntered)
         { 
-            Debug.Log("Je susi con");
+            Debug.Log("Spawning ... ");
             Spawn();
             
         }
