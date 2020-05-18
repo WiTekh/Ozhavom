@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Security.Cryptography;
 using Photon.Pun;
 using UnityEngine;
@@ -14,12 +16,15 @@ public class Equipement : MonoBehaviour
     private LaserBeam _laserBeam;
     private ChargedBeam _chargedBeam;
     private PhotonView PV;
+    Sprite activeSprite;
+
     
     
     // Start is called before the first frame update
     void Start()
     {
-        Transform transformparent = transform.GetChild(5).GetChild(0).GetChild(0);
+        activeSprite = Resources.Load("blank") as Sprite;
+        Transform transformparent = transform.GetChild(7).GetChild(0).GetChild(0);
         _rafale = transformparent.GetComponent<Rafale>();
         tripleShot = transformparent.GetComponent<TripleShot>();
         _laserBeam = transformparent.GetComponent<LaserBeam>();
@@ -35,8 +40,6 @@ public class Equipement : MonoBehaviour
     {
         if (PV.IsMine)
         {
-
-
             _gameObject = col.gameObject;
             if (_gameObject.CompareTag("Weapons"))
             {
@@ -51,6 +54,8 @@ public class Equipement : MonoBehaviour
                                 _rafale.slot = freeslot;
                                 _rafale.enabled = true;
                                 PhotonNetwork.Destroy(_gameObject);
+                                activeSprite = Resources.Load("rifle") as Sprite;
+                                Debug.Log("equiped the rifle");
                                 freeslot++; //une fois les test terminer faut rajouter un PhotonNetwork. avant le destroy
                             }
 
@@ -62,6 +67,8 @@ public class Equipement : MonoBehaviour
                                 masse.slot = freeslot;
                                 masse.enabled = true;
                                 PhotonNetwork.Destroy(_gameObject);
+                                activeSprite = Resources.Load("mass") as Sprite;
+                                Debug.Log("equiped the mass");
                                 freeslot++;
                             }
 
@@ -74,6 +81,8 @@ public class Equipement : MonoBehaviour
                                 freeslot++;
                                 tripleShot.enabled = true;
                                 PhotonNetwork.Destroy(_gameObject);
+                                activeSprite = Resources.Load("shotgun") as Sprite;
+                                Debug.Log("equiped the shotgun");
                             }
 
                             break;
@@ -85,6 +94,8 @@ public class Equipement : MonoBehaviour
                                 _laserBeam.slot = freeslot;
                                 freeslot++;
                                 PhotonNetwork.Destroy(_gameObject);
+                                activeSprite = Resources.Load("laser") as Sprite;
+                                Debug.Log("equiped the laserbeam");
                             }
 
                             break;
@@ -96,6 +107,8 @@ public class Equipement : MonoBehaviour
                                 _chargedBeam.enabled = true;
                                 freeslot++;
                                 PhotonNetwork.Destroy(_gameObject);
+                                Debug.Log("equiped the chargedbeam");
+                                activeSprite = Resources.Load("charged") as Sprite;
                             }
 
                             break;
@@ -103,5 +116,12 @@ public class Equipement : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void Update()
+    {
+        GameObject sprite = GameObject.Find("Canvas").transform.GetChild(2).GetChild(2).gameObject;
+
+        sprite.GetComponent<weaponUI>().wSprite = activeSprite;
     }
 }

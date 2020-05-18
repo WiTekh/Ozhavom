@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\rmour\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\rmour\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Ozhavom.1002264303.00" t="ExcludeRecursive" />
-    <e p="D:\GitHub\16 mai\Ozhavom" t="IncludeRecursive">
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="AI" t="Include">
@@ -13,8 +11,6 @@
             <e p="moving.cs" t="Include" />
           </e>
         </e>
-        <e p="bodymovement.cs" t="Include" />
-        <e p="CrabWeapon.cs" t="Include" />
         <e p="Demigiant" t="Include">
           <e p="DOTween" t="Include">
             <e p="Modules" t="Include">
@@ -29,9 +25,6 @@
             <e p="readme.txt" t="Include" />
           </e>
         </e>
-        <e p="gniollweapon.cs" t="Include" />
-        <e p="gnollweapon.cs" t="Include" />
-        <e p="goblinweapon.cs" t="Include" />
         <e p="other assets" t="Include">
           <e p="TMP" t="Include">
             <e p="Examples &amp; Extras" t="Include">
@@ -383,7 +376,6 @@
                   <e p="eurof_tt.txt" t="Include" />
                 </e>
               </e>
-              <e p="WebRpcImplementationExample.cs" t="Include" />
             </e>
             <e p="link.xml" t="Include" />
             <e p="readme.txt" t="Include" />
@@ -511,6 +503,7 @@
           <e p="Masse.cs" t="Include" />
           <e p="TripleShot.cs" t="Include" />
         </e>
+        <e p="weaponUI.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Ozhavom.sln" t="IncludeFlat" />
@@ -526,7 +519,9 @@
       <e p="PhotonWebSocket.csproj" t="IncludeRecursive" />
       <e p="PunDemos.DemoHubEditor.csproj" t="IncludeRecursive" />
       <e p="PunDemos.DemoSlotcarEditor.csproj" t="IncludeRecursive" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Temp/bin" t="ExcludeRecursive" />
     </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2019.2/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.2/resharper-host/local/Transient/ReSharperHost/v192/SolutionCaches/_Ozhavom.-830269385.00" t="ExcludeRecursive" />
   </component>
 </project>
