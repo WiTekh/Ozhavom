@@ -551,17 +551,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1880366585684468400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faebfbd5d55b2974ba0f92756b742cea, type: 3}
+  m_Script: {fileID: 11500000, guid: a5c000a35f6d458468fc44dad3ab5291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 0
   PV: {fileID: 5537800801512113069}
   transformplayer: {fileID: 5026135947840991541}
   liste:
+  - {fileID: -3762590393921506602, guid: 2ffc1add49df7494e960f359a74b8788, type: 3}
   - {fileID: -1775031394084752501, guid: 2ffc1add49df7494e960f359a74b8788, type: 3}
   - {fileID: -8766283920888389804, guid: 2ffc1add49df7494e960f359a74b8788, type: 3}
   - {fileID: -1775031394084752501, guid: 2ffc1add49df7494e960f359a74b8788, type: 3}
-  - {fileID: -3762590393921506602, guid: 2ffc1add49df7494e960f359a74b8788, type: 3}
 --- !u!1 &4364471229357064865
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,7 +746,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6235176513072341672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77adbf5d530c3f146ae8e3b73130a686, type: 3}
+  m_Script: {fileID: 11500000, guid: 252e0d830e157ec419ef4c1bab91f6cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 0
