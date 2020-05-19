@@ -33,6 +33,6 @@ public class camMove : MonoBehaviour
         
         transform.DOMove(new Vector3(X, Y, pos.z), 1f);
 
-        Debug.Log(pos);
+        //Debug.Log(pos);
     }
 }

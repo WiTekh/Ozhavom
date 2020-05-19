@@ -21,7 +21,7 @@ public class ennemyStats : MonoBehaviourPunCallbacks, IPunObservable
         }
     }
 
-    public void OnPhotonSerializedView(PhotonStream stream, PhotonMessageInfo info)
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.IsWriting)
         {
@@ -31,10 +31,5 @@ public class ennemyStats : MonoBehaviourPunCallbacks, IPunObservable
         {
             this.health = (float) stream.ReceiveNext();
         }
-    }
-
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        throw new NotImplementedException();
     }
 }

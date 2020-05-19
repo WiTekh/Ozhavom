@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 8277228322521229206}
   - component: {fileID: 29888686516930000}
   - component: {fileID: 2333432224606633281}
+  - component: {fileID: 7469037650365545809}
   m_Layer: 0
   m_Name: Gnoll
   m_TagString: Player
@@ -376,6 +377,21 @@ MonoBehaviour:
   coinAmount: 0
   playerName: {fileID: 0}
   coinHeap: {fileID: 0}
+--- !u!114 &7469037650365545809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878105456183434423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f653d1d2bdde5d048a314d743353e35f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 9
+  neo: {fileID: 7299700018657890553, guid: b65768f60c33c9842a79c7635ac09bbb, type: 3}
+  shouldGen: 1
 --- !u!1 &3067907267516270255
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,7 +933,6 @@ MonoBehaviour:
   firerate: 100
   coinsAmount: {fileID: 0}
   healthBar: {fileID: 0}
-  fire: 0
 --- !u!114 &2795059349755713698
 MonoBehaviour:
   m_ObjectHideFlags: 0

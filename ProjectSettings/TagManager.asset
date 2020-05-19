@@ -12,6 +12,7 @@ TagManager:
   - rLeft
   - rRight
   - spawner
+  - room
   layers:
   - Default
   - TransparentFX

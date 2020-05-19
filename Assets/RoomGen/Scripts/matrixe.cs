@@ -20,8 +20,9 @@ public class matrixe : MonoBehaviour
     
     void Awake()
     {
-        if (shouldGen)
+        if (PhotonNetwork.IsMasterClient)
         {
+            Debug.Log("is generating");
             PV = gameObject.GetComponent<PhotonView>();
             if (size % 2 == 0) size += 1;
             matrix = new (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool)[size,size]; 
@@ -35,24 +36,22 @@ public class matrixe : MonoBehaviour
         
             generatedungeon();
             shouldGen = false;
-        }
-    }
-    private void Start()
-    {
-//        PrintM();
-        int cnt = 0;
-        for (int i = 0; i < size; i++)
-        {
-            for (int j = 0; j < size; j++)
+            
+            int cnt = 0;
+            for (int i = 0; i < size; i++)
             {
-                if (!(matrix[i, j].Item1 && matrix[i, j].Item2 && matrix[i, j].Item3 && matrix[i, j].Item4))
+                for (int j = 0; j < size; j++)
                 {
-                    cnt++;
-                    PV.RPC("Generate", RpcTarget.AllBuffered, i, j);
-
+                    if (!(matrix[i, j].Item1 && matrix[i, j].Item2 && matrix[i, j].Item3 && matrix[i, j].Item4))
+                    {
+                        cnt++;
+                        PV.RPC("Generate", RpcTarget.AllBuffered, i, j, cnt);
+                    }
                 }
             }
         }
+        else
+            Debug.Log("not gonna generate");
     }
 
     public void generatedungeon()
@@ -576,19 +575,28 @@ public class matrixe : MonoBehaviour
                     cook = false;
                 }
             }
-            
-            
         }
     }
     
     [PunRPC]
-    private void Generate(int i, int j)
+    private void Generate(int i, int j, int counter)
     {
-        int counter = 0;
-        GameObject oo = Instantiate(neo, new Vector2(i*19, j*12), Quaternion.identity, transform);
+        //Instantiating
+        GameObject oo = Instantiate(neo, new Vector2(i*19, j*12), Quaternion.identity);
+
+        //If is Spawn
+        if (matrix[i, j].Item5)
+        {
+            //Put GameSetup here
+            GameObject.Find("GameSetup").transform.position = new Vector3(i*19, j*12);
+        }
+
         oo.name = $"Room_{counter}";
-        counter++;
+        
+        //Generating Walls/etc...
         generateforest(oo,i,j);
+        
+        //Setting variables
         oo.GetComponent<cleanscript>().spawn = matrix[i, j].Item5;
         oo.GetComponent<cleanscript>().boss = matrix[i, j].Item6;
         oo.GetComponent<cleanscript>().forge = matrix[i, j].Item7;
