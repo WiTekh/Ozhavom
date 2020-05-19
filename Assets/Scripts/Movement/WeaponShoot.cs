@@ -19,7 +19,7 @@ public class WeaponShoot : MonoBehaviour
     public TMP_Text coinsAmount;
     public Slider healthBar;
 
-    private int fire;
+    [SerializeField] int fire;
     
     private void Start()
     {
@@ -41,8 +41,6 @@ public class WeaponShoot : MonoBehaviour
             {
                 GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position, transform.rotation);
                 bullet.GetComponent<BulletColision>().dmg = 50;
-                Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-                rb.AddForce(transform.right*20f,ForceMode2D.Impulse);
                 fire = 0;
             }
             else if (fire<firerate)

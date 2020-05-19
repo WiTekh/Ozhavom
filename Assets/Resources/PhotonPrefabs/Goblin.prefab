@@ -335,7 +335,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   freeslot: 0
-  _rafale: {fileID: 1335277090702782655}
+  _rafale: {fileID: 404032149702111064}
+  masse: {fileID: 8150337427640898112}
+  _laserBeam: {fileID: 7393658235309596058}
+  _chargedBeam: {fileID: 5648678784721404072}
 --- !u!114 &1454615288157574492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,11 +568,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5323212414365828809}
   - component: {fileID: 524262085625301486}
-  - component: {fileID: 1335277090702782655}
-  - component: {fileID: 3668001218021789505}
   - component: {fileID: 4322607313502332825}
   - component: {fileID: 7393658235309596058}
   - component: {fileID: 5648678784721404072}
+  - component: {fileID: 404032149702111064}
   m_Layer: 0
   m_Name: firepoint
   m_TagString: Untagged
@@ -608,37 +610,7 @@ MonoBehaviour:
   firerate: 50
   coinsAmount: {fileID: 0}
   healthBar: {fileID: 0}
---- !u!114 &1335277090702782655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4753665402521842104}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7125cdc49778e541af9826a64543abb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firerate: 200
-  active: 0
-  slot: 0
---- !u!114 &3668001218021789505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4753665402521842104}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b442357b83d9635479bfb209d748004a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firerate: 200
-  active: 0
-  slot: 0
-  mem: 0
+  fire: 0
 --- !u!120 &4322607313502332825
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -768,6 +740,21 @@ MonoBehaviour:
   active: 0
   LaserHit: {fileID: 5981820843921539822}
   firerate: 19
+--- !u!114 &404032149702111064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4753665402521842104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7125cdc49778e541af9826a64543abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firerate: 0
+  active: 0
+  slot: 0
 --- !u!1 &4937646980500406706
 GameObject:
   m_ObjectHideFlags: 0

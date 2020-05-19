@@ -10,12 +10,12 @@ public class Equipement : MonoBehaviour
 {
     [SerializeField] private int freeslot;
     [SerializeField] private Rafale _rafale;
-    private TripleShot tripleShot;
-    private Masse masse;
+    [SerializeField]private Masse masse;
     private GameObject _gameObject;
-    private LaserBeam _laserBeam;
-    private ChargedBeam _chargedBeam;
-    private PhotonView PV;
+    [SerializeField]private LaserBeam _laserBeam;
+    [SerializeField]private ChargedBeam _chargedBeam;
+    [SerializeField] private PoisonDart _poisonDart;
+     private PhotonView PV;
     Sprite activeSprite;
 
     
@@ -24,11 +24,6 @@ public class Equipement : MonoBehaviour
     void Start()
     {
         activeSprite = Resources.Load("blank") as Sprite;
-        Transform transformparent = transform.GetChild(7).GetChild(0).GetChild(0);
-        _rafale = transformparent.GetComponent<Rafale>();
-        tripleShot = transformparent.GetComponent<TripleShot>();
-        _laserBeam = transformparent.GetComponent<LaserBeam>();
-        _chargedBeam = transformparent.GetComponent<ChargedBeam>();
         freeslot = 0;
         PV = GetComponent<PhotonView>();
     }
@@ -71,20 +66,6 @@ public class Equipement : MonoBehaviour
                                 Debug.Log("equiped the mass");
                                 freeslot++;
                             }
-
-                            break;
-                        case "tripleshots":
-                            if (!tripleShot.active)
-                            {
-                                tripleShot.active = true;
-                                tripleShot.slot = freeslot;
-                                freeslot++;
-                                tripleShot.enabled = true;
-                                PhotonNetwork.Destroy(_gameObject);
-                                activeSprite = Resources.Load("shotgun") as Sprite;
-                                Debug.Log("equiped the shotgun");
-                            }
-
                             break;
                         case "laserbeam":
                             if (!_laserBeam.active)
@@ -111,6 +92,14 @@ public class Equipement : MonoBehaviour
                                 activeSprite = Resources.Load("charged") as Sprite;
                             }
 
+                            break;
+                        case "poisondart":
+                            if (_poisonDart.active)
+                            {
+                                _poisonDart.active = true;
+                                _poisonDart.slot = freeslot;
+                                _poisonDart.enabled = true;
+                            }
                             break;
                     }
                 }

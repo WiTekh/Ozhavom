@@ -216,10 +216,10 @@ GameObject:
   - component: {fileID: 365176023604299584}
   - component: {fileID: 5442610332905490535}
   - component: {fileID: 6794066672410652982}
-  - component: {fileID: 9091043032042999496}
   - component: {fileID: 8589060098836063760}
   - component: {fileID: 3050353298072673299}
   - component: {fileID: 192150347610833185}
+  - component: {fileID: 6204448966690780424}
   m_Layer: 0
   m_Name: firepoint
   m_TagString: Untagged
@@ -258,6 +258,7 @@ MonoBehaviour:
   firerate: 50
   coinsAmount: {fileID: 0}
   healthBar: {fileID: 0}
+  fire: 0
 --- !u!114 &6794066672410652982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,22 +274,6 @@ MonoBehaviour:
   firerate: 200
   active: 0
   slot: 0
---- !u!114 &9091043032042999496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952209691058237489}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b442357b83d9635479bfb209d748004a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firerate: 200
-  active: 0
-  slot: 0
-  mem: 0
 --- !u!120 &8589060098836063760
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -418,6 +403,21 @@ MonoBehaviour:
   active: 0
   LaserHit: {fileID: 2291547749296735079}
   firerate: 19
+--- !u!114 &6204448966690780424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952209691058237489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8df118049bdf7645802b76f7f095757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firerate: 50
+  active: 0
+  slot: 0
 --- !u!1 &1880366585684468400
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,6 +556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angle: 0
   PV: {fileID: 5537800801512113069}
+  memoire: 0
   transformplayer: {fileID: 5026135947840991541}
   liste:
   - {fileID: -3762590393921506602, guid: 2ffc1add49df7494e960f359a74b8788, type: 3}
@@ -928,6 +929,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freeslot: 0
   _rafale: {fileID: 6794066672410652982}
+  masse: {fileID: 4455560183674721225}
+  _laserBeam: {fileID: 3050353298072673299}
+  _chargedBeam: {fileID: 192150347610833185}
+  _poisonDart: {fileID: 0}
 --- !u!114 &6404488320476845269
 MonoBehaviour:
   m_ObjectHideFlags: 0

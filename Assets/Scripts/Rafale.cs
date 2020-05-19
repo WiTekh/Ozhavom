@@ -32,12 +32,12 @@ public class Rafale : MonoBehaviour
                    fire++;
                }
 
-               if (fire == 20)
+               if (fire == 10)
                {
                    Fire();
                }
 
-               if (fire == 40)
+               if (fire == 20)
                {
                    Fire();
                }
@@ -79,7 +79,6 @@ public class Rafale : MonoBehaviour
        void Fire()
        {
            GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position, transform.rotation);
-           Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-           rb.AddForce(transform.right*20f,ForceMode2D.Impulse);
+          
        }
 }
