@@ -26,21 +26,8 @@ public class GameSetup : MonoBehaviour
 
     public void Start()
     {
-        matrix = GameObject.Find("starter").GetComponent<matrixe>().matrix;
-        GameObject.Find("Canvas").transform.GetChild(0).GetChild(5).GetComponent<TMP_Text>().text = PhotonNetwork.LocalPlayer.NickName;
+        GameObject.Find("Canvas").transform.GetChild(0).GetChild(5).GetComponent<TMP_Text>().text =
+            PhotonNetwork.LocalPlayer.NickName;
         octoBar = GameObject.Find("Canvas").transform.GetChild(1).GetComponent<Slider>();
-        
-        //Set the spawnpoints in the right room
-        for (int i = 0; i < matrix.GetLength(0); i++)
-        {
-            for (int j = 0; j < matrix.GetLength(1); j++)
-            {
-                if (matrix[i,j].Item5)
-                    foreach (var sp in SpawnPoints)
-                    {
-                        sp.position += new Vector3(i*19, j*12, 0);
-                    }
-            }
-        }
     }
 }

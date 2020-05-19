@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: 5085495905750257547}
   - component: {fileID: 3758253069087387085}
   - component: {fileID: 1454615288157574492}
+  - component: {fileID: -3280577159449650325}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Player
@@ -354,6 +355,21 @@ MonoBehaviour:
   coinAmount: 0
   playerName: {fileID: 0}
   coinHeap: {fileID: 0}
+--- !u!114 &-3280577159449650325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3340982823557657770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f653d1d2bdde5d048a314d743353e35f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 9
+  neo: {fileID: 7299700018657890553, guid: b65768f60c33c9842a79c7635ac09bbb, type: 3}
+  shouldGen: 1
 --- !u!1 &3573135238110164373
 GameObject:
   m_ObjectHideFlags: 0

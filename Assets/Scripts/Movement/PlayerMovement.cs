@@ -23,7 +23,11 @@ public class PlayerMovement : MonoBehaviour
         if (PV.IsMine)
         {
             MovementSpeed = gameObject.GetComponent<AvatarSetup>().speed;
-
+        }
+        //Adjusting position of Master
+        if (PhotonNetwork.IsMasterClient)
+        {
+            transform.position = GameObject.Find("GameSetup").transform.GetChild(0).position;
         }
     }
     

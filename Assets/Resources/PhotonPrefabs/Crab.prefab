@@ -772,6 +772,7 @@ GameObject:
   - component: {fileID: 746976593945529858}
   - component: {fileID: 8712630834939341892}
   - component: {fileID: 6404488320476845269}
+  - component: {fileID: 132840629278363447}
   m_Layer: 0
   m_Name: Crab
   m_TagString: Player
@@ -946,6 +947,21 @@ MonoBehaviour:
   coinAmount: 0
   playerName: {fileID: 0}
   coinHeap: {fileID: 0}
+--- !u!114 &132840629278363447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7103033102385083683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f653d1d2bdde5d048a314d743353e35f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 9
+  neo: {fileID: 7299700018657890553, guid: b65768f60c33c9842a79c7635ac09bbb, type: 3}
+  shouldGen: 1
 --- !u!1 &9032205746068632604
 GameObject:
   m_ObjectHideFlags: 0
