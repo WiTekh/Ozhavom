@@ -8,7 +8,9 @@ using UnityEngine;
 public class ennemyStats : MonoBehaviourPunCallbacks, IPunObservable
 {
     [SerializeField]public float health = 100;
+    public float poison = 0;
     public float dmg = 50;
+    private float tick= 25;
 
     private void Update()
     {
@@ -19,6 +21,15 @@ public class ennemyStats : MonoBehaviourPunCallbacks, IPunObservable
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
             gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll; 
         }
+        else if (tick == 25)
+        {
+            health -= poison;
+            tick = 0;
+        }
+        else
+        {
+            tick ++;
+        }
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
@@ -26,10 +37,14 @@ public class ennemyStats : MonoBehaviourPunCallbacks, IPunObservable
         if (stream.IsWriting)
         {
             stream.SendNext(health);
+            stream.SendNext(poison);
         }
         else
         {
             this.health = (float) stream.ReceiveNext();
+            this.poison = (float) stream.ReceiveNext();
+
+            
         }
     }
 }

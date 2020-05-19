@@ -3,18 +3,36 @@ using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using Photon.Pun.Demo.Asteroids;
+using Photon.Realtime;
 using UnityEngine;
 
 public class BulletColision : MonoBehaviour
 {
-   public float dmg = 0;
-   private void OnCollisionEnter2D(Collision2D collision)
+   public float dmg = 15;
+
+   private void Update()
    {
-      PhotonNetwork.Destroy(gameObject);
-      if (collision.collider.CompareTag("Ennemy"))
+      transform.Translate(0.4f,0,0);
+   }
+
+   private void OnTriggerEnter2D(Collider2D collision)
+   {
+      
+      if (collision.CompareTag("Ennemy"))
       {
          Debug.Log($"Dealt {dmg}");
          collision.gameObject.GetComponent<ennemyStats>().health -= dmg;
+        
       }
+     
+
+      if (!collision.CompareTag("Player")&& !collision.CompareTag("Bullet"))
+      {
+         
+         Destroy(gameObject);
+      }
+      
    }
+
+   
 }

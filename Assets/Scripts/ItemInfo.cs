@@ -22,7 +22,7 @@ public class ItemInfo : MonoBehaviour
                case 1:
                     return "masse";
                case 2:
-                    return "tripleshots";
+                    return "poisondart";
                case 3:
                     return "laserbeam";
                default:

@@ -12,18 +12,17 @@ public class TripleShot : MonoBehaviour
     [SerializeField] public bool active;
     [SerializeField] public int slot;
     [SerializeField] private int mem;
-    private WeaponRotation wr;
+    private CrabWeapon wr;
     private int fire;
-    private Rigidbody2D rb;
 
-    private GameObject bullet;
+    private GameObject bullet = new GameObject(); 
     // Start is called before the first frame update
     void Start()
     {          
         PV = transform.parent.parent.parent.GetComponent<PhotonView>();
 
         fire = firerate;
-        wr = transform.parent.GetComponent<WeaponRotation>();
+        wr = transform.parent.GetComponent<CrabWeapon>();
     }
 
     // Update is called once per frame
@@ -80,66 +79,50 @@ public class TripleShot : MonoBehaviour
                 //haut
                 case 90:
                
-                    bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position + new Vector3(-0.5f,0), transform.rotation);
-                    rb = bullet.GetComponent<Rigidbody2D>();
-                    rb.AddForce(transform.TransformDirection(1,1,0)*5f,ForceMode2D.Impulse);
+                    bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position + new Vector3(-0.1f,0), new Quaternion(0,0,45 + transform.rotation.z,0));
+                    
                 
-                    bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position + new Vector3(0.5f,0), transform.rotation);
-                    rb = bullet.GetComponent<Rigidbody2D>();
-                    rb.AddForce(transform.TransformDirection(1,-1,0)*5f,ForceMode2D.Impulse);
+                    bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position + new Vector3(0.1f,0), transform.rotation);
+                   
                 
                     bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position, transform.rotation);
-                    rb = bullet.GetComponent<Rigidbody2D>();
-                    rb.AddForce(transform.TransformDirection(1,0,0)*10f,ForceMode2D.Impulse);
+                   
 
                     break;
                 //gauche
                 case 180 :
               
                     bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position + new Vector3(0,-0.5f), transform.rotation);
-                    rb = bullet.GetComponent<Rigidbody2D>();
-                    rb.AddForce(transform.TransformDirection(1,1,0)*5f,ForceMode2D.Impulse);
+                   
                 
                     bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position + new Vector3(0,0.5f), transform.rotation);
-                    rb = bullet.GetComponent<Rigidbody2D>();
-                    rb.AddForce(transform.TransformDirection(1,-1,0)*5f,ForceMode2D.Impulse);
+                  
                 
                     bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position, transform.rotation);
-                    rb = bullet.GetComponent<Rigidbody2D>();
-                    rb.AddForce(transform.TransformDirection(1,0,0)*10f,ForceMode2D.Impulse);
+                   
                     
                     break;
                 //bas
                 case -90 :
           
                     bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position + new Vector3(0.5f,0), transform.rotation);
-                    rb = bullet.GetComponent<Rigidbody2D>();
-                    rb.AddForce(transform.TransformDirection(1,1,0)*5f,ForceMode2D.Impulse);
+                    
                 
                     bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position + new Vector3(-0.5f,0), transform.rotation);
-                    rb = bullet.GetComponent<Rigidbody2D>();
-                    rb.AddForce(transform.TransformDirection(1,-1,0)*5f,ForceMode2D.Impulse);
+                  
                 
                     bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position, transform.rotation);
-                    rb = bullet.GetComponent<Rigidbody2D>();
-                    rb.AddForce(transform.TransformDirection(1,0,0)*10f,ForceMode2D.Impulse);
-                    
+                 
                     break;
                 //droite
                 case 0:
       
                     bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position + new Vector3(0,0.5f), transform.rotation);
-                    rb = bullet.GetComponent<Rigidbody2D>();
-                    rb.AddForce(transform.TransformDirection(1,1,0)*5f,ForceMode2D.Impulse);
-                
+                  
                     bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position + new Vector3(0,-0.5f), transform.rotation);
-                    rb = bullet.GetComponent<Rigidbody2D>();
-                    rb.AddForce(transform.TransformDirection(1,-1,0)*5f,ForceMode2D.Impulse);
-                
+             
                     bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position, transform.rotation);
-                    rb = bullet.GetComponent<Rigidbody2D>();
-                    rb.AddForce(transform.TransformDirection(1,0,0)*10f,ForceMode2D.Impulse);
-
+                 
                     break;
                     
             }

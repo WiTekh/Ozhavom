@@ -6,7 +6,7 @@ public class CrabWeapon : MonoBehaviour
 {
     [SerializeField] private float angle;
     [SerializeField]private PhotonView PV;
-    private int memoire;
+    public int memoire;
     private Transform transformparent;
     [SerializeField] Transform transformplayer;
     private SpriteRenderer _spriteRenderer;

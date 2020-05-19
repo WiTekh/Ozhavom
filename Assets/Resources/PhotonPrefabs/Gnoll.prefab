@@ -357,7 +357,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   freeslot: 0
-  _rafale: {fileID: 2795059349755713698}
+  _rafale: {fileID: 3913244527477013715}
+  masse: {fileID: 4996181310373886557}
+  _laserBeam: {fileID: 5969059678332237191}
+  _chargedBeam: {fileID: 8802834910584137909}
 --- !u!114 &2333432224606633281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -890,11 +893,10 @@ GameObject:
   m_Component:
   - component: {fileID: 9048305217265020628}
   - component: {fileID: 3678136109708763635}
-  - component: {fileID: 2795059349755713698}
-  - component: {fileID: 480349655830308700}
   - component: {fileID: 1130734081925140356}
   - component: {fileID: 5969059678332237191}
   - component: {fileID: 8802834910584137909}
+  - component: {fileID: 3913244527477013715}
   m_Layer: 0
   m_Name: firepoint
   m_TagString: Untagged
@@ -933,37 +935,7 @@ MonoBehaviour:
   firerate: 100
   coinsAmount: {fileID: 0}
   healthBar: {fileID: 0}
---- !u!114 &2795059349755713698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8481889589030312357}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7125cdc49778e541af9826a64543abb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firerate: 200
-  active: 0
-  slot: 0
---- !u!114 &480349655830308700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8481889589030312357}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b442357b83d9635479bfb209d748004a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firerate: 200
-  active: 0
-  slot: 0
-  mem: 0
+  fire: 0
 --- !u!120 &1130734081925140356
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1093,6 +1065,21 @@ MonoBehaviour:
   active: 0
   LaserHit: {fileID: 7443995562957089523}
   firerate: 19
+--- !u!114 &3913244527477013715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8481889589030312357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7125cdc49778e541af9826a64543abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firerate: 0
+  active: 0
+  slot: 0
 --- !u!1 &8753321527526832638
 GameObject:
   m_ObjectHideFlags: 0
