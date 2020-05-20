@@ -203,7 +203,6 @@ GameObject:
   - component: {fileID: 29888686516930000}
   - component: {fileID: 2333432224606633281}
   - component: {fileID: 7469037650365545809}
-  - component: {fileID: 8059184253113314813}
   m_Layer: 0
   m_Name: Gnoll
   m_TagString: Player
@@ -398,18 +397,6 @@ MonoBehaviour:
   size: 9
   neo: {fileID: 7299700018657890553, guid: b65768f60c33c9842a79c7635ac09bbb, type: 3}
   shouldGen: 1
---- !u!114 &8059184253113314813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1878105456183434423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03a58ac60eb82429aa1cfefc796f962c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3067907267516270255
 GameObject:
   m_ObjectHideFlags: 0

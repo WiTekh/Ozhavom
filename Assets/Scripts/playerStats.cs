@@ -12,6 +12,7 @@ public class playerStats : MonoBehaviour
     
     public float currentH;
     public Slider healthBar;
+    public TMP_Text healthDisp;
     [SerializeField] private PhotonView PV;
     private float speed;
 
@@ -25,6 +26,7 @@ public class playerStats : MonoBehaviour
     { 
         AS = gameObject.GetComponent<AvatarSetup>();
         playerName = GameObject.Find("Canvas").transform.GetChild(0).GetChild(5).GetComponent<TMP_Text>();
+        healthDisp = GameObject.Find("Canvas").transform.GetChild(0).GetChild(6).GetComponent<TMP_Text>();
     }
 
     public void Start()
@@ -49,7 +51,8 @@ public class playerStats : MonoBehaviour
                 SceneManager.LoadScene("GameOver");
             }
             healthBar.value = currentH / AS.maxH;
-            coinHeap.text = coinAmount.ToString(); 
+            coinHeap.text = coinAmount.ToString();
+            healthDisp.text = currentH.ToString() + "/" + AS.maxH;
         }
         
     }

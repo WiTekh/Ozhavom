@@ -23,7 +23,7 @@ public class AvatarSetup : MonoBehaviour
             {
                 case 0:
                     maxH = 300;
-                    speed = 5;
+                    speed = 6;
                     break;
                 case 1:
                     maxH = 200;
@@ -31,7 +31,11 @@ public class AvatarSetup : MonoBehaviour
                     break;
                 case 2:
                     maxH = 100;
-                    speed = 10;
+                    speed = 8;
+                    break;
+                case 3:
+                    maxH = 450;
+                    speed = 7.5f;
                     break;
                 default:
                     maxH = 100;
