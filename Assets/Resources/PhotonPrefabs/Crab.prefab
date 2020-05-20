@@ -559,10 +559,10 @@ MonoBehaviour:
   memoire: 0
   transformplayer: {fileID: 5026135947840991541}
   liste:
-  - {fileID: -3762590393921506602, guid: 2ffc1add49df7494e960f359a74b8788, type: 3}
   - {fileID: -1775031394084752501, guid: 2ffc1add49df7494e960f359a74b8788, type: 3}
   - {fileID: -8766283920888389804, guid: 2ffc1add49df7494e960f359a74b8788, type: 3}
   - {fileID: -1775031394084752501, guid: 2ffc1add49df7494e960f359a74b8788, type: 3}
+  - {fileID: -3762590393921506602, guid: 2ffc1add49df7494e960f359a74b8788, type: 3}
 --- !u!1 &4364471229357064865
 GameObject:
   m_ObjectHideFlags: 0

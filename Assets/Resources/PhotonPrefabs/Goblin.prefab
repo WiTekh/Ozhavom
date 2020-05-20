@@ -339,6 +339,7 @@ MonoBehaviour:
   masse: {fileID: 8150337427640898112}
   _laserBeam: {fileID: 7393658235309596058}
   _chargedBeam: {fileID: 5648678784721404072}
+  _poisonDart: {fileID: 0}
 --- !u!114 &1454615288157574492
 MonoBehaviour:
   m_ObjectHideFlags: 0
