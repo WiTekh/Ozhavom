@@ -20,6 +20,7 @@
     <explicitExcludes>
       <Path>.git</Path>
       <Path>.idea</Path>
+      <Path>Big_PP.app</Path>
       <Path>Library</Path>
       <Path>MonoBleedingEdge</Path>
       <Path>Oz2_Data</Path>
