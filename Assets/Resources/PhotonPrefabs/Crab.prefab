@@ -774,6 +774,7 @@ GameObject:
   - component: {fileID: 8712630834939341892}
   - component: {fileID: 6404488320476845269}
   - component: {fileID: 132840629278363447}
+  - component: {fileID: 4288938029885060528}
   m_Layer: 0
   m_Name: Crab
   m_TagString: Player
@@ -933,6 +934,7 @@ MonoBehaviour:
   _laserBeam: {fileID: 3050353298072673299}
   _chargedBeam: {fileID: 192150347610833185}
   _poisonDart: {fileID: 0}
+  Stats: {fileID: 0}
 --- !u!114 &6404488320476845269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -967,6 +969,18 @@ MonoBehaviour:
   size: 9
   neo: {fileID: 7299700018657890553, guid: b65768f60c33c9842a79c7635ac09bbb, type: 3}
   shouldGen: 1
+--- !u!114 &4288938029885060528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7103033102385083683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03a58ac60eb82429aa1cfefc796f962c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9032205746068632604
 GameObject:
   m_ObjectHideFlags: 0
