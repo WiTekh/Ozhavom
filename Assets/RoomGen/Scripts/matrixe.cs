@@ -505,13 +505,13 @@ public class matrixe : MonoBehaviour
         {
             int a = r.Next(size);
             int b = r.Next(size);
-            if (IsBossCandidaite(a, b))
+            if (IsBossCandidaite(a, b) && !matrix[a,b].Item6)
             {
                 matrix[a, b].Item11 = true;
                 item = false;
             }
         }
-        if (size<=9)
+        if (size<=7)
         {
             
             bool market = true;
@@ -577,6 +577,18 @@ public class matrixe : MonoBehaviour
             }
         }
     }
+
+    private void GeneratesShop(bool cook, bool smith, bool shop, bool sensei,GameObject gobj)
+    {
+        if (cook)
+            gobj.transform.GetChild(5).GetChild(0).gameObject.SetActive(true);
+        if (smith)
+            gobj.transform.GetChild(5).GetChild(1).gameObject.SetActive(true);
+        if (shop)
+            gobj.transform.GetChild(5).GetChild(2).gameObject.SetActive(true);
+        if (sensei)
+            gobj.transform.GetChild(5).GetChild(3).gameObject.SetActive(true);
+    }
     
     [PunRPC]
     private void Generate(int i, int j, int counter)
@@ -599,11 +611,13 @@ public class matrixe : MonoBehaviour
         //Setting variables
         oo.GetComponent<cleanscript>().spawn = matrix[i, j].Item5;
         oo.GetComponent<cleanscript>().boss = matrix[i, j].Item6;
-        oo.GetComponent<cleanscript>().forge = matrix[i, j].Item7;
-        oo.GetComponent<cleanscript>().shop = matrix[i, j].Item8;
-        oo.GetComponent<cleanscript>().instructor = matrix[i, j].Item9;
-        oo.GetComponent<cleanscript>().cook = matrix[i, j].Item10;
+        bool forgeron = oo.GetComponent<cleanscript>().forge = matrix[i, j].Item7;
+        bool shop = oo.GetComponent<cleanscript>().shop = matrix[i, j].Item8;
+        bool sensei = oo.GetComponent<cleanscript>().instructor = matrix[i, j].Item9;
+        bool cook = oo.GetComponent<cleanscript>().cook = matrix[i, j].Item10;
         oo.GetComponent<cleanscript>().item = matrix[i, j].Item11;
+        
+        GeneratesShop(cook,forgeron,shop,sensei,oo);
     }
 }
 

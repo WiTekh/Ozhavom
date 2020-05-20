@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\noeba\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\noeba\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Ozhavom.846849366.00" t="ExcludeRecursive" />
-    <e p="D:\cour\programation\Git\Ozhavom" t="IncludeRecursive">
+    <e p="C:\Users\rmour\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\rmour\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Ozhavom.611638280.00" t="ExcludeRecursive" />
+    <e p="D:\GitHub\20 mai\Ozhavom" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="AI" t="Include">
@@ -506,6 +506,8 @@
           <e p="Rafale.cs" t="Include" />
           <e p="spawnEnnemies.cs" t="Include" />
         </e>
+        <e p="ShopItems.cs" t="Include" />
+        <e p="SpawnShopItems.cs" t="Include" />
         <e p="Weapons" t="Include">
           <e p="ChargedBeam.cs" t="Include" />
           <e p="LaserBeam.cs" t="Include" />
