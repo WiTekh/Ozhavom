@@ -932,8 +932,8 @@ MonoBehaviour:
   masse: {fileID: 4455560183674721225}
   _laserBeam: {fileID: 3050353298072673299}
   _chargedBeam: {fileID: 192150347610833185}
-  _poisonDart: {fileID: 0}
-  Stats: {fileID: 0}
+  _poisonDart: {fileID: 6204448966690780424}
+  Stats: {fileID: 6404488320476845269}
   activeSprite: {fileID: 0}
 --- !u!114 &6404488320476845269
 MonoBehaviour:
@@ -980,14 +980,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2318367664936783965}
   - component: {fileID: 4455560183674721225}
-  - component: {fileID: 5284595069259438270}
   - component: {fileID: 959761731469777119}
   - component: {fileID: 3788550933658133101}
   - component: {fileID: 8971385510669154995}
   - component: {fileID: 56196982785229173}
   m_Layer: 0
   m_Name: Masse
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1021,27 +1020,6 @@ MonoBehaviour:
   firerate: 1500
   active: 0
   slot: 0
---- !u!50 &5284595069259438270
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9032205746068632604}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
 --- !u!61 &959761731469777119
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1052,7 +1030,7 @@ BoxCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

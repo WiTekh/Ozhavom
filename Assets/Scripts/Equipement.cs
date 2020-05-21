@@ -20,6 +20,7 @@ public class Equipement : MonoBehaviour
     [SerializeField] private PoisonDart _poisonDart;
     [SerializeField] private playerStats Stats;
     private PhotonView PV;
+    private int coin;
      
     public Sprite activeSprite;
 
@@ -50,10 +51,12 @@ public class Equipement : MonoBehaviour
             }
             else if(_gameObject.CompareTag("itemshop"))
             {
+                coin = Stats.coinAmount;
                 if (_gameObject.GetComponent<ShopItems>().isweapon &&
-                    _gameObject.GetComponent<ShopItems>().prix <= Stats.coinAmount && freeslot <= 2)
+                    _gameObject.GetComponent<ShopItems>().prix <= coin && freeslot <= 2)
                 {
-                    Stats.coinAmount -= _gameObject.GetComponent<ShopItems>().prix;
+                    coin -= _gameObject.GetComponent<ShopItems>().prix;
+                    Stats.coinAmount = coin;
                     equipitems();
                 }
             }
@@ -145,6 +148,8 @@ public class Equipement : MonoBehaviour
                                 _poisonDart.active = true;
                                 _poisonDart.slot = freeslot;
                                 _poisonDart.enabled = true;
+                                PhotonNetwork.Destroy(_gameObject);
+                                freeslot++;
                             }
                             break;
                     }

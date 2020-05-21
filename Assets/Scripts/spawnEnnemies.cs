@@ -86,10 +86,12 @@ public class spawnEnnemies : MonoBehaviour
 
         if (ennemies.Count > 0)
         {
-            foreach (GameObject e in ennemies)
+            for (int i = 0; i < ennemies.Count; i++)
             {
-                if (!e)
-                    ennemies.Remove(e);
+                if (ennemies[i] = null)
+                {
+                    ennemies.Remove(ennemies[i]);
+                }
             }
         }
     }
