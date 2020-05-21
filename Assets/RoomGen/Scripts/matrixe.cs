@@ -37,6 +37,26 @@ public class matrixe : MonoBehaviour
             generatedungeon();
             shouldGen = false;
             
+            /* ------------ How to Generate the dungeon around the spawn room ------------
+            * Browse the matrix to get the World position of the spawning room
+            * Calculating the X's and Y's regarding the spawn position to make it at (0, 0)
+            * Instantiate each room at the new coordinates calculated by the SpawnOffset
+              --------------------------------------------------------------------------- */
+        
+            //Browsing the matrix to get the Spawn coodrinates (world relative coords)
+            Vector2 coords = Vector2.zero;
+
+            for (int x = 0; x < size; x++)
+            {
+                for (int y = 0; y < size; y++)
+                {
+                    if (matrix[x, y].Item5)
+                    {
+                        coords = new Vector2(x*19, y*12);
+                    }
+                }
+            }
+            
             int cnt = 0;
             for (int i = 0; i < size; i++)
             {
@@ -45,7 +65,7 @@ public class matrixe : MonoBehaviour
                     if (!(matrix[i, j].Item1 && matrix[i, j].Item2 && matrix[i, j].Item3 && matrix[i, j].Item4))
                     {
                         cnt++;
-                        PV.RPC("Generate", RpcTarget.AllBuffered, i, j, cnt);
+                        PV.RPC("Generate", RpcTarget.AllBuffered, i, j, cnt, coords);
                     }
                 }
             }
@@ -505,13 +525,13 @@ public class matrixe : MonoBehaviour
         {
             int a = r.Next(size);
             int b = r.Next(size);
-            if (IsBossCandidaite(a, b))
+            if (IsBossCandidaite(a, b) && !matrix[a,b].Item6)
             {
                 matrix[a, b].Item11 = true;
                 item = false;
             }
         }
-        if (size<=9)
+        if (size<=7)
         {
             
             bool market = true;
@@ -577,19 +597,31 @@ public class matrixe : MonoBehaviour
             }
         }
     }
+
+    private void GeneratesShop(bool cook, bool smith, bool shop, bool sensei,GameObject gobj)
+    {
+        if (cook)
+            gobj.transform.GetChild(5).GetChild(0).gameObject.SetActive(true);
+        if (smith)
+            gobj.transform.GetChild(5).GetChild(1).gameObject.SetActive(true);
+        if (shop)
+            gobj.transform.GetChild(5).GetChild(2).gameObject.SetActive(true);
+        if (sensei)
+            gobj.transform.GetChild(5).GetChild(3).gameObject.SetActive(true);
+    }
     
     [PunRPC]
-    private void Generate(int i, int j, int counter)
+    private void Generate(int i, int j, int counter, Vector2 sPos)
     {
         //Instantiating
-        GameObject oo = Instantiate(neo, new Vector2(i*19, j*12), Quaternion.identity);
+        GameObject oo = Instantiate(neo, new Vector2(i*19-sPos.x, j*12-sPos.y), Quaternion.identity);
 
         //If is Spawn
-        if (matrix[i, j].Item5)
-        {
-            //Put GameSetup here
-            GameObject.Find("GameSetup").transform.position = new Vector3(i*19, j*12);
-        }
+//        if (matrix[i, j].Item5)
+//        {
+//            //Put GameSetup here
+//            GameObject.Find("GameSetup").transform.position = new Vector3(i*19, j*12);
+//        }
 
         oo.name = $"Room_{counter}";
         
@@ -599,11 +631,14 @@ public class matrixe : MonoBehaviour
         //Setting variables
         oo.GetComponent<cleanscript>().spawn = matrix[i, j].Item5;
         oo.GetComponent<cleanscript>().boss = matrix[i, j].Item6;
-        oo.GetComponent<cleanscript>().forge = matrix[i, j].Item7;
-        oo.GetComponent<cleanscript>().shop = matrix[i, j].Item8;
-        oo.GetComponent<cleanscript>().instructor = matrix[i, j].Item9;
-        oo.GetComponent<cleanscript>().cook = matrix[i, j].Item10;
+        bool forgeron = oo.GetComponent<cleanscript>().forge = matrix[i, j].Item7;
+        bool shop = oo.GetComponent<cleanscript>().shop = matrix[i, j].Item8;
+        bool sensei = oo.GetComponent<cleanscript>().instructor = matrix[i, j].Item9;
+        bool cook = oo.GetComponent<cleanscript>().cook = matrix[i, j].Item10;
         oo.GetComponent<cleanscript>().item = matrix[i, j].Item11;
+        
+        //Generating all kinds of shops
+        GeneratesShop(cook,forgeron,shop,sensei,oo);
     }
 }
 

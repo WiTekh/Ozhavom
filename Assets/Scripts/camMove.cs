@@ -17,14 +17,14 @@ public class camMove : MonoBehaviour
         float X = parent.x;
         float Y = parent.y;
 
-        if (X % 19 < 9.5) {
+        if (mod(X, 19) < 9.5) {
             X = X - X % 19;
         }
         else {
             X = X - X % 19 + 19;
         }
 
-        if (Y % 12 < 6) {
+        if (mod(Y, 12) < 6) {
             Y = Y - Y % 12;
         }
         else {
@@ -34,5 +34,13 @@ public class camMove : MonoBehaviour
         transform.DOMove(new Vector3(X, Y, pos.z), 1f);
 
         //Debug.Log(pos);
+    }
+
+    float mod(float x, float y)
+    {
+        if (x >= 0)
+            return x % y;
+        else
+            return -1*(-x % y);
     }
 }

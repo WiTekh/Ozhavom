@@ -409,7 +409,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952209691058237489}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8df118049bdf7645802b76f7f095757, type: 3}
   m_Name: 
@@ -558,7 +558,6 @@ MonoBehaviour:
   memoire: 0
   transformplayer: {fileID: 5026135947840991541}
   liste:
-  - {fileID: -3762590393921506602, guid: 2ffc1add49df7494e960f359a74b8788, type: 3}
   - {fileID: -1775031394084752501, guid: 2ffc1add49df7494e960f359a74b8788, type: 3}
   - {fileID: -8766283920888389804, guid: 2ffc1add49df7494e960f359a74b8788, type: 3}
   - {fileID: -1775031394084752501, guid: 2ffc1add49df7494e960f359a74b8788, type: 3}
@@ -708,6 +707,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+
 --- !u!1 &4364471229357064865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,6 +1280,8 @@ MonoBehaviour:
   _laserBeam: {fileID: 3050353298072673299}
   _chargedBeam: {fileID: 192150347610833185}
   _poisonDart: {fileID: 0}
+  Stats: {fileID: 0}
+  activeSprite: {fileID: 0}
 --- !u!114 &6404488320476845269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1295,6 +1297,7 @@ MonoBehaviour:
   AS: {fileID: 746976593945529858}
   currentH: 0
   healthBar: {fileID: 0}
+  healthDisp: {fileID: 0}
   PV: {fileID: 5177273163633628843}
   coinAmount: 0
   playerName: {fileID: 0}

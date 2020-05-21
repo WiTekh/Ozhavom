@@ -5,18 +5,23 @@ using System.IO;
 using System.Security.Cryptography;
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Equipement : MonoBehaviour
 {
     [SerializeField] private int freeslot;
     [SerializeField] private Rafale _rafale;
     [SerializeField]private Masse masse;
+    
     private GameObject _gameObject;
+    
     [SerializeField]private LaserBeam _laserBeam;
     [SerializeField]private ChargedBeam _chargedBeam;
     [SerializeField] private PoisonDart _poisonDart;
-     private PhotonView PV;
-    Sprite activeSprite;
+    [SerializeField] private playerStats Stats;
+    private PhotonView PV;
+     
+    public Sprite activeSprite;
 
     
     
@@ -40,7 +45,48 @@ public class Equipement : MonoBehaviour
             {
                 if (freeslot <= 2)
                 {
-                    switch (_gameObject.GetComponent<ItemInfo>().weaponname)
+                   equipitems();
+                }
+            }
+            else if(_gameObject.CompareTag("itemshop"))
+            {
+                if (_gameObject.GetComponent<ShopItems>().isweapon &&
+                    _gameObject.GetComponent<ShopItems>().prix <= Stats.coinAmount && freeslot <= 2)
+                {
+                    Stats.coinAmount -= _gameObject.GetComponent<ShopItems>().prix;
+                    equipitems();
+                }
+            }
+        }
+    }
+
+    private void Update()
+    {
+        // Get access to "firepoint", get the list of scripts attached to it
+        // Get only the one activated
+
+//        GameObject firepoint = transform.GetChild(4).GetChild(0).GetChild(0).gameObject;
+//
+//        Rafale r = firepoint.GetComponent<Rafale>();
+//        PoisonDart p = firepoint.GetComponent<PoisonDart>();
+//        LaserBeam l = firepoint.GetComponent<LaserBeam>();
+//        ChargedBeam c = firepoint.GetComponent<ChargedBeam>();
+//
+//        if (r.active)
+//            activeSprite = Resources.Load("rifle") as Sprite;
+//        if (p.active)
+//            activeSprite = Resources.Load("poison") as Sprite;
+//        if (l.active)
+//            activeSprite = Resources.Load("laser") as Sprite;
+//        if (c.active)
+//            activeSprite = Resources.Load("charged") as Sprite;
+//
+//        GameObject.Find("Canvas").transform.GetChild(2).GetChild(2).GetComponent<Image>().sprite = activeSprite;
+    }
+
+    private void equipitems()
+    {
+         switch (_gameObject.GetComponent<ItemInfo>().weaponname)
                     {
                         case "rafale":
                             if (!_rafale.active)
@@ -102,15 +148,5 @@ public class Equipement : MonoBehaviour
                             }
                             break;
                     }
-                }
-            }
-        }
-    }
-
-    private void Update()
-    {
-        GameObject sprite = GameObject.Find("Canvas").transform.GetChild(2).GetChild(2).gameObject;
-
-        sprite.GetComponent<weaponUI>().wSprite = activeSprite;
     }
 }

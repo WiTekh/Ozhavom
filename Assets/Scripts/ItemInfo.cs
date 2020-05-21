@@ -7,11 +7,11 @@ using Random = System.Random;
 public class ItemInfo : MonoBehaviour
 {
      [SerializeField] public string weaponname;
-
+     public int setazero = 0;
      private void Start()
      {
           Random rng = new Random();
-          weaponname = WichItem(rng.Next(4));
+          weaponname = WichItem((rng.Next(4)+setazero)%5);
      }
      private string WichItem(int rng)
      {
