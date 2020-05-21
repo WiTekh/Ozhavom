@@ -19,6 +19,9 @@ public class Equipement : MonoBehaviour
     [SerializeField]private ChargedBeam _chargedBeam;
     [SerializeField] private PoisonDart _poisonDart;
     [SerializeField] private playerStats Stats;
+    [SerializeField] private AttackAoe AoeDmg;
+    [SerializeField] private HealAoe AoeHeal;
+    [SerializeField] private MoreShoot MoreShoot;
     private PhotonView PV;
     private int coin;
      
@@ -144,10 +147,39 @@ public class Equipement : MonoBehaviour
                             break;
                         case "poisondart":
                             if (_poisonDart.active)
-                            {
-                                _poisonDart.active = true;
+                            { _poisonDart.active = true;
                                 _poisonDart.slot = freeslot;
                                 _poisonDart.enabled = true;
+                                PhotonNetwork.Destroy(_gameObject);
+                                freeslot++;
+                            }
+                            break;
+                        case "aoeheal":
+                            if (AoeHeal.active)
+                            {
+                                AoeHeal.active = true;
+                                AoeHeal.slot = freeslot;
+                                AoeHeal.enabled = true;
+                                PhotonNetwork.Destroy(_gameObject);
+                                freeslot++;
+                            }
+                            break;
+                        case "aoeattack":
+                            if (AoeDmg.active)
+                            {
+                                AoeDmg.active = true;
+                                AoeDmg.slot = freeslot;
+                                AoeDmg.enabled = true;
+                                PhotonNetwork.Destroy(_gameObject);
+                                freeslot++;
+                            }
+                            break;
+                        case "moreshoot":
+                            if (MoreShoot.active)
+                            {
+                                MoreShoot.active = true;
+                                MoreShoot.slot = freeslot;
+                                MoreShoot.enabled = true;
                                 PhotonNetwork.Destroy(_gameObject);
                                 freeslot++;
                             }

@@ -14,6 +14,9 @@
             <e p="moving.cs" t="Include" />
           </e>
         </e>
+        <e p="AoeDmg.cs" t="Include" />
+        <e p="AoeHeal.cs" t="Include" />
+        <e p="AttackAoe.cs" t="Include" />
         <e p="DartCollison.cs" t="Include" />
         <e p="debug_master.cs" t="Include" />
         <e p="Demigiant" t="Include">
@@ -30,6 +33,9 @@
             <e p="readme.txt" t="Include" />
           </e>
         </e>
+        <e p="HealAoe.cs" t="Include" />
+        <e p="MoreShoot.cs" t="Include" />
+        <e p="MoreShootRotation.cs" t="Include" />
         <e p="other assets" t="Include">
           <e p="TMP" t="Include">
             <e p="Examples &amp; Extras" t="Include">
@@ -448,6 +454,7 @@
             <e p="matrixe.cs" t="Include" />
           </e>
         </e>
+        <e p="RotationFP.cs" t="Include" />
         <e p="Scenes" t="Include">
           <e p="Menus" t="Include">
             <e p="Cre_Joi.Sys" t="Include">
