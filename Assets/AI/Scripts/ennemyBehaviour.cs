@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using Photon.Pun;
+using TMPro.EditorUtilities;
 using UnityEngine;
 using Random = System.Random;
 
@@ -12,6 +13,8 @@ public class ennemyBehaviour : MonoBehaviour
     public float stopDist;
     public float retreatDist;
 
+    public int cooldown;
+    private int cooled;
     public float detection;
 
     private float fireRate;
@@ -22,7 +25,6 @@ public class ennemyBehaviour : MonoBehaviour
     private Transform player;
 
     private Random rd = new Random();
-    
     public bool isRat;
     public bool collided;
 
@@ -30,6 +32,7 @@ public class ennemyBehaviour : MonoBehaviour
     {
         Look4Target();
         fireRate = nxtFire;
+        cooled = cooldown;
     }
 
     private void Update()
@@ -42,20 +45,26 @@ public class ennemyBehaviour : MonoBehaviour
         {
             Rat();
         }
+
+        if (cooled <= cooldown)
+        {
+            cooled++;
+        }
     }
 
     void Rat()
     {
         //Gonna move towards the player dealing melee damage
-        
+
         //Choose a target
-        player = GameObject.FindGameObjectsWithTag("Player")[rd.Next(GameObject.FindGameObjectsWithTag("Player").Length)].transform;
-        
+        player = GameObject.FindGameObjectsWithTag("Player")[
+            rd.Next(GameObject.FindGameObjectsWithTag("Player").Length)].transform;
+
         //Follow it until it's dead
 //        transform.position += dir.normalized * speed;
-        
+
         if (!collided)
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);    
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
 
         //If hit, stand for 1 sec, and then push to the player
         else
@@ -65,6 +74,7 @@ public class ennemyBehaviour : MonoBehaviour
             collided = false;
         }
     }
+
     void Thrower()
     {
         if (Vector2.Distance(transform.position, player.position) < detection)
@@ -105,6 +115,7 @@ public class ennemyBehaviour : MonoBehaviour
             Look4Target();
         }
     }
+
     void Look4Target()
     {
         //Getting the Player thru all GO tagged w/ "Player"
@@ -118,6 +129,15 @@ public class ennemyBehaviour : MonoBehaviour
                 player = gO.transform;
         }
     }
+    
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (cooled >= cooldown)
+        {
+            other.gameObject.GetComponent<playerStats>().currentH -= GetComponent<ennemyStats>().dmg;
+            cooled = 0;
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -126,6 +146,7 @@ public class ennemyBehaviour : MonoBehaviour
             collided = true;
         }
     }
+    
 
     IEnumerator wait1()
     {

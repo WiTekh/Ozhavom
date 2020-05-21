@@ -36,6 +36,7 @@
         <e p="HealAoe.cs" t="Include" />
         <e p="MoreShoot.cs" t="Include" />
         <e p="MoreShootRotation.cs" t="Include" />
+        <e p="LaserDamage.cs" t="Include" />
         <e p="other assets" t="Include">
           <e p="TMP" t="Include">
             <e p="Examples &amp; Extras" t="Include">

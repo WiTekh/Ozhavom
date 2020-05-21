@@ -22,13 +22,11 @@ public class BulletColision : MonoBehaviour
       {
          Debug.Log($"Dealt {dmg}");
          collision.gameObject.GetComponent<ennemyStats>().health -= dmg;
-        
       }
      
 
       if (!collision.CompareTag("Player")&& !collision.CompareTag("Bullet"))
       {
-         
          Destroy(gameObject);
       }
       
