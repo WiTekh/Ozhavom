@@ -126,6 +126,7 @@ MonoBehaviour:
   speed: 4
   stopDist: 5
   retreatDist: 3
+  cooldown: 40
   detection: 10
   nxtFire: 2
   bullet: {fileID: 4403390162498528759, guid: 9dbb2483aac1745ee88ad2507c44a56a, type: 3}
