@@ -21,12 +21,12 @@ public class matrixe : MonoBehaviour
     
     void Awake()
     {
-        if (PhotonNetwork.IsMasterClient)
+        if (PhotonNetwork.IsMasterClient && shouldGen)
         {
             Debug.Log("is generating");
             PV = gameObject.GetComponent<PhotonView>();
             if (size % 2 == 0) size += 1;
-            matrix = new (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool)[size,size]; 
+            matrix = new (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool)[size, size];
             for (int i = 0; i < size; i++)
             {
                 for (int j = 0; j < size; j++)
@@ -34,16 +34,15 @@ public class matrixe : MonoBehaviour
                     matrix[i, j] = (true, true, true, true, false, false, false, false, false, false, false);
                 }
             }
-        
+
             generatedungeon();
-            shouldGen = false;
-            
+
             /* ------------ How to Generate the dungeon around the spawn room ------------
             * Browse the matrix to get the World position of the spawning room
             * Calculating the X's and Y's regarding the spawn position to make it at (0, 0)
             * Instantiate each room at the new coordinates calculated by the SpawnOffset
               --------------------------------------------------------------------------- */
-        
+
             //Browsing the matrix to get the Spawn coodrinates (world relative coords)
             Vector2 coords = Vector2.zero;
 
@@ -53,11 +52,11 @@ public class matrixe : MonoBehaviour
                 {
                     if (matrix[x, y].Item5)
                     {
-                        coords = new Vector2(x*19, y*12);
+                        coords = new Vector2(x * 19, y * 12);
                     }
                 }
             }
-            
+
             int cnt = 0;
             for (int i = 0; i < size; i++)
             {
@@ -67,13 +66,18 @@ public class matrixe : MonoBehaviour
                     {
                         cnt++;
 //                        PV.RPC("Generate", RpcTarget.AllBuffered, i, j, cnt, coords);
-                        Generate2(i,j,cnt,coords);
+                        Generate2(i, j, cnt, coords);
                     }
                 }
             }
+            
+            PV.RPC("SaveGenBool", RpcTarget.AllBufferedViaServer);
         }
         else
+        {
             Debug.Log("not gonna generate");
+            PV.RPC("SaveGenBool", RpcTarget.AllBufferedViaServer);
+        }
     }
 
     public void generatedungeon()
@@ -629,6 +633,12 @@ public class matrixe : MonoBehaviour
         oo.GetComponent<cleanscript>().item = matrix[i, j].Item11;
         
         GeneratesShop(cook,forgeron,shop,sensei,oo);
+    }
+
+    [PunRPC]
+    void SaveGenBool()
+    {
+        shouldGen = false;
     }
 }
 
