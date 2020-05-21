@@ -527,6 +527,7 @@ MonoBehaviour:
   _chargedBeam: {fileID: 6549349867827841807}
   _poisonDart: {fileID: 0}
   Stats: {fileID: 0}
+  activeSprite: {fileID: 0}
 --- !u!114 &47288387975487227
 MonoBehaviour:
   m_ObjectHideFlags: 0

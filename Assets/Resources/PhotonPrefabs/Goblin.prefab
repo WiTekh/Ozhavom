@@ -341,6 +341,7 @@ MonoBehaviour:
   _chargedBeam: {fileID: 5648678784721404072}
   _poisonDart: {fileID: 0}
   Stats: {fileID: 0}
+  activeSprite: {fileID: 0}
 --- !u!114 &1454615288157574492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,6 +357,7 @@ MonoBehaviour:
   AS: {fileID: 5085495905750257547}
   currentH: 0
   healthBar: {fileID: 0}
+  healthDisp: {fileID: 0}
   PV: {fileID: 799347526864901922}
   coinAmount: 0
   playerName: {fileID: 0}

@@ -15,11 +15,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         Lobby = this;
     }
 
-    private void Start()
-    {
-        PhotonNetwork.ConnectUsingSettings();
-    }
-
     public override void OnConnectedToMaster()
     {
         Debug.Log($"Connected on {PhotonNetwork.CloudRegion} region");
@@ -28,7 +23,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     
     public void OnClick()
     {
-        PhotonNetwork.JoinRandomRoom();
+        if (PhotonNetwork.OfflineMode)
+            CreateRoom();
+        else
+            PhotonNetwork.JoinRandomRoom();
     }
 
     public override void OnJoinedRoom()

@@ -363,6 +363,7 @@ MonoBehaviour:
   _chargedBeam: {fileID: 8802834910584137909}
   _poisonDart: {fileID: 0}
   Stats: {fileID: 0}
+  activeSprite: {fileID: 0}
 --- !u!114 &2333432224606633281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,6 +379,7 @@ MonoBehaviour:
   AS: {fileID: 8277228322521229206}
   currentH: 0
   healthBar: {fileID: 0}
+  healthDisp: {fileID: 0}
   PV: {fileID: 4564972769351188287}
   coinAmount: 0
   playerName: {fileID: 0}
@@ -789,7 +791,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 50
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
