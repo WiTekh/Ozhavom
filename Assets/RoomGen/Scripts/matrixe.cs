@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using Photon.Pun;
 using Random = System.Random;
@@ -20,12 +21,12 @@ public class matrixe : MonoBehaviour
     
     void Awake()
     {
-        if (PhotonNetwork.IsMasterClient)
+        if (PhotonNetwork.IsMasterClient && shouldGen)
         {
             Debug.Log("is generating");
             PV = gameObject.GetComponent<PhotonView>();
             if (size % 2 == 0) size += 1;
-            matrix = new (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool)[size,size]; 
+            matrix = new (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool)[size, size];
             for (int i = 0; i < size; i++)
             {
                 for (int j = 0; j < size; j++)
@@ -33,16 +34,15 @@ public class matrixe : MonoBehaviour
                     matrix[i, j] = (true, true, true, true, false, false, false, false, false, false, false);
                 }
             }
-        
+
             generatedungeon();
-            shouldGen = false;
-            
+
             /* ------------ How to Generate the dungeon around the spawn room ------------
             * Browse the matrix to get the World position of the spawning room
             * Calculating the X's and Y's regarding the spawn position to make it at (0, 0)
             * Instantiate each room at the new coordinates calculated by the SpawnOffset
               --------------------------------------------------------------------------- */
-        
+
             //Browsing the matrix to get the Spawn coodrinates (world relative coords)
             Vector2 coords = Vector2.zero;
 
@@ -52,11 +52,11 @@ public class matrixe : MonoBehaviour
                 {
                     if (matrix[x, y].Item5)
                     {
-                        coords = new Vector2(x*19, y*12);
+                        coords = new Vector2(x * 19, y * 12);
                     }
                 }
             }
-            
+
             int cnt = 0;
             for (int i = 0; i < size; i++)
             {
@@ -65,13 +65,19 @@ public class matrixe : MonoBehaviour
                     if (!(matrix[i, j].Item1 && matrix[i, j].Item2 && matrix[i, j].Item3 && matrix[i, j].Item4))
                     {
                         cnt++;
-                        PV.RPC("Generate", RpcTarget.AllBuffered, i, j, cnt, coords);
+//                        PV.RPC("Generate", RpcTarget.AllBuffered, i, j, cnt, coords);
+                        Generate2(i, j, cnt, coords);
                     }
                 }
             }
+            
+            PV.RPC("SaveGenBool", RpcTarget.AllBufferedViaServer);
         }
         else
+        {
             Debug.Log("not gonna generate");
+            PV.RPC("SaveGenBool", RpcTarget.AllBufferedViaServer);
+        }
     }
 
     public void generatedungeon()
@@ -610,25 +616,14 @@ public class matrixe : MonoBehaviour
             gobj.transform.GetChild(5).GetChild(3).gameObject.SetActive(true);
     }
     
-    [PunRPC]
-    private void Generate(int i, int j, int counter, Vector2 sPos)
+    private void Generate2(int i, int j, int cnt, Vector2 sPos)
     {
-        //Instantiating
-        GameObject oo = Instantiate(neo, new Vector2(i*19-sPos.x, j*12-sPos.y), Quaternion.identity);
+        GameObject oo = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Room"), new Vector3(i*19-sPos.x, j*12-sPos.y), Quaternion.identity);
 
-        //If is Spawn
-//        if (matrix[i, j].Item5)
-//        {
-//            //Put GameSetup here
-//            GameObject.Find("GameSetup").transform.position = new Vector3(i*19, j*12);
-//        }
-
-        oo.name = $"Room_{counter}";
+        oo.name = $"Room_{cnt}";
         
-        //Generating Walls/etc...
-        generateforest(oo,i,j);
+        generateforest(oo, i, j);
         
-        //Setting variables
         oo.GetComponent<cleanscript>().spawn = matrix[i, j].Item5;
         oo.GetComponent<cleanscript>().boss = matrix[i, j].Item6;
         bool forgeron = oo.GetComponent<cleanscript>().forge = matrix[i, j].Item7;
@@ -637,8 +632,13 @@ public class matrixe : MonoBehaviour
         bool cook = oo.GetComponent<cleanscript>().cook = matrix[i, j].Item10;
         oo.GetComponent<cleanscript>().item = matrix[i, j].Item11;
         
-        //Generating all kinds of shops
         GeneratesShop(cook,forgeron,shop,sensei,oo);
+    }
+
+    [PunRPC]
+    void SaveGenBool()
+    {
+        shouldGen = false;
     }
 }
 

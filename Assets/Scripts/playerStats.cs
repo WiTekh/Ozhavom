@@ -40,6 +40,7 @@ public class playerStats : MonoBehaviour
             coinHeap = GameObject.Find("Canvas").transform.GetChild(0).GetChild(4).GetComponent<TMP_Text>();
         }
        
+        Debug.Log(PhotonNetwork.IsMasterClient);
     }
 
     public void Update()

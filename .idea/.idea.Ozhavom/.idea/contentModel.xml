@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\olgay\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\olgay\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_Ozhavom.-1428318037.00" t="ExcludeRecursive" />
-    <e p="C:\Users\olgay\Ozhavom" t="IncludeRecursive">
+    <e p="C:\Users\noeba\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\noeba\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Ozhavom.846849366.00" t="ExcludeRecursive" />
+    <e p="D:\cour\programation\Git\Ozhavom" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="adjustment.cs" t="Include" />
@@ -14,7 +14,11 @@
             <e p="moving.cs" t="Include" />
           </e>
         </e>
+        <e p="AoeDmg.cs" t="Include" />
+        <e p="AoeHeal.cs" t="Include" />
+        <e p="AttackAoe.cs" t="Include" />
         <e p="DartCollison.cs" t="Include" />
+        <e p="debug_master.cs" t="Include" />
         <e p="Demigiant" t="Include">
           <e p="DOTween" t="Include">
             <e p="Modules" t="Include">
@@ -29,6 +33,9 @@
             <e p="readme.txt" t="Include" />
           </e>
         </e>
+        <e p="HealAoe.cs" t="Include" />
+        <e p="MoreShoot.cs" t="Include" />
+        <e p="MoreShootRotation.cs" t="Include" />
         <e p="LaserDamage.cs" t="Include" />
         <e p="other assets" t="Include">
           <e p="TMP" t="Include">
@@ -448,6 +455,7 @@
             <e p="matrixe.cs" t="Include" />
           </e>
         </e>
+        <e p="RotationFP.cs" t="Include" />
         <e p="Scenes" t="Include">
           <e p="Menus" t="Include">
             <e p="Cre_Joi.Sys" t="Include">
@@ -532,9 +540,7 @@
       <e p="PhotonWebSocket.csproj" t="IncludeRecursive" />
       <e p="PunDemos.DemoHubEditor.csproj" t="IncludeRecursive" />
       <e p="PunDemos.DemoSlotcarEditor.csproj" t="IncludeRecursive" />
-      <e p="Temp/bin" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
-    <e p="$USER_HOME$/Library/Caches/Rider2019.2/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.2/resharper-host/local/Transient/ReSharperHost/v192/SolutionCaches/_Ozhavom.-830269385.00" t="ExcludeRecursive" />
   </component>
 </project>

@@ -16,7 +16,7 @@ public class LoadScene : MonoBehaviour
     
     public void LoadSolo()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(8);
     }
     
     public void LoadRoomSystemMenu()

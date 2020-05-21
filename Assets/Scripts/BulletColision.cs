@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class BulletColision : MonoBehaviour
 {
-   public float dmg = 15;
+   public float dmg = 50;
 
    private void Update()
    {
