@@ -2691,6 +2691,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2536246397674162098}
   - component: {fileID: 4104582936333806749}
+  - component: {fileID: 6183266734037967769}
   m_Layer: 0
   m_Name: ronces
   m_TagString: Untagged
@@ -2733,6 +2734,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsRoomOpen: 0
+--- !u!114 &6183266734037967769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4535504274420158071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 4104582936333806749}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &4584785702637770309
 GameObject:
   m_ObjectHideFlags: 0
@@ -3802,6 +3825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a46e95cdd3daedb4685b3a17bb616a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PV: {fileID: -6971266471565526453}
   top: 1
   bot: 1
   left: 1
@@ -3872,6 +3896,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 3751041230339006960}
+  - {fileID: 438742407828689194}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
