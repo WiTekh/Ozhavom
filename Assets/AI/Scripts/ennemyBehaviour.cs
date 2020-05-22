@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using Photon.Pun;
-using TMPro.EditorUtilities;
 using UnityEngine;
 using Random = System.Random;
 
@@ -12,6 +11,7 @@ public class ennemyBehaviour : MonoBehaviour
     public float speed;
     public float stopDist;
     public float retreatDist;
+    private PhotonView Pv;
 
     public int cooldown;
     private int cooled;
@@ -31,6 +31,7 @@ public class ennemyBehaviour : MonoBehaviour
 
     private void Start()
     {
+        Pv = GetComponent<PhotonView>();
         Look4Target();
         fireRate = nxtFire;
         cooled = cooldown;
@@ -38,19 +39,23 @@ public class ennemyBehaviour : MonoBehaviour
 
     private void Update()
     {
-        if (!isRat)
+        if (Pv.IsMine)
         {
-            Thrower();
-        }
-        else
-        {
-            Rat();
-        }
+            if (!isRat)
+            {
+                Thrower();
+            }
+            else
+            {
+                Rat();
+            }
 
-        if (cooled <= cooldown)
-        {
-            cooled++;
+            if (cooled <= cooldown)
+            {
+                cooled++;
+            }
         }
+        
     }
 
     void Rat()

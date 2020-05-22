@@ -309,6 +309,22 @@ MonoBehaviour:
   coinsAmount: {fileID: 0}
   healthBar: {fileID: 0}
   fire: 0
+--- !u!114 &3050353298072673299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952209691058237489}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9978adb9bd4c7984c8c0fd61f3e2a1c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slot: 0
+  active: 0
+  LaserHit: {fileID: 2291547749296735079}
+  firerate: 200
 --- !u!120 &7090437338455787167
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -664,6 +680,7 @@ MonoBehaviour:
   liste:
   - {fileID: -1775031394084752501, guid: 2ffc1add49df7494e960f359a74b8788, type: 3}
   - {fileID: -8766283920888389804, guid: 2ffc1add49df7494e960f359a74b8788, type: 3}
+  - {fileID: -1775031394084752501, guid: 2ffc1add49df7494e960f359a74b8788, type: 3}
   - {fileID: -1775031394084752501, guid: 2ffc1add49df7494e960f359a74b8788, type: 3}
 --- !u!1 &3082406083642947679
 GameObject:
@@ -1469,7 +1486,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 9
   neo: {fileID: 7299700018657890553, guid: b65768f60c33c9842a79c7635ac09bbb, type: 3}
-  shouldGen: 1
   spawnOffset: {x: 0, y: 0}
 --- !u!1 &7787058545009321972
 GameObject:

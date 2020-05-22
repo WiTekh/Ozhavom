@@ -28,7 +28,7 @@ public class AIBullet : MonoBehaviour
         {
             Debug.Log("Hit!");
             other.gameObject.GetComponent<playerStats>().currentH -= dmg;
-            PhotonNetwork.Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 

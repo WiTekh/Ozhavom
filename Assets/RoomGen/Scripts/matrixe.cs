@@ -15,16 +15,22 @@ public class matrixe : MonoBehaviour
     [SerializeField] private GameObject neo;
     //[SerializeField] private GameObject boss;
     private Random r = new Random();
-    
+    private int tw;
+    private int bw;
+    private int lw;
+    private int rw;
+    private int gr ;
     private PhotonView PV;
-    public bool shouldGen = true;
+    private PhotonView myPV;
 
     public Vector2 spawnOffset;
     
-    void Awake()
+    void Start()
     {
-        if (PhotonNetwork.IsMasterClient && shouldGen)
+        myPV = GetComponent<PhotonView>();
+        if (PhotonNetwork.IsMasterClient  && myPV.IsMine)
         {
+            
             Debug.Log("is generating");
             PV = gameObject.GetComponent<PhotonView>();
             if (size % 2 == 0) size += 1;
@@ -432,14 +438,12 @@ public class matrixe : MonoBehaviour
 
     public void generateforest(GameObject gobj, int i, int j)
     {
-        int tw = r.Next(0,2);
-        int bw = r.Next(0,2);
-        int lw = r.Next(0,2);
-        int rw = r.Next(0,2);
-        int gr = r.Next(0,2);
-        
-        
-        if (tw==0)
+         tw = r.Next(0,2);
+         bw = r.Next(0,2);
+         lw = r.Next(0,2);
+         rw = r.Next(0,2);
+
+         if (tw==0)
         {
             gobj.transform.GetChild(2).GetChild(0).gameObject.SetActive(true);
             
@@ -654,6 +658,11 @@ public class matrixe : MonoBehaviour
         
         generateforest(oo, i, j);
         
+        oo.GetComponent<cleanscript>().top = matrix[i, j].Item1;
+        oo.GetComponent<cleanscript>().bot = matrix[i, j].Item2;
+        oo.GetComponent<cleanscript>().left = matrix[i, j].Item3;
+        oo.GetComponent<cleanscript>().right = matrix[i, j].Item4;
+        
         oo.GetComponent<cleanscript>().spawn = matrix[i, j].Item5;
         oo.GetComponent<cleanscript>().boss = matrix[i, j].Item6;
         bool forgeron = oo.GetComponent<cleanscript>().forge = matrix[i, j].Item7;
@@ -662,14 +671,11 @@ public class matrixe : MonoBehaviour
         bool cook = oo.GetComponent<cleanscript>().cook = matrix[i, j].Item10;
         oo.GetComponent<cleanscript>().item = matrix[i, j].Item11;
         
+
         GeneratesShop(cook,forgeron,shop,sensei,oo);
     }
 
-    [PunRPC]
-    void SaveGenBool()
-    {
-        shouldGen = false;
-    }
+  
 
     [PunRPC]
 
@@ -677,6 +683,8 @@ public class matrixe : MonoBehaviour
     {
         GameObject.Find("varHolder").GetComponent<variablesStock>().spawnOffset = this.spawnOffset;
     }
+
+  
 }
 
 
