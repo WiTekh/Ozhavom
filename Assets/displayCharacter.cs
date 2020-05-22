@@ -9,15 +9,22 @@ using Image = UnityEngine.UI.Image;
 public class displayCharacter : MonoBehaviour, IPointerEnterHandler
 {
     [SerializeField] private Sprite whichPlayer;
+    [SerializeField] private int playerId;
 
-    private void OnMouseOver()
+    public changeVal cV;
+
+    public float hVal;
+    public float sVal;
+
+    private void Start()
     {
-        Debug.Log("Over!");
-        GameObject.Find("Canvas").transform.GetChild(7).GetComponent<Image>().sprite = whichPlayer;
+        cV = GameObject.Find("Canvas").transform.GetChild(8).GetComponent<changeVal>();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         GameObject.Find("Canvas").transform.GetChild(7).GetComponent<Image>().sprite = whichPlayer;
+
+        GameObject.Find("dataHandler").GetComponent<goContainer>().button = gameObject;
     }
 }

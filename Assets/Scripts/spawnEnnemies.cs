@@ -88,7 +88,7 @@ public class spawnEnnemies : MonoBehaviour
         {
             for (int i = 0; i < ennemies.Count; i++)
             {
-                if (ennemies[i] = null)
+                if (ennemies[i] == null)
                 {
                     ennemies.Remove(ennemies[i]);
                 }
