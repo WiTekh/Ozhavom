@@ -338,7 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b809907e633447b38015ce1a7ac2caf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whichPlayer: {fileID: 21300000, guid: 2258d612e3cfb564bbfb468d0a02647a, type: 3}
+  whichPlayer: {fileID: 21300000, guid: e706dc20605ba4112bb7a4bc76aaee3f, type: 3}
   playerId: 0
   cV: {fileID: 0}
   hVal: 400
@@ -523,7 +523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -674,7 +674,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c4da085893c1e4c5486eacafbe713fa3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1108,8 +1108,8 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 10
-  m_WholeNumbers: 0
-  m_Value: 1
+  m_WholeNumbers: 1
+  m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1555,8 +1555,8 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 500
-  m_WholeNumbers: 0
-  m_Value: 0
+  m_WholeNumbers: 1
+  m_Value: 500
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1610,7 +1610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1776,7 +1776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b809907e633447b38015ce1a7ac2caf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whichPlayer: {fileID: 21300000, guid: 3f02dc5d8aa87450d84f184b9b10be28, type: 3}
+  whichPlayer: {fileID: 21300000, guid: cd8dcaa15cf6644579c579eb680f213b, type: 3}
   playerId: 0
   cV: {fileID: 0}
   hVal: 250
@@ -2109,7 +2109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b809907e633447b38015ce1a7ac2caf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whichPlayer: {fileID: 21300000, guid: f46387bddfaf74b7db01340306de543c, type: 3}
+  whichPlayer: {fileID: 21300000, guid: 08fdf0cebfb484fb9ab1c8bbeac5a89b, type: 3}
   playerId: 0
   cV: {fileID: 0}
   hVal: 300
@@ -2331,7 +2331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b809907e633447b38015ce1a7ac2caf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whichPlayer: {fileID: 21300000, guid: db1879d4f6d3d4268bb18f7a081ed3f8, type: 3}
+  whichPlayer: {fileID: 21300000, guid: a6cfd656f57bc4b17af872a72a65ab9f, type: 3}
   playerId: 0
   cV: {fileID: 0}
   hVal: 200
@@ -2443,7 +2443,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -30.3, y: 30.4}
+  m_AnchoredPosition: {x: -51.8, y: 17.7}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1830554031
@@ -2466,8 +2466,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Speed
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2492,8 +2492,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2598,7 +2598,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -30.8, y: 23.3}
+  m_AnchoredPosition: {x: -52.29995, y: 17.4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2030503165
@@ -2621,8 +2621,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Health
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2647,8 +2647,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
