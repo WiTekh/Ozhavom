@@ -21,21 +21,25 @@ public class AvatarSetup : MonoBehaviour
             charVal = PlayerInfos.PI.mySelectedChar;
             switch (charVal)
             {
+                //CRAB
                 case 0:
                     maxH = 300;
-                    speed = 6;
+                    speed = 6f;
                     break;
+                //GOBELIN
                 case 1:
                     maxH = 200;
-                    speed = 7;
+                    speed = 6.5f;
                     break;
+                //GNOLL
                 case 2:
-                    maxH = 100;
-                    speed = 8;
+                    maxH = 250;
+                    speed = 7f;
                     break;
+                //GOLEM
                 case 3:
-                    maxH = 450;
-                    speed = 7.5f;
+                    maxH = 400;
+                    speed = 5.5f;
                     break;
                 default:
                     maxH = 100;
