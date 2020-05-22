@@ -5,9 +5,13 @@ using Photon.Pun;
 using UnityEngine;
 
 public class HealAoe : MonoBehaviour
-{ private PhotonView PV;
-    [SerializeField] private int firerate;
+{
     [SerializeField] public bool active;
+    public Sprite weaponRenderer;
+    private variablesStock _dataHandler;
+
+    private PhotonView PV;
+    [SerializeField] private int firerate;
     [SerializeField] public int slot;
    
     private int fire;
@@ -16,14 +20,16 @@ public class HealAoe : MonoBehaviour
     {
         fire = firerate;
         PV = transform.parent.GetComponent<PhotonView>();
-
+        
+        _dataHandler = GameObject.Find("varHolder").GetComponent<variablesStock>();
     }
    
     private void Update()
     {
+        _dataHandler.GetComponent<variablesStock>().activeWeapon = weaponRenderer;
+
         if (PV.IsMine)
         {
-
             if (fire >= firerate)
             {
                 switch (slot)

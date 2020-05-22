@@ -6,79 +6,83 @@ using UnityEngine;
 
 public class Rafale : MonoBehaviour
 {
+    [SerializeField] public bool active;
+    public Sprite weaponRenderer;
     
-        private PhotonView PV;
-        [SerializeField] private int firerate;
-       [SerializeField] public bool active;
-       [SerializeField] public int slot;
-   
-       private int fire;
-       // Update is called once per frame
-       private void Start()
-       {
-           fire = firerate;
-           PV = transform.parent.parent.parent.GetComponent<PhotonView>();
+    public  variablesStock _dataHandler;
 
-       }
-   
-       private void Update()
-       {
-           if (PV.IsMine)
-           {
+    private PhotonView PV;
+    [SerializeField] private int firerate;
+    [SerializeField] public int slot;
 
+    private int fire;
 
-               if (fire < firerate)
-               {
-                   fire++;
-               }
+    // Update is called once per frame
+    private void Awake()
+    {
+        fire = firerate;
+        PV = transform.parent.parent.parent.GetComponent<PhotonView>();
 
-               if (fire == 10)
-               {
-                   Fire();
-               }
+        _dataHandler = GameObject.Find("varHolder").GetComponent<variablesStock>();
+    }
 
-               if (fire == 20)
-               {
-                   Fire();
-               }
+    private void Update()
+    {
+        _dataHandler.activeWeapon = weaponRenderer;
 
-               if (fire >= firerate)
-               {
-                   switch (slot)
-                   {
-                       case 0:
-                           if (Input.GetKey(KeyCode.Z))
-                           {
-                               Fire();
-                               fire = 0;
-                           }
+        if (PV.IsMine)
+        {
+            if (fire < firerate)
+            {
+                fire++;
+            }
 
-                           break;
-                       case 1:
-                           if (Input.GetKey(KeyCode.E))
-                           {
-                               Fire();
-                               fire = 0;
+            if (fire == 10)
+            {
+                Fire();
+            }
 
-                           }
+            if (fire == 20)
+            {
+                Fire();
+            }
 
-                           break;
-                       case 2:
-                           if (Input.GetKey(KeyCode.R))
-                           {
-                               Fire();
-                               fire = 0;
-                           }
+            if (fire >= firerate)
+            {
+                switch (slot)
+                {
+                    case 0:
+                        if (Input.GetKey(KeyCode.Z))
+                        {
+                            Fire();
+                            fire = 0;
+                        }
 
-                           break;
-                   }
-               }
-           }
-       }
-   
-       void Fire()
-       {
-           GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position, transform.rotation);
-          
-       }
+                        break;
+                    case 1:
+                        if (Input.GetKey(KeyCode.E))
+                        {
+                            Fire();
+                            fire = 0;
+                        }
+
+                        break;
+                    case 2:
+                        if (Input.GetKey(KeyCode.R))
+                        {
+                            Fire();
+                            fire = 0;
+                        }
+
+                        break;
+                }
+            }
+        }
+    }
+
+    void Fire()
+    {
+        GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position,
+            transform.rotation);
+    }
 }

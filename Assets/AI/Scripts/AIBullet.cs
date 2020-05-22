@@ -7,7 +7,7 @@ using UnityEngine;
 public class AIBullet : MonoBehaviour
 {
     public float speed;
-    public Vector2 Target;
+    public Vector3 Target;
 
     public float dmg;
 

@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class ChargedBeam : MonoBehaviour
 {
+    [SerializeField] public bool active;
+    public Sprite weaponRenderer;
+    private variablesStock _dataHandler;
 
     private PhotonView PV;
     public int slot;
-    public bool active;
     private PlayerMovement move;
     private LineRenderer laser;
     public Transform LaserHit;
@@ -23,14 +25,16 @@ public class ChargedBeam : MonoBehaviour
 
         move = transform.parent.parent.parent.parent.GetComponent<PlayerMovement>();
         laser = GetComponent<LineRenderer>();
+        
+        _dataHandler = GameObject.Find("varHolder").GetComponent<variablesStock>();
     }
 
     void Update()
     {
+        _dataHandler.GetComponent<variablesStock>().activeWeapon = weaponRenderer;
+
         if (PV.IsMine)
         {
-
-
             if (move.enabled == false)
             {
                 fire += 0.25f;

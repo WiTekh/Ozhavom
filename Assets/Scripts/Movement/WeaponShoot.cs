@@ -49,6 +49,5 @@ public class WeaponShoot : MonoBehaviour
                 fire++;
             }
         }
-
     }
 }

@@ -25,8 +25,6 @@ public class playerStats : MonoBehaviour
     public void Awake()
     { 
         AS = gameObject.GetComponent<AvatarSetup>();
-        playerName = GameObject.Find("Canvas").transform.GetChild(0).GetChild(5).GetComponent<TMP_Text>();
-        healthDisp = GameObject.Find("Canvas").transform.GetChild(0).GetChild(6).GetComponent<TMP_Text>();
     }
 
     public void Start()
@@ -38,6 +36,7 @@ public class playerStats : MonoBehaviour
         
             healthBar = GameObject.Find("Canvas").transform.GetChild(0).GetComponent<Slider>();
             coinHeap = GameObject.Find("Canvas").transform.GetChild(0).GetChild(4).GetComponent<TMP_Text>();
+            healthDisp = GameObject.Find("Canvas").transform.GetChild(0).GetChild(5).GetComponent<TMP_Text>();
         }
        
         Debug.Log(PhotonNetwork.IsMasterClient);
@@ -53,7 +52,7 @@ public class playerStats : MonoBehaviour
             }
             healthBar.value = currentH / AS.maxH;
             coinHeap.text = coinAmount.ToString();
-            healthDisp.text = currentH.ToString() + "/" + AS.maxH;
+            healthDisp.text = currentH + "/" + AS.maxH;
         }
         
     }

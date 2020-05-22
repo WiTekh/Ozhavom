@@ -21,6 +21,7 @@ public class ennemyBehaviour : MonoBehaviour
     public float nxtFire;
 
     public GameObject bullet;
+    public GameObject turretBullet;
 
     private Transform player;
 
@@ -70,12 +71,34 @@ public class ennemyBehaviour : MonoBehaviour
         else
         {
             transform.position = transform.position;
-            wait1();
             collided = false;
         }
     }
 
     void Thrower()
+    {
+        if (Vector2.Distance(transform.position, player.position) < detection)
+        {
+            if (fireRate <= 0)
+            {
+                GameObject b = PhotonNetwork.Instantiate("bullet", transform.position, Quaternion.identity);
+                b.transform.parent = transform;
+                b.GetComponent<AIBullet>().Target = new Vector2(player.position.x, player.position.y);
+                fireRate = nxtFire;
+            }
+            else
+            {
+                fireRate -= Time.deltaTime;
+            }
+        }
+        else
+
+        {
+            Look4Target();
+        }
+    }
+
+    void Other()
     {
         if (Vector2.Distance(transform.position, player.position) < detection)
         {
@@ -145,11 +168,5 @@ public class ennemyBehaviour : MonoBehaviour
         {
             collided = true;
         }
-    }
-    
-
-    IEnumerator wait1()
-    {
-        yield return new WaitForSeconds(1f);
     }
 }
