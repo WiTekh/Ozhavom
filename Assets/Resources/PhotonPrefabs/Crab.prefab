@@ -303,11 +303,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 646d08baa0c31e744a47f55b446e3144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 300
   bulletprefab: {fileID: 8550024257524648773, guid: 49596134dbb6cb64bbc66f1d5f5216d4,
     type: 3}
-  LaserHit: {fileID: 2291547749296735079}
   firerate: 100
+  coinsAmount: {fileID: 0}
+  healthBar: {fileID: 0}
+  fire: 0
 --- !u!114 &3050353298072673299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -655,6 +656,7 @@ MonoBehaviour:
   liste:
   - {fileID: -1775031394084752501, guid: 2ffc1add49df7494e960f359a74b8788, type: 3}
   - {fileID: -8766283920888389804, guid: 2ffc1add49df7494e960f359a74b8788, type: 3}
+  - {fileID: -1775031394084752501, guid: 2ffc1add49df7494e960f359a74b8788, type: 3}
   - {fileID: -1775031394084752501, guid: 2ffc1add49df7494e960f359a74b8788, type: 3}
 --- !u!1 &3082406083642947679
 GameObject:
@@ -1460,7 +1462,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 9
   neo: {fileID: 7299700018657890553, guid: b65768f60c33c9842a79c7635ac09bbb, type: 3}
-  shouldGen: 1
   spawnOffset: {x: 0, y: 0}
 --- !u!1 &7787058545009321972
 GameObject:

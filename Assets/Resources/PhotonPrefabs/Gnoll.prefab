@@ -403,6 +403,7 @@ MonoBehaviour:
   size: 9
   neo: {fileID: 7299700018657890553, guid: b65768f60c33c9842a79c7635ac09bbb, type: 3}
   shouldGen: 1
+  spawnOffset: {x: 0, y: 0}
 --- !u!1 &1937480112498330989
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,11 +710,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 646d08baa0c31e744a47f55b446e3144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 0
   bulletprefab: {fileID: 8550024257524648773, guid: 49596134dbb6cb64bbc66f1d5f5216d4,
     type: 3}
-  LaserHit: {fileID: 7443995562957089523}
   firerate: 50
+  coinsAmount: {fileID: 0}
+  healthBar: {fileID: 0}
+  fire: 0
 --- !u!114 &8674788534122552365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -993,7 +995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e12c0189b8671774d9965465f1eab84f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myCam: {fileID: 0}
+  myCam: {fileID: 1342151103774718637}
 --- !u!1 &7105329450584443684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1229,6 +1231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c47d53bd41240548907c0025b86ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawnOffset: {x: 0, y: 0}
 --- !u!114 &3745114156608888072
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -23,8 +23,7 @@ public class displayCharacter : MonoBehaviour, IPointerEnterHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Sprite oo = GameObject.Find("Canvas").transform.GetChild(7).GetComponent<Image>().sprite;
-        oo = whichPlayer;
+        GameObject.Find("Canvas").transform.GetChild(7).GetComponent<Image>().sprite = whichPlayer;
 
         GameObject.Find("dataHandler").GetComponent<goContainer>().button = gameObject;
     }
