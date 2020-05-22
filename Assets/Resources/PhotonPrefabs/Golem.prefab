@@ -214,12 +214,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 646d08baa0c31e744a47f55b446e3144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dmg: 0
   bulletprefab: {fileID: 8550024257524648773, guid: 49596134dbb6cb64bbc66f1d5f5216d4,
     type: 3}
-  firerate: 50
-  coinsAmount: {fileID: 0}
-  healthBar: {fileID: 0}
-  fire: 0
+  LaserHit: {fileID: 5153356235596302665}
+  firerate: 100
 --- !u!114 &4432545455946584315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -835,6 +834,9 @@ MonoBehaviour:
   _chargedBeam: {fileID: 0}
   _poisonDart: {fileID: 0}
   Stats: {fileID: 0}
+  AoeDmg: {fileID: 0}
+  AoeHeal: {fileID: 0}
+  MoreShoot: {fileID: 0}
   activeSprite: {fileID: 0}
 --- !u!114 &47288387975487227
 MonoBehaviour:

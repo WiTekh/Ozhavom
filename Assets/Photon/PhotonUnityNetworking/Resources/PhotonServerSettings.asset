@@ -42,6 +42,7 @@ MonoBehaviour:
   - SpawnEnnemy
   - Ownership
   - SaveGenBool
+  - SendToStock
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

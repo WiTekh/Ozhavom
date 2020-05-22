@@ -18,6 +18,8 @@ public class matrixe : MonoBehaviour
     
     private PhotonView PV;
     public bool shouldGen = true;
+
+    public Vector2 spawnOffset;
     
     void Awake()
     {
@@ -72,6 +74,33 @@ public class matrixe : MonoBehaviour
             }
             
             PV.RPC("SaveGenBool", RpcTarget.AllBufferedViaServer);
+            
+            //Browse thru matrix to find the new base
+            Debug.Log("Getting the Spawn Offset");
+            float __i = 0;
+            float __j = 0;
+
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    if (ishere(i,j))
+                    {
+                        float __x = i * 19 - coords.x;
+                        float __y = j * 12 - coords.y;
+
+                        if (__x < __i)
+                            __i = __x;
+                        if (__y < __j)
+                            __j = __y;
+                    }
+                }
+            }
+            
+            spawnOffset = new Vector2(__i, __j);
+            Debug.Log("The spawn offset is : " + spawnOffset);
+            
+            PV.RPC("SendToStock", RpcTarget.AllBuffered);
         }
         else
         {
@@ -139,12 +168,13 @@ public class matrixe : MonoBehaviour
         return (x,y);
     }
     
-    
+    //Check if inside of the matrix
     public bool isvalid(int i ,int j)
     {
         return (i >= 0 && j >= 0 && i < size && j < size);
     }
     
+    //Check if the case is linked to the dungeon
     public bool ishere(int i, int j)
     {
         if (isvalid(i, j))
@@ -639,6 +669,13 @@ public class matrixe : MonoBehaviour
     void SaveGenBool()
     {
         shouldGen = false;
+    }
+
+    [PunRPC]
+
+    void SendToStock()
+    {
+        GameObject.Find("varHolder").GetComponent<variablesStock>().spawnOffset = this.spawnOffset;
     }
 }
 
