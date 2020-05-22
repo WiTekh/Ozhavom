@@ -16,7 +16,6 @@ public class PlayerInfos : MonoBehaviour
     public GameObject[] allCharacters;
 
     public string name;
-    public TMP_InputField inputName;
 
     public void OnEnable()
     {
@@ -34,7 +33,6 @@ public class PlayerInfos : MonoBehaviour
 
     void Start()
     {
-        inputName = GameObject.Find("Canvas").transform.GetChild(5).GetComponent<TMP_InputField>();
         if (PlayerPrefs.HasKey("MyChar"))
         {
             mySelectedChar = PlayerPrefs.GetInt("MyChar");
@@ -44,11 +42,5 @@ public class PlayerInfos : MonoBehaviour
             mySelectedChar = 0;
             PlayerPrefs.SetInt("MyChar", mySelectedChar);
         }
-    }
-
-    public void Update()
-    {
-        name = inputName.text;
-        PhotonNetwork.LocalPlayer.NickName = name;
     }
 }

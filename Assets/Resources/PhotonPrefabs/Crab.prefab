@@ -306,7 +306,7 @@ MonoBehaviour:
   bulletprefab: {fileID: 8550024257524648773, guid: 49596134dbb6cb64bbc66f1d5f5216d4,
     type: 3}
   LaserHit: {fileID: 2291547749296735079}
-  firerate: 30
+  firerate: 100
 --- !u!114 &3050353298072673299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -801,7 +801,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
-
 --- !u!1 &4364471229357064865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,6 +1421,9 @@ MonoBehaviour:
   _chargedBeam: {fileID: 192150347610833185}
   _poisonDart: {fileID: 6204448966690780424}
   Stats: {fileID: 6404488320476845269}
+  AoeDmg: {fileID: 0}
+  AoeHeal: {fileID: 0}
+  MoreShoot: {fileID: 0}
   activeSprite: {fileID: 0}
 --- !u!114 &6404488320476845269
 MonoBehaviour:
