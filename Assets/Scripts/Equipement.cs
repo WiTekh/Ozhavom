@@ -15,8 +15,8 @@ public class Equipement : MonoBehaviour
     
     private GameObject _gameObject;
     
-    [SerializeField]private LaserBeam _laserBeam;
-    [SerializeField]private ChargedBeam _chargedBeam;
+    [SerializeField] private LaserBeam _laserBeam;
+    [SerializeField] private ChargedBeam _chargedBeam;
     [SerializeField] private PoisonDart _poisonDart;
     [SerializeField] private playerStats Stats;
     [SerializeField] private AttackAoe AoeDmg;
@@ -24,15 +24,13 @@ public class Equipement : MonoBehaviour
     [SerializeField] private MoreShoot MoreShoot;
     private PhotonView PV;
     private int coin;
-     
-    public Sprite activeSprite;
 
-    
-    
+    public GameObject dataHandler;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        activeSprite = Resources.Load("blank") as Sprite;
         freeslot = 0;
         PV = GetComponent<PhotonView>();
     }
@@ -101,7 +99,6 @@ public class Equipement : MonoBehaviour
                                 _rafale.slot = freeslot;
                                 _rafale.enabled = true;
                                 PhotonNetwork.Destroy(_gameObject);
-                                activeSprite = Resources.Load("rifle") as Sprite;
                                 Debug.Log("equiped the rifle");
                                 freeslot++; //une fois les test terminer faut rajouter un PhotonNetwork. avant le destroy
                             }
@@ -114,7 +111,6 @@ public class Equipement : MonoBehaviour
                                 masse.slot = freeslot;
                                 masse.enabled = true;
                                 PhotonNetwork.Destroy(_gameObject);
-                                activeSprite = Resources.Load("mass") as Sprite;
                                 Debug.Log("equiped the mass");
                                 freeslot++;
                             }
@@ -127,7 +123,6 @@ public class Equipement : MonoBehaviour
                                 _laserBeam.slot = freeslot;
                                 freeslot++;
                                 PhotonNetwork.Destroy(_gameObject);
-                                activeSprite = Resources.Load("laser") as Sprite;
                                 Debug.Log("equiped the laserbeam");
                             }
 
@@ -141,7 +136,6 @@ public class Equipement : MonoBehaviour
                                 freeslot++;
                                 PhotonNetwork.Destroy(_gameObject);
                                 Debug.Log("equiped the chargedbeam");
-                                activeSprite = Resources.Load("charged") as Sprite;
                             }
 
                             break;

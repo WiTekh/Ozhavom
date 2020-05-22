@@ -262,8 +262,8 @@ GameObject:
   m_Component:
   - component: {fileID: 365176023604299584}
   - component: {fileID: 5442610332905490535}
-  - component: {fileID: 3050353298072673299}
   - component: {fileID: 7090437338455787167}
+  - component: {fileID: 3050353298072673299}
   - component: {fileID: 6794066672410652982}
   - component: {fileID: 192150347610833185}
   - component: {fileID: 6204448966690780424}
@@ -422,6 +422,23 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &3050353298072673299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952209691058237489}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9978adb9bd4c7984c8c0fd61f3e2a1c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  weaponRenderer: {fileID: 21300000, guid: 64259a4419e9f4c5b8ed4d8335a9cb4a, type: 3}
+  slot: 0
+  LaserHit: {fileID: 2291547749296735079}
+  firerate: 200
 --- !u!114 &6794066672410652982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,8 +451,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7125cdc49778e541af9826a64543abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firerate: 200
   active: 0
+  weaponRenderer: {fileID: 21300000, guid: a6f633eb822e845c194dfe6907c36100, type: 3}
+  _dataHandler: {fileID: 0}
+  firerate: 200
   slot: 0
 --- !u!114 &192150347610833185
 MonoBehaviour:
@@ -449,8 +468,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0664813cb9396b142ad6654e62e65e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot: 0
   active: 0
+  weaponRenderer: {fileID: 21300000, guid: b3f8cbedd1ce24a84bc1919af9cb7a59, type: 3}
+  slot: 0
   LaserHit: {fileID: 2291547749296735079}
   firerate: 19
 --- !u!114 &6204448966690780424
@@ -465,8 +485,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8df118049bdf7645802b76f7f095757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firerate: 50
   active: 0
+  weaponRenderer: {fileID: 21300000, guid: 4b6671d8d7e58414591d9ea80c2c2a8c, type: 3}
+  firerate: 50
   slot: 0
 --- !u!114 &7612151174118876629
 MonoBehaviour:
@@ -480,8 +501,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3c2298c9ae94814d9757248ae672ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firerate: 500
   active: 0
+  weaponRenderer: {fileID: 0}
+  firerate: 500
   slot: 0
 --- !u!114 &4930912778413098392
 MonoBehaviour:
@@ -495,8 +517,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83e0a725a416e7418471ef7fc145b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firerate: 50
   active: 0
+  weaponRenderer: {fileID: 0}
+  firerate: 50
   slot: 0
 --- !u!114 &3040728828918782217
 MonoBehaviour:
@@ -510,8 +533,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fcd85901347fcb4e85ce111b72958a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firerate: 200
   active: 0
+  weaponRenderer: {fileID: 0}
+  firerate: 200
   slot: 0
 --- !u!1 &1880366585684468400
 GameObject:
@@ -1427,7 +1451,7 @@ MonoBehaviour:
   AoeDmg: {fileID: 0}
   AoeHeal: {fileID: 0}
   MoreShoot: {fileID: 0}
-  activeSprite: {fileID: 0}
+  dataHandler: {fileID: 0}
 --- !u!114 &6404488320476845269
 MonoBehaviour:
   m_ObjectHideFlags: 0

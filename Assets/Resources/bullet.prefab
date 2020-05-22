@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  Target: {x: 0, y: 0}
+  Target: {x: 0, y: 0, z: 0}
   dmg: 0
 --- !u!50 &1501336512770414759
 Rigidbody2D:

@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class LaserBeam : MonoBehaviour
 {
+    public bool active;
+    public Sprite weaponRenderer;
+    private variablesStock _dataHandler;
+    
     private PhotonView PV;
     public int slot;
-    public bool active;
     private PlayerMovement move;
     private LineRenderer laser;
     public Transform LaserHit;
@@ -23,14 +26,16 @@ public class LaserBeam : MonoBehaviour
         move = transform.parent.parent.parent.GetComponent<PlayerMovement>();
         fire = firerate;
         laser = GetComponent<LineRenderer>();
+
+        _dataHandler = GameObject.Find("varHolder").GetComponent<variablesStock>();
     }
 
     void Update()
     {
+        _dataHandler.GetComponent<variablesStock>().activeWeapon = weaponRenderer;
+        
         if (PV.IsMine)
         {
-
-
             if (fire == 80)
             {
                 move.enabled = true;
