@@ -340,6 +340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whichPlayer: {fileID: 21300000, guid: e706dc20605ba4112bb7a4bc76aaee3f, type: 3}
   playerId: 0
+  customScale: {x: 0.80515, y: 0.80515}
   cV: {fileID: 0}
   hVal: 400
   sVal: 5.5
@@ -646,7 +647,7 @@ RectTransform:
   m_GameObject: {fileID: 599605553}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2875, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1323127226}
   m_RootOrder: 7
@@ -674,7 +675,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 08fdf0cebfb484fb9ab1c8bbeac5a89b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1109,7 +1110,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 10
   m_WholeNumbers: 1
-  m_Value: 10
+  m_Value: 6
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1556,7 +1557,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 500
   m_WholeNumbers: 1
-  m_Value: 500
+  m_Value: 300
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1778,6 +1779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whichPlayer: {fileID: 21300000, guid: cd8dcaa15cf6644579c579eb680f213b, type: 3}
   playerId: 0
+  customScale: {x: 1.3654, y: 1.3654}
   cV: {fileID: 0}
   hVal: 250
   sVal: 7
@@ -2111,6 +2113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whichPlayer: {fileID: 21300000, guid: 08fdf0cebfb484fb9ab1c8bbeac5a89b, type: 3}
   playerId: 0
+  customScale: {x: 1.2875, y: 1}
   cV: {fileID: 0}
   hVal: 300
   sVal: 6
@@ -2333,6 +2336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whichPlayer: {fileID: 21300000, guid: a6cfd656f57bc4b17af872a72a65ab9f, type: 3}
   playerId: 0
+  customScale: {x: 1.1, y: 1.1}
   cV: {fileID: 0}
   hVal: 200
   sVal: 6.5
