@@ -309,22 +309,6 @@ MonoBehaviour:
   coinsAmount: {fileID: 0}
   healthBar: {fileID: 0}
   fire: 0
---- !u!114 &3050353298072673299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952209691058237489}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9978adb9bd4c7984c8c0fd61f3e2a1c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slot: 0
-  active: 0
-  LaserHit: {fileID: 2291547749296735079}
-  firerate: 200
 --- !u!120 &7090437338455787167
 LineRenderer:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ public class displayCharacter : MonoBehaviour, IPointerEnterHandler
     [SerializeField] private Sprite whichPlayer;
     [SerializeField] private int playerId;
 
+    [SerializeField] private Vector2 customScale = new Vector2(1,1);
+
     public changeVal cV;
 
     public float hVal;
@@ -26,5 +28,7 @@ public class displayCharacter : MonoBehaviour, IPointerEnterHandler
         GameObject.Find("Canvas").transform.GetChild(7).GetComponent<Image>().sprite = whichPlayer;
 
         GameObject.Find("dataHandler").GetComponent<goContainer>().button = gameObject;
+
+        GameObject.Find("Canvas").transform.GetChild(7).localScale = customScale;
     }
 }
