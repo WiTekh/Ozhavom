@@ -25,6 +25,7 @@ public class Equipement : MonoBehaviour
     [SerializeField] private AttackAoe AoeDmg;
     [SerializeField] private HealAoe AoeHeal;
     [SerializeField] private MoreShoot MoreShoot;
+    [SerializeField] private Mine Mine;
     private PhotonView PV;
     private int coin;
 
@@ -188,6 +189,16 @@ public class Equipement : MonoBehaviour
                                 MoreShoot.active = true;
                                 MoreShoot.slot = freeslot;
                                 MoreShoot.enabled = true;
+                                PhotonNetwork.Destroy(_gameObject);
+                                freeslot++;
+                            }
+                            break;
+                        case "mine":
+                            if (Mine.active)
+                            {
+                                Mine.active = true;
+                                Mine.slot = freeslot;
+                                Mine.enabled = true;
                                 PhotonNetwork.Destroy(_gameObject);
                                 freeslot++;
                             }

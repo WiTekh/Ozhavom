@@ -79,7 +79,7 @@ public class matrixe : MonoBehaviour
                 }
             }
             
-            PV.RPC("SaveGenBool", RpcTarget.AllBufferedViaServer);
+           // PV.RPC("SaveGenBool", RpcTarget.AllBufferedViaServer);
             
             //Browse thru matrix to find the new base
             Debug.Log("Getting the Spawn Offset");
@@ -111,7 +111,7 @@ public class matrixe : MonoBehaviour
         else
         {
             Debug.Log("not gonna generate");
-            PV.RPC("SaveGenBool", RpcTarget.AllBufferedViaServer);
+            //PV.RPC("SaveGenBool", RpcTarget.AllBufferedViaServer);
         }
     }
 

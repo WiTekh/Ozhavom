@@ -507,6 +507,7 @@ MonoBehaviour:
   Spawners: []
   RoomID: 80001
   isOccupied: 0
+  bossRoom: {fileID: 0}
   ennemies: []
 --- !u!1 &1283465285003436592
 GameObject:

@@ -12,6 +12,8 @@ public class variablesStock : MonoBehaviour
 
     public int[] slots = new int[3];
 
+    public GameObject bossRoom;
+
     public Sprite[] availableSprites;
 
     public Sprite blank;

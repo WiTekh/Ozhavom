@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 7612151174118876629}
   - component: {fileID: 4930912778413098392}
   - component: {fileID: 3040728828918782217}
+  - component: {fileID: 6189867917939557741}
   m_Layer: 0
   m_Name: firepoint
   m_TagString: Untagged
@@ -305,7 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletprefab: {fileID: 8550024257524648773, guid: 49596134dbb6cb64bbc66f1d5f5216d4,
     type: 3}
-  firerate: 100
+  firerate: 2
   coinsAmount: {fileID: 0}
   healthBar: {fileID: 0}
   fire: 0
@@ -520,6 +521,22 @@ MonoBehaviour:
   active: 0
   weaponRenderer: {fileID: 0}
   firerate: 200
+  slot: 0
+--- !u!114 &6189867917939557741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952209691058237489}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e8be210f44d6d4c9f9af67aa6b5362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  weaponRenderer: {fileID: 0}
+  firerate: 50
   slot: 0
 --- !u!1 &1880366585684468400
 GameObject:
@@ -1439,6 +1456,7 @@ MonoBehaviour:
   AoeDmg: {fileID: 4930912778413098392}
   AoeHeal: {fileID: 3040728828918782217}
   MoreShoot: {fileID: 7612151174118876629}
+  Mine: {fileID: 6189867917939557741}
   dataHandler: {fileID: 0}
   drops: []
 --- !u!114 &6404488320476845269

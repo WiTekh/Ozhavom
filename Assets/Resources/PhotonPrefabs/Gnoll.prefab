@@ -360,17 +360,14 @@ MonoBehaviour:
   freeslot: 0
   _rafale: {fileID: 0}
   masse: {fileID: 4996181310373886557}
-  equipement:
-  - 
-  - 
-  - 
-  _laserBeam: {fileID: 0}
-  _chargedBeam: {fileID: 0}
-  _poisonDart: {fileID: 0}
+  _laserBeam: {fileID: 7738493371374550797}
+  _chargedBeam: {fileID: 611873215916752203}
+  _poisonDart: {fileID: 8958817292527227532}
   Stats: {fileID: 0}
-  AoeDmg: {fileID: 0}
-  AoeHeal: {fileID: 0}
-  MoreShoot: {fileID: 0}
+  AoeDmg: {fileID: 5328479436473534032}
+  AoeHeal: {fileID: 3289784112383156628}
+  MoreShoot: {fileID: 9103490873535812435}
+  Mine: {fileID: 8984152879996888187}
   dataHandler: {fileID: 0}
 --- !u!114 &2333432224606633281
 MonoBehaviour:
@@ -680,6 +677,7 @@ GameObject:
   - component: {fileID: 9103490873535812435}
   - component: {fileID: 5328479436473534032}
   - component: {fileID: 3289784112383156628}
+  - component: {fileID: 8984152879996888187}
   m_Layer: 0
   m_Name: firepoint
   m_TagString: Untagged
@@ -930,6 +928,22 @@ MonoBehaviour:
   active: 0
   weaponRenderer: {fileID: 0}
   firerate: 200
+  slot: 0
+--- !u!114 &8984152879996888187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4011439691103953370}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e8be210f44d6d4c9f9af67aa6b5362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  weaponRenderer: {fileID: 0}
+  firerate: 0
   slot: 0
 --- !u!1 &4905233060023511861
 GameObject:

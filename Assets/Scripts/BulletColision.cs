@@ -18,7 +18,7 @@ public class BulletColision : MonoBehaviour
    private void OnTriggerEnter2D(Collider2D collision)
    {
       
-      if (collision.CompareTag("Ennemy"))
+      if (collision.CompareTag("Ennemy") || collision.CompareTag("Boss"))
       {
          Debug.Log($"Dealt {dmg}");
          collision.gameObject.GetComponent<ennemyStats>().health -= dmg;
