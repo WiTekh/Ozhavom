@@ -196,6 +196,8 @@ public class Equipement : MonoBehaviour
                         case "mine":
                             if (Mine.active)
                             {
+                                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 8;
+                                equipement[freeslot] = "mine";
                                 Mine.active = true;
                                 Mine.slot = freeslot;
                                 Mine.enabled = true;
