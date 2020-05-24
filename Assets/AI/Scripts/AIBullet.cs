@@ -16,7 +16,7 @@ public class AIBullet : MonoBehaviour
         dmg = transform.parent.GetComponent<ennemyStats>().dmg;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         transform.position = Vector2.MoveTowards(transform.position, Target, speed * Time.deltaTime);
         StartCoroutine("AutoDestroy");
@@ -26,7 +26,7 @@ public class AIBullet : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Hit!");
+            Debug.Log(gameObject.name + " hit " + other.name + " dealing him " + dmg + " damages");
             other.gameObject.GetComponent<playerStats>().currentH -= dmg;
             Destroy(gameObject);
         }

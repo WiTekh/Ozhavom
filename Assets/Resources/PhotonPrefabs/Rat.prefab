@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 6150102826714003237}
   - component: {fileID: 4091881425612711460}
   - component: {fileID: -7474948484264135330}
-  - component: {fileID: 8630004795986131806}
   m_Layer: 0
   m_Name: Rat
   m_TagString: Ennemy
@@ -118,7 +117,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4608649092266109911}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 563a87ba878ac4aed943cb18ecadee0a, type: 3}
   m_Name: 
@@ -129,8 +128,6 @@ MonoBehaviour:
   cooldown: 20
   detection: 10
   nxtFire: 2
-  bullet: {fileID: 4403390162498528759, guid: 9dbb2483aac1745ee88ad2507c44a56a, type: 3}
-  turretBullet: {fileID: 0}
   isRat: 1
   collided: 0
 --- !u!114 &8763422460329221910
@@ -226,19 +223,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectionDistance: 2
   speed: 10
---- !u!58 &8630004795986131806
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4608649092266109911}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.00000017881393, y: 0.03845387}
-  serializedVersion: 2
-  m_Radius: 4.1612983
