@@ -24,11 +24,11 @@ public class variablesStock : MonoBehaviour
         
         // -- Weapon Init -- 
         //Active Weapon
-        canvas.GetChild(2).GetChild(3).GetComponent<Image>().sprite = blank;
+        canvas.GetChild(2).GetChild(1).GetComponent<Image>().sprite = blank;
         //Slot 1 Weapon
-        canvas.GetChild(3).GetChild(3).GetComponent<Image>().sprite = blank;
+        canvas.GetChild(3).GetChild(1).GetComponent<Image>().sprite = blank;
         //Slot 2 Weapon
-        canvas.GetChild(4).GetChild(3).GetComponent<Image>().sprite = blank;
+        canvas.GetChild(4).GetChild(1).GetComponent<Image>().sprite = blank;
         // -----------------------
     }
 
