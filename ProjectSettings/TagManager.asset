@@ -13,6 +13,7 @@ TagManager:
   - rRight
   - spawner
   - room
+  - itemshop
   layers:
   - Default
   - TransparentFX
@@ -67,4 +68,7 @@ TagManager:
     locked: 0
   - name: ronces et murs
     uniqueID: 2839124839
+    locked: 0
+  - name: ITEMS SA MERE
+    uniqueID: 2712994157
     locked: 0

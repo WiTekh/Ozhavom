@@ -9,6 +9,9 @@ using UnityEngine.UI;
 
 public class Equipement : MonoBehaviour
 {
+    [Tooltip("0 -> Z || 1 -> E || 2 -> R")]
+    [SerializeField] public string[] equipement = new string[3];
+
     [SerializeField] private int freeslot;
     [SerializeField] private Rafale _rafale;
     [SerializeField]private Masse masse;
@@ -27,17 +30,36 @@ public class Equipement : MonoBehaviour
 
     public GameObject dataHandler;
 
+    public GameObject[] drops;
 
     // Start is called before the first frame update
     void Start()
     {
         freeslot = 0;
         PV = GetComponent<PhotonView>();
+        dataHandler = GameObject.Find("varHolder");
+        Debug.Log(dataHandler.name);
     }
 
-    
 
-    // Update is called once per frame
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            variablesStock stock =  GameObject.Find("varHolder").GetComponent<variablesStock>();
+            stock.slots[freeslot] = 0;
+            stock.UpdateIcons(freeslot);
+            
+            equipement[freeslot] = "rafale";
+            _rafale.active = true;
+            _rafale.slot = freeslot;
+            _rafale.enabled = true;
+            PhotonNetwork.Destroy(_gameObject);
+            Debug.Log("equiped the rifle");
+            freeslot++;
+        }
+    }
+
     private void OnCollisionEnter2D (Collision2D col)
     {
         if (PV.IsMine)
@@ -52,40 +74,15 @@ public class Equipement : MonoBehaviour
             }
             else if(_gameObject.CompareTag("itemshop"))
             {
-                coin = Stats.coinAmount;
                 if (_gameObject.GetComponent<ShopItems>().isweapon &&
                     _gameObject.GetComponent<ShopItems>().prix <= coin && freeslot <= 2)
                 {
-                    coin -= _gameObject.GetComponent<ShopItems>().prix;
+                    Stats.coinAmount -= _gameObject.GetComponent<ShopItems>().prix;
                     Stats.coinAmount = coin;
                     equipitems();
                 }
             }
         }
-    }
-
-    private void Update()
-    {
-        // Get access to "firepoint", get the list of scripts attached to it
-        // Get only the one activated
-
-//        GameObject firepoint = transform.GetChild(4).GetChild(0).GetChild(0).gameObject;
-//
-//        Rafale r = firepoint.GetComponent<Rafale>();
-//        PoisonDart p = firepoint.GetComponent<PoisonDart>();
-//        LaserBeam l = firepoint.GetComponent<LaserBeam>();
-//        ChargedBeam c = firepoint.GetComponent<ChargedBeam>();
-//
-//        if (r.active)
-//            activeSprite = Resources.Load("rifle") as Sprite;
-//        if (p.active)
-//            activeSprite = Resources.Load("poison") as Sprite;
-//        if (l.active)
-//            activeSprite = Resources.Load("laser") as Sprite;
-//        if (c.active)
-//            activeSprite = Resources.Load("charged") as Sprite;
-//
-//        GameObject.Find("Canvas").transform.GetChild(2).GetChild(2).GetComponent<Image>().sprite = activeSprite;
     }
 
     private void equipitems()
@@ -95,6 +92,8 @@ public class Equipement : MonoBehaviour
                         case "rafale":
                             if (!_rafale.active)
                             {
+                                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 0;
+                                equipement[freeslot] = "rafale";
                                 _rafale.active = true;
                                 _rafale.slot = freeslot;
                                 _rafale.enabled = true;
@@ -107,6 +106,8 @@ public class Equipement : MonoBehaviour
                         case "masse":
                             if (!masse.active)
                             {
+                                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 1;
+                                equipement[freeslot] = "masse";
                                 masse.active = true;
                                 masse.slot = freeslot;
                                 masse.enabled = true;
@@ -118,6 +119,8 @@ public class Equipement : MonoBehaviour
                         case "laserbeam":
                             if (!_laserBeam.active)
                             {
+                                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 2;
+                                equipement[freeslot] = "laserbeam";
                                 _laserBeam.active = true;
                                 _laserBeam.enabled = true;
                                 _laserBeam.slot = freeslot;
@@ -130,6 +133,8 @@ public class Equipement : MonoBehaviour
                         case "chargedbeam":
                             if (!_chargedBeam.active)
                             {
+                                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 3;
+                                equipement[freeslot] = "chargedbeam";
                                 _chargedBeam.active = true;
                                 _chargedBeam.slot = freeslot;
                                 _chargedBeam.enabled = true;
@@ -141,7 +146,10 @@ public class Equipement : MonoBehaviour
                             break;
                         case "poisondart":
                             if (_poisonDart.active)
-                            { _poisonDart.active = true;
+                            {
+                                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 4;
+                                equipement[freeslot] = "poisondart";
+                                _poisonDart.active = true;
                                 _poisonDart.slot = freeslot;
                                 _poisonDart.enabled = true;
                                 PhotonNetwork.Destroy(_gameObject);
@@ -151,6 +159,8 @@ public class Equipement : MonoBehaviour
                         case "aoeheal":
                             if (AoeHeal.active)
                             {
+                                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 5;
+                                equipement[freeslot] = "aoeheal";
                                 AoeHeal.active = true;
                                 AoeHeal.slot = freeslot;
                                 AoeHeal.enabled = true;
@@ -161,6 +171,8 @@ public class Equipement : MonoBehaviour
                         case "aoeattack":
                             if (AoeDmg.active)
                             {
+                                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 6;
+                                equipement[freeslot] = "aoeattack";
                                 AoeDmg.active = true;
                                 AoeDmg.slot = freeslot;
                                 AoeDmg.enabled = true;
@@ -171,6 +183,8 @@ public class Equipement : MonoBehaviour
                         case "moreshoot":
                             if (MoreShoot.active)
                             {
+                                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 7;
+                                equipement[freeslot] = "moreshoot";
                                 MoreShoot.active = true;
                                 MoreShoot.slot = freeslot;
                                 MoreShoot.enabled = true;
@@ -179,5 +193,6 @@ public class Equipement : MonoBehaviour
                             }
                             break;
                     }
+         GameObject.Find("varHolder").GetComponent<variablesStock>().UpdateIcons(freeslot);
     }
 }

@@ -360,6 +360,10 @@ MonoBehaviour:
   freeslot: 0
   _rafale: {fileID: 0}
   masse: {fileID: 4996181310373886557}
+  equipement:
+  - 
+  - 
+  - 
   _laserBeam: {fileID: 0}
   _chargedBeam: {fileID: 0}
   _poisonDart: {fileID: 0}
@@ -402,7 +406,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 9
   neo: {fileID: 7299700018657890553, guid: b65768f60c33c9842a79c7635ac09bbb, type: 3}
-  shouldGen: 1
   spawnOffset: {x: 0, y: 0}
 --- !u!1 &1937480112498330989
 GameObject:
@@ -449,7 +452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firerate: 50
   fire: 0
-  myCam: {fileID: 0}
+  myCam: {fileID: 1342151103774718637}
 --- !u!1 &3058914227293379049
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,7 +498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firerate: 50
   fire: 0
-  myCam: {fileID: 0}
+  myCam: {fileID: 1342151103774718637}
 --- !u!1 &3067907267516270255
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,7 +977,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3358716196256130625
 Transform:
   m_ObjectHideFlags: 0
@@ -998,7 +1001,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6570069282665612067}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e12c0189b8671774d9965465f1eab84f, type: 3}
   m_Name: 

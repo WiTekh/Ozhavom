@@ -25,6 +25,7 @@
             <e p="readme.txt" t="Include" />
           </e>
         </e>
+        <e p="fasterRat.cs" t="Include" />
         <e p="miniMap.cs" t="Include" />
         <e p="other assets" t="Include">
           <e p="TMP" t="Include">

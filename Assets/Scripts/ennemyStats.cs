@@ -14,21 +14,26 @@ public class ennemyStats : MonoBehaviourPunCallbacks, IPunObservable
 
     private void Update()
     {
-        if (health <= 0)
+        if (gameObject.GetComponent<PhotonView>().IsMine)
         {
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            gameObject.GetComponent<ennemyBehaviour>().enabled = false;
-            gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll; 
-        }
-        else if (tick == 25)
-        {
-            health -= poison;
-            tick = 0;
-        }
-        else
-        {
-            tick ++;
+            if (health <= 0)
+            {
+                //PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "items", "coin"), transform.position, Quaternion.identity);
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                gameObject.GetComponent<ennemyBehaviour>().enabled = false;
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                //PhotonNetwork.Destroy(gameObject);
+            }
+            else if (tick == 25)
+            {
+                health -= poison;
+                tick = 0;
+            }
+            else
+            {
+                tick++;
+            }
         }
     }
 
@@ -43,8 +48,6 @@ public class ennemyStats : MonoBehaviourPunCallbacks, IPunObservable
         {
             this.health = (float) stream.ReceiveNext();
             this.poison = (float) stream.ReceiveNext();
-
-            
         }
     }
 }
