@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\noeba\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\noeba\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Ozhavom.846849366.00" t="ExcludeRecursive" />
-    <e p="D:\cour\programation\Git\Ozhavom" t="IncludeRecursive">
+    <e p="C:\Users\olgay\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\olgay\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_Ozhavom.-1428318037.00" t="ExcludeRecursive" />
+    <e p="C:\Users\olgay\Ozhavom" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="AI" t="Include">
@@ -12,6 +12,10 @@
             <e p="ennemyBehaviour.cs" t="Include" />
             <e p="moving.cs" t="Include" />
           </e>
+        </e>
+        <e p="Boingo_Behavior.cs" t="Include" />
+        <e p="Bosses" t="Include">
+          <e p="IntroBehaviour_Oct.cs" t="Include" />
         </e>
         <e p="Demigiant" t="Include">
           <e p="DOTween" t="Include">
@@ -27,6 +31,8 @@
             <e p="readme.txt" t="Include" />
           </e>
         </e>
+        <e p="Idle_Behavior.cs" t="Include" />
+        <e p="Mine.cs" t="Include" />
         <e p="other assets" t="Include">
           <e p="TMP" t="Include">
             <e p="Examples &amp; Extras" t="Include">
@@ -444,6 +450,7 @@
             <e p="matrixe.cs" t="Include" />
           </e>
         </e>
+        <e p="Rotation_Behavior.cs" t="Include" />
         <e p="Scenes" t="Include">
           <e p="Menus" t="Include">
             <e p="Cre_Joi.Sys" t="Include">
@@ -467,7 +474,6 @@
           <e p="camMove.cs" t="Include" />
           <e p="changeVal.cs" t="Include" />
           <e p="Class.cs" t="Include" />
-          <e p="DartCollison.cs" t="Include" />
           <e p="debug_master.cs" t="Include" />
           <e p="displaycharacter.cs" t="Include" />
           <e p="ennemyStats.cs" t="Include" />
@@ -522,8 +528,13 @@
           <e p="spawnEnnemies.cs" t="Include" />
           <e p="SpawnShopItems.cs" t="Include" />
           <e p="variablesStock.cs" t="Include" />
+          <e p="Weapons" t="Include">
+            <e p="DartCollison.cs" t="Include" />
+            <e p="MineDmg.cs" t="Include" />
+          </e>
           <e p="weaponUI.cs" t="Include" />
         </e>
+        <e p="Slide_Behavior.cs" t="Include" />
         <e p="Weapons" t="Include">
           <e p="ChargedBeam.cs" t="Include" />
           <e p="LaserBeam.cs" t="Include" />

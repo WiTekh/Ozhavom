@@ -129,6 +129,7 @@ MonoBehaviour:
   detection: 10
   nxtFire: 2
   bullet: {fileID: 4403390162498528759, guid: 9dbb2483aac1745ee88ad2507c44a56a, type: 3}
+  turretBullet: {fileID: 0}
   isRat: 1
   collided: 0
 --- !u!114 &8763422460329221910

@@ -39,23 +39,30 @@ public class ennemyBehaviour : MonoBehaviour
 
     private void Update()
     {
-        if (Pv.IsMine)
+        if (!CompareTag("Boss"))
         {
-            if (!isRat)
+            if (Pv.IsMine)
             {
-                Thrower();
-            }
-            else
-            {
-                Rat();
-            }
+                if (!isRat)
+                {
+                    Thrower();
+                }
+                else
+                {
+                    Rat();
+                }
 
-            if (cooled <= cooldown)
-            {
-                cooled++;
-            }
+                if (cooled <= cooldown)
+                {
+                    cooled++;
+                }
+            }   
         }
-        
+
+        if (CompareTag("Boss"))
+        {
+            Physics.IgnoreCollision(bullet.GetComponent<Collider>(), GetComponent<Collider>());
+        }
     }
 
     void Rat()

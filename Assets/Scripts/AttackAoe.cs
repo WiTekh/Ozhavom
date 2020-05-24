@@ -61,6 +61,10 @@ public class AttackAoe : MonoBehaviour
                         break;
                 }
             }
+            else
+            {
+                fire++;
+            }
         }
     }
    

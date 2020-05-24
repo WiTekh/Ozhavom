@@ -19,6 +19,8 @@ public class spawnEnnemies : MonoBehaviour
     private bool go4boss = true;
     [SerializeField] private bool isOccupied;
 
+    public GameObject bossRoom;
+
 
     [SerializeField] private List<GameObject> ennemies;
     
@@ -110,7 +112,15 @@ public class spawnEnnemies : MonoBehaviour
     void SpawnBoss()
     {
         Debug.Log($"Boss : ({transform.position.x},{transform.position.y}) Spawned");
-        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "octo"), transform.position, Quaternion.identity);
+        GameObject bite = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Octothorp"), transform.position, Quaternion.identity);
+        bite.transform.parent = transform;
+        bossRoom = bite.transform.parent.parent.parent.gameObject;
+        if (transform.parent.parent.GetComponent<cleanscript>().boss)
+        {
+            Debug.Log("Found Boss");
+            GameObject.Find("varHolder").GetComponent<variablesStock>().bossRoom = bossRoom;
+        }
+
         GameObject.Find("Canvas").transform.GetChild(1).gameObject.SetActive(true);
     }
 }

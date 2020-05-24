@@ -11,7 +11,7 @@ public class ItemInfo : MonoBehaviour
      private void Start()
      {
           Random rng = new Random();
-          weaponname = WichItem((rng.Next(7)+setazero)%7);
+          weaponname = WichItem((rng.Next(8)+setazero)%9);
      }
      private string WichItem(int rng)
      {
@@ -31,6 +31,8 @@ public class ItemInfo : MonoBehaviour
                     return "aoeheal";
                case 6:
                     return "moreshoot";
+               case 7:
+                    return "mine";
                default:
                     return "chargedbeam";
           }

@@ -61,6 +61,10 @@ public class HealAoe : MonoBehaviour
                         break;
                 }
             }
+            else
+            {
+                fire++;
+            }
         }
     }
    

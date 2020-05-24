@@ -232,8 +232,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7125cdc49778e541af9826a64543abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firerate: 200
   active: 0
+  weaponRenderer: {fileID: 0}
+  _dataHandler: {fileID: 0}
+  firerate: 200
   slot: 0
 --- !u!120 &6421561090070277888
 LineRenderer:
@@ -344,8 +346,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9978adb9bd4c7984c8c0fd61f3e2a1c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot: 0
   active: 0
+  weaponRenderer: {fileID: 0}
+  slot: 0
   LaserHit: {fileID: 0}
   firerate: 200
 --- !u!114 &8966201962212084303
@@ -360,8 +363,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0664813cb9396b142ad6654e62e65e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot: 0
   active: 0
+  weaponRenderer: {fileID: 0}
+  slot: 0
   LaserHit: {fileID: 0}
   firerate: 19
 --- !u!114 &8068349116409934530
@@ -376,8 +380,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8df118049bdf7645802b76f7f095757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firerate: 50
   active: 0
+  weaponRenderer: {fileID: 0}
+  firerate: 50
   slot: 0
 --- !u!114 &8168117061818981094
 MonoBehaviour:
@@ -391,8 +396,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3c2298c9ae94814d9757248ae672ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firerate: 500
   active: 0
+  weaponRenderer: {fileID: 0}
+  firerate: 500
   slot: 0
 --- !u!114 &6526308167156209217
 MonoBehaviour:
@@ -406,8 +412,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83e0a725a416e7418471ef7fc145b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firerate: 50
   active: 0
+  weaponRenderer: {fileID: 0}
+  firerate: 50
   slot: 0
 --- !u!114 &1744698214737444866
 MonoBehaviour:
@@ -421,8 +428,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fcd85901347fcb4e85ce111b72958a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firerate: 200
   active: 0
+  weaponRenderer: {fileID: 0}
+  firerate: 200
   slot: 0
 --- !u!1 &1921264250537204109
 GameObject:
@@ -838,7 +846,7 @@ MonoBehaviour:
   AoeDmg: {fileID: 0}
   AoeHeal: {fileID: 0}
   MoreShoot: {fileID: 0}
-  activeSprite: {fileID: 0}
+  dataHandler: {fileID: 0}
 --- !u!114 &47288387975487227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -873,7 +881,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 9
   neo: {fileID: 7299700018657890553, guid: b65768f60c33c9842a79c7635ac09bbb, type: 3}
-  shouldGen: 1
   spawnOffset: {x: 0, y: 0}
 --- !u!114 &7191139001042534302
 MonoBehaviour:

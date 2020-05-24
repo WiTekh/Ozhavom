@@ -10,6 +10,8 @@ public class variablesStock : MonoBehaviour
 
     public Vector2 spawnOffset;
 
+    public GameObject bossRoom;
+
     public Sprite activeWeapon;
     public Sprite slot1Wp;
     public Sprite slot2Wp;

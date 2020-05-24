@@ -13,6 +13,8 @@ TagManager:
   - rRight
   - spawner
   - room
+  - itemshop
+  - Boss
   layers:
   - Default
   - TransparentFX

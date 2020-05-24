@@ -7,10 +7,11 @@ using UnityEngine;
 
 public class ennemyStats : MonoBehaviourPunCallbacks, IPunObservable
 {
-    [SerializeField]public float health = 100;
+    [SerializeField]public float health;
     public float poison = 0;
     public float dmg = 50;
     private float tick= 25;
+    private Animator anim;
 
     private void Update()
     {
@@ -43,8 +44,6 @@ public class ennemyStats : MonoBehaviourPunCallbacks, IPunObservable
         {
             this.health = (float) stream.ReceiveNext();
             this.poison = (float) stream.ReceiveNext();
-
-            
         }
     }
 }
