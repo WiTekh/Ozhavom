@@ -42,15 +42,15 @@ public class variablesStock : MonoBehaviour
             // -- Weapon Management -- 
             //Slot 1 Weapon
             case 0:
-                canvas.GetChild(2).GetChild(3).GetComponent<Image>().sprite = availableSprites[slots[0]];
+                canvas.GetChild(2).GetChild(1).GetComponent<Image>().sprite = availableSprites[slots[0]];
                 break;
             //Slot 2 Weapon
             case 1:
-                canvas.GetChild(3).GetChild(3).GetComponent<Image>().sprite = availableSprites[slots[1]];
+                canvas.GetChild(3).GetChild(1).GetComponent<Image>().sprite = availableSprites[slots[1]];
                 break;
             //Slot 3 Weapon
             default:
-                canvas.GetChild(4).GetChild(3).GetComponent<Image>().sprite = availableSprites[slots[2]];
+                canvas.GetChild(4).GetChild(1).GetComponent<Image>().sprite = availableSprites[slots[2]];
                 break;
             // -----------------------
         }
