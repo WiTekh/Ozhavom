@@ -31,8 +31,6 @@ public class ChargedBeam : MonoBehaviour
 
     void Update()
     {
-        _dataHandler.GetComponent<variablesStock>().activeWeapon = weaponRenderer;
-
         if (PV.IsMine)
         {
             if (move.enabled == false)

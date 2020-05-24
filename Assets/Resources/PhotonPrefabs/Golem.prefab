@@ -448,7 +448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5622893722558017868
 Transform:
   m_ObjectHideFlags: 0
@@ -839,6 +839,10 @@ MonoBehaviour:
   freeslot: 0
   _rafale: {fileID: 0}
   masse: {fileID: 7321732425428556263}
+  equipement:
+  - 
+  - 
+  - 
   _laserBeam: {fileID: 0}
   _chargedBeam: {fileID: 0}
   _poisonDart: {fileID: 0}
@@ -939,7 +943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firerate: 50
   fire: 0
-  myCam: {fileID: 0}
+  myCam: {fileID: 3632790706009200919}
 --- !u!1 &4778662021720844446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1331,7 +1335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firerate: 50
   fire: 0
-  myCam: {fileID: 0}
+  myCam: {fileID: 3632790706009200919}
 --- !u!1 &7266812869290952847
 GameObject:
   m_ObjectHideFlags: 0
