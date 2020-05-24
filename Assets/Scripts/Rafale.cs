@@ -28,8 +28,6 @@ public class Rafale : MonoBehaviour
 
     private void Update()
     {
-        _dataHandler.activeWeapon = weaponRenderer;
-
         if (PV.IsMine)
         {
             if (fire < firerate)

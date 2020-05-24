@@ -10,30 +10,53 @@ public class variablesStock : MonoBehaviour
 
     public Vector2 spawnOffset;
 
-    public Sprite activeWeapon;
-    public Sprite slot1Wp;
-    public Sprite slot2Wp;
+    public int[] slots = new int[3];
 
-    private void Update()
+    public Sprite[] availableSprites;
+
+    public Sprite blank;
+
+    private void Start()
     {
         Transform canvas = GameObject.Find("Canvas").transform;
-
-        // -- Weapon Management -- 
+        
+        // -- Weapon Init -- 
         //Active Weapon
-        canvas.GetChild(2).GetChild(2).GetComponent<Image>().sprite = activeWeapon;
+        canvas.GetChild(2).GetChild(3).GetComponent<Image>().sprite = blank;
         //Slot 1 Weapon
-        canvas.GetChild(3).GetChild(2).GetComponent<Image>().sprite = slot1Wp;
+        canvas.GetChild(3).GetChild(3).GetComponent<Image>().sprite = blank;
         //Slot 2 Weapon
-        canvas.GetChild(4).GetChild(2).GetComponent<Image>().sprite = slot2Wp;
+        canvas.GetChild(4).GetChild(3).GetComponent<Image>().sprite = blank;
         // -----------------------
-        
-        // -- Spell Management --
-        //Spell 1
-        
-        //Spell 2
-        
-        //Spell 3
-        
-        // ----------------------
+    }
+
+    public void UpdateIcons(int i)
+    {
+        Debug.Log("Updating Icons ... ");
+        Transform canvas = GameObject.Find("Canvas").transform;
+
+        switch (i)
+        {
+            // -- Weapon Management -- 
+            //Slot 1 Weapon
+            case 0:
+                canvas.GetChild(2).GetChild(3).GetComponent<Image>().sprite = availableSprites[slots[0]];
+                break;
+            //Slot 2 Weapon
+            case 1:
+                canvas.GetChild(3).GetChild(3).GetComponent<Image>().sprite = availableSprites[slots[1]];
+                break;
+            //Slot 3 Weapon
+            default:
+                canvas.GetChild(4).GetChild(3).GetComponent<Image>().sprite = availableSprites[slots[2]];
+                break;
+            // -----------------------
+        }
+    }
+
+    public void DeleteLastIcon()
+    {
+        Transform canvas = GameObject.Find("Canvas").transform;
+        canvas.GetChild(3).GetChild(3).GetComponent<Image>().sprite = blank;
     }
 }

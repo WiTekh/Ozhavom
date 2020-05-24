@@ -27,8 +27,6 @@ public class PoisonDart : MonoBehaviour
    
     private void Update()
     {
-        _dataHandler.GetComponent<variablesStock>().activeWeapon = weaponRenderer;
-
         if (PV.IsMine)
         {
             if (fire < firerate)

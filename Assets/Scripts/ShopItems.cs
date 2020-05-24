@@ -15,6 +15,5 @@ public class ShopItems : MonoBehaviour
         {
             iteminfo = transform.GetComponent<ItemInfo>().weaponname;
         }
-        
     }
 }

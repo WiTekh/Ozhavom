@@ -11,7 +11,7 @@ public class pickUpCoin : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<playerStats>().coinAmount += 1;
-            PhotonNetwork.Destroy(transform.parent.gameObject);
+            PhotonNetwork.Destroy(gameObject);
         }
     }
 }

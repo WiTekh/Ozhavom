@@ -201,8 +201,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7125cdc49778e541af9826a64543abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firerate: 200
   active: 0
+  weaponRenderer: {fileID: 0}
+  _dataHandler: {fileID: 0}
+  firerate: 200
   slot: 0
 --- !u!120 &2046200992371525664
 LineRenderer:
@@ -313,8 +315,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9978adb9bd4c7984c8c0fd61f3e2a1c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot: 0
   active: 0
+  weaponRenderer: {fileID: 0}
+  slot: 0
   LaserHit: {fileID: 0}
   firerate: 200
 --- !u!114 &7454476231760334885
@@ -329,8 +332,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0664813cb9396b142ad6654e62e65e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot: 0
   active: 0
+  weaponRenderer: {fileID: 0}
+  slot: 0
   LaserHit: {fileID: 0}
   firerate: 19
 --- !u!114 &357966402277055322
@@ -345,8 +349,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8df118049bdf7645802b76f7f095757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firerate: 50
   active: 0
+  weaponRenderer: {fileID: 0}
+  firerate: 50
   slot: 0
 --- !u!114 &2504705461716731869
 MonoBehaviour:
@@ -360,8 +365,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3c2298c9ae94814d9757248ae672ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firerate: 500
   active: 0
+  weaponRenderer: {fileID: 0}
+  firerate: 500
   slot: 0
 --- !u!114 &7661246242408793478
 MonoBehaviour:
@@ -375,8 +381,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83e0a725a416e7418471ef7fc145b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firerate: 50
   active: 0
+  weaponRenderer: {fileID: 0}
+  firerate: 50
   slot: 0
 --- !u!114 &8783176425395656994
 MonoBehaviour:
@@ -390,8 +397,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fcd85901347fcb4e85ce111b72958a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firerate: 200
   active: 0
+  weaponRenderer: {fileID: 0}
+  firerate: 200
   slot: 0
 --- !u!1 &2224415088456576690
 GameObject:
@@ -599,6 +607,10 @@ MonoBehaviour:
   freeslot: 0
   _rafale: {fileID: 0}
   masse: {fileID: 8150337427640898112}
+  equipement:
+  - 
+  - 
+  - 
   _laserBeam: {fileID: 0}
   _chargedBeam: {fileID: 0}
   _poisonDart: {fileID: 0}
@@ -606,7 +618,7 @@ MonoBehaviour:
   AoeDmg: {fileID: 0}
   AoeHeal: {fileID: 0}
   MoreShoot: {fileID: 0}
-  activeSprite: {fileID: 0}
+  dataHandler: {fileID: 0}
 --- !u!114 &1454615288157574492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -658,7 +670,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3940738641544206149
 Transform:
   m_ObjectHideFlags: 0
@@ -682,7 +694,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3566638193521635362}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e12c0189b8671774d9965465f1eab84f, type: 3}
   m_Name: 
@@ -1124,7 +1136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firerate: 50
   fire: 0
-  myCam: {fileID: 0}
+  myCam: {fileID: 2805064763346735792}
 --- !u!1 &6257439035764613945
 GameObject:
   m_ObjectHideFlags: 0
@@ -1342,4 +1354,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firerate: 50
   fire: 0
-  myCam: {fileID: 0}
+  myCam: {fileID: 2805064763346735792}

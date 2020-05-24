@@ -1425,6 +1425,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb8c4a605521e9408dea0e1cfa6f73b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipement:
+  - 
+  - 
+  - 
   freeslot: 0
   _rafale: {fileID: 6794066672410652982}
   masse: {fileID: 4455560183674721225}
@@ -1432,10 +1436,11 @@ MonoBehaviour:
   _chargedBeam: {fileID: 192150347610833185}
   _poisonDart: {fileID: 6204448966690780424}
   Stats: {fileID: 6404488320476845269}
-  AoeDmg: {fileID: 0}
-  AoeHeal: {fileID: 0}
-  MoreShoot: {fileID: 0}
+  AoeDmg: {fileID: 4930912778413098392}
+  AoeHeal: {fileID: 3040728828918782217}
+  MoreShoot: {fileID: 7612151174118876629}
   dataHandler: {fileID: 0}
+  drops: []
 --- !u!114 &6404488320476845269
 MonoBehaviour:
   m_ObjectHideFlags: 0
