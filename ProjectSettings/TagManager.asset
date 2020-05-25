@@ -16,6 +16,7 @@ TagManager:
   - itemshop
   - Boss
   - dungeon
+  - BadBullet
   layers:
   - Default
   - TransparentFX

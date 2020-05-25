@@ -1,36 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using Photon.Pun;
 using UnityEngine;
 
-public class Masse : MonoBehaviourPunCallbacks, IPunObservable
+public class Shield : MonoBehaviourPunCallbacks, IPunObservable
 {
-    [SerializeField] private int firerate;
-    private int fire;
-    private SpriteRenderer sr;
-    private BoxCollider2D bc;
-    private Transform rb;
-    private PhotonView PV;
+    // Start is called before the first frame update
+   
+    // Start is called before the first frame update
     [SerializeField] public bool active;
+    public Sprite weaponRenderer;
+    private variablesStock _dataHandler;
+
+    private PhotonView PV;
+    [SerializeField] private int firerate;
     [SerializeField] public int slot;
-    [SerializeField] private MasseDmg MasseDmg;
-    private bool yes = false;
-    Vector3 vect = new Vector3(0,0,1);
+    [SerializeField] private GameObject GameObject;
+    private bool fornetwork = false;
+   
+    private int fire;
+
     private void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
-        bc = GetComponent<BoxCollider2D>();
         fire = firerate;
-        rb = transform.parent;
-        PV = GetComponent<PhotonView>();
-    }
+        PV = transform.parent.GetComponent<PhotonView>();
 
+        _dataHandler = GameObject.Find("varHolder").GetComponent<variablesStock>();
+    }
+   
     private void Update()
     {
         if (PV.IsMine)
         {
-
-
+            if (fire == 50)
+            {
+                GameObject.SetActive(false);
+                fornetwork = false;
+            }
             if (fire >= firerate)
             {
                 switch (slot)
@@ -62,48 +69,28 @@ public class Masse : MonoBehaviourPunCallbacks, IPunObservable
                         break;
                 }
             }
-
-            if (fire < firerate)
+            else
             {
                 fire++;
             }
-
-            if (fire == 1080)
-            {
-                sr.enabled = false;
-                bc.enabled = false;
-                MasseDmg.enabled = false;
-                yes = false;
-            }
-
-            if (fire < 1080)
-            {
-                rb.rotation *= Quaternion.Euler(vect);
-            }
         }
     }
+   
     void Fire()
     {
-        sr.enabled = true;
-        bc.enabled = true;
-        MasseDmg.enabled = true;
-        yes = true;
+        fornetwork = true;
+        GameObject.SetActive(true);
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.IsWriting)
         {
-            stream.SendNext(yes);
+            stream.SendNext(fornetwork);
         }
         else if (stream.IsReading)
         {
-            yes = (bool) stream.ReceiveNext();
-            sr.enabled = yes;
-            bc.enabled = yes;
-            MasseDmg.enabled = yes;
+            GameObject.SetActive((bool)stream.ReceiveNext());
         }
     }
 }
-
-

@@ -1,21 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using Photon.Pun;
 using UnityEngine;
 
-public class MoreShoot : MonoBehaviourPunCallbacks, IPunObservable
+public class InstantHeal : MonoBehaviour
 {
+    // Start is called before the first frame update
     [SerializeField] public bool active;
     public Sprite weaponRenderer;
     private variablesStock _dataHandler;
-    private bool fornetwork = true;
 
     private PhotonView PV;
     [SerializeField] private int firerate;
     [SerializeField] public int slot;
    
     private int fire;
-    // Update is called once per frame
+
     private void Start()
     {
         fire = firerate;
@@ -28,11 +29,6 @@ public class MoreShoot : MonoBehaviourPunCallbacks, IPunObservable
     {
         if (PV.IsMine)
         {
-            if (fire == 125)
-            {
-                transform.parent.parent.parent.GetChild(5).gameObject.SetActive(false);
-            }
-
             if (fire >= firerate)
             {
                 switch (slot)
@@ -64,24 +60,15 @@ public class MoreShoot : MonoBehaviourPunCallbacks, IPunObservable
                         break;
                 }
             }
+            else
+            {
+                fire++;
+            }
         }
     }
    
     void Fire()
     {
-        transform.parent.parent.parent.GetChild(5).gameObject.SetActive(true);
-    }
-
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        if (stream.IsWriting)
-        {
-            stream.SendNext(fornetwork);
-        }
-
-        if (stream.IsReading)
-        {
-            transform.parent.parent.parent.GetChild(5).gameObject.SetActive(fornetwork);
-        }
+        GameObject yes = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "InstantHeal"), transform.position, transform.rotation);
     }
 }
