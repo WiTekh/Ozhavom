@@ -212,7 +212,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.000000016763806, y: -0.000000029802322}
@@ -264,8 +264,6 @@ MonoBehaviour:
   cooldown: 5
   detection: 0
   nxtFire: 0
-  bullet: {fileID: 0}
-  turretBullet: {fileID: 0}
   isRat: 0
   collided: 0
 --- !u!1 &8802545906025496000
@@ -360,10 +358,10 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8802545906025496000}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -409,11 +407,9 @@ MonoBehaviour:
   speed: 0
   stopDist: 0
   retreatDist: 0
-  cooldown: 5
+  cooldown: 15
   detection: 0
   nxtFire: 0
-  bullet: {fileID: 0}
-  turretBullet: {fileID: 0}
   isRat: 0
   collided: 0
 --- !u!1 &8802545906520023032
@@ -508,10 +504,10 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8802545906520023032}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -557,11 +553,9 @@ MonoBehaviour:
   speed: 0
   stopDist: 0
   retreatDist: 0
-  cooldown: 5
+  cooldown: 15
   detection: 0
   nxtFire: 0
-  bullet: {fileID: 0}
-  turretBullet: {fileID: 0}
   isRat: 0
   collided: 0
 --- !u!1 &8802545906970299539
@@ -656,10 +650,10 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8802545906970299539}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -705,11 +699,9 @@ MonoBehaviour:
   speed: 0
   stopDist: 0
   retreatDist: 0
-  cooldown: 5
+  cooldown: 15
   detection: 0
   nxtFire: 0
-  bullet: {fileID: 0}
-  turretBullet: {fileID: 0}
   isRat: 0
   collided: 0
 --- !u!1 &8802545907201950997
@@ -804,10 +796,10 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8802545907201950997}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -853,10 +845,8 @@ MonoBehaviour:
   speed: 0
   stopDist: 0
   retreatDist: 0
-  cooldown: 5
+  cooldown: 15
   detection: 0
   nxtFire: 0
-  bullet: {fileID: 0}
-  turretBullet: {fileID: 0}
   isRat: 0
   collided: 0

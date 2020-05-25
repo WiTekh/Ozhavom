@@ -11,7 +11,6 @@ public class ennemyStats : MonoBehaviourPunCallbacks, IPunObservable
     public float poison = 0;
     public float dmg = 50;
     private float tick= 25;
-    private Animator anim;
 
     private void Update()
     {

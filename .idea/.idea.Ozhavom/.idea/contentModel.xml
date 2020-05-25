@@ -13,9 +13,11 @@
             <e p="moving.cs" t="Include" />
           </e>
         </e>
+        <e p="blocked.cs" t="Include" />
         <e p="Bosses" t="Include">
           <e p="IntroBehaviour_Oct.cs" t="Include" />
         </e>
+        <e p="ddol.cs" t="Include" />
         <e p="Demigiant" t="Include">
           <e p="DOTween" t="Include">
             <e p="Modules" t="Include">
@@ -30,6 +32,8 @@
             <e p="readme.txt" t="Include" />
           </e>
         </e>
+        <e p="Heal.cs" t="Include" />
+        <e p="InstantHeal.cs" t="Include" />
         <e p="MasseDmg.cs" t="Include" />
         <e p="other assets" t="Include">
           <e p="TMP" t="Include">
@@ -103,6 +107,7 @@
             </e>
           </e>
         </e>
+        <e p="pause.cs" t="Include" />
         <e p="Photon" t="Include">
           <e p="PhotonChat" t="Include">
             <e p="Code" t="Include">
@@ -457,7 +462,6 @@
               </e>
               <e p="Join" t="Include">
                 <e p="ListRooms.cs" t="Include" />
-                <e p="LoadScene.cs" t="Include" />
               </e>
             </e>
           </e>
@@ -486,6 +490,7 @@
           <e p="ItemInfo.cs" t="Include" />
           <e p="Joueur.cs" t="Include" />
           <e p="LaserDamage.cs" t="Include" />
+          <e p="LoadScene.cs" t="Include" />
           <e p="Mine.cs" t="Include" />
           <e p="miniMap.cs" t="Include" />
           <e p="MoreShoot.cs" t="Include" />
@@ -535,11 +540,17 @@
           <e p="SpawnShopItems.cs" t="Include" />
           <e p="variablesStock.cs" t="Include" />
           <e p="Weapons" t="Include">
+            <e p="Canon.cs" t="Include" />
             <e p="DartCollison.cs" t="Include" />
+            <e p="Mine.cs" t="Include" />
             <e p="MineDmg.cs" t="Include" />
+            <e p="Rafale.cs" t="Include" />
           </e>
           <e p="weaponUI.cs" t="Include" />
         </e>
+        <e p="Seisme.cs" t="Include" />
+        <e p="SeismeDmg.cs" t="Include" />
+        <e p="Shield.cs" t="Include" />
         <e p="Weapons" t="Include">
           <e p="ChargedBeam.cs" t="Include" />
           <e p="LaserBeam.cs" t="Include" />

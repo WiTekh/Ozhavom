@@ -21,12 +21,12 @@ public class octo_Pattern : MonoBehaviour
         MaxOH = GetComponent<ennemyStats>().health;
         octoHealth.maxValue = MaxOH;
         CurrentOH = MaxOH;
-        
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        if (octoHealth.value == 0)
+        if (octoHealth.value <= 0)
         {
             anim.SetTrigger("death");
         }

@@ -26,6 +26,10 @@ public class Equipement : MonoBehaviour
     [SerializeField] private HealAoe AoeHeal;
     [SerializeField] private MoreShoot MoreShoot;
     [SerializeField] private Mine Mine;
+    [SerializeField] private Canon Canon;
+    [SerializeField] private Seisme Seisme;
+    [SerializeField] private InstantHeal InstantHeal;
+    [SerializeField] private Shield Shield;
     private AvatarSetup AvatarSetups;
     private PhotonView PV;
     private int coin;
@@ -227,7 +231,6 @@ public class Equipement : MonoBehaviour
         {
             if (!MoreShoot.active)
             {
-                Debug.Log("yeet");
                 equipement[freeslot] = "moreshoot";
                 MoreShoot.active = true;
                 MoreShoot.slot = freeslot;
@@ -239,11 +242,67 @@ public class Equipement : MonoBehaviour
 
             }
         }
+        else if ("seisme" == name)
+        {
+            if (!Seisme.active)
+            {
+                equipement[freeslot] = "seisme";
+                Seisme.active = true;
+                Seisme.slot = freeslot;
+                Seisme.enabled = true;
+                freeslot++;
+
+                PhotonNetwork.Destroy(_gameObject);
+                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 9;
+
+            }
+        }
+        else if ("instantheal" == name)
+        {
+            if (!InstantHeal.active)
+            {
+                equipement[freeslot] = "instantheal";
+                InstantHeal.active = true;
+                InstantHeal.slot = freeslot;
+                InstantHeal.enabled = true;
+                freeslot++;
+
+                PhotonNetwork.Destroy(_gameObject);
+                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 10;
+
+            }
+        }
+        else if ("shield" == name)
+        {
+            if (!Shield.active)
+            {
+                equipement[freeslot] = "shield";
+                Shield.active = true;
+                Shield.slot = freeslot;
+                Shield.enabled = true;
+                freeslot++;
+
+                PhotonNetwork.Destroy(_gameObject);
+                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 11;
+
+            }
+        }
+        else if (name == "canon")
+        {
+          if (Canon.active)
+          {
+            dataHandler.GetComponent<variablesStock>().slots[freeslot] = 9;
+            equipement[freeslot] = "canon";
+            Canon.active = true;
+            Canon.slot = freeslot;
+            Canon.enabled = true;
+            PhotonNetwork.Destroy(_gameObject);
+            freeslot++;
+        }
 
         if (freeslot >0)
         {
             GameObject.Find("varHolder").GetComponent<variablesStock>().UpdateIcons(freeslot-1);
         }
-        
     }
 }

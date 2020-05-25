@@ -97,6 +97,7 @@ public class ennemyBehaviour : MonoBehaviour
                 GameObject b = PhotonNetwork.Instantiate("bullet", transform.position, Quaternion.identity);
                 b.GetComponent<AIBullet>().Target = new Vector2(player.position.x, player.position.y);
                 fireRate = nxtFire;
+                b.transform.parent = transform;
             }
             else
             {
@@ -119,6 +120,15 @@ public class ennemyBehaviour : MonoBehaviour
             if (Vector2.Distance(transform.position, gO.transform.position) <
                 Vector2.Distance(gameObject.transform.position, player.position))
                 player = gO.transform;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (cooled >= cooldown)
+        {
+            other.gameObject.GetComponent<playerStats>().currentH -= GetComponent<ennemyStats>().dmg;
+            cooled = 0;
         }
     }
 

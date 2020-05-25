@@ -12,13 +12,14 @@ public class ItemInfo : MonoBehaviourPunCallbacks,IPunObservable
      public int setazero = 0;
      private void Start()
      {
+          Random rng = new Random();
+          weaponname = WichItem((rng.Next(9)+setazero)%10);
           PV = GetComponent<PhotonView>();
           if (PV.IsMine)
           {
                Random rng = new Random();
-               weaponname = WichItem((rng.Next(8)+setazero)%9);
+               weaponname = WichItem((rng.Next(10)+setazero)%11);
           }
-         
      }
      private string WichItem(int rng)
      {
@@ -40,6 +41,14 @@ public class ItemInfo : MonoBehaviourPunCallbacks,IPunObservable
                     return "moreshoot";
                case 7:
                     return "mine";
+               case 8:
+                    return "canon";
+               case 9:
+                    return "instantheal";
+               case 10:
+                    return "shield";
+               case 11:
+                    return "seisme";
                default:
                     return "laserbeam";
           }
