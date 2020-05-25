@@ -174,6 +174,15 @@ public class ennemyBehaviour : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (cooled >= cooldown)
+        {
+            other.gameObject.GetComponent<playerStats>().currentH -= GetComponent<ennemyStats>().dmg;
+            cooled = 0;
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))

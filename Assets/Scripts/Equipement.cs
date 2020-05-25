@@ -26,6 +26,7 @@ public class Equipement : MonoBehaviour
     [SerializeField] private HealAoe AoeHeal;
     [SerializeField] private MoreShoot MoreShoot;
     [SerializeField] private Mine Mine;
+    [SerializeField] private Canon Canon;
     private PhotonView PV;
     private int coin;
 
@@ -204,6 +205,19 @@ public class Equipement : MonoBehaviour
                                 PhotonNetwork.Destroy(_gameObject);
                                 freeslot++;
                             }
+                            break;
+                        case "canon" :
+                            if (Canon.active)
+                            {
+                                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 9;
+                                equipement[freeslot] = "canon";
+                                Canon.active = true;
+                                Canon.slot = freeslot;
+                                Canon.enabled = true;
+                                PhotonNetwork.Destroy(_gameObject);
+                                freeslot++;
+                            }
+
                             break;
                     }
          GameObject.Find("varHolder").GetComponent<variablesStock>().UpdateIcons(freeslot);

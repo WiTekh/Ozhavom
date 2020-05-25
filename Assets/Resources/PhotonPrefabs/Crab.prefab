@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 4930912778413098392}
   - component: {fileID: 3040728828918782217}
   - component: {fileID: 6189867917939557741}
+  - component: {fileID: 2778618401829869246}
   m_Layer: 0
   m_Name: firepoint
   m_TagString: Untagged
@@ -537,6 +538,23 @@ MonoBehaviour:
   active: 0
   weaponRenderer: {fileID: 0}
   firerate: 50
+  slot: 0
+--- !u!114 &2778618401829869246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952209691058237489}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0bdf1c1b0bed99438c9c18dc8db8236, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  weaponRenderer: {fileID: 0}
+  _dataHandler: {fileID: 0}
+  firerate: 75
   slot: 0
 --- !u!1 &1880366585684468400
 GameObject:
@@ -1457,6 +1475,7 @@ MonoBehaviour:
   AoeHeal: {fileID: 3040728828918782217}
   MoreShoot: {fileID: 7612151174118876629}
   Mine: {fileID: 6189867917939557741}
+  Canon: {fileID: 2778618401829869246}
   dataHandler: {fileID: 0}
   drops: []
 --- !u!114 &6404488320476845269
