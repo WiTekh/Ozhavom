@@ -2038,7 +2038,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 9
-  neo: {fileID: 7299700018657890553, guid: b65768f60c33c9842a79c7635ac09bbb, type: 3}
+  neo: countryside
+  biome: 1
   spawnOffset: {x: 0, y: 0}
 --- !u!1 &7787058545009321972
 GameObject:
@@ -2219,6 +2220,7 @@ MonoBehaviour:
   firerate: 1250
   active: 0
   slot: 0
+  MasseDmg: {fileID: 0}
 --- !u!61 &959761731469777119
 BoxCollider2D:
   m_ObjectHideFlags: 0

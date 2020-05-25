@@ -18,6 +18,7 @@ public class cleanscript : MonoBehaviourPunCallbacks, IPunObservable
      private int bw= 0;
      private int rw = 0;
      private int lw = 0;
+     private int gr = 0;
     
     
     public bool boss;
