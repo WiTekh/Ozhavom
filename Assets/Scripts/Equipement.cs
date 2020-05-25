@@ -26,6 +26,7 @@ public class Equipement : MonoBehaviour
     [SerializeField] private HealAoe AoeHeal;
     [SerializeField] private MoreShoot MoreShoot;
     [SerializeField] private Mine Mine;
+    [SerializeField] private Canon Canon;
     [SerializeField] private Seisme Seisme;
     [SerializeField] private InstantHeal InstantHeal;
     [SerializeField] private Shield Shield;
@@ -286,11 +287,22 @@ public class Equipement : MonoBehaviour
 
             }
         }
+        else if (name == "canon")
+        {
+          if (Canon.active)
+          {
+            dataHandler.GetComponent<variablesStock>().slots[freeslot] = 9;
+            equipement[freeslot] = "canon";
+            Canon.active = true;
+            Canon.slot = freeslot;
+            Canon.enabled = true;
+            PhotonNetwork.Destroy(_gameObject);
+            freeslot++;
+        }
 
         if (freeslot >0)
         {
             GameObject.Find("varHolder").GetComponent<variablesStock>().UpdateIcons(freeslot-1);
         }
-        
     }
 }

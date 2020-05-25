@@ -486,6 +486,7 @@ GameObject:
   - component: {fileID: 4930912778413098392}
   - component: {fileID: 3040728828918782217}
   - component: {fileID: 6189867917939557741}
+  - component: {fileID: 2778618401829869246}
   - component: {fileID: 5129338536877079557}
   - component: {fileID: 5164817469467663696}
   - component: {fileID: 5962194554436748138}
@@ -757,7 +758,7 @@ MonoBehaviour:
   weaponRenderer: {fileID: 0}
   firerate: 50
   slot: 0
---- !u!114 &5129338536877079557
+--- !u!114 &2778618401829869246
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -803,7 +804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 0
   weaponRenderer: {fileID: 0}
-  firerate: 75
+  firerate: 50
   slot: 0
   GameObject: {fileID: 7700905547331638868}
 --- !u!114 &3030968178325154754
@@ -2081,6 +2082,7 @@ MonoBehaviour:
   AoeHeal: {fileID: 3040728828918782217}
   MoreShoot: {fileID: 7612151174118876629}
   Mine: {fileID: 6189867917939557741}
+  Canon: {fileID: 2778618401829869246}
   Seisme: {fileID: 5129338536877079557}
   InstantHeal: {fileID: 5164817469467663696}
   Shield: {fileID: 5962194554436748138}

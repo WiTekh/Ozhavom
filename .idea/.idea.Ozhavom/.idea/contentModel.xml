@@ -540,8 +540,11 @@
           <e p="SpawnShopItems.cs" t="Include" />
           <e p="variablesStock.cs" t="Include" />
           <e p="Weapons" t="Include">
+            <e p="Canon.cs" t="Include" />
             <e p="DartCollison.cs" t="Include" />
+            <e p="Mine.cs" t="Include" />
             <e p="MineDmg.cs" t="Include" />
+            <e p="Rafale.cs" t="Include" />
           </e>
           <e p="weaponUI.cs" t="Include" />
         </e>
