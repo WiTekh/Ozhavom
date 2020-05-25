@@ -54,6 +54,15 @@ public class playerStats : MonoBehaviour
             coinHeap.text = coinAmount.ToString();
             healthDisp.text = currentH + "/" + AS.maxH;
         }
-        
+
+        if (PhotonNetwork.IsMasterClient && Input.GetKeyDown(KeyCode.L))
+        {
+            Debug.Log("Loading players into Stage 2");
+            gameObject.GetComponent<matrixe>().DestroyDungeon();
+            gameObject.GetComponent<matrixe>().Generate(Vector2.zero);
+            gameObject.transform.position = Vector2.zero;
+            
+            //Balancer les joueurs en (0,0)
+        }
     }
 }

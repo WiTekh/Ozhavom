@@ -24,24 +24,37 @@ public class matrixe : MonoBehaviour
     private PhotonView myPV;
 
     public Vector2 spawnOffset;
+
+    private GameObject parent;
     
     void Start()
     {
+        //Init
+        PV = gameObject.GetComponent<PhotonView>();
+        if (size % 2 == 0) size += 1;
+
+        //Gen
+        Generate(Vector2.zero);
+    }
+
+    public void Generate(Vector2 spawnPos)
+    {
+        matrix = new (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool)[size, size];
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                matrix[i, j] = (true, true, true, true, false, false, false, false, false, false, false);
+            }
+        }
+        
+
+        parent = new GameObject("DUNGEON");
+        Debug.Log("Generating Dungeon in : " + spawnPos);
         myPV = GetComponent<PhotonView>();
         if (PhotonNetwork.IsMasterClient  && myPV.IsMine)
         {
-            
             Debug.Log("is generating");
-            PV = gameObject.GetComponent<PhotonView>();
-            if (size % 2 == 0) size += 1;
-            matrix = new (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool)[size, size];
-            for (int i = 0; i < size; i++)
-            {
-                for (int j = 0; j < size; j++)
-                {
-                    matrix[i, j] = (true, true, true, true, false, false, false, false, false, false, false);
-                }
-            }
 
             generatedungeon();
 
@@ -83,8 +96,8 @@ public class matrixe : MonoBehaviour
             
             //Browse thru matrix to find the new base
             Debug.Log("Getting the Spawn Offset");
-            float __i = 0;
-            float __j = 0;
+            float __i = spawnPos.x;
+            float __j = spawnPos.y;
 
             for (int i = 0; i < size; i++)
             {
@@ -114,7 +127,6 @@ public class matrixe : MonoBehaviour
             //PV.RPC("SaveGenBool", RpcTarget.AllBufferedViaServer);
         }
     }
-
     public void generatedungeon()
     {
         int maxroom = (size * size) /3;
@@ -656,6 +668,8 @@ public class matrixe : MonoBehaviour
 
         oo.name = $"Room_{cnt}";
         
+        oo.transform.parent = parent.transform;
+        
         generateforest(oo, i, j);
         
         oo.GetComponent<cleanscript>().top = matrix[i, j].Item1;
@@ -675,16 +689,21 @@ public class matrixe : MonoBehaviour
         GeneratesShop(cook,forgeron,shop,sensei,oo);
     }
 
-  
+
+    public void DestroyDungeon()
+    {
+        PhotonNetwork.Destroy(parent);
+        foreach (GameObject oo in GameObject.FindGameObjectsWithTag("itemshop"))
+        {
+            PhotonNetwork.Destroy(oo);
+        }
+    }
 
     [PunRPC]
-
     void SendToStock()
     {
         GameObject.Find("varHolder").GetComponent<variablesStock>().spawnOffset = this.spawnOffset;
     }
-
-  
 }
 
 
