@@ -18,40 +18,32 @@ public class spawnEnnemies : MonoBehaviour
     public int RoomID = 80001;
     private bool go4boss = true;
     [SerializeField] private bool isOccupied;
+    private cleanscript CS;
 
     public GameObject bossRoom;
 
 
     [SerializeField] private List<GameObject> ennemies;
     
-    private void Awake()
-    {
-        Spawners = new Transform[transform.childCount];
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            Spawners[i] = transform.GetChild(i);
-        }
-    }
+//    private void Awake()
+//    { 
+//        Spawners = new Transform[transform.childCount];
+//        for (int i = 0; i < transform.childCount; i++)
+//        {
+//            Spawners[i] = transform.GetChild(i);
+//        }
+//    }
 
     private void Start()
-    {/*
-        //Setting the nb of ennemies w/ more chances of having between 4 and 6 ennemies than more or less
-        switch (rd.Next(10))
-        {
-            case 0:
-            case 1:
-                nbEnnemies = rd.Next(2,3);
-                break;
-            case 2:
-            case 3:
-                nbEnnemies = rd.Next(6, 7);
-                break;
-            default:
-                nbEnnemies = rd.Next(4, 6);
-                break;
-        } */
+    {
+        CS = gameObject.GetComponent<cleanscript>();
         nbEnnemies = 2; 
         isOccupied = true;
+        
+        //Determining the pattern
+        int rd = new Random().Next(0, 3);
+        
+        transform.GetChild(6+rd).gameObject.SetActive(true);
     }
 
     private void Update()
@@ -61,7 +53,7 @@ public class spawnEnnemies : MonoBehaviour
             if (ennemies.Count == 0)
             {
                 Debug.Log("Cleared Room");
-                transform.parent.GetComponent<IsOpen>().IsRoomOpen = true;
+                transform.GetChild(4).GetComponent<IsOpen>().IsRoomOpen = true;
                 done = true;
             }
         }
@@ -69,17 +61,17 @@ public class spawnEnnemies : MonoBehaviour
        
 
         //Spawning Ennemies only if not a shop, a spawn, a boss room, etc..
-        if (isOccupied && !transform.parent.parent.GetComponent<cleanscript>().shop && !transform.parent.parent.GetComponent<cleanscript>().item && !transform.parent.parent.GetComponent<cleanscript>().instructor 
-            && !transform.parent.parent.GetComponent<cleanscript>().forge && !transform.parent.parent.GetComponent<cleanscript>().cook && !transform.parent.parent.GetComponent<cleanscript>().boss 
-            && !transform.parent.parent.GetComponent<cleanscript>().spawn && hasSpawned && transform.parent.parent.GetComponent<playerEnter>().hasEntered)
+        if (isOccupied && !CS.shop && !CS.item && !CS.instructor 
+            && !CS.forge && !CS.cook && !CS.boss 
+            && !CS.spawn && hasSpawned && gameObject.GetComponent<playerEnter>().hasEntered)
         { 
             Debug.Log("Spawning ... ");
             Spawn();
             
         }
         //Spawning the Boss
-        if (isOccupied && transform.parent.parent.GetComponent<cleanscript>().boss &&
-            transform.parent.parent.GetComponent<playerEnter>().hasEntered && go4boss)
+        if (isOccupied && CS.boss &&
+            gameObject.GetComponent<playerEnter>().hasEntered && go4boss)
         {
             SpawnBoss();
             go4boss = false;
@@ -101,11 +93,29 @@ public class spawnEnnemies : MonoBehaviour
     void Spawn()
     {
         if (RoomID == 80001)
-        {    
-            
-            ennemies.Add( PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "ennemy"), transform.position + new Vector3(-2,0,0), transform.rotation));
-            ennemies.Add(PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Rat"), transform.position + new Vector3(2,0,0), transform.rotation));
+        {
+            for (int i = 6; i < transform.childCount; i++)
+            {
+                if (transform.GetChild(i).gameObject.active)
+                {
+                    for (int j = 0; j < transform.GetChild(i).childCount; j++)
+                    {
+                        int rd = new Random().Next(0, 1);
+                        string ennemy = "";
+
+                        if (rd == 0)
+                            ennemy = "rat";
+                        else
+                            ennemy = "ennemy";
+
+                        PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", ennemy), transform.GetChild(i).GetChild(j).position,
+                            Quaternion.identity);
+                        nbEnnemies += 1;
+                    }
+                }
+            }
         }
+
         hasSpawned = false;
     }
 
@@ -114,8 +124,8 @@ public class spawnEnnemies : MonoBehaviour
         Debug.Log($"Boss : ({transform.position.x},{transform.position.y}) Spawned");
         GameObject bite = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Octothorp"), transform.position, Quaternion.identity);
         bite.transform.parent = transform;
-        bossRoom = bite.transform.parent.parent.parent.gameObject;
-        if (transform.parent.parent.GetComponent<cleanscript>().boss)
+        bossRoom = gameObject;
+        if (CS.boss)
         {
             Debug.Log("Found Boss");
             GameObject.Find("varHolder").GetComponent<variablesStock>().bossRoom = bossRoom;
