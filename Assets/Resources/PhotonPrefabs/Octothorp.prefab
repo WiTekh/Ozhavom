@@ -264,8 +264,6 @@ MonoBehaviour:
   cooldown: 5
   detection: 0
   nxtFire: 0
-  bullet: {fileID: 0}
-  turretBullet: {fileID: 0}
   isRat: 0
   collided: 0
 --- !u!1 &8802545906025496000
@@ -412,8 +410,6 @@ MonoBehaviour:
   cooldown: 15
   detection: 0
   nxtFire: 0
-  bullet: {fileID: 0}
-  turretBullet: {fileID: 0}
   isRat: 0
   collided: 0
 --- !u!1 &8802545906520023032
@@ -560,8 +556,6 @@ MonoBehaviour:
   cooldown: 15
   detection: 0
   nxtFire: 0
-  bullet: {fileID: 0}
-  turretBullet: {fileID: 0}
   isRat: 0
   collided: 0
 --- !u!1 &8802545906970299539
@@ -708,8 +702,6 @@ MonoBehaviour:
   cooldown: 15
   detection: 0
   nxtFire: 0
-  bullet: {fileID: 0}
-  turretBullet: {fileID: 0}
   isRat: 0
   collided: 0
 --- !u!1 &8802545907201950997
@@ -856,7 +848,5 @@ MonoBehaviour:
   cooldown: 15
   detection: 0
   nxtFire: 0
-  bullet: {fileID: 0}
-  turretBullet: {fileID: 0}
   isRat: 0
   collided: 0

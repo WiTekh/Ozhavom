@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
@@ -23,6 +24,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     
     public void OnClick()
     {
+        GameObject.Find("AMBIANCE").transform.GetChild(1).GetChild(0).GetComponent<AudioSource>().Play();
         if (PhotonNetwork.OfflineMode)
             CreateRoom();
         else
@@ -53,5 +55,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         //Recalling Create if OnCreateRoomFailed called bc that RoomName already exists
         CreateRoom();
+    }
+    
+    public void SoloPlay()
+    {
+        //Va falloir faire un peu plus que ca quand meme
+        SceneManager.LoadScene(5);
     }
 }

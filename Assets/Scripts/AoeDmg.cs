@@ -15,14 +15,19 @@ public class AoeDmg : MonoBehaviour
         {
             other.gameObject.GetComponent<ennemyStats>().health -= dmg;
         }
+
+       
     }
 
     private void Update()
     {
-        time++;
-        if (time == 10)
+        
+        if (time == 3)
         {
             Destroy(gameObject);
         }
+
+       
+        time++;
     }
 }

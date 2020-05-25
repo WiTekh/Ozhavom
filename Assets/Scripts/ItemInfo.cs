@@ -1,17 +1,25 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using Random = System.Random;
 
-public class ItemInfo : MonoBehaviour
+public class ItemInfo : MonoBehaviourPunCallbacks,IPunObservable
 {
      [SerializeField] public string weaponname;
+     private PhotonView PV;
      public int setazero = 0;
      private void Start()
      {
           Random rng = new Random();
           weaponname = WichItem((rng.Next(9)+setazero)%10);
+          PV = GetComponent<PhotonView>();
+          if (PV.IsMine)
+          {
+               Random rng = new Random();
+               weaponname = WichItem((rng.Next(10)+setazero)%11);
+          }
      }
      private string WichItem(int rng)
      {
@@ -35,8 +43,27 @@ public class ItemInfo : MonoBehaviour
                     return "mine";
                case 8:
                     return "canon";
+               case 9:
+                    return "instantheal";
+               case 10:
+                    return "shield";
+               case 11:
+                    return "seisme";
                default:
-                    return "chargedbeam";
+                    return "laserbeam";
+          }
+     }
+
+     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+     {
+          if (stream.IsWriting)
+          {
+               stream.SendNext(weaponname);
+          }
+          else if(stream.IsReading);
+
+          {
+               weaponname = (string) stream.ReceiveNext();
           }
      }
 }

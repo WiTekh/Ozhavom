@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 
-public class MoreShoot : MonoBehaviour
+public class MoreShoot : MonoBehaviourPunCallbacks, IPunObservable
 {
     [SerializeField] public bool active;
     public Sprite weaponRenderer;
     private variablesStock _dataHandler;
+    private bool fornetwork = true;
 
     private PhotonView PV;
     [SerializeField] private int firerate;
@@ -27,7 +28,7 @@ public class MoreShoot : MonoBehaviour
     {
         if (PV.IsMine)
         {
-            if (fire == 250)
+            if (fire == 125)
             {
                 transform.parent.parent.parent.GetChild(5).gameObject.SetActive(false);
             }
@@ -69,5 +70,18 @@ public class MoreShoot : MonoBehaviour
     void Fire()
     {
         transform.parent.parent.parent.GetChild(5).gameObject.SetActive(true);
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(fornetwork);
+        }
+
+        if (stream.IsReading)
+        {
+            transform.parent.parent.parent.GetChild(5).gameObject.SetActive(fornetwork);
+        }
     }
 }

@@ -48,7 +48,6 @@ public class bodymovement : MonoBehaviour
             {
                 _spriteRenderer.sprite = liste[3];
             }
-           
         }
     }
 }
