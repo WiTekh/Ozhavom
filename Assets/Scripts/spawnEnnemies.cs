@@ -21,8 +21,7 @@ public class spawnEnnemies : MonoBehaviour
     private cleanscript CS;
 
     public GameObject bossRoom;
-
-
+    
     [SerializeField] private List<GameObject> ennemies;
     
 //    private void Awake()
@@ -41,9 +40,8 @@ public class spawnEnnemies : MonoBehaviour
         isOccupied = true;
         
         //Determining the pattern
-        int rd = new Random().Next(0, 3);
         
-        transform.GetChild(6+rd).gameObject.SetActive(true);
+        transform.GetChild(6+rd.Next(0, 8)).gameObject.SetActive(true);
     }
 
     private void Update()
@@ -100,7 +98,7 @@ public class spawnEnnemies : MonoBehaviour
                 {
                     for (int j = 0; j < transform.GetChild(i).childCount; j++)
                     {
-                        int rd = new Random().Next(0, 1);
+                        int rd = new Random().Next(0, 2);
                         string ennemy = "";
 
                         if (rd == 0)

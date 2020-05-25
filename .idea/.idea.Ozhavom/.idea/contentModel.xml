@@ -101,6 +101,7 @@
             </e>
           </e>
         </e>
+        <e p="pause.cs" t="Include" />
         <e p="Photon" t="Include">
           <e p="PhotonChat" t="Include">
             <e p="Code" t="Include">
@@ -455,7 +456,6 @@
               </e>
               <e p="Join" t="Include">
                 <e p="ListRooms.cs" t="Include" />
-                <e p="LoadScene.cs" t="Include" />
               </e>
             </e>
           </e>
@@ -484,6 +484,7 @@
           <e p="ItemInfo.cs" t="Include" />
           <e p="Joueur.cs" t="Include" />
           <e p="LaserDamage.cs" t="Include" />
+          <e p="LoadScene.cs" t="Include" />
           <e p="Mine.cs" t="Include" />
           <e p="miniMap.cs" t="Include" />
           <e p="MoreShoot.cs" t="Include" />
@@ -538,6 +539,7 @@
           </e>
           <e p="weaponUI.cs" t="Include" />
         </e>
+        <e p="showDungeon.cs" t="Include" />
         <e p="Weapons" t="Include">
           <e p="ChargedBeam.cs" t="Include" />
           <e p="LaserBeam.cs" t="Include" />
