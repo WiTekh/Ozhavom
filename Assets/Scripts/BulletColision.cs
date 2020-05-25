@@ -17,6 +17,7 @@ public class BulletColision : MonoBehaviour
 
    private void OnTriggerEnter2D(Collider2D collision)
    {
+      Debug.Log(collision.tag);
       
       if (collision.CompareTag("Ennemy") || collision.CompareTag("Boss"))
       {

@@ -27,7 +27,7 @@ public class MoreShoot : MonoBehaviour
     {
         if (PV.IsMine)
         {
-            if (fire == 250)
+            if (fire == 125)
             {
                 transform.parent.parent.parent.GetChild(5).gameObject.SetActive(false);
             }

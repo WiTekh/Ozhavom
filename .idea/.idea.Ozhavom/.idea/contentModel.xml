@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+    <e p="C:\Users\noeba\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\noeba\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Ozhavom.846849366.00" t="ExcludeRecursive" />
+    <e p="D:\cour\programation\Git\Ozhavom" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="AI" t="Include">
@@ -11,7 +13,6 @@
             <e p="moving.cs" t="Include" />
           </e>
         </e>
-        <e p="Boingo_Behavior.cs" t="Include" />
         <e p="Bosses" t="Include">
           <e p="IntroBehaviour_Oct.cs" t="Include" />
         </e>
@@ -29,11 +30,7 @@
             <e p="readme.txt" t="Include" />
           </e>
         </e>
-        <e p="fasterRat.cs" t="Include" />
-        <e p="GolemWeapon.cs" t="Include" />
-        <e p="Idle_Behavior.cs" t="Include" />
-        <e p="Mine.cs" t="Include" />
-        <e p="miniMap.cs" t="Include" />
+        <e p="MasseDmg.cs" t="Include" />
         <e p="other assets" t="Include">
           <e p="TMP" t="Include">
             <e p="Examples &amp; Extras" t="Include">
@@ -451,7 +448,6 @@
             <e p="matrixe.cs" t="Include" />
           </e>
         </e>
-        <e p="Rotation_Behavior.cs" t="Include" />
         <e p="Scenes" t="Include">
           <e p="Menus" t="Include">
             <e p="Cre_Joi.Sys" t="Include">
@@ -471,6 +467,7 @@
           <e p="AoeDmg.cs" t="Include" />
           <e p="AoeHeal.cs" t="Include" />
           <e p="AttackAoe.cs" t="Include" />
+          <e p="Boingo_Behavior.cs" t="Include" />
           <e p="BulletColision.cs" t="Include" />
           <e p="camMove.cs" t="Include" />
           <e p="changeVal.cs" t="Include" />
@@ -479,17 +476,23 @@
           <e p="displaycharacter.cs" t="Include" />
           <e p="ennemyStats.cs" t="Include" />
           <e p="Equipement.cs" t="Include" />
+          <e p="fasterRat.cs" t="Include" />
           <e p="goContainer.cs" t="Include" />
+          <e p="GolemWeapon.cs" t="Include" />
           <e p="HealAoe.cs" t="Include" />
           <e p="Hover.cs" t="Include" />
+          <e p="Idle_Behavior.cs" t="Include" />
           <e p="IsOpen.cs" t="Include" />
           <e p="ItemInfo.cs" t="Include" />
           <e p="Joueur.cs" t="Include" />
           <e p="LaserDamage.cs" t="Include" />
+          <e p="Mine.cs" t="Include" />
+          <e p="miniMap.cs" t="Include" />
           <e p="MoreShoot.cs" t="Include" />
           <e p="MoreShootRotation.cs" t="Include" />
           <e p="Movement" t="Include">
             <e p="bodymovement.cs" t="Include" />
+            <e p="crabBodyMvt.cs" t="Include" />
             <e p="CrabWeapon.cs" t="Include" />
             <e p="gnollweapon.cs" t="Include" />
             <e p="goblinweapon.cs" t="Include" />
@@ -524,8 +527,10 @@
           <e p="playerStats.cs" t="Include" />
           <e p="PoisonDart.cs" t="Include" />
           <e p="Rafale.cs" t="Include" />
+          <e p="Rotation_Behavior.cs" t="Include" />
           <e p="RotationFP.cs" t="Include" />
           <e p="ShopItems.cs" t="Include" />
+          <e p="Slide_Behavior.cs" t="Include" />
           <e p="spawnEnnemies.cs" t="Include" />
           <e p="SpawnShopItems.cs" t="Include" />
           <e p="variablesStock.cs" t="Include" />
@@ -535,7 +540,6 @@
           </e>
           <e p="weaponUI.cs" t="Include" />
         </e>
-        <e p="Slide_Behavior.cs" t="Include" />
         <e p="Weapons" t="Include">
           <e p="ChargedBeam.cs" t="Include" />
           <e p="LaserBeam.cs" t="Include" />
@@ -557,9 +561,7 @@
       <e p="PhotonWebSocket.csproj" t="IncludeRecursive" />
       <e p="PunDemos.DemoHubEditor.csproj" t="IncludeRecursive" />
       <e p="PunDemos.DemoSlotcarEditor.csproj" t="IncludeRecursive" />
-      <e p="Temp/bin" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
-    <e p="$USER_HOME$/Library/Caches/Rider2019.2/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.2/resharper-host/local/Transient/ReSharperHost/v192/SolutionCaches/_Ozhavom.-830269385.00" t="ExcludeRecursive" />
   </component>
 </project>
