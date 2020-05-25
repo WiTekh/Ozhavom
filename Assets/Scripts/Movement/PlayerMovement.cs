@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     //FixedUpdate has to be called for Rigidbodies
     void FixedUpdate()
     {
-        if (PV.IsMine)
+        if (PV.IsMine && !GetComponent<playerStats>().paused)
         {
             Move();
         }
