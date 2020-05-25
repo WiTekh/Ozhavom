@@ -26,6 +26,9 @@ public class Equipement : MonoBehaviour
     [SerializeField] private HealAoe AoeHeal;
     [SerializeField] private MoreShoot MoreShoot;
     [SerializeField] private Mine Mine;
+    [SerializeField] private Seisme Seisme;
+    [SerializeField] private InstantHeal InstantHeal;
+    [SerializeField] private Shield Shield;
     private AvatarSetup AvatarSetups;
     private PhotonView PV;
     private int coin;
@@ -227,7 +230,6 @@ public class Equipement : MonoBehaviour
         {
             if (!MoreShoot.active)
             {
-                Debug.Log("yeet");
                 equipement[freeslot] = "moreshoot";
                 MoreShoot.active = true;
                 MoreShoot.slot = freeslot;
@@ -236,6 +238,51 @@ public class Equipement : MonoBehaviour
 
                 PhotonNetwork.Destroy(_gameObject);
                 dataHandler.GetComponent<variablesStock>().slots[freeslot] = 7;
+
+            }
+        }
+        else if ("seisme" == name)
+        {
+            if (!Seisme.active)
+            {
+                equipement[freeslot] = "seisme";
+                Seisme.active = true;
+                Seisme.slot = freeslot;
+                Seisme.enabled = true;
+                freeslot++;
+
+                PhotonNetwork.Destroy(_gameObject);
+                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 9;
+
+            }
+        }
+        else if ("instantheal" == name)
+        {
+            if (!InstantHeal.active)
+            {
+                equipement[freeslot] = "instantheal";
+                InstantHeal.active = true;
+                InstantHeal.slot = freeslot;
+                InstantHeal.enabled = true;
+                freeslot++;
+
+                PhotonNetwork.Destroy(_gameObject);
+                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 10;
+
+            }
+        }
+        else if ("shield" == name)
+        {
+            if (!Shield.active)
+            {
+                equipement[freeslot] = "shield";
+                Shield.active = true;
+                Shield.slot = freeslot;
+                Shield.enabled = true;
+                freeslot++;
+
+                PhotonNetwork.Destroy(_gameObject);
+                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 11;
 
             }
         }

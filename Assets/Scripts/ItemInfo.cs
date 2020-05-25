@@ -16,7 +16,7 @@ public class ItemInfo : MonoBehaviourPunCallbacks,IPunObservable
           if (PV.IsMine)
           {
                Random rng = new Random();
-               weaponname = WichItem((rng.Next(8)+setazero)%9);
+               weaponname = WichItem((rng.Next(10)+setazero)%11);
           }
          
      }
@@ -40,6 +40,12 @@ public class ItemInfo : MonoBehaviourPunCallbacks,IPunObservable
                     return "moreshoot";
                case 7:
                     return "mine";
+               case 8:
+                    return "seisme";
+               case 9:
+                    return "instantheal";
+               case 10:
+                    return "shield";
                default:
                     return "laserbeam";
           }

@@ -15,6 +15,7 @@ TagManager:
   - room
   - itemshop
   - Boss
+  - BadBullet
   layers:
   - Default
   - TransparentFX

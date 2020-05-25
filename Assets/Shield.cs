@@ -1,21 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using Photon.Pun;
 using UnityEngine;
 
-public class MoreShoot : MonoBehaviourPunCallbacks, IPunObservable
+public class Shield : MonoBehaviourPunCallbacks, IPunObservable
 {
+    // Start is called before the first frame update
+   
+    // Start is called before the first frame update
     [SerializeField] public bool active;
     public Sprite weaponRenderer;
     private variablesStock _dataHandler;
-    private bool fornetwork = true;
 
     private PhotonView PV;
     [SerializeField] private int firerate;
     [SerializeField] public int slot;
+    [SerializeField] private GameObject GameObject;
+    private bool fornetwork = false;
    
     private int fire;
-    // Update is called once per frame
+
     private void Start()
     {
         fire = firerate;
@@ -28,11 +33,11 @@ public class MoreShoot : MonoBehaviourPunCallbacks, IPunObservable
     {
         if (PV.IsMine)
         {
-            if (fire == 125)
+            if (fire == 50)
             {
-                transform.parent.parent.parent.GetChild(5).gameObject.SetActive(false);
+                GameObject.SetActive(false);
+                fornetwork = false;
             }
-
             if (fire >= firerate)
             {
                 switch (slot)
@@ -64,12 +69,17 @@ public class MoreShoot : MonoBehaviourPunCallbacks, IPunObservable
                         break;
                 }
             }
+            else
+            {
+                fire++;
+            }
         }
     }
    
     void Fire()
     {
-        transform.parent.parent.parent.GetChild(5).gameObject.SetActive(true);
+        fornetwork = true;
+        GameObject.SetActive(true);
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
@@ -78,10 +88,9 @@ public class MoreShoot : MonoBehaviourPunCallbacks, IPunObservable
         {
             stream.SendNext(fornetwork);
         }
-
-        if (stream.IsReading)
+        else if (stream.IsReading)
         {
-            transform.parent.parent.parent.GetChild(5).gameObject.SetActive(fornetwork);
+            GameObject.SetActive((bool)stream.ReceiveNext());
         }
     }
 }
