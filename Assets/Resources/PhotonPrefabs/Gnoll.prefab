@@ -357,6 +357,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb8c4a605521e9408dea0e1cfa6f73b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipement:
+  - 
+  - 
+  - 
   freeslot: 0
   _rafale: {fileID: 0}
   masse: {fileID: 4996181310373886557}
@@ -369,6 +373,7 @@ MonoBehaviour:
   MoreShoot: {fileID: 9103490873535812435}
   Mine: {fileID: 8984152879996888187}
   dataHandler: {fileID: 0}
+  drops: []
 --- !u!114 &2333432224606633281
 MonoBehaviour:
   m_ObjectHideFlags: 0
