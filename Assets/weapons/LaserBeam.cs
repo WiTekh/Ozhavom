@@ -6,6 +6,7 @@ using UnityEngine;
 public class LaserBeam : MonoBehaviour
 {
     public bool active;
+    public int upgrade;
     public Sprite weaponRenderer;
     private variablesStock _dataHandler;
     
@@ -48,7 +49,7 @@ public class LaserBeam : MonoBehaviour
                         if (Input.GetKey(KeyCode.Z))
                         {
                             Fire();
-                            fire = 0;
+                            fire = upgrade*10;
                         }
 
                         break;
@@ -56,7 +57,7 @@ public class LaserBeam : MonoBehaviour
                         if (Input.GetKey(KeyCode.E))
                         {
                             Fire();
-                            fire = 0;
+                            fire = upgrade*10;
 
                         }
 
@@ -65,7 +66,7 @@ public class LaserBeam : MonoBehaviour
                         if (Input.GetKey(KeyCode.R))
                         {
                             Fire();
-                            fire = 0;
+                            fire = upgrade*10;
                         }
 
                         break;

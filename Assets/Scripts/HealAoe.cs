@@ -9,6 +9,8 @@ public class HealAoe : MonoBehaviour
     [SerializeField] public bool active;
     public Sprite weaponRenderer;
     private variablesStock _dataHandler;
+    public int upgrade;
+
 
     private PhotonView PV;
     [SerializeField] private int firerate;
@@ -28,7 +30,7 @@ public class HealAoe : MonoBehaviour
     {
         if (PV.IsMine)
         {
-            if (fire >= firerate)
+            if (fire >= firerate - 10* upgrade)
             {
                 switch (slot)
                 {

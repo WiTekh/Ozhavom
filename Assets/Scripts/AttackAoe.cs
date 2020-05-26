@@ -9,6 +9,7 @@ public class AttackAoe : MonoBehaviour
     [SerializeField] public bool active;
     public Sprite weaponRenderer;
     private variablesStock _dataHandler;
+    public int upgrade;
 
     private PhotonView PV;
     [SerializeField] private int firerate;
@@ -28,7 +29,7 @@ public class AttackAoe : MonoBehaviour
     {
         if (PV.IsMine)
         {
-            if (fire >= firerate)
+            if (fire >= firerate - 10*upgrade)
             {
                 switch (slot)
                 {
@@ -69,5 +70,6 @@ public class AttackAoe : MonoBehaviour
     void Fire()
     {
        GameObject yes = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "AoeDmg"), transform.position, transform.rotation);
+       
     }
 }

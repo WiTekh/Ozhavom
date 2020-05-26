@@ -12,6 +12,7 @@ public class Equipement : MonoBehaviour
     [Tooltip("0 -> Z || 1 -> E || 2 -> R")]
     [SerializeField] public string[] equipement = new string[3];
 
+    private int drop = 0;
     [SerializeField] private int freeslot;
     [SerializeField] private Rafale _rafale;
     [SerializeField]private Masse masse;
@@ -26,6 +27,10 @@ public class Equipement : MonoBehaviour
     [SerializeField] private HealAoe AoeHeal;
     [SerializeField] private MoreShoot MoreShoot;
     [SerializeField] private Mine Mine;
+    [SerializeField] private Shield Shield;
+    [SerializeField] private Seisme Seisme;
+    [SerializeField] private InstantHeal InstantHeal;
+    [SerializeField] private Piercingshot Piercingshot;
     private AvatarSetup AvatarSetups;
     private PhotonView PV;
     private int coin;
@@ -42,6 +47,9 @@ public class Equipement : MonoBehaviour
         PV = GetComponent<PhotonView>();
         dataHandler = GameObject.Find("varHolder");
         Debug.Log(dataHandler.name);
+        equipement[0] = "";
+        equipement[1] = "";
+        equipement[2] = "";
     }
 
 
@@ -66,50 +74,86 @@ public class Equipement : MonoBehaviour
             Debug.Log("equiped the rifle");
             freeslot++;
         }
+        
+        // c'est pour le drop
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            drop = 1;
+        }
+
+        if (drop >0)
+        {
+            drop++;
+            Drop();
+            
+        }
+
+        if (drop == 11)
+        {
+            drop = 0;
+        }
     }
 
     private void OnCollisionEnter2D (Collision2D col)
     {
         if (PV.IsMine)
         {
-            _gameObject = col.gameObject;
-            if (_gameObject.CompareTag("Weapons"))
+            if (freeslot == 3 || equipement[freeslot] != "")
             {
-                if (freeslot <= 2)
+                for (int i = 2; i >= 0; i--)
                 {
-                   equipitems();
-                   freeslot++;
+                    if (equipement[i] == "")
+                    {
+                        freeslot = i;
+                    }
+                }
+            }
 
-                }
-            }
-            else if (_gameObject.CompareTag("itemshop"))
+            if (equipement[freeslot] == "")
             {
-                coin = Stats.coinAmount;
-                if (_gameObject.GetComponent<ShopItems>().isweapon)
+                _gameObject = col.gameObject;
+                if (_gameObject.CompareTag("Weapons") && !_gameObject.GetComponent<ItemInfo>().drop)
                 {
-                    if (_gameObject.GetComponent<ShopItems>().prix <= coin && freeslot <= 2)
+
+                    if (freeslot <= 2)
                     {
-                        Debug.Log("I buy this");
-                        Stats.coinAmount -= _gameObject.GetComponent<ShopItems>().prix;
+                      
                         equipitems();
-                    }
-                }
-                else 
-                {
-                    if ( Stats.currentH < AvatarSetups.maxH)
-                    {
-                        if (AvatarSetups.maxH >=  Stats.currentH +_gameObject.GetComponent<ShopItems>().heal)
-                        {
-                            Stats.currentH = Stats.currentH  + _gameObject.GetComponent<ShopItems>().heal;
-                        }
-                        else
-                        {
-                            Stats.currentH  = AvatarSetups.maxH;
-                        }
-                        PhotonNetwork.Destroy(_gameObject);
+                        freeslot++;
                     }
                 }
             }
+            else if (_gameObject.CompareTag("itemshop") && !_gameObject.GetComponent<ItemInfo>().drop)
+                {
+                    coin = Stats.coinAmount;
+                    if (_gameObject.GetComponent<ShopItems>().isweapon )
+                    {
+                        if (_gameObject.GetComponent<ShopItems>().prix <= coin && freeslot <= 2&& equipement[freeslot] == "")
+                        {
+                           Debug.Log("I buy this");
+                           Stats.coinAmount -= _gameObject.GetComponent<ShopItems>().prix;
+                           equipitems();
+                        }
+                    }
+                    else
+                    {
+                        if (Stats.currentH < AvatarSetups.maxH && _gameObject.GetComponent<ShopItems>().prix <= coin)
+                        {
+                            if (AvatarSetups.maxH >= Stats.currentH + _gameObject.GetComponent<ShopItems>().heal)
+                            {
+                                Stats.currentH = Stats.currentH + _gameObject.GetComponent<ShopItems>().heal;
+                            }
+                            else
+                            {
+                                Stats.currentH = AvatarSetups.maxH;
+                            }
+
+                            PhotonNetwork.Destroy(_gameObject);
+                            Stats.coinAmount -= _gameObject.GetComponent<ShopItems>().prix;
+                        }
+                    }
+                }
+            
         }
     }
 
@@ -239,11 +283,420 @@ public class Equipement : MonoBehaviour
 
             }
         }
+        else if ("instantheal" == name)
+        {
+            if (!MoreShoot.active)
+            {
+                equipement[freeslot] = "instantheal";
+                InstantHeal.active = true;
+                InstantHeal.slot = freeslot;
+                InstantHeal.enabled = true;
+                freeslot++;
+
+                PhotonNetwork.Destroy(_gameObject);
+                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 9;
+
+            }
+        }
+        else if ("seisme" == name)
+        {
+            if (!MoreShoot.active)
+            {
+                equipement[freeslot] = "seisme";
+                Seisme.active = true;
+                Seisme.slot = freeslot;
+                Seisme.enabled = true;
+                freeslot++;
+
+                PhotonNetwork.Destroy(_gameObject);
+                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 10;
+
+            }
+        }
+        else if ("shield" == name)
+        {
+            if (!MoreShoot.active)
+            {
+                Debug.Log("yeet");
+                equipement[freeslot] = "shield";
+                Shield.active = true;
+                Shield.slot = freeslot;
+                Shield.enabled = true;
+                freeslot++;
+
+                PhotonNetwork.Destroy(_gameObject);
+                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 11;
+
+            }
+        }
+        else if ("pierce" == name)
+        {
+            if (!MoreShoot.active)
+            {
+                Debug.Log("yeet");
+                equipement[freeslot] = "shield";
+                Piercingshot.active = true;
+                Piercingshot.slot = freeslot;
+                Piercingshot.enabled = true;
+                freeslot++;
+
+                PhotonNetwork.Destroy(_gameObject);
+                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 12;
+
+            }
+        }
 
         if (freeslot >0)
         {
             GameObject.Find("varHolder").GetComponent<variablesStock>().UpdateIcons(freeslot-1);
         }
         
+    }
+
+    void Drop()
+    {
+        if (Input.GetKeyDown(KeyCode.Z)&&equipement[0]!="")
+        {
+            
+             name = equipement[0];
+            if (name == "rafale")
+            {
+                _rafale.enabled = false;
+                _rafale.active = false;
+                equipement[0] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if (name == "mine")
+            {
+                Mine.enabled = false;
+                Mine.active = false;
+                equipement[0] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if (name == "masse")
+            {
+                masse.enabled = false;
+                masse.active = false;
+                equipement[0] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if (name == "laserbeam")
+            {
+                _laserBeam.enabled = false;
+                _laserBeam.active = false;
+                equipement[0] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if ( "poisondart" == name)
+            {
+                _poisonDart.enabled = false;
+                _poisonDart.active = false;
+                equipement[0] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if ("aoeheal" == name)
+            {
+                AoeHeal.enabled = false;
+                AoeHeal.active = false;
+                equipement[0] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if ( "aoeattack" == name)
+            {
+                AoeDmg.enabled = false;
+                AoeDmg.active = false;
+               equipement[0] = "";
+               GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+               yes.GetComponent<ItemInfo>().drop = true;
+               yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if ("moreshoot" == name)
+            {
+                MoreShoot.enabled = false;
+                MoreShoot.active = false;
+                equipement[0] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+                
+            }
+            else if ("instantheal" == name)
+            {
+                InstantHeal.enabled = false;
+                InstantHeal.active = false;
+                equipement[0] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if ("seisme" == name)
+            {
+                Seisme.enabled = false;
+                Seisme.active = false;
+                equipement[0] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if ("shield" == name)
+            {
+               Shield.enabled = false;
+               Shield.active = false;
+               equipement[0] = "";
+               GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+               yes.GetComponent<ItemInfo>().drop = true;
+               yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if ("pierce" == name)
+            {
+                Piercingshot.enabled = false;
+                Piercingshot.active = false;
+                equipement[0] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            GameObject.Find("varHolder").GetComponent<variablesStock>().UpdateIcons(0);
+        }
+         if (Input.GetKeyDown(KeyCode.E)&&equipement[1]!="")
+        {
+             name = equipement[1];
+            if (name == "rafale")
+            {
+                _rafale.enabled = false;
+                _rafale.active = false;
+                equipement[1] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if (name == "mine")
+            {
+                Mine.enabled = false;
+                Mine.active = false;
+                equipement[1] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if (name == "masse")
+            {
+                masse.enabled = false;
+                masse.active = false;
+                equipement[1] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if (name == "laserbeam")
+            {
+                _laserBeam.enabled = false;
+                _laserBeam.active = false;
+                equipement[1] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if ( "poisondart" == name)
+            {
+                _poisonDart.enabled = false;
+                _poisonDart.active = false;
+                equipement[1] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if ("aoeheal" == name)
+            {
+                AoeHeal.enabled = false;
+                AoeHeal.active = false;
+                equipement[1] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if ( "aoeattack" == name)
+            {
+                AoeDmg.enabled = false;
+                AoeDmg.active = false;
+               equipement[1] = "";
+               GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+               yes.GetComponent<ItemInfo>().drop = true;
+               yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if ("moreshoot" == name)
+            {
+                MoreShoot.enabled = false;
+                MoreShoot.active = false;
+                equipement[1] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+                
+            }
+            else if ("instantheal" == name)
+            {
+                InstantHeal.enabled = false;
+                InstantHeal.active = false;
+                equipement[1] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if ("seisme" == name)
+            {
+                Seisme.enabled = false;
+                Seisme.active = false;
+                equipement[1] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if ("shield" == name)
+            {
+               Shield.enabled = false;
+               Shield.active = false;
+               equipement[1] = "";
+               GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+               yes.GetComponent<ItemInfo>().drop = true;
+               yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if ("pierce" == name)
+            {
+                Piercingshot.enabled = false;
+                Piercingshot.active = false;
+                equipement[1] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            GameObject.Find("varHolder").GetComponent<variablesStock>().UpdateIcons(1);
+        }
+          if (Input.GetKeyDown(KeyCode.R)&&equipement[2]!="")
+        {
+             name = equipement[2];
+            if (name == "rafale")
+            {
+                _rafale.enabled = false;
+                _rafale.active = false;
+                equipement[2] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if (name == "mine")
+            {
+                Mine.enabled = false;
+                Mine.active = false;
+                equipement[2] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if (name == "masse")
+            {
+                masse.enabled = false;
+                masse.active = false;
+                equipement[2] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if (name == "laserbeam")
+            {
+                _laserBeam.enabled = false;
+                _laserBeam.active = false;
+                equipement[2] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if ( "poisondart" == name)
+            {
+                _poisonDart.enabled = false;
+                _poisonDart.active = false;
+                equipement[2] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if ("aoeheal" == name)
+            {
+                AoeHeal.enabled = false;
+                AoeHeal.active = false;
+                equipement[2] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if ( "aoeattack" == name)
+            {
+                AoeDmg.enabled = false;
+                AoeDmg.active = false;
+               equipement[2] = "";
+               GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+               yes.GetComponent<ItemInfo>().drop = true;
+               yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if ("moreshoot" == name)
+            {
+                MoreShoot.enabled = false;
+                MoreShoot.active = false;
+                equipement[2] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+                
+            }
+            else if ("instantheal" == name)
+            {
+                InstantHeal.enabled = false;
+                InstantHeal.active = false;
+                equipement[2] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if ("seisme" == name)
+            {
+                Seisme.enabled = false;
+                Seisme.active = false;
+                equipement[2] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if ("shield" == name)
+            {
+               Shield.enabled = false;
+               Shield.active = false;
+               equipement[2] = "";
+               GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+               yes.GetComponent<ItemInfo>().drop = true;
+               yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            else if ("pierce" == name)
+            {
+                Piercingshot.enabled = false;
+                Piercingshot.active = false;
+                equipement[2] = "";
+                GameObject yes = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Item"), transform.position, transform.rotation);
+                yes.GetComponent<ItemInfo>().drop = true;
+                yes.GetComponent<ItemInfo>().weaponname = name;
+            }
+            GameObject.Find("varHolder").GetComponent<variablesStock>().UpdateIcons(2);
+        }
     }
 }
