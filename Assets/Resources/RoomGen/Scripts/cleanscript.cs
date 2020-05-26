@@ -18,6 +18,7 @@ public class cleanscript : MonoBehaviourPunCallbacks, IPunObservable
      private int bw= 0;
      private int rw = 0;
      private int lw = 0;
+     private int gr = 0;
     
     
     public bool boss;
@@ -146,7 +147,28 @@ public class cleanscript : MonoBehaviourPunCallbacks, IPunObservable
                     transform.GetChild(4).GetChild(6).gameObject.SetActive(true);
                 }
             }
+
+            if (forge)
+            {
+                transform.GetChild(5).GetChild(1).gameObject.SetActive(true);
+            }
+
+            if (shop)
+            {
+                transform.GetChild(5).GetChild(2).gameObject.SetActive(true);
+            }
+
+            if (cook)
+            {
+                transform.GetChild(5).GetChild(0).gameObject.SetActive(true);
+            }
+
+            if (instructor)
+            {
+                transform.GetChild(5).GetChild(3).gameObject.SetActive(true);
+            }
         }
+        
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
@@ -161,6 +183,10 @@ public class cleanscript : MonoBehaviourPunCallbacks, IPunObservable
             stream.SendNext(bw);
             stream.SendNext(lw);
             stream.SendNext(rw);
+            stream.SendNext(cook);
+            stream.SendNext(instructor);
+            stream.SendNext(shop);
+            stream.SendNext(forge);
             
         }
         else if (stream.IsReading)
@@ -173,7 +199,11 @@ public class cleanscript : MonoBehaviourPunCallbacks, IPunObservable
             bw = (int) stream.ReceiveNext();
             lw = (int) stream.ReceiveNext();
             rw = (int) stream.ReceiveNext();
-            
+            cook = (bool) stream.ReceiveNext();
+            instructor = (bool) stream.ReceiveNext();
+            shop = (bool) stream.ReceiveNext();
+            forge = (bool) stream.ReceiveNext();
+
         }
     }
 }
