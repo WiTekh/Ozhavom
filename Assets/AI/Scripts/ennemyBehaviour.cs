@@ -97,6 +97,7 @@ public class ennemyBehaviour : MonoBehaviour
                 GameObject b = PhotonNetwork.Instantiate("bullet", transform.position, Quaternion.identity);
                 b.GetComponent<AIBullet>().Target = new Vector2(player.position.x, player.position.y);
                 fireRate = nxtFire;
+                b.transform.parent = transform;
             }
             else
             {
