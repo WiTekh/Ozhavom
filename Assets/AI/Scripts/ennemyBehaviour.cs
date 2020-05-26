@@ -13,6 +13,8 @@ public class ennemyBehaviour : MonoBehaviour
     public float retreatDist;
     private PhotonView Pv;
 
+    public int badGuyId;
+    
     public int cooldown;
     private int cooled;
     public float detection;
@@ -20,7 +22,6 @@ public class ennemyBehaviour : MonoBehaviour
     public float nxtFire;
     private Transform player;
     private Random rd = new Random();
-    public bool isRat;
     public bool collided;
 
     private void Start()
@@ -35,13 +36,17 @@ public class ennemyBehaviour : MonoBehaviour
     {
         if (Pv.IsMine)
         {
-            if (!isRat)
+            if (badGuyId == 0)
             {
                 Thrower();
             }
-            else
+            else if (badGuyId == 1)
             {
                 Rat();
+            }
+            else if (badGuyId == 2)
+            {
+                Tom();
             }
 
             if (cooled <= cooldown)
@@ -51,6 +56,27 @@ public class ennemyBehaviour : MonoBehaviour
         }
     }
 
+    void Tom()
+    {
+        if (Vector2.Distance(transform.position, player.position) < detection)
+        {
+            if (fireRate <= 0)
+            {
+                GameObject b = PhotonNetwork.Instantiate("bullet", transform.position, Quaternion.identity);
+                b.GetComponent<AIBullet>().Target = new Vector2(player.position.x, player.position.y);
+                fireRate = nxtFire;
+                b.transform.parent = transform;
+            }
+            else
+            {
+                fireRate -= Time.deltaTime;
+            }
+        }
+        else
+        {
+            Look4Target();
+        }
+    }
     void Rat()
     {
         //Gonna move towards the player dealing melee damage
@@ -97,6 +123,7 @@ public class ennemyBehaviour : MonoBehaviour
                 GameObject b = PhotonNetwork.Instantiate("bullet", transform.position, Quaternion.identity);
                 b.GetComponent<AIBullet>().Target = new Vector2(player.position.x, player.position.y);
                 fireRate = nxtFire;
+                b.transform.parent = transform;
             }
             else
             {

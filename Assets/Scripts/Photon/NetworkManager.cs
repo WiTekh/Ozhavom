@@ -24,6 +24,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     
     public void OnClick()
     {
+        GameObject.Find("AMBIANCE").transform.GetChild(1).GetChild(0).GetComponent<AudioSource>().Play();
         if (PhotonNetwork.OfflineMode)
             CreateRoom();
         else

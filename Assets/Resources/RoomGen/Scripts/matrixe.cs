@@ -9,41 +9,58 @@ using Random = System.Random;
 public class matrixe : MonoBehaviour
 {
     // 1 -> Top || 2 -> Bot || 3 -> Left || 4 -> Right || 5 -> Spawn || 6 -> Boss
-    // 7-> forgeron || 8-> shop || 9-> instructeur || 10 -> cook || 11-> item
-    [SerializeField] public (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool)[,] matrix;
+    // 7-> forgeron || 8-> shop || 9-> instructeur || 10 -> cook || 11-> item || 12->house
+    [SerializeField] public (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool,bool)[,] matrix;
      public int size;
-    [SerializeField] private GameObject neo;
+    [SerializeField] public string neo;
     //[SerializeField] private GameObject boss;
     private Random r = new Random();
     private int tw;
     private int bw;
     private int lw;
     private int rw;
-    private int gr ;
+    private int gr;
     private PhotonView PV;
     private PhotonView myPV;
+    [SerializeField] public int biome;
 
     public Vector2 spawnOffset;
+
+    private GameObject parent;
     
-    void Start()
+    void Awake()
     {
+        //Init
+        PV = gameObject.GetComponent<PhotonView>();
+        if (size % 2 == 0) size += 1;
+        biome = 1;
+
+        //Gen
+        Generate(Vector2.zero);
+    }
+
+    public void Generate(Vector2 spawnPos)
+    {
+        matrix = new (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool,bool)[size, size];
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                matrix[i, j] = (true, true, true, true, false, false, false, false, false, false, false, false);
+            }
+        }
+        
+        parent = new GameObject("DUNGEON");
+        parent.tag = "dungeon";
+        
+        Debug.Log("Generating Dungeon in : " + spawnPos);
         myPV = GetComponent<PhotonView>();
         if (PhotonNetwork.IsMasterClient  && myPV.IsMine)
         {
-            
             Debug.Log("is generating");
-            PV = gameObject.GetComponent<PhotonView>();
-            if (size % 2 == 0) size += 1;
-            matrix = new (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool)[size, size];
-            for (int i = 0; i < size; i++)
-            {
-                for (int j = 0; j < size; j++)
-                {
-                    matrix[i, j] = (true, true, true, true, false, false, false, false, false, false, false);
-                }
-            }
 
             generatedungeon();
+            GenerateHouses();
 
             /* ------------ How to Generate the dungeon around the spawn room ------------
             * Browse the matrix to get the World position of the spawning room
@@ -83,8 +100,8 @@ public class matrixe : MonoBehaviour
             
             //Browse thru matrix to find the new base
             Debug.Log("Getting the Spawn Offset");
-            float __i = 0;
-            float __j = 0;
+            float __i = spawnPos.x;
+            float __j = spawnPos.y;
 
             for (int i = 0; i < size; i++)
             {
@@ -107,6 +124,8 @@ public class matrixe : MonoBehaviour
             Debug.Log("The spawn offset is : " + spawnOffset);
             
             PV.RPC("SendToStock", RpcTarget.AllBuffered);
+            
+            GameObject.Find("Canvas").transform.GetChild(5).GetComponent<miniMap>().rStart();
         }
         else
         {
@@ -114,7 +133,6 @@ public class matrixe : MonoBehaviour
             //PV.RPC("SaveGenBool", RpcTarget.AllBufferedViaServer);
         }
     }
-
     public void generatedungeon()
     {
         int maxroom = (size * size) /3;
@@ -443,7 +461,7 @@ public class matrixe : MonoBehaviour
          lw = r.Next(0,2);
          rw = r.Next(0,2);
 
-         if (tw==0)
+        if (tw==0)
         {
             gobj.transform.GetChild(2).GetChild(0).gameObject.SetActive(true);
             
@@ -652,11 +670,26 @@ public class matrixe : MonoBehaviour
     
     private void Generate2(int i, int j, int cnt, Vector2 sPos)
     {
-        GameObject oo = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Room"), new Vector3(i*19-sPos.x, j*12-sPos.y), Quaternion.identity);
+        GameObject oo = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", neo), new Vector3(i*19-sPos.x, j*12-sPos.y), Quaternion.identity);
+
+
+//        GameObject pp = Instantiate(Resources.Load("mmRoom"), Vector3.zero, Quaternion.identity) as GameObject;
+//
+//        pp.transform.parent = GameObject.Find("Canvas").transform.GetChild(5);
+//        pp.transform.localPosition = new Vector3(i-(sPos.x/19), j-(sPos.x/12))*15;
+//        pp.transform.localScale = Vector3.one;
+//        
+//        if (matrix[i, j].Item5)
+//            GameObject.Find("Canvas").transform.GetChild(6).position = pp.transform.position;
+
 
         oo.name = $"Room_{cnt}";
         
-        generateforest(oo, i, j);
+        oo.transform.parent = parent.transform;
+        if (neo=="Room")
+            generateforest(oo, i, j);
+        else
+            GenerateFarm(oo,i,j);
         
         oo.GetComponent<cleanscript>().top = matrix[i, j].Item1;
         oo.GetComponent<cleanscript>().bot = matrix[i, j].Item2;
@@ -671,20 +704,135 @@ public class matrixe : MonoBehaviour
         bool cook = oo.GetComponent<cleanscript>().cook = matrix[i, j].Item10;
         oo.GetComponent<cleanscript>().item = matrix[i, j].Item11;
         
-
         GeneratesShop(cook,forgeron,shop,sensei,oo);
     }
 
-  
+
+    public void DestroyDungeon()
+    {
+        PhotonNetwork.Destroy(parent);
+        foreach (GameObject oo in GameObject.FindGameObjectsWithTag("itemshop"))
+        {
+            PhotonNetwork.Destroy(oo);
+        }
+    }
 
     [PunRPC]
-
     void SendToStock()
     {
         GameObject.Find("varHolder").GetComponent<variablesStock>().spawnOffset = this.spawnOffset;
     }
 
-  
+    public void GenerateHouses()
+    {
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                if (r.Next(0, 4)==1)
+                    matrix[i, j].Item12 = true;
+            }
+        }
+    }
+    
+    public void GenerateFarm(GameObject gobj,int i, int j)
+    {
+        if (matrix[i, j].Item12)
+        {
+            gobj.transform.GetChild(1).gameObject.SetActive(true);
+            gobj.transform.GetChild(0).gameObject.SetActive(false);
+            if (!matrix[i, j].Item1)
+            {
+                gobj.transform.GetChild(4).GetChild(0).gameObject.SetActive(true);
+                gobj.transform.GetChild(6).GetChild(0).gameObject.SetActive(true);
+            }
+            if (!matrix[i,j].Item2)
+            {
+                gobj.transform.GetChild(4).GetChild(1).gameObject.SetActive(true);
+                gobj.transform.GetChild(6).GetChild(1).gameObject.SetActive(true);
+            }
+            if (!matrix[i,j].Item3)
+            {
+                gobj.transform.GetChild(4).GetChild(2).gameObject.SetActive(true);
+                gobj.transform.GetChild(6).GetChild(2).gameObject.SetActive(true);
+            }
+            if (!matrix[i,j].Item4)
+            {
+                gobj.transform.GetChild(4).GetChild(3).gameObject.SetActive(true);
+                gobj.transform.GetChild(6).GetChild(3).gameObject.SetActive(true);
+            }
+        }
+        else
+        {
+            if (isvalid(i,j+1) && matrix[i,j+1].Item12)
+            {
+                gobj.transform.GetChild(2).GetChild(4).gameObject.SetActive(true);
+                if (!matrix[i,j].Item1)
+                    gobj.transform.GetChild(4).GetChild(8).gameObject.SetActive(true);
+                else
+                    gobj.transform.GetChild(3).GetChild(4).gameObject.SetActive(true);
+            }
+            else
+            {
+                gobj.transform.GetChild(2).GetChild(0).gameObject.SetActive(true);
+                if (!matrix[i,j].Item1)
+                    gobj.transform.GetChild(4).GetChild(4).gameObject.SetActive(true);
+                else
+                    gobj.transform.GetChild(3).GetChild(0).gameObject.SetActive(true);
+            }
+            
+            if (isvalid(i,j-1) && matrix[i,j-1].Item12)
+            {
+                gobj.transform.GetChild(2).GetChild(5).gameObject.SetActive(true);
+                if (!matrix[i,j].Item2)
+                    gobj.transform.GetChild(4).GetChild(9).gameObject.SetActive(true);
+                else
+                    gobj.transform.GetChild(3).GetChild(5).gameObject.SetActive(true);
+            }
+            else
+            {
+                gobj.transform.GetChild(2).GetChild(1).gameObject.SetActive(true);
+                if (!matrix[i,j].Item2)
+                    gobj.transform.GetChild(4).GetChild(5).gameObject.SetActive(true);
+                else
+                    gobj.transform.GetChild(3).GetChild(1).gameObject.SetActive(true);
+            }
+            
+            if (isvalid(i-1,j) && matrix[i-1,j].Item12)
+            {
+                gobj.transform.GetChild(2).GetChild(6).gameObject.SetActive(true);
+                if (!matrix[i,j].Item3)
+                    gobj.transform.GetChild(4).GetChild(10).gameObject.SetActive(true);
+                else
+                    gobj.transform.GetChild(3).GetChild(6).gameObject.SetActive(true);
+            }
+            else
+            {
+                gobj.transform.GetChild(2).GetChild(2).gameObject.SetActive(true);
+                if (!matrix[i,j].Item3)
+                    gobj.transform.GetChild(4).GetChild(6).gameObject.SetActive(true);
+                else
+                    gobj.transform.GetChild(3).GetChild(2).gameObject.SetActive(true);
+            }
+            
+            if (isvalid(i+1,j) && matrix[i+1,j].Item12)
+            {
+                gobj.transform.GetChild(2).GetChild(7).gameObject.SetActive(true);
+                if (!matrix[i,j].Item4)
+                    gobj.transform.GetChild(4).GetChild(11).gameObject.SetActive(true);
+                else
+                    gobj.transform.GetChild(3).GetChild(7).gameObject.SetActive(true);
+            }
+            else
+            {
+                gobj.transform.GetChild(2).GetChild(3).gameObject.SetActive(true);
+                if (!matrix[i,j].Item4)
+                    gobj.transform.GetChild(4).GetChild(7).gameObject.SetActive(true);
+                else
+                    gobj.transform.GetChild(3).GetChild(3).gameObject.SetActive(true);
+            }
+        }
+    }
 }
 
 

@@ -19,12 +19,12 @@ public class ennemyStats : MonoBehaviourPunCallbacks, IPunObservable
         {
             if (health <= 0)
             {
-                //PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "items", "coin"), transform.position, Quaternion.identity);
                 gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 gameObject.GetComponent<ennemyBehaviour>().enabled = false;
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-                //PhotonNetwork.Destroy(gameObject);
+                PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "bagofcoin"), transform.position, Quaternion.identity);
+                PhotonNetwork.Destroy(gameObject);
             }
             else if (tick == 25)
             {

@@ -1,9 +1,11 @@
 ﻿using System;
+using DG.Tweening;
 using Photon.Pun;
 using Photon.Pun.Demo.PunBasics;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Assertions.Must;
 using UnityEngine.SceneManagement;
 
 public class playerStats : MonoBehaviour
@@ -21,6 +23,11 @@ public class playerStats : MonoBehaviour
 
     [SerializeField] private TMP_Text playerName;
     public TMP_Text coinHeap;
+    
+    public bool isForest = true;
+    public bool paused = false;
+
+    private bool cheatOn = false;
     
     public void Awake()
     { 
@@ -44,6 +51,12 @@ public class playerStats : MonoBehaviour
 
     public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            GameObject.Find("Canvas").transform.GetChild(8).gameObject.SetActive(cheatOn);
+            cheatOn = !cheatOn;
+        }
+        
         if (PV.IsMine)
         {
             if (currentH <= 0)
@@ -53,6 +66,54 @@ public class playerStats : MonoBehaviour
             healthBar.value = currentH / AS.maxH;
             coinHeap.text = coinAmount.ToString();
             healthDisp.text = currentH + "/" + AS.maxH;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!paused)
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    GameObject.Find("Canvas").transform.GetChild(i).gameObject.SetActive(false);
+                }
+
+                GameObject.Find("Canvas").transform.GetChild(7).gameObject.SetActive(true);
+                transform.GetChild(0).DOMoveZ(-70, 1f);
+                transform.GetChild(0).GetComponent<Camera>().orthographic = false;
+            }
+            else
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    GameObject.Find("Canvas").transform.GetChild(i).gameObject.SetActive(true);
+                }
+
+                transform.GetChild(0).transform.position = new Vector3(transform.GetChild(0).transform.position.x, transform.GetChild(0).transform.position.y, -1f);
+                GameObject.Find("Canvas").transform.GetChild(7).gameObject.SetActive(false);
+                transform.GetChild(0).GetComponent<Camera>().orthographic = true;
+            }
+
+            paused = !paused;
+        }
+
+        //Cheat Load Stage 2
+        if (PhotonNetwork.IsMasterClient && Input.GetKeyDown(KeyCode.L))
+        {
+            if (isForest)
+            {
+                GetComponent<matrixe>().neo = "countryside";
+            }
+            else
+            {
+                GetComponent<matrixe>().neo = "Room";
+            }
+            
+            Debug.Log("Loading players into Stage 2");
+            gameObject.GetComponent<matrixe>().DestroyDungeon();
+            gameObject.GetComponent<matrixe>().Generate(Vector2.zero);
+            gameObject.transform.position = Vector2.zero;
+
+            isForest = !isForest;
         }
         
     }
