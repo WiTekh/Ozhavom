@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 8204575802740821113}
   - component: {fileID: 6150102826714003237}
   - component: {fileID: 4091881425612711460}
-  - component: {fileID: -7474948484264135330}
   m_Layer: 0
   m_Name: Rat
   m_TagString: Ennemy
@@ -125,10 +124,10 @@ MonoBehaviour:
   speed: 4
   stopDist: 0
   retreatDist: 3
+  badGuyId: 1
   cooldown: 20
   detection: 10
   nxtFire: 2
-  isRat: 1
   collided: 0
 --- !u!114 &8763422460329221910
 MonoBehaviour:
@@ -209,17 +208,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8778825, y: 0.7525511}
   m_EdgeRadius: 0
---- !u!114 &-7474948484264135330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4608649092266109911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c73ccabb1ba36460496a4e7aeea4abc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectionDistance: 2
-  speed: 10

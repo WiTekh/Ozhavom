@@ -542,6 +542,7 @@
           </e>
           <e p="weaponUI.cs" t="Include" />
         </e>
+        <e p="select.cs" t="Include" />
         <e p="showDungeon.cs" t="Include" />
         <e p="Weapons" t="Include">
           <e p="ChargedBeam.cs" t="Include" />

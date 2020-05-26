@@ -23,8 +23,12 @@ public class playerStats : MonoBehaviour
 
     [SerializeField] private TMP_Text playerName;
     public TMP_Text coinHeap;
-
+    
+    public bool isForest = true;
     public bool paused = false;
+
+    private bool cheatOn = false;
+    
     public void Awake()
     { 
         AS = gameObject.GetComponent<AvatarSetup>();
@@ -47,6 +51,12 @@ public class playerStats : MonoBehaviour
 
     public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            GameObject.Find("Canvas").transform.GetChild(8).gameObject.SetActive(cheatOn);
+            cheatOn = !cheatOn;
+        }
+        
         if (PV.IsMine)
         {
             if (currentH <= 0)
@@ -89,12 +99,21 @@ public class playerStats : MonoBehaviour
         //Cheat Load Stage 2
         if (PhotonNetwork.IsMasterClient && Input.GetKeyDown(KeyCode.L))
         {
+            if (isForest)
+            {
+                GetComponent<matrixe>().neo = "countryside";
+            }
+            else
+            {
+                GetComponent<matrixe>().neo = "Room";
+            }
+            
             Debug.Log("Loading players into Stage 2");
             gameObject.GetComponent<matrixe>().DestroyDungeon();
             gameObject.GetComponent<matrixe>().Generate(Vector2.zero);
             gameObject.transform.position = Vector2.zero;
-            
-            //Balancer les joueurs en (0,0)
+
+            isForest = !isForest;
         }
         
     }

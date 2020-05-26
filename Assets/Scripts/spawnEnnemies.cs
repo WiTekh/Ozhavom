@@ -36,7 +36,7 @@ public class spawnEnnemies : MonoBehaviour
     private void Start()
     {
         CS = gameObject.GetComponent<cleanscript>();
-        nbEnnemies = 2; 
+        nbEnnemies = 3; 
         isOccupied = true;
         
         //Determining the pattern
@@ -97,14 +97,16 @@ public class spawnEnnemies : MonoBehaviour
                 {
                     for (int j = 0; j < transform.GetChild(i).childCount; j++)
                     {
-                        int rd = new Random().Next(0, 2);
+                        int rd = new Random().Next(0, 3);
                         string ennemy = "";
 
                         if (rd == 0)
                             ennemy = "rat";
-                        else
+                        else if (rd == 1)
                             ennemy = "ennemy";
-
+                        else
+                            ennemy = "tom";
+                        
                         GameObject ooo = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", ennemy), transform.GetChild(i).GetChild(j).position,
                             Quaternion.identity);
                         ennemies.Add(ooo);

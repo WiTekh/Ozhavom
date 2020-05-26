@@ -2025,6 +2025,7 @@ MonoBehaviour:
   coinAmount: 0
   playerName: {fileID: 0}
   coinHeap: {fileID: 0}
+  isForest: 1
   paused: 0
 --- !u!114 &132840629278363447
 MonoBehaviour:
