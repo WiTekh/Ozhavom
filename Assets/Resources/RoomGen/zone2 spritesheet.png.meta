@@ -1,0 +1,919 @@
+fileFormatVersion: 2
+guid: 625a70a8b64f4b344b314f62d7616296
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7813576124720512756
+    second: zone2 spritesheet_0
+  - first:
+      213: 5394111403565502924
+    second: zone2 spritesheet_1
+  - first:
+      213: -6070029371856990301
+    second: zone2 spritesheet_2
+  - first:
+      213: -361542797136077682
+    second: zone2 spritesheet_3
+  - first:
+      213: -7743152269029227432
+    second: zone2 spritesheet_4
+  - first:
+      213: 7850695035575082857
+    second: zone2 spritesheet_5
+  - first:
+      213: -1497983019830422837
+    second: zone2 spritesheet_6
+  - first:
+      213: 2245161576722115676
+    second: zone2 spritesheet_7
+  - first:
+      213: -4673414941568218286
+    second: zone2 spritesheet_8
+  - first:
+      213: -6929890947234385397
+    second: zone2 spritesheet_9
+  - first:
+      213: -9190773755708036312
+    second: zone2 spritesheet_10
+  - first:
+      213: -239655388773657399
+    second: zone2 spritesheet_11
+  - first:
+      213: 1971580438874841314
+    second: zone2 spritesheet_12
+  - first:
+      213: -9004913458841300306
+    second: zone2 spritesheet_13
+  - first:
+      213: -670026338168735564
+    second: zone2 spritesheet_14
+  - first:
+      213: -3575149504930827695
+    second: zone2 spritesheet_15
+  - first:
+      213: 6603235249588644126
+    second: zone2 spritesheet_16
+  - first:
+      213: -5982769505032566572
+    second: zone2 spritesheet_17
+  - first:
+      213: 2694600580967986058
+    second: zone2 spritesheet_18
+  - first:
+      213: -5471587738986966277
+    second: zone2 spritesheet_19
+  - first:
+      213: 1360204886057460133
+    second: zone2 spritesheet_20
+  - first:
+      213: -4471194972077198250
+    second: zone2 spritesheet_21
+  - first:
+      213: 7378578447945092095
+    second: zone2 spritesheet_22
+  - first:
+      213: -4431994259077193160
+    second: zone2 spritesheet_23
+  - first:
+      213: 8404433434199048198
+    second: zone2 spritesheet_24
+  - first:
+      213: 1612211524442304689
+    second: zone2 spritesheet_25
+  - first:
+      213: 5216359398991394337
+    second: zone2 spritesheet_26
+  - first:
+      213: 2261646422573910531
+    second: zone2 spritesheet_27
+  - first:
+      213: 701558647583203129
+    second: zone2 spritesheet_28
+  - first:
+      213: 7557575546818725596
+    second: zone2 spritesheet_29
+  - first:
+      213: 4167479200557490821
+    second: zone2 spritesheet_30
+  - first:
+      213: 2560800044315854442
+    second: zone2 spritesheet_31
+  - first:
+      213: -310909304718736988
+    second: zone2 spritesheet_32
+  - first:
+      213: 5704702570557043420
+    second: zone2 spritesheet_33
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: zone2 spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 2648
+        width: 1856
+        height: 1203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94279d7f46b04064cbf548a640c3383c
+      internalID: -7813576124720512756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 1405
+        width: 1820
+        height: 1219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9918d512f33315348a9737f9dcb1760a
+      internalID: 5394111403565502924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 1113
+        width: 241
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce4516743bbbaa643ab7a8ed5443c6da
+      internalID: -6070029371856990301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 1113
+        width: 229
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e993be8932c316c478de537d20738d5a
+      internalID: -361542797136077682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 794
+        width: 169
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e83fdf0e6601cba4a8d020331d63a554
+      internalID: -7743152269029227432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 794
+        width: 185
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c17ccf4fcf68e5548b177d0b19a6e36c
+      internalID: 7850695035575082857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 529
+        width: 230
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a75e1dccf30b9704abc39cd98ce6bb3d
+      internalID: -1497983019830422837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 536
+        width: 219
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b191e83266c6ca241bace7f681af15a1
+      internalID: 2245161576722115676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 249
+        width: 178
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57d6c34cabebf884d8ace97946002f67
+      internalID: -4673414941568218286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 244
+        width: 179
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91c88b0597d694e48a2c682a052bf3d8
+      internalID: -6929890947234385397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 2090
+        y: 540
+        width: 201
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e94ba93de0f44ff44833bd262b765878
+      internalID: -9190773755708036312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 2390
+        y: 527
+        width: 135
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6526e1718891e24fa5e139a3872f617
+      internalID: -239655388773657399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 2757
+        y: 486
+        width: 270
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb8531bf7b798d84fa7d1a76da04bd5c
+      internalID: 1971580438874841314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 3205
+        y: 449
+        width: 300
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a12f196f1f84aac4daa95325fc8a1283
+      internalID: -9004913458841300306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 3399
+        y: 819
+        width: 87
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b97dd0b7ead73441a8cc08ab7675e8f
+      internalID: -670026338168735564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 3311
+        y: 1064
+        width: 240
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87c0458f60937d84db9da44cbf8ba7dd
+      internalID: -3575149504930827695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 2979
+        y: 845
+        width: 137
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d976556d46eb0e246a82a0135c4b1592
+      internalID: 6603235249588644126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 2654
+        y: 863
+        width: 152
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac84ba8cade15724abd9a25424487242
+      internalID: -5982769505032566572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 2907
+        y: 1032
+        width: 248
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1d497f4b2d1f7840af98faa65b02065
+      internalID: 2694600580967986058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 1008
+        width: 216
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0d1371f8171eb64c81b646e0c2b16d3
+      internalID: -5471587738986966277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 2415
+        y: 864
+        width: 56
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 956b5a1543c95c0438bceaf6b67ce4dc
+      internalID: 1360204886057460133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 2325
+        y: 1086
+        width: 251
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4645ee7f7d630c14fba26aadffebd40d
+      internalID: -4471194972077198250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 2341
+        y: 1345
+        width: 230
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa9811f65f9a97448b21818ebb29e67c
+      internalID: 7378578447945092095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 2701
+        y: 1377
+        width: 181
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0019d7e056392c841b483f879eddd890
+      internalID: -4431994259077193160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 2935
+        y: 1405
+        width: 163
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed3c495f3f077a743976449b8a40c970
+      internalID: 8404433434199048198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 3311
+        y: 1366
+        width: 241
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d11a13946279c56418c3a40de1dd393f
+      internalID: 1612211524442304689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 2070
+        y: 1636
+        width: 1777
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b14c501d9de93b40a792c4ebaa801d8
+      internalID: 5216359398991394337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 2045
+        y: 1930
+        width: 1778
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6702194467b2c4d47b1ad697971f702a
+      internalID: 2261646422573910531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 3538
+        y: 2295
+        width: 246
+        height: 882
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c39ec00f29322340849f148675ac5be
+      internalID: 701558647583203129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 2992
+        y: 2289
+        width: 251
+        height: 901
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 605512df93bd0fa49929c8a94e48288f
+      internalID: 7557575546818725596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 2483
+        y: 2278
+        width: 255
+        height: 927
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d41bcb087af3d2640900ed59717dc11c
+      internalID: 4167479200557490821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 2134
+        y: 2260
+        width: 242
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 131ad7b800156e04a85056cac0ccb08e
+      internalID: 2560800044315854442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 2084
+        y: 3506
+        width: 1804
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d8791c93b0adfb4daf772c0a1ce800e
+      internalID: -310909304718736988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone2 spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 2074
+        y: 3229
+        width: 1793
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 602197f993c7bf645838cb925d70adf6
+      internalID: 5704702570557043420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

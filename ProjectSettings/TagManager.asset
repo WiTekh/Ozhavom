@@ -15,6 +15,7 @@ TagManager:
   - room
   - itemshop
   - Boss
+  - dungeon
   layers:
   - Default
   - TransparentFX
