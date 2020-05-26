@@ -8,6 +8,7 @@ public class Rafale : MonoBehaviour
 {
     [SerializeField] public bool active;
     public Sprite weaponRenderer;
+    public int upgrade;
     
     public  variablesStock _dataHandler;
 
@@ -45,7 +46,7 @@ public class Rafale : MonoBehaviour
                 Fire();
             }
 
-            if (fire >= firerate)
+            if (fire >= firerate-5*upgrade)
             {
                 switch (slot)
                 {
@@ -82,5 +83,6 @@ public class Rafale : MonoBehaviour
     {
         GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position,
             transform.rotation);
+        bullet.GetComponent<BulletColision>().dmg = 50 + 5 * upgrade;
     }
 }

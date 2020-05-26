@@ -13,8 +13,9 @@ public class WeaponShoot : MonoBehaviour
     private PhotonView PV;
 
     [SerializeField] GameObject bulletprefab;
-
+    [SerializeField] private int dmg = 50;
     [SerializeField] private int firerate;
+    public int upgrade = 0;
 
     public TMP_Text coinsAmount;
     public Slider healthBar;
@@ -37,11 +38,11 @@ public class WeaponShoot : MonoBehaviour
     {
         if (PV.IsMine)
         {
-            if (Input.GetMouseButton(0) && firerate <= fire)
+            if (Input.GetMouseButton(0) && firerate-5*upgrade <= fire)
             {
                 GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"),
                     transform.position, transform.rotation);
-                bullet.GetComponent<BulletColision>().dmg = 50;
+                bullet.GetComponent<BulletColision>().dmg = dmg+5*upgrade;
                 fire = 0;
             }
             else if (fire < firerate)

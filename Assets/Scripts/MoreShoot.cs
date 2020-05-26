@@ -8,7 +8,7 @@ public class MoreShoot : MonoBehaviour
     [SerializeField] public bool active;
     public Sprite weaponRenderer;
     private variablesStock _dataHandler;
-
+    public int upgrade;
     private PhotonView PV;
     [SerializeField] private int firerate;
     [SerializeField] public int slot;
@@ -32,7 +32,7 @@ public class MoreShoot : MonoBehaviour
                 transform.parent.parent.parent.GetChild(5).gameObject.SetActive(false);
             }
 
-            if (fire >= firerate)
+            if (fire >= firerate - 5*upgrade)
             {
                 switch (slot)
                 {
@@ -62,6 +62,10 @@ public class MoreShoot : MonoBehaviour
 
                         break;
                 }
+            }
+            else
+            {
+                fire++;
             }
         }
     }

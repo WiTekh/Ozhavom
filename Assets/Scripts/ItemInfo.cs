@@ -8,6 +8,7 @@ using Random = System.Random;
 public class ItemInfo : MonoBehaviourPunCallbacks,IPunObservable
 {
      [SerializeField] public string weaponname;
+     public bool drop = false;
      private PhotonView PV;
      public int setazero = 0;
      private void Start()
@@ -15,8 +16,13 @@ public class ItemInfo : MonoBehaviourPunCallbacks,IPunObservable
           PV = GetComponent<PhotonView>();
           if (PV.IsMine)
           {
-               Random rng = new Random();
-               weaponname = WichItem((rng.Next(8)+setazero)%9);
+               if (!drop)
+               {
+                    Random rng = new Random();
+                    weaponname = WichItem((rng.Next(11)+setazero)%12);
+               }
+              
+              
           }
          
      }
@@ -40,6 +46,14 @@ public class ItemInfo : MonoBehaviourPunCallbacks,IPunObservable
                     return "moreshoot";
                case 7:
                     return "mine";
+               case 8:
+                    return "instantheal";
+               case 9:
+                    return "seisme";
+               case 10:
+                    return "shield";
+               case 11:
+                    return "pierce";
                default:
                     return "laserbeam";
           }

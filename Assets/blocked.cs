@@ -6,7 +6,7 @@ using UnityEngine;
 public class blocked : MonoBehaviour
 {
     // Start is called before the first frame update
-    private void OnCollisionStay2D(Collision2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("BadBullet"))
         {

@@ -4,13 +4,12 @@ using System.IO;
 using Photon.Pun;
 using UnityEngine;
 
-public class Seisme : MonoBehaviour
-{ [SerializeField] public bool active;
+public class Piercingshot : MonoBehaviour
+{
+    [SerializeField] public bool active;
     public Sprite weaponRenderer;
     private variablesStock _dataHandler;
     public int upgrade;
-
-
     private PhotonView PV;
     [SerializeField] private int firerate;
     [SerializeField] public int slot;
@@ -29,7 +28,7 @@ public class Seisme : MonoBehaviour
     {
         if (PV.IsMine)
         {
-            if (fire >= firerate - 10 *  upgrade)
+            if (fire >= firerate-10 * upgrade)
             {
                 switch (slot)
                 {
@@ -69,6 +68,6 @@ public class Seisme : MonoBehaviour
    
     void Fire()
     {
-        GameObject yes = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Seisme"), transform.position, transform.rotation);
+        GameObject yes = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "BulletPiercing"), transform.position, transform.rotation);
     }
 }

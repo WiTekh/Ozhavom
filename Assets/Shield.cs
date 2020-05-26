@@ -18,7 +18,8 @@ public class Shield : MonoBehaviourPunCallbacks, IPunObservable
     [SerializeField] public int slot;
     [SerializeField] private GameObject GameObject;
     private bool fornetwork = false;
-   
+    public int upgrade;
+
     private int fire;
 
     private void Start()
@@ -38,7 +39,7 @@ public class Shield : MonoBehaviourPunCallbacks, IPunObservable
                 GameObject.SetActive(false);
                 fornetwork = false;
             }
-            if (fire >= firerate)
+            if (fire >= firerate - 10 * upgrade)
             {
                 switch (slot)
                 {
