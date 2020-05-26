@@ -9,9 +9,6 @@ public class PlayerMovement : MonoBehaviour
     private PhotonView PV;
     private Rigidbody2D RB;       //hit box of the sprite
 
-    public ParticleSystem dustR;
-    public ParticleSystem dustL;
-
     //[SerializeField] private Sprite[] sprites;
 
     private Camera _cam;
@@ -67,25 +64,13 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.D))
             {
                 RB.transform.Translate(new Vector2(MovementSpeed, 0) * Time.deltaTime);
-                dustR.Play();
-            }
-
-            if (Input.GetKeyUp(KeyCode.D))
-            {
-                dustR.Stop();
             }
 
             if (Input.GetKey(KeyCode.A))
             {
                 RB.transform.Translate(new Vector2(-MovementSpeed, 0) * Time.deltaTime);
-                dustL.Play();
             }
 
-            if (Input.GetKeyUp(KeyCode.A))
-            {
-                dustL.Stop();
-            }
-            
             if (Input.GetKey(KeyCode.S))
             {
                 RB.transform.Translate(new Vector2(0, -MovementSpeed) * Time.deltaTime);

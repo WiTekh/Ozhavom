@@ -40,8 +40,7 @@ public class spawnEnnemies : MonoBehaviour
         isOccupied = true;
         
         //Determining the pattern
-        
-        transform.GetChild(6+rd.Next(0, 8)).gameObject.SetActive(true);
+        transform.GetChild(6+rd.Next(1, 8)).gameObject.SetActive(true);
     }
 
     private void Update()
@@ -106,9 +105,9 @@ public class spawnEnnemies : MonoBehaviour
                         else
                             ennemy = "ennemy";
 
-                        PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", ennemy), transform.GetChild(i).GetChild(j).position,
+                        GameObject ooo = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", ennemy), transform.GetChild(i).GetChild(j).position,
                             Quaternion.identity);
-                        nbEnnemies += 1;
+                        ennemies.Add(ooo);
                     }
                 }
             }
