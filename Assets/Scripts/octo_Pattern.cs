@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,25 +14,33 @@ public class octo_Pattern : MonoBehaviour
     private float MaxOH;
     private float CurrentOH;
     private Animator anim;
+    private Transform Stone;
 
     private void Start()
     {
         octoHealth = GameObject.Find("Canvas").transform.GetChild(1).GetComponent<Slider>();
+        Stone = gameObject.transform.GetChild(0);
         
-        MaxOH = GetComponent<ennemyStats>().health;
+        MaxOH = Stone.GetComponent<ennemyStats>().health;
         octoHealth.maxValue = MaxOH;
         CurrentOH = MaxOH;
-        
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        if (octoHealth.value == 0)
+        if (octoHealth.value <= 0)
         {
             anim.SetTrigger("death");
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.GetComponent<ennemyBehaviour>().enabled = false;
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "bagofcoin"), transform.position, Quaternion.identity);
+            PhotonNetwork.Destroy(gameObject);
         }
         //Synch Health / Slider
-        CurrentOH = GetComponent<ennemyStats>().health;
+        CurrentOH = Stone.GetComponent<ennemyStats>().health;
         octoHealth.value = CurrentOH;
         //Moving Mecanism
         
@@ -43,7 +52,5 @@ public class octo_Pattern : MonoBehaviour
         
         
         //Keeping the display of the Boss' healthbar
-        CurrentOH = GetComponent<ennemyStats>().health;
-        octoHealth.value = CurrentOH;
     }
 }

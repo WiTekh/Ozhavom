@@ -104,6 +104,7 @@ public class spawnEnnemies : MonoBehaviour
                             ennemy = "rat";
                         else if (rd == 1)
                             ennemy = "ennemy";
+
                         else
                             ennemy = "tom";
                         

@@ -156,5 +156,71 @@ public class ennemyBehaviour : MonoBehaviour
             other.gameObject.GetComponent<playerStats>().currentH -= GetComponent<ennemyStats>().dmg;
             collided = true;
         }
+        int wait = 0;
+        bool Depop = false;
+        while (wait <= 20)
+        {
+            if (wait % 5 == 0 && Depop == false) 
+            {
+                other.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                Depop = true;
+            }
+            if (wait % 5 == 0 && Depop) 
+            {
+                other.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                Depop = false;
+            }
+            wait++;
+        }
+    }
+    
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player") && cooled == cooldown)
+        {
+            other.gameObject.GetComponent<playerStats>().currentH -= GetComponent<ennemyStats>().dmg;
+            int wait = 0;
+            bool Depop = false;
+            while (wait <= 20)
+            {
+                if (wait % 5 == 0 && Depop == false) 
+                {
+                    other.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                    Depop = true;
+                }
+                if (wait % 5 == 0 && Depop) 
+                {
+                    other.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                    Depop = false;
+                }
+                wait++;
+            }
+            cooled = 0;
+        }
+    }
+    
+    private void OnColliderStay2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player") && cooled == cooldown)
+        {
+            other.gameObject.GetComponent<playerStats>().currentH -= GetComponent<ennemyStats>().dmg;
+            int wait = 0;
+            bool Depop = false;
+            while (wait <= 20)
+            {
+                if (wait % 5 == 0 && Depop == false) 
+                {
+                    other.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                    Depop = true;
+                }
+                if (wait % 5 == 0 && Depop) 
+                {
+                    other.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                    Depop = false;
+                }
+                wait++;
+            }
+            cooled = 0;
+        }
     }
 }
