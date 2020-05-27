@@ -126,22 +126,25 @@ public class Equipement : MonoBehaviour
                         freeslot++;
                     }
                 }
-            }
-            else if (_gameObject.CompareTag("itemshop") && !_gameObject.GetComponent<ItemInfo>().drop)
+                else if (_gameObject.CompareTag("itemshop") && !_gameObject.GetComponent<ItemInfo>().drop)
                 {
                     coin = Stats.coinAmount;
-                    if (_gameObject.GetComponent<ShopItems>().isweapon )
+                    if (_gameObject.GetComponent<ShopItems>().isweapon)
                     {
-                        if (_gameObject.GetComponent<ShopItems>().prix <= coin && freeslot <= 2&& equipement[freeslot] == "")
+                        if (_gameObject.GetComponent<ShopItems>().prix <= coin && freeslot <= 2)
                         {
-                           Debug.Log("I buy this");
-                           Stats.coinAmount -= _gameObject.GetComponent<ShopItems>().prix;
-                           equipitems();
+                            Debug.Log("I buy this");
+                            Stats.coinAmount -= _gameObject.GetComponent<ShopItems>().prix;
+                            equipitems();
                         }
                     }
-                    else
-                    {
-                        if (Stats.currentH < AvatarSetups.maxH && _gameObject.GetComponent<ShopItems>().prix <= coin)
+                }
+            }
+
+
+            if (_gameObject.CompareTag("itemshop"))
+                {
+                        if (Stats.currentH < AvatarSetups.maxH && _gameObject.GetComponent<ShopItems>().prix <= coin &&!_gameObject.GetComponent<ShopItems>().isweapon )
                         {
                             if (AvatarSetups.maxH >= Stats.currentH + _gameObject.GetComponent<ShopItems>().heal)
                             {
@@ -158,7 +161,7 @@ public class Equipement : MonoBehaviour
                     }
                 }
             
-        }
+        
     }
 
     private void Give(int wp)
@@ -408,7 +411,7 @@ public class Equipement : MonoBehaviour
         }
         else if ("instantheal" == name)
         {
-            if (!MoreShoot.active)
+            if (!InstantHeal.active)
             {
                 equipement[freeslot] = "instantheal";
                 InstantHeal.active = true;
@@ -423,7 +426,7 @@ public class Equipement : MonoBehaviour
         }
         else if ("seisme" == name)
         {
-            if (!MoreShoot.active)
+            if (!Seisme.active)
             {
                 equipement[freeslot] = "seisme";
                 Seisme.active = true;
@@ -438,7 +441,7 @@ public class Equipement : MonoBehaviour
         }
         else if ("shield" == name)
         {
-            if (!MoreShoot.active)
+            if (!Shield.active)
             {
                 Debug.Log("yeet");
                 equipement[freeslot] = "shield";
@@ -454,7 +457,7 @@ public class Equipement : MonoBehaviour
         }
         else if ("pierce" == name)
         {
-            if (!MoreShoot.active)
+            if (!Piercingshot.active)
             {
                 Debug.Log("yeet");
                 equipement[freeslot] = "shield";

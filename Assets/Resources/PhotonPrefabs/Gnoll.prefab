@@ -792,6 +792,7 @@ MonoBehaviour:
   firerate: 50
   fire: 0
   myCam: {fileID: 1342151103774718637}
+  sp: {fileID: -702417484383542198, guid: a23b97126683af84480dec55ddc17ebf, type: 3}
 --- !u!212 &2550309908752773549
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -832,7 +833,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.03208439, g: 0.94322276, b: 0.9716981, a: 1}
+  m_Color: {r: 0.972549, g: 0.12653543, b: 0.031372517, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -865,6 +866,7 @@ GameObject:
   - component: {fileID: 3018778711570447402}
   - component: {fileID: 4618546668717003658}
   - component: {fileID: 1207763431741469679}
+  - component: {fileID: 3702748627837658243}
   m_Layer: 0
   m_Name: firepoint
   m_TagString: Untagged
@@ -1034,7 +1036,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
-  weaponRenderer: {fileID: 21300000, guid: a6f633eb822e845c194dfe6907c36100, type: 3}
+  weaponRenderer: {fileID: 7102705430510447968, guid: a23b97126683af84480dec55ddc17ebf,
+    type: 3}
   upgrade: 0
   _dataHandler: {fileID: 0}
   firerate: 200
@@ -1219,6 +1222,25 @@ MonoBehaviour:
   firerate: 50
   slot: 0
   _sprite: {fileID: 0}
+--- !u!114 &3702748627837658243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5394053628790408302}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7125cdc49778e541af9826a64543abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  weaponRenderer: {fileID: 7102705430510447968, guid: a23b97126683af84480dec55ddc17ebf,
+    type: 3}
+  upgrade: 0
+  _dataHandler: {fileID: 0}
+  firerate: 200
+  slot: 0
 --- !u!1 &6157701418530660639
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,6 +1631,7 @@ MonoBehaviour:
   firerate: 50
   fire: 0
   myCam: {fileID: 1342151103774718637}
+  sp: {fileID: -702417484383542198, guid: a23b97126683af84480dec55ddc17ebf, type: 3}
 --- !u!212 &4965358177249827673
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1649,7 +1672,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.03208439, g: 0.94322276, b: 0.9716981, a: 1}
+  m_Color: {r: 0.972549, g: 0.031372517, b: 0.049076755, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

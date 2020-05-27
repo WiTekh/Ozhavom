@@ -627,6 +627,7 @@ MonoBehaviour:
   firerate: 50
   fire: 0
   myCam: {fileID: 2805064763346735792}
+  sp: {fileID: -702417484383542198, guid: a23b97126683af84480dec55ddc17ebf, type: 3}
 --- !u!212 &7188868367975219866
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -667,7 +668,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.03208439, g: 0.94322276, b: 0.9716981, a: 1}
+  m_Color: {r: 0.972549, g: 0.07789855, b: 0.031372517, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1165,7 +1166,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
-  weaponRenderer: {fileID: 21300000, guid: a6f633eb822e845c194dfe6907c36100, type: 3}
+  weaponRenderer: {fileID: 7102705430510447968, guid: a23b97126683af84480dec55ddc17ebf,
+    type: 3}
   upgrade: 0
   _dataHandler: {fileID: 0}
   firerate: 200
@@ -1540,6 +1542,7 @@ MonoBehaviour:
   firerate: 50
   fire: 0
   myCam: {fileID: 2805064763346735792}
+  sp: {fileID: -702417484383542198, guid: a23b97126683af84480dec55ddc17ebf, type: 3}
 --- !u!212 &5554007257605704623
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1580,7 +1583,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.03208439, g: 0.94322276, b: 0.9716981, a: 1}
+  m_Color: {r: 0.972549, g: 0.10648585, b: 0.031372517, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

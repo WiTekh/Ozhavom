@@ -4857,7 +4857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 50
   _sprite: {fileID: 0}
-  sp: {fileID: 0}
+  sp: {fileID: 8492435688376753077}
   isH: 0
 --- !u!114 &6532375513854258629
 MonoBehaviour:

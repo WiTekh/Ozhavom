@@ -163,6 +163,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponname: 
+  Sprite:
+  - {fileID: 1145637296735392538, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  - {fileID: 1715686085431780359, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  - {fileID: 6321443046475953421, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  - {fileID: 7642472461541729571, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  - {fileID: 2912464402848211330, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  - {fileID: -2885549205037184772, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  - {fileID: 1808469803286354170, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  - {fileID: -7353613653143852761, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  - {fileID: -6635782518697459388, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  - {fileID: 5629216859032522159, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  - {fileID: -2639032509303485284, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  - {fileID: 781155818728307869, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  - {fileID: -8508422110644630109, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  heal: 0
+  drop: 0
   setazero: 0
 --- !u!114 &8309463163618580129
 MonoBehaviour:
@@ -179,3 +195,4 @@ MonoBehaviour:
   iteminfo: 
   isweapon: 0
   prix: 15
+  heal: 0

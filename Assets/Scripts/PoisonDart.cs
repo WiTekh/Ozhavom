@@ -76,7 +76,6 @@ public class PoisonDart : MonoBehaviour
     {
         GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PoisonDart"), transform.position, transform.rotation);
         
-        bullet.GetComponent<BulletColision>()._sprite = _sprite;
         bullet.GetComponent<DartCollison>().dmg = 50 + upgrade * 5;
         bullet.GetComponent<DartCollison>().poison = 15 + upgrade * 5;
     }

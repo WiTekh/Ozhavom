@@ -72,6 +72,5 @@ public class AttackAoe : MonoBehaviour
     {
        GameObject yes = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "AoeDmg"), transform.position, transform.rotation);
        
-       yes.GetComponent<BulletColision>()._sprite = _sprite;
     }
 }

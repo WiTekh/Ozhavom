@@ -71,6 +71,5 @@ public class InstantHeal : MonoBehaviour
     void Fire()
     {
         GameObject yes = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "InstantHeal"), transform.position, transform.rotation);
-        yes.GetComponent<BulletColision>()._sprite = _sprite;
     }
 }
