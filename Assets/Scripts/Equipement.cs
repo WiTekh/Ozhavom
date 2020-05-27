@@ -35,7 +35,7 @@ public class Equipement : MonoBehaviour
     private PhotonView PV;
     private int coin;
 
-    public GameObject dataHandler;
+    public variablesStock dataHandler;
 
     public GameObject[] drops;
 
@@ -45,7 +45,7 @@ public class Equipement : MonoBehaviour
         AvatarSetups = GetComponent<AvatarSetup>();
         freeslot = 0;
         PV = GetComponent<PhotonView>();
-        dataHandler = GameObject.Find("varHolder");
+        dataHandler = GameObject.Find("varHolder").GetComponent<variablesStock>();
         Debug.Log(dataHandler.name);
         equipement[0] = "";
         equipement[1] = "";
@@ -55,13 +55,18 @@ public class Equipement : MonoBehaviour
 
     private void Update()
     {
+        if (dataHandler.canGive)
+        {
+            Give(dataHandler.weapon);
+            dataHandler.canGive = false;
+        }
+
         if (Input.GetKeyDown(KeyCode.T))
         {
-            variablesStock stock =  GameObject.Find("varHolder").GetComponent<variablesStock>();
+            variablesStock stock =  dataHandler;
             if (freeslot <3)
             { 
                 stock.slots[freeslot] = 0;
-                
             }
            
             stock.UpdateIcons(freeslot);
@@ -157,9 +162,126 @@ public class Equipement : MonoBehaviour
         }
     }
 
+    private void Give(int wp)
+    {
+        int p = 0;
+        for (int i = 0; i < dataHandler.slots.Length; i++)
+        {
+            if (dataHandler.slots[i] != -1)
+            {
+                p++;
+            }
+        }
+        
+        switch (wp)
+        {
+            case 0:
+                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 0;
+                equipement[freeslot] = "rafale";
+                _rafale.active = true;
+                _rafale.slot = freeslot;
+                _rafale.enabled = true;
+                PhotonNetwork.Destroy(_gameObject);
+                Debug.Log("Xx_H4CK3RM4N_xX : Gived U the classic pew pew");
+                freeslot++;
+                
+                dataHandler.slots[p] = 0;
+                break;
+            case 1:
+                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 1;
+                equipement[freeslot] = "mass";
+                masse.active = true;
+                masse.slot = freeslot;
+                masse.enabled = true;
+                PhotonNetwork.Destroy(_gameObject);
+                Debug.Log("Xx_H4CK3RM4N_xX : Gived U the big bawl");
+                freeslot++;
+                dataHandler.slots[p] = 1;
+                break;
+            case 2:
+                equipement[freeslot] = "aoeattack";
+                AoeDmg.active = true;
+                AoeDmg.slot = freeslot;
+                AoeDmg.enabled = true;
+                freeslot++;
+                PhotonNetwork.Destroy(_gameObject);
+                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 6;
+                Debug.Log("Xx_H4CK3RM4N_xX : Gived U the weird thorny thing");
+                dataHandler.slots[p] = 7;
+                break;
+            case 3:
+                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 2;
+                equipement[freeslot] = "laserbeam";
+                _laserBeam.active = true;
+                _laserBeam.enabled = true;
+                _laserBeam.slot = freeslot;
+                PhotonNetwork.Destroy(_gameObject);
+                Debug.Log("Xx_H4CK3RM4N_xX : Gived U the big ray stuff");
+                freeslot++;
+                dataHandler.slots[p] = 2;
+                break;
+            case 4:
+                equipement[freeslot] = "shield";
+                Shield.active = true;
+                Shield.slot = freeslot;
+                Shield.enabled = true;
+                freeslot++;
+                PhotonNetwork.Destroy(_gameObject);
+                Debug.Log("Xx_H4CK3RM4N_xX : he protec");
+                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 11;
+                dataHandler.slots[p] = 6;
+                break;
+            case 5:
+                equipement[freeslot] = "aoeheal";
+                AoeHeal.active = true;
+                AoeHeal.slot = freeslot;
+                AoeHeal.enabled = true;
+                freeslot++;
+                Debug.Log("Xx_H4CK3RM4N_xX : I got yo ass man");
+                PhotonNetwork.Destroy(_gameObject);
+                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 5;
+                dataHandler.slots[p] = 5;
+                break;
+            case 6:
+                equipement[freeslot] = "poisondart";
+                _poisonDart.active = true;
+                _poisonDart.slot = freeslot;
+                _poisonDart.enabled = true;
+                freeslot++;
+                Debug.Log("Xx_H4CK3RM4N_xX : Eh! ne confonds pas avec le poisson ^^''");
+                PhotonNetwork.Destroy(_gameObject);
+                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 4;
+                dataHandler.slots[p] = 4;
+                break;
+            case 7:
+                equipement[freeslot] = "mine";
+                Mine.active = true;
+                Mine.slot = freeslot;
+                Mine.enabled = true;
+                freeslot++;
+                Debug.Log("Xx_H4CK3RM4N_xX : Yo got ya boom boom");
+                PhotonNetwork.Destroy(_gameObject);
+                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 8;
+                dataHandler.slots[p] = 8;
+                break;
+            case 8:
+                equipement[freeslot] = "seisme";
+                Seisme.active = true;
+                Seisme.slot = freeslot;
+                Seisme.enabled = true;
+                freeslot++;
+                dataHandler.slots[p] = 3;
+                PhotonNetwork.Destroy(_gameObject);
+                dataHandler.GetComponent<variablesStock>().slots[freeslot] = 10;
+                Debug.Log("Xx_H4CK3RM4N_xX : You're such a CRACKhead (eheh .. crack ... seism ... ^^')");
+                break;
+        }
+        
+        dataHandler.UpdateIcons(p);
+    }
     private void equipitems()
     {
-        string name = _gameObject.GetComponent<ItemInfo>().weaponname;
+        name = _gameObject.GetComponent<ItemInfo>().weaponname;
         if (name == "rafale")
         {
             if (!_rafale.active)
@@ -225,7 +347,6 @@ public class Equipement : MonoBehaviour
         {
             if (!_poisonDart.active)
             {
-                
                 equipement[freeslot] = "poisondart";
                 _poisonDart.active = true;
                 _poisonDart.slot = freeslot;
@@ -348,7 +469,7 @@ public class Equipement : MonoBehaviour
 
         if (freeslot >0)
         {
-            GameObject.Find("varHolder").GetComponent<variablesStock>().UpdateIcons(freeslot-1);
+            dataHandler.UpdateIcons(freeslot-1);
         }
         
     }
@@ -468,7 +589,7 @@ public class Equipement : MonoBehaviour
                 yes.GetComponent<ItemInfo>().drop = true;
                 yes.GetComponent<ItemInfo>().weaponname = name;
             }
-            GameObject.Find("varHolder").GetComponent<variablesStock>().UpdateIcons(0);
+            dataHandler.UpdateIcons(0);
         }
          if (Input.GetKeyDown(KeyCode.E)&&equipement[1]!="")
         {
@@ -582,7 +703,7 @@ public class Equipement : MonoBehaviour
                 yes.GetComponent<ItemInfo>().drop = true;
                 yes.GetComponent<ItemInfo>().weaponname = name;
             }
-            GameObject.Find("varHolder").GetComponent<variablesStock>().UpdateIcons(1);
+            dataHandler.UpdateIcons(1);
         }
           if (Input.GetKeyDown(KeyCode.R)&&equipement[2]!="")
         {
@@ -696,7 +817,7 @@ public class Equipement : MonoBehaviour
                 yes.GetComponent<ItemInfo>().drop = true;
                 yes.GetComponent<ItemInfo>().weaponname = name;
             }
-            GameObject.Find("varHolder").GetComponent<variablesStock>().UpdateIcons(2);
+            dataHandler.UpdateIcons(2);
         }
     }
 }

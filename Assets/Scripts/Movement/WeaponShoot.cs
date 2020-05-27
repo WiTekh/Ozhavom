@@ -13,7 +13,7 @@ public class WeaponShoot : MonoBehaviour
     private PhotonView PV;
 
     [SerializeField] GameObject bulletprefab;
-    [SerializeField] private int dmg = 50;
+    [SerializeField] public int dmg = 50;
     [SerializeField] private int firerate;
     public int upgrade = 0;
 
@@ -40,9 +40,29 @@ public class WeaponShoot : MonoBehaviour
         {
             if (Input.GetMouseButton(0) && firerate-5*upgrade <= fire)
             {
-                GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"),
-                    transform.position, transform.rotation);
-                bullet.GetComponent<BulletColision>().dmg = dmg+5*upgrade;
+//                GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"),
+//                    transform.position, transform.rotation);
+//                bullet.GetComponent<BulletColision>().dmg = dmg+5*upgrade;
+//                
+//                
+                //Change shooting depending on character
+                switch (GameObject.Find("PlayerInfos").GetComponent<PlayerInfos>().mySelectedChar)
+                {
+                    case 0:
+                        Debug.Log("Crab");
+                        
+                        break; 
+                    case 1:
+                        Debug.Log("Gobelin");
+                        break;
+                    case 2:
+                        Debug.Log("Gnoll");
+                        break;
+                    case 3:
+                        Debug.Log("Golem");
+                        break;
+                }
+
                 fire = 0;
             }
             else if (fire < firerate)
