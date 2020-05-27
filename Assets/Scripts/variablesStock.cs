@@ -8,18 +8,22 @@ public class variablesStock : MonoBehaviour
 {
     private Sprite _activeWeapon;
 
+    public bool canGive = false;
+    public int weapon;
+    
     public Vector2 spawnOffset;
-
     public int[] slots = new int[3];
-
     public GameObject bossRoom;
-
     public Sprite[] availableSprites;
-
     public Sprite blank;
 
     private void Start()
     {
+        //Init of slots
+        for (int i = 0; i < slots.Length; i++) {
+            slots[i] = -1;
+        }
+        
         Transform canvas = GameObject.Find("Canvas").transform;
         
         // -- Weapon Init -- 
@@ -31,7 +35,7 @@ public class variablesStock : MonoBehaviour
         canvas.GetChild(4).GetChild(1).GetComponent<Image>().sprite = blank;
         // -----------------------
     }
-
+    
     public void UpdateIcons(int i)
     {
         Debug.Log("Updating Icons ... ");

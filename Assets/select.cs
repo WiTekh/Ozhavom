@@ -6,9 +6,11 @@ using UnityEngine.UIElements;
 
 public class select : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    
     public void OnPointerEnter(PointerEventData eventData)
     {
         transform.GetChild(0).gameObject.SetActive(true);
+        GetComponent<AudioSource>().Play();
         
         if (Input.GetMouseButtonDown(0))
         {

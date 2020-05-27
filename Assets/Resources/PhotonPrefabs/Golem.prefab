@@ -862,7 +862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 9
-  neo: 
+  neo: Room
   biome: 0
   spawnOffset: {x: 0, y: 0}
 --- !u!114 &7191139001042534302
