@@ -7,7 +7,8 @@ using UnityEngine;
 public class Shield : MonoBehaviourPunCallbacks, IPunObservable
 {
     // Start is called before the first frame update
-   
+
+    [SerializeField] private Sprite _sprite;
     // Start is called before the first frame update
     [SerializeField] public bool active;
     public Sprite weaponRenderer;

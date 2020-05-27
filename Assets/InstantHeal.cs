@@ -7,6 +7,7 @@ using UnityEngine;
 public class InstantHeal : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField] private Sprite _sprite;
     [SerializeField] public bool active;
     public Sprite weaponRenderer;
     private variablesStock _dataHandler;
@@ -70,5 +71,6 @@ public class InstantHeal : MonoBehaviour
     void Fire()
     {
         GameObject yes = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "InstantHeal"), transform.position, transform.rotation);
+        yes.GetComponent<BulletColision>()._sprite = _sprite;
     }
 }

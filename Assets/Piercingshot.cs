@@ -13,7 +13,8 @@ public class Piercingshot : MonoBehaviour
     private PhotonView PV;
     [SerializeField] private int firerate;
     [SerializeField] public int slot;
-   
+    [SerializeField] private Sprite _sprite;
+    
     private int fire;
 
     private void Start()
@@ -69,5 +70,6 @@ public class Piercingshot : MonoBehaviour
     void Fire()
     {
         GameObject yes = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "BulletPiercing"), transform.position, transform.rotation);
+        yes.GetComponent<BulletColision>()._sprite = _sprite;
     }
 }

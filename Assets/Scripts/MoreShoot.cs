@@ -7,6 +7,7 @@ public class MoreShoot : MonoBehaviour
 {
     [SerializeField] public bool active;
     public Sprite weaponRenderer;
+    [SerializeField] private Sprite _sprite;
     private variablesStock _dataHandler;
     public int upgrade;
     private PhotonView PV;
