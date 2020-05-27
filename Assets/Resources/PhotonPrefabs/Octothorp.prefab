@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8802545905922487519}
   - component: {fileID: 8802545905922487518}
-  - component: {fileID: 498669595038611304}
   - component: {fileID: 5469048460293049359}
   - component: {fileID: 8363353565446576924}
+  - component: {fileID: 3094854489440591779}
   m_Layer: 0
   m_Name: Octothorp
   m_TagString: Untagged
@@ -58,27 +58,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!50 &498669595038611304
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8802545905922487513}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!114 &5469048460293049359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,6 +95,19 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+--- !u!114 &3094854489440591779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8802545905922487513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8029b4d8722134293b2abe7239988910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  octoHealth: {fileID: 0}
 --- !u!1 &8802545906009195597
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,7 +119,6 @@ GameObject:
   - component: {fileID: 8802545906009195586}
   - component: {fileID: 8802545906009195587}
   - component: {fileID: 6612941582694930006}
-  - component: {fileID: 6079469825033061492}
   - component: {fileID: 1974509113191103183}
   - component: {fileID: 6608816887478318118}
   m_Layer: 0
@@ -212,25 +203,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.000000016763806, y: -0.000000029802322}
   serializedVersion: 2
   m_Radius: 0.5400001
---- !u!114 &6079469825033061492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8802545906009195597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8029b4d8722134293b2abe7239988910, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  octoHealth: {fileID: 0}
 --- !u!114 &1974509113191103183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,10 +239,10 @@ MonoBehaviour:
   speed: 0
   stopDist: 0
   retreatDist: 0
-  cooldown: 5
+  badGuyId: 0
+  cooldown: 15
   detection: 0
   nxtFire: 0
-  isRat: 0
   collided: 0
 --- !u!1 &8802545906025496000
 GameObject:
@@ -358,10 +336,10 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8802545906025496000}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -407,10 +385,10 @@ MonoBehaviour:
   speed: 0
   stopDist: 0
   retreatDist: 0
-  cooldown: 5
+  badGuyId: 0
+  cooldown: 15
   detection: 0
   nxtFire: 0
-  isRat: 0
   collided: 0
 --- !u!1 &8802545906520023032
 GameObject:
@@ -504,10 +482,10 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8802545906520023032}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -553,10 +531,10 @@ MonoBehaviour:
   speed: 0
   stopDist: 0
   retreatDist: 0
-  cooldown: 5
+  badGuyId: 0
+  cooldown: 15
   detection: 0
   nxtFire: 0
-  isRat: 0
   collided: 0
 --- !u!1 &8802545906970299539
 GameObject:
@@ -650,10 +628,10 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8802545906970299539}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -699,10 +677,10 @@ MonoBehaviour:
   speed: 0
   stopDist: 0
   retreatDist: 0
-  cooldown: 5
+  badGuyId: 0
+  cooldown: 15
   detection: 0
   nxtFire: 0
-  isRat: 0
   collided: 0
 --- !u!1 &8802545907201950997
 GameObject:
@@ -796,10 +774,10 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8802545907201950997}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -845,8 +823,8 @@ MonoBehaviour:
   speed: 0
   stopDist: 0
   retreatDist: 0
-  cooldown: 5
+  badGuyId: 0
+  cooldown: 15
   detection: 0
   nxtFire: 0
-  isRat: 0
   collided: 0
