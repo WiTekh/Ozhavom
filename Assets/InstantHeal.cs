@@ -7,6 +7,7 @@ using UnityEngine;
 public class InstantHeal : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField] private Sprite _sprite;
     [SerializeField] public bool active;
     public Sprite weaponRenderer;
     private variablesStock _dataHandler;

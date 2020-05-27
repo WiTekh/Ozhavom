@@ -13,7 +13,8 @@ public class Piercingshot : MonoBehaviour
     private PhotonView PV;
     [SerializeField] private int firerate;
     [SerializeField] public int slot;
-   
+    [SerializeField] private Sprite _sprite;
+    
     private int fire;
 
     private void Start()

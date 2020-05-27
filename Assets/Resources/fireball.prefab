@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 7313537978960452635}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.13823888, y: -0.65995383, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 466740918282718671}
   m_Father: {fileID: 0}
@@ -71,7 +71,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 36da32cd9b50e4084bb439d052420723, type: 3}
+  m_Sprite: {fileID: 8978497540601235842, guid: a23b97126683af84480dec55ddc17ebf,
+    type: 3}
   m_Color: {r: 0.34456214, g: 0.7039729, b: 0.8396226, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92,12 +93,12 @@ PrefabInstance:
     - target: {fileID: 1137256362337190509, guid: 7c24e4608e5d94162b25719b7f36eda9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.06
+      value: -0.028
       objectReference: {fileID: 0}
     - target: {fileID: 1137256362337190509, guid: 7c24e4608e5d94162b25719b7f36eda9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.19
+      value: -0.029
       objectReference: {fileID: 0}
     - target: {fileID: 1137256362337190509, guid: 7c24e4608e5d94162b25719b7f36eda9,
         type: 3}
@@ -107,12 +108,12 @@ PrefabInstance:
     - target: {fileID: 1137256362337190509, guid: 7c24e4608e5d94162b25719b7f36eda9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.3848764
+      value: 0.7722748
       objectReference: {fileID: 0}
     - target: {fileID: 1137256362337190509, guid: 7c24e4608e5d94162b25719b7f36eda9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9229681
+      value: 0.6352887
       objectReference: {fileID: 0}
     - target: {fileID: 1137256362337190509, guid: 7c24e4608e5d94162b25719b7f36eda9,
         type: 3}
@@ -142,7 +143,7 @@ PrefabInstance:
     - target: {fileID: 1137256362337190509, guid: 7c24e4608e5d94162b25719b7f36eda9,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -134.728
+      value: -78.882996
       objectReference: {fileID: 0}
     - target: {fileID: 7481973733024309014, guid: 7c24e4608e5d94162b25719b7f36eda9,
         type: 3}

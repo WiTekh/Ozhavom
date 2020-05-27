@@ -8,6 +8,7 @@ public class HealAoe : MonoBehaviour
 {
     [SerializeField] public bool active;
     public Sprite weaponRenderer;
+    [SerializeField] private Sprite _sprite;
     private variablesStock _dataHandler;
     public int upgrade;
 
@@ -71,5 +72,6 @@ public class HealAoe : MonoBehaviour
     void Fire()
     {
         GameObject yes = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "AoeHeal"), transform.position, transform.rotation);
+
     }
 }

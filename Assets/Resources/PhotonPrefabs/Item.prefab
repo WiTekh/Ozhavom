@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ad442d9c7c1a8496db88f72ecee4bf03, type: 3}
-  m_Color: {r: 0.90588236, g: 0.11844927, b: 0.01176471, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -185,6 +185,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponname: 
+  Sprite:
+  - {fileID: 1145637296735392538, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  - {fileID: 1715686085431780359, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  - {fileID: 6321443046475953421, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  - {fileID: 7642472461541729571, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  - {fileID: 2912464402848211330, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  - {fileID: -2885549205037184772, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  - {fileID: 1808469803286354170, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  - {fileID: -7353613653143852761, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  - {fileID: -6635782518697459388, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  - {fileID: 5629216859032522159, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  - {fileID: -2639032509303485284, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  - {fileID: 781155818728307869, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  - {fileID: -8508422110644630109, guid: cd30af9b821f243c49d7fd07610b8383, type: 3}
+  heal: 0
+  drop: 0
   setazero: 0
 --- !u!114 &8515510180272536402
 MonoBehaviour:

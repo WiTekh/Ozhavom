@@ -7,6 +7,7 @@ using UnityEngine;
 public class Seisme : MonoBehaviour
 { [SerializeField] public bool active;
     public Sprite weaponRenderer;
+    [SerializeField] private Sprite _sprite;
     private variablesStock _dataHandler;
     public int upgrade;
 

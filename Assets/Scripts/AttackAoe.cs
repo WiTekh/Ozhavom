@@ -10,6 +10,7 @@ public class AttackAoe : MonoBehaviour
     public Sprite weaponRenderer;
     private variablesStock _dataHandler;
     public int upgrade;
+    [SerializeField] private Sprite _sprite;
 
     private PhotonView PV;
     [SerializeField] private int firerate;

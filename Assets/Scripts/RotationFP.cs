@@ -11,6 +11,7 @@ public class RotationFP : MonoBehaviour
     [SerializeField] private int firerate;
     [SerializeField] int fire;
     [SerializeField] private Camera myCam;
+    [SerializeField] private Sprite sp;
 
 
 
@@ -30,6 +31,7 @@ public class RotationFP : MonoBehaviour
             {
                 GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Bullet"), transform.position, transform.rotation);
                 bullet.GetComponent<BulletColision>().dmg = 50;
+                bullet.GetComponent<BulletColision>()._sprite = sp;
                 fire = 0;
             }
             else if (fire<firerate)

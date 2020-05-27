@@ -7,6 +7,7 @@ using UnityEngine;
 public class Mine : MonoBehaviour
 {
     [SerializeField] public bool active;
+    [SerializeField] Sprite _sprite;
     public Sprite weaponRenderer;
     private variablesStock _dataHandler;
     public int upgrade;
@@ -70,6 +71,6 @@ public class Mine : MonoBehaviour
     void Fire()
     {
         GameObject yes = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Mine"), transform.position, transform.rotation);
-        
+
     }
 }

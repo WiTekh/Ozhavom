@@ -9,6 +9,7 @@ public class PoisonDart : MonoBehaviour
 {
     [SerializeField] public bool active;
     public Sprite weaponRenderer;
+    [SerializeField] private Sprite _sprite;
     private variablesStock _dataHandler;
     public int upgrade;
 
@@ -74,6 +75,7 @@ public class PoisonDart : MonoBehaviour
     void Fire()
     {
         GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PoisonDart"), transform.position, transform.rotation);
+        
         bullet.GetComponent<DartCollison>().dmg = 50 + upgrade * 5;
         bullet.GetComponent<DartCollison>().poison = 15 + upgrade * 5;
     }
