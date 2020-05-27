@@ -136,6 +136,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 0
+  _sprite: {fileID: 0}
+  sp: {fileID: 8179144547454297399}
+  isH: 0
 --- !u!61 &2075572588726275934
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -71,7 +71,6 @@ public class Mine : MonoBehaviour
     void Fire()
     {
         GameObject yes = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Mine"), transform.position, transform.rotation);
-        yes.GetComponent<BulletColision>()._sprite = _sprite;
 
     }
 }

@@ -72,7 +72,6 @@ public class HealAoe : MonoBehaviour
     void Fire()
     {
         GameObject yes = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "AoeHeal"), transform.position, transform.rotation);
-        yes.GetComponent<BulletColision>()._sprite = _sprite;
 
     }
 }

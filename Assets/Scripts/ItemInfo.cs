@@ -8,6 +8,10 @@ using Random = System.Random;
 public class ItemInfo : MonoBehaviourPunCallbacks,IPunObservable
 {
      [SerializeField] public string weaponname;
+     [SerializeField] public Sprite[] Sprite;
+     private int myrng;
+
+     [SerializeField]private bool heal;
      public bool drop = false;
      private PhotonView PV;
      public int setazero = 0;
@@ -19,13 +23,25 @@ public class ItemInfo : MonoBehaviourPunCallbacks,IPunObservable
                if (!drop)
                {
                     Random rng = new Random();
-                    weaponname = WichItem((rng.Next(11)+setazero)%12);
+                     myrng = (rng.Next(11) + setazero) % 12;
+                    weaponname = WichItem(myrng);
                }
               
               
           }
+
+          
          
      }
+
+     private void Update()
+     {
+          if (!heal)
+          {
+               transform.GetComponent<SpriteRenderer>().sprite = Sprite[myrng];
+          }
+     }
+
      private string WichItem(int rng)
      {
           switch (rng)
@@ -64,11 +80,13 @@ public class ItemInfo : MonoBehaviourPunCallbacks,IPunObservable
           if (stream.IsWriting)
           {
                stream.SendNext(weaponname);
+               stream.SendNext(myrng);
           }
           else if(stream.IsReading);
 
           {
                weaponname = (string) stream.ReceiveNext();
+               myrng = (int) stream.ReceiveNext();
           }
      }
 }
