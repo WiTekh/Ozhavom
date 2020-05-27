@@ -4855,10 +4855,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdd2554f698716c4c9bb0a59df0db48e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFB: 0
   dmg: 50
   _sprite: {fileID: 0}
   sp: {fileID: 0}
+  isH: 0
 --- !u!114 &6532375513854258629
 MonoBehaviour:
   m_ObjectHideFlags: 0
