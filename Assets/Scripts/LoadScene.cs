@@ -16,8 +16,7 @@ public class LoadScene : MonoBehaviour
     
     public void LoadSolo()
     {
-        GameObject.Find("AMBIANCE").transform.GetChild(1).GetChild(1).GetComponent<AudioSource>().Play();
-        SceneManager.LoadScene(8);
+        SceneManager.LoadScene(2);
     }
     
     public void LoadRoomSystemMenu()

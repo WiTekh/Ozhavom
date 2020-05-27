@@ -14,7 +14,7 @@ public class variablesStock : MonoBehaviour
     public Vector2 spawnOffset;
     public int[] slots = new int[3];
     public GameObject bossRoom;
-    public Sprite[] availableSprites;
+    public Sprite[] availableSprites = new Sprite[3];
     public Sprite blank;
 
     private void Start()

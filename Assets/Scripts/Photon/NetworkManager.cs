@@ -42,6 +42,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         CreateRoom();
     }
 
+    public void RoomSolo()
+    {
+        int randomRoomId = UnityEngine.Random.Range(0, 99999);
+        RoomOptions defaultROps = new RoomOptions() {IsVisible =  false, IsOpen = false, MaxPlayers = 1};
+        PhotonNetwork.CreateRoom($"Solo_{randomRoomId.ToString()}", defaultROps);
+        
+    }
     void CreateRoom()
     {
         int randomRoomId = UnityEngine.Random.Range(0, 99999);
