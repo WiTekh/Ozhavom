@@ -11,6 +11,7 @@ public class ChargedBeam : MonoBehaviour
 
     private PhotonView PV;
     public int slot;
+    [SerializeField] private Sprite _sprite;
     private PlayerMovement move;
     private LineRenderer laser;
     public Transform LaserHit;

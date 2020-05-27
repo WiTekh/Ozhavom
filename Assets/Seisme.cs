@@ -7,6 +7,7 @@ using UnityEngine;
 public class Seisme : MonoBehaviour
 { [SerializeField] public bool active;
     public Sprite weaponRenderer;
+    [SerializeField] private Sprite _sprite;
     private variablesStock _dataHandler;
     public int upgrade;
 
@@ -70,5 +71,6 @@ public class Seisme : MonoBehaviour
     void Fire()
     {
         GameObject yes = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Seisme"), transform.position, transform.rotation);
+        yes.GetComponent<BulletColision>()._sprite = _sprite;
     }
 }

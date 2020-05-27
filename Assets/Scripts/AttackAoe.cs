@@ -10,6 +10,7 @@ public class AttackAoe : MonoBehaviour
     public Sprite weaponRenderer;
     private variablesStock _dataHandler;
     public int upgrade;
+    [SerializeField] private Sprite _sprite;
 
     private PhotonView PV;
     [SerializeField] private int firerate;
@@ -71,5 +72,6 @@ public class AttackAoe : MonoBehaviour
     {
        GameObject yes = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "AoeDmg"), transform.position, transform.rotation);
        
+       yes.GetComponent<BulletColision>()._sprite = _sprite;
     }
 }
